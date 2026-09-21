@@ -1,33 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkSpire | Independent Publication</title>
+    <title>InkSpire — Global Digital Intelligence & Tech Wire</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
-                        serif: ['Merriweather', 'Georgia', 'serif'],
-                    },
-                    colors: {
-                        substack: '#FF6719',
+                        serif: ['Merriweather', 'serif'],
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #fbfbf9; color: #111111; }
-        .substack-border { border-bottom: 1px solid #e6e6e2; }
-        .substack-card:hover { transform: translateY(-2px); transition: all 0.2s ease; }
-        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        .ticker-wrap { width: 100%; overflow: hidden; background: #090d16; border-bottom: 1px solid #1e293b; }
+        .ticker { display: inline-block; white-space: nowrap; padding-right: 100%; animation: ticker 35s linear infinite; }
+        @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
+        /* Hide default google translate bar completely */
+        .goog-te-banner-frame.skiptranslate, #goog-gt-tt { display: none !important; }
         body { top: 0px !important; }
-        #google_translate_element select { background-color: #ffffff; color: #111111; border: 1px solid #e6e6e2; padding: 3px 8px; border-radius: 4px; font-size: 11px; outline: none; cursor: pointer; }
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -39,102 +37,165 @@
       gtag('config', 'G-C2TQYXBJ7V');
     </script>
 </head>
-<body class="min-h-screen flex flex-col font-sans antialiased">
+<body class="bg-[#030712] text-slate-100 min-h-screen flex flex-col font-sans selection:bg-indigo-600 selection:text-white">
 
-    <!-- Header -->
-    <header class="w-full bg-white substack-border sticky top-0 z-50">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <div class="w-7 h-7 bg-substack text-white font-bold flex items-center justify-center rounded text-sm">IS</div>
-                <span class="text-lg font-bold tracking-tight text-slate-900 font-serif">InkSpire</span>
+    <!-- Hidden Google Translate Element for Auto-Detection Backend -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <!-- Top Global Ticker Bar -->
+    <div class="ticker-wrap text-xs text-slate-400 py-2">
+        <div class="ticker font-mono">
+            <span class="text-indigo-400 font-bold mr-3 uppercase tracking-wider">● Global Wire:</span> 
+            OpenAI & Google deploy next-gen neural reasoning agents globally — Silicon Valley & New Delhi tech hubs announce joint AI initiatives — GTA 6 breaks global digital pre-order records — Python automated CI/CD pipelines scale enterprise workflows.
+        </div>
+    </div>
+
+    <!-- Professional Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-[#030712]/90 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer group" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition">
+                    IS
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-white uppercase block leading-none">
+                        Ink<span class="text-indigo-500">Spire</span>
+                    </span>
+                    <span class="text-[9px] font-bold tracking-widest text-slate-400 uppercase">Global Digital Intelligence</span>
+                </div>
             </div>
-            <div class="flex items-center space-x-3">
-                <div id="google_translate_element"></div>
-                <button onclick="scrollToSubscribe()" class="bg-substack hover:bg-orange-600 text-white text-xs font-semibold px-4 py-2 rounded-full transition shadow-xs">
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-bold tracking-widest uppercase text-slate-300">
+                <a href="#feed" class="hover:text-indigo-400 transition">Front Page</a>
+                <a href="#ai-tech" class="hover:text-indigo-400 transition">AI & Tech</a>
+                <a href="#global" class="hover:text-indigo-400 transition">World News</a>
+                <a href="#gaming" class="hover:text-indigo-400 transition">Gaming</a>
+            </nav>
+
+            <!-- Right Actions -->
+            <div class="flex items-center space-x-4">
+                <button onclick="scrollToNewsletter()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-xl transition shadow-lg shadow-indigo-600/20">
                     Subscribe
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Main Container -->
-    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 flex-grow w-full space-y-12">
+    <!-- Hero Section / Lead Story -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-grow w-full space-y-12">
         
-        <!-- Hero Section -->
-        <section class="text-center space-y-4 py-6 substack-border">
-            <span class="text-[11px] font-bold tracking-widest text-substack uppercase bg-orange-50 px-2.5 py-1 rounded-full border border-orange-100">Independent Publication</span>
-            <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif leading-tight">
-                Digital Intelligence, Essays & Global Tech Workflows
-            </h1>
-            <p class="text-slate-600 font-serif text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-                Exploring autonomous AI workflows, digital publishing, and modern web architecture.
-            </p>
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-900/40 border border-slate-800 rounded-3xl p-6 sm:p-10 backdrop-blur-sm">
+            <div class="lg:col-span-7 space-y-4">
+                <div class="flex items-center space-x-3">
+                    <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-[10px] font-black uppercase tracking-wider">Featured Cover Story</span>
+                    <span class="text-xs text-slate-400 font-mono">September 21, 2026</span>
+                </div>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight font-serif">
+                    The Rise of Autonomous AI Workflows: Scaling Global Digital Agencies in 2026
+                </h1>
+                <p class="text-slate-300 text-sm sm:text-base font-serif leading-relaxed">
+                    Modern tech industries and intelligent automation have completely transformed digital growth frameworks. Exploring how custom API orchestration enables round-the-clock enterprise scaling across New Delhi and Silicon Valley.
+                </p>
+                <div class="pt-2 flex items-center space-x-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-600 to-violet-500 text-white font-bold flex items-center justify-center text-xs">PS</div>
+                        <div>
+                            <span class="block text-xs font-bold text-white">Editorial Bureau</span>
+                            <span class="block text-[10px] text-slate-400 uppercase">Global Intelligence Desk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <div class="max-w-md mx-auto pt-4 flex gap-2">
-                <input type="email" id="hero-email" placeholder="Type your email..." class="flex-grow bg-white border border-slate-300 px-4 py-2.5 text-xs rounded-lg focus:outline-none focus:border-substack">
-                <button onclick="handleSubscribe()" class="bg-slate-900 hover:bg-black text-white text-xs font-semibold px-5 py-2.5 rounded-lg transition">
-                    Sign up
-                </button>
+            <div class="lg:col-span-5">
+                <div class="w-full aspect-video rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+                    <iframe src="https://www.youtube.com/embed/kqtD5dpn9C8" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
         </section>
 
-        <!-- Articles Feed -->
-        <div class="space-y-10">
-            <article class="substack-card bg-white p-6 rounded-xl border border-slate-200/80 shadow-2xs space-y-4">
-                <div class="flex items-center justify-between text-xs text-slate-500">
-                    <span class="font-semibold text-substack uppercase tracking-wider text-[10px]">AI & Tech Trends</span>
-                    <span>Sep 21, 2026 • 3 min read</span>
-                </div>
-                
-                <h2 class="text-xl sm:text-2xl font-bold font-serif text-slate-900 leading-snug">
-                    The Rise of Autonomous AI Workflows: How Developers are Scaling Digital Agencies in 2026
-                </h2>
-                
-                <p class="text-slate-600 font-serif text-sm leading-relaxed">
-                    Modern tech industries and automation have completely revolutionized digital growth agencies through custom API integrations and scripts.
+        <!-- Secondary Stories Grid -->
+        <div id="feed" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Card 1 -->
+            <article class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 space-y-3 hover:border-indigo-500/50 transition group">
+                <span class="text-[10px] font-bold tracking-widest text-indigo-400 uppercase">AI & Tech Trends</span>
+                <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition font-serif">
+                    Next-Gen Neural Networks and Autonomous Agent Architecture
+                </h3>
+                <p class="text-slate-400 text-xs font-serif leading-relaxed">
+                    A deep dive into how developers configure resilient background models using advanced API routing protocols.
                 </p>
-
-                <div class="w-full aspect-video bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
-                    <iframe src="https://www.youtube.com/embed/kqtD5dpn9C8" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
-                </div>
-
-                <div class="flex items-center justify-between pt-4 substack-border text-xs text-slate-500">
-                    <span class="font-semibold text-slate-900">Published by Editorial Desk</span>
-                    <button onclick="handleLike('post-1')" class="hover:text-substack flex items-center gap-1 font-medium">
-                        ❤️ <span id="like-count-post-1">12</span>
-                    </button>
+                <div class="pt-2 border-t border-slate-800 flex justify-between items-center text-[11px] text-slate-400 font-mono">
+                    <span>4 min read</span>
+                    <button onclick="handleLike('c1')" class="hover:text-indigo-400 flex items-center gap-1 font-bold">❤️ <span id="like-c1">24</span></button>
                 </div>
             </article>
+
+            <!-- Card 2 -->
+            <article class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 space-y-3 hover:border-indigo-500/50 transition group">
+                <span class="text-[10px] font-bold tracking-widest text-indigo-400 uppercase">Global Markets</span>
+                <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition font-serif">
+                    Cross-Border Tech Employment & Digital Startup Surges
+                </h3>
+                <p class="text-slate-400 text-xs font-serif leading-relaxed">
+                    Analyzing economic shifts across Asian and Western tech sectors as remote cloud infrastructure expands.
+                </p>
+                <div class="pt-2 border-t border-slate-800 flex justify-between items-center text-[11px] text-slate-400 font-mono">
+                    <span>6 min read</span>
+                    <button onclick="handleLike('c2')" class="hover:text-indigo-400 flex items-center gap-1 font-bold">❤️ <span id="like-c2">19</span></button>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 space-y-3 hover:border-indigo-500/50 transition group">
+                <span class="text-[10px] font-bold tracking-widest text-indigo-400 uppercase">Digital Publishing</span>
+                <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition font-serif">
+                    The Modern Independent Author & Web Storefront Economy
+                </h3>
+                <p class="text-slate-400 text-xs font-serif leading-relaxed">
+                    How creators distribute digital e-books, graphic assets, and serial publications directly to global audiences.
+                </p>
+                <div class="pt-2 border-t border-slate-800 flex justify-between items-center text-[11px] text-slate-400 font-mono">
+                    <span>5 min read</span>
+                    <button onclick="handleLike('c3')" class="hover:text-indigo-400 flex items-center gap-1 font-bold">❤️ <span id="like-c3">31</span></button>
+                </div>
+            </article>
+
         </div>
 
-        <!-- Subscribe Box Footer -->
-        <section id="subscribe-box" class="bg-orange-50/60 border border-orange-100 rounded-2xl p-8 text-center space-y-4 my-12">
-            <h3 class="text-xl font-bold font-serif text-slate-900">Subscribe to InkSpire</h3>
-            <p class="text-slate-600 text-xs sm:text-sm font-serif max-w-md mx-auto">
-                Never miss an update. Every new post is sent directly to your email inbox.
+        <!-- Newsletter Subscription Section -->
+        <section id="newsletter" class="bg-gradient-to-r from-indigo-950/40 to-slate-900/60 border border-indigo-500/20 rounded-3xl p-8 sm:p-12 text-center space-y-4">
+            <h3 class="text-2xl font-extrabold text-white font-serif">Get Global Intelligence Delivered</h3>
+            <p class="text-slate-300 text-xs sm:text-sm font-serif max-w-lg mx-auto leading-relaxed">
+                Receive our curated weekly dispatches covering artificial intelligence, digital workflow architecture, and global tech trends straight to your inbox.
             </p>
-            <div class="max-w-sm mx-auto flex gap-2 pt-2">
-                <input type="email" placeholder="Your email address" class="flex-grow bg-white border border-slate-300 px-4 py-2.5 text-xs rounded-lg focus:outline-none focus:border-substack">
-                <button onclick="handleSubscribe()" class="bg-substack hover:bg-orange-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition">
-                    Continue
+            <div class="max-w-md mx-auto pt-2 flex gap-3">
+                <input type="email" placeholder="Enter your email address..." class="flex-grow bg-slate-950 border border-slate-800 px-4 py-3 text-xs rounded-xl focus:outline-none focus:border-indigo-500 text-white placeholder-slate-500">
+                <button onclick="handleSubscribe()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl transition shadow-lg shadow-indigo-600/20">
+                    Join Wire
                 </button>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="w-full bg-white substack-border py-8 text-xs text-slate-500 mt-auto">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-            <p>&copy; 2026 InkSpire. All rights reserved.</p>
-            <div class="flex space-x-4 font-medium">
-                <a href="https://x.com/kavinmusic13" target="_blank" class="hover:text-slate-900">Twitter</a>
-                <a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-slate-900">Instagram</a>
+    <!-- Professional Footer -->
+    <footer class="bg-[#02040a] border-t border-slate-800/80 py-10 mt-auto text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 InkSpire Global Intelligence. All rights reserved.</p>
+            <div class="flex space-x-6 font-semibold uppercase tracking-wider text-[11px]">
+                <a href="https://x.com/kavinmusic13" target="_blank" class="hover:text-indigo-400 transition">Twitter / X</a>
+                <a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-indigo-400 transition">Instagram</a>
             </div>
         </div>
     </footer>
 
-    <!-- Google Translate Script -->
+    <!-- Automatic Backend Language Detection Script -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -143,6 +204,7 @@
                 autoDisplay: false
             }, 'google_translate_element');
 
+            // Automatically translate for non-Hindi regions (e.g. US / Europe) seamlessly in background
             setTimeout(function() {
                 var userLang = navigator.language || navigator.userLanguage; 
                 if (userLang && !userLang.startsWith('hi')) {
@@ -154,22 +216,16 @@
                 }
             }, 1000);
         }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Scripts -->
-    <script>
-        function scrollToSubscribe() {
-            document.getElementById('subscribe-box').scrollIntoView({ behavior: 'smooth' });
+        function scrollToNewsletter() {
+            document.getElementById('newsletter').scrollIntoView({ behavior: 'smooth' });
         }
         function handleSubscribe() {
-            alert('Thank you for subscribing!');
+            alert('Successfully subscribed to InkSpire Global Wire!');
         }
-        function handleLike(postId) {
-            const countEl = document.getElementById(`like-count-${postId}`);
-            if(countEl) {
-                countEl.textContent = parseInt(countEl.textContent) + 1;
-            }
+        function handleLike(id) {
+            const el = document.getElementById(`like-${id}`);
+            if(el) el.textContent = parseInt(el.textContent) + 1;
         }
     </script>
 </body>
