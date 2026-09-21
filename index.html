@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InkSpire - Modern Web Writing & Publishing Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2TQYXBJ7V"></script>
@@ -23,7 +28,7 @@
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-black text-indigo-600 dark:text-indigo-400 tracking-tight">InkSpire</h1>
             <nav class="flex items-center space-x-3">
-                <button onclick="toggleDarkMode()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition" title="Toggle Dark Mode">🌙</button>
+                <button onclick="toggleDarkMode()" id="dark-mode-btn" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition" title="Toggle Dark Mode">🌙</button>
                 <button onclick="showHome()" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 font-medium transition">Home</button>
                 <button onclick="showEditor()" class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition">Write Article</button>
             </nav>
@@ -120,7 +125,15 @@
         }
 
         function toggleDarkMode() {
-            document.documentElement.classList.toggle('dark');
+            const html = document.documentElement;
+            const btn = document.getElementById('dark-mode-btn');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                btn.textContent = '🌙';
+            } else {
+                html.classList.add('dark');
+                btn.textContent = '☀️';
+            }
         }
 
         function publishArticle() {
