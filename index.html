@@ -21,11 +21,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         .ticker-wrap { width: 100%; overflow: hidden; background-color: #0f172a; color: #f8fafc; border-bottom: 1px solid #1e293b; }
-        .ticker { display: inline-block; white-space: nowrap; padding-right: 100%; animation: ticker 35s linear infinite; }
+        .ticker { display: inline-block; white-space: nowrap; padding-right: 100%; animation: ticker 40s linear infinite; }
         @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
         .article-border { border-bottom: 1px solid #e2e8f0; }
         .dark .article-border { border-bottom: 1px solid #1e293b; }
-        /* Dropdown transition */
         .dropdown-menu { transform-origin: top right; transition: transform 0.2s ease, opacity 0.2s ease; }
     </style>
 
@@ -43,7 +42,7 @@
     <!-- Top Utility Bar -->
     <div class="bg-slate-900 dark:bg-black text-slate-400 text-[11px] py-1.5 px-4 sm:px-8 flex justify-between items-center border-b border-slate-800">
         <div class="flex items-center space-x-3">
-            <span class="font-black text-white tracking-widest uppercase bg-indigo-600 px-1.5 py-0.5 rounded text-[10px]">WIRE</span>
+            <span class="font-black text-white tracking-widest uppercase bg-indigo-600 px-1.5 py-0.5 rounded text-[10px]">GLOBAL WIRE</span>
             <span class="hidden sm:inline">Monday, September 21, 2026</span>
         </div>
         <div class="flex items-center space-x-5 font-medium">
@@ -53,11 +52,11 @@
         </div>
     </div>
 
-    <!-- Live Ticker -->
+    <!-- Live Ticker with Global Topics -->
     <div class="ticker-wrap text-xs font-semibold py-1.5">
         <div class="ticker">
-            <span class="text-indigo-400 font-bold mr-2">● LIVE FEED:</span> 
-            GTA 6 Pre-Registration breaks international records — Python automated news scraping API architectures deployed — Global tech hiring and government vacancies surge across India & US.
+            <span class="text-indigo-400 font-bold mr-2">● BREAKING WIRE:</span> 
+            OpenAI & Google release next-gen neural reasoning agents — Global tech hiring surges across New Delhi & Silicon Valley — GTA 6 pre-orders break digital storefront records — Python automated CI/CD pipelines become industry standard.
         </div>
     </div>
 
@@ -76,17 +75,17 @@
                     <h1 class="text-2xl font-black tracking-tight text-slate-900 dark:text-white uppercase font-sans leading-none">
                         Ink<span class="text-indigo-600 dark:text-indigo-500">Spire</span>
                     </h1>
-                    <span class="text-[9px] font-bold tracking-widest text-slate-400 uppercase">Digital Intelligence</span>
+                    <span class="text-[9px] font-bold tracking-widest text-slate-400 uppercase">Global Digital Intelligence</span>
                 </div>
             </div>
             
             <!-- Desktop Navigation Links -->
             <nav class="hidden md:flex items-center space-x-6 text-xs font-bold tracking-wider uppercase text-slate-600 dark:text-slate-300">
                 <button onclick="filterCategory('All')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Front Page</button>
-                <button onclick="filterCategory('Programming')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Programming</button>
+                <button onclick="filterCategory('AI & Tech')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">AI & Tech</button>
+                <button onclick="filterCategory('E-Writing')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">E-Writing</button>
                 <button onclick="filterCategory('Gaming')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Gaming</button>
-                <button onclick="filterCategory('Employment')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Careers</button>
-                <button onclick="showSection('about')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">About</button>
+                <button onclick="filterCategory('Careers')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Careers</button>
             </nav>
 
             <!-- Professional Three-Dot Menu Options (Desktop & Mobile) -->
@@ -96,16 +95,16 @@
                 </button>
                 
                 <!-- Dropdown Menu Box -->
-                <div id="three-dot-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl py-2 z-50 dropdown-menu">
-                    <div class="px-4 py-1.5 text-[10px] font-black uppercase text-slate-400 tracking-wider border-b border-slate-100 dark:border-slate-800 mb-1">Navigation</div>
+                <div id="three-dot-dropdown" class="hidden absolute right-0 mt-2 w-52 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl py-2 z-50 dropdown-menu">
+                    <div class="px-4 py-1.5 text-[10px] font-black uppercase text-slate-400 tracking-wider border-b border-slate-100 dark:border-slate-800 mb-1">Quick Navigation</div>
                     <button onclick="filterCategory('All'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Front Page</button>
-                    <button onclick="filterCategory('Programming'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Programming</button>
-                    <button onclick="filterCategory('Gaming'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Gaming</button>
-                    <button onclick="filterCategory('Employment'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Careers</button>
+                    <button onclick="filterCategory('AI & Tech'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">AI & Tech Trends</button>
+                    <button onclick="filterCategory('E-Writing'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">E-Writing Essays</button>
+                    <button onclick="filterCategory('Gaming'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Gaming Industry</button>
+                    <button onclick="filterCategory('Careers'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Global Careers</button>
                     <div class="border-t border-slate-100 dark:border-slate-800 my-1"></div>
                     <button onclick="showSection('about'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">About Publisher</button>
-                    <button onclick="showSection('contact'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Contact Desk</button>
-                    <button onclick="showSection('privacy'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Privacy Policy</button>
+                    <button onclick="showSection('contact'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Contact & Socials</button>
                 </div>
             </div>
 
@@ -115,7 +114,7 @@
     <!-- Main Balanced Container -->
     <main class="max-w-7xl mx-auto px-4 sm:px-8 py-8 flex-grow w-full">
         
-        <!-- Top Ad Banner (Compact) -->
+        <!-- Top Ad Banner -->
         <div class="mb-8 flex justify-center w-full overflow-hidden border-b border-slate-200 dark:border-slate-800 pb-6">
             <div class="min-w-[300px]">
                 <script>
@@ -137,30 +136,31 @@
             <!-- LEFT COLUMN: Articles (Col span 8) -->
             <div class="lg:col-span-8 space-y-10 lg:border-r lg:border-slate-200 dark:lg:border-slate-800 lg:pr-10">
                 
-                <!-- Post 1 -->
-                <article class="post-item group" data-category="Programming" data-post-id="post-1">
+                <!-- Post 1: AI & Tech Trend -->
+                <article class="post-item group" data-category="AI & Tech" data-post-id="post-1">
                     <div class="w-full aspect-video bg-slate-100 dark:bg-slate-900 mb-4 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs">
                         <iframe src="https://www.youtube.com/embed/kqtD5dpn9C8" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
                     </div>
                     
                     <div class="flex items-center space-x-3 mb-2">
-                        <span class="text-[10px] font-extrabold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase bg-indigo-50 dark:bg-indigo-950/50 px-2.5 py-0.5 rounded border border-indigo-100 dark:border-indigo-900">Programming & Automation</span>
+                        <span class="text-[10px] font-extrabold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase bg-indigo-50 dark:bg-indigo-950/50 px-2.5 py-0.5 rounded border border-indigo-100 dark:border-indigo-900">AI & Tech Trends</span>
                         <span class="text-[11px] font-semibold text-slate-400">Sep 21, 2026</span>
                     </div>
                     
                     <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-3 leading-snug group-hover:text-indigo-600 transition-colors cursor-pointer">
-                        Building Automated Digital Media Feeds Using Python, APIs & Modern Web Stacks
+                        The Rise of Autonomous AI Workflows: How Developers are Scaling Digital Agencies in 2026
                     </h2>
                     
                     <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-serif mb-4 leading-relaxed">
-                        आधुनिक डिजिटल पब्लिशिंग और जर्नलिज्म में, न्यूज़पेपर या मीडिया साइट्स को ऑटोमेट करना मुख्य ट्रेंड बन गया है। डेवलपर्स वेब स्क्रैपिंग और API इंटीग्रेशन के ज़रिए हाई-स्पीड स्टैटिक प्लेटफॉर्म्स तैयार कर रहे हैं।
+                        आधुनिक टेक इंडस्ट्री में आर्टिफिशियल इंटेलिजेंस और ऑटोमेशन ने डिजिटल ग्रोथ एजेंसियों के काम करने का तरीका पूरी तरह बदल दिया है। एपीआई इंटीग्रेशन (API Integration) और कस्टम स्क्रिप्ट्स के ज़रिए डेवलपर्स अब बिना रुके 24/7 ऑपरेशंस मैनेज कर रहे हैं। 
+                        <a href="https://github.com" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-bold underline ml-1">Explore Open Source Repos &rarr;</a>
                     </p>
 
                     <div class="bg-slate-900 text-emerald-400 p-4 rounded-xl font-mono text-xs mb-4 overflow-x-auto border border-slate-800">
-                        # Python Automated Pipeline Example<br>
-                        import requests<br>
-                        response = requests.get('https://api.inkspire.global/v1/trending')<br>
-                        print(f"Successfully processed {len(response.json())} global records.")
+                        # Neural API Request Sample<br>
+                        import openai<br>
+                        response = openai.ChatCompletion.create(model="gpt-4", messages=[{"role": "user", "content": "Scale agency metrics"}])<br>
+                        print("Workflow successfully optimized.")
                     </div>
                     
                     <div class="flex items-center justify-between border-t border-b border-slate-200 dark:border-slate-800 py-3 mb-4 text-xs">
@@ -168,19 +168,22 @@
                             <span class="w-7 h-7 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-[10px]">PS</span>
                             <div>
                                 <p class="font-bold text-slate-800 dark:text-slate-200">Prasant Sagar</p>
-                                <p class="text-[9px] text-slate-400 uppercase">Publisher</p>
+                                <p class="text-[9px] text-slate-400 uppercase">Editor-in-Chief</p>
                             </div>
                         </div>
-                        <button onclick="handleLike('post-1')" class="flex items-center space-x-1 font-bold text-slate-700 dark:text-slate-300 hover:text-indigo-600 bg-slate-100 dark:bg-slate-900 px-3 py-1 rounded-lg border border-slate-200 dark:border-slate-800">
-                            <span id="like-icon-post-1">❤️</span>
-                            <span id="like-count-post-1">0</span>
-                        </button>
+                        <div class="flex items-center space-x-3">
+                            <a href="https://x.com/kavinmusic13" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">Discuss on X &rarr;</a>
+                            <button onclick="handleLike('post-1')" class="flex items-center space-x-1 font-bold text-slate-700 dark:text-slate-300 hover:text-indigo-600 bg-slate-100 dark:bg-slate-900 px-3 py-1 rounded-lg border border-slate-200 dark:border-slate-800">
+                                <span id="like-icon-post-1">❤️</span>
+                                <span id="like-count-post-1">0</span>
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Comment Box -->
                     <div class="space-y-2 bg-slate-50 dark:bg-slate-900/40 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800">
                         <div class="flex gap-2">
-                            <input type="text" id="comment-input-post-1" placeholder="Add a comment..." class="flex-grow bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs px-3 py-2 rounded-lg focus:outline-none focus:border-indigo-500 dark:text-white">
+                            <input type="text" id="comment-input-post-1" placeholder="Join the discussion..." class="flex-grow bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs px-3 py-2 rounded-lg focus:outline-none focus:border-indigo-500 dark:text-white">
                             <button onclick="addComment('post-1')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold uppercase rounded-lg transition">Post</button>
                         </div>
                         <div id="comments-list-post-1" class="space-y-1 pt-1"></div>
@@ -189,29 +192,73 @@
 
                 <hr class="border-slate-200 dark:border-slate-800">
 
-                <!-- Post 2 -->
-                <article class="post-item group flex flex-col md:flex-row gap-5 items-center" data-category="Gaming" data-post-id="post-2">
+                <!-- Post 2: E-Writing Feature -->
+                <article class="post-item group" data-category="E-Writing" data-post-id="post-2">
+                    <div class="flex items-center space-x-3 mb-2">
+                        <span class="text-[10px] font-extrabold tracking-widest text-violet-600 dark:text-violet-400 uppercase bg-violet-50 dark:bg-violet-950/50 px-2.5 py-0.5 rounded border border-violet-100 dark:border-violet-900">E-Writing & Essay</span>
+                        <span class="text-[11px] font-semibold text-slate-400">Digital Publishing Series</span>
+                    </div>
+                    
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-3 leading-snug group-hover:text-indigo-600 transition-colors cursor-pointer">
+                        The Psychology of Digital Minimalism: Crafting Stories in an Era of Infinite Feeds
+                    </h2>
+                    
+                    <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-serif mb-4 leading-relaxed">
+                        लेखन (E-Writing) और डिजिटल कॉमिक्स जैसे 'MIDNIGHT REQUIEM' के निर्माण में, पाठक का ध्यान खींचना सबसे बड़ी कला है। जब सूचनाओं का अंबार हो, तब न्यूनतम शब्दों में गहरी बात कहना ही आधुनिक ई-राइटिंग की असली ताकत है। क्रिएटर्स अब पारंपरिक प्रकाशन से हटकर ग्लोबल रीडर्स तक सीधे डिजिटल प्लेटफॉर्म्स के ज़रिए पहुँच रहे हैं।
+                    </p>
+
+                    <div class="bg-indigo-50 dark:bg-indigo-950/30 p-4 rounded-xl border border-indigo-100 dark:border-indigo-900 mb-4 text-xs font-serif text-slate-700 dark:text-slate-300 italic">
+                        "Great writing is not about how many words you use, but how deeply those words resonate within the reader's digital consciousness." — Editorial Insight
+                    </div>
+
+                    <div class="flex items-center justify-between border-t border-b border-slate-200 dark:border-slate-800 py-3 mb-4 text-xs">
+                        <div class="flex items-center space-x-2.5">
+                            <span class="w-7 h-7 rounded-full bg-violet-600 text-white font-bold flex items-center justify-center text-[10px]">EW</span>
+                            <div>
+                                <p class="font-bold text-slate-800 dark:text-slate-200">InkSpire Literature Desk</p>
+                                <p class="text-[9px] text-slate-400 uppercase">Essay Publication</p>
+                            </div>
+                        </div>
+                        <button onclick="handleLike('post-2')" class="flex items-center space-x-1 font-bold text-slate-700 dark:text-slate-300 hover:text-indigo-600 bg-slate-100 dark:bg-slate-900 px-3 py-1 rounded-lg border border-slate-200 dark:border-slate-800">
+                            <span id="like-icon-post-2">❤️</span>
+                            <span id="like-count-post-2">0</span>
+                        </button>
+                    </div>
+
+                    <div class="space-y-2 bg-slate-50 dark:bg-slate-900/40 p-3.5 rounded-xl border border-slate-200 dark:border-slate-800">
+                        <div class="flex gap-2">
+                            <input type="text" id="comment-input-post-2" placeholder="Leave your thoughts on this essay..." class="flex-grow bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs px-3 py-2 rounded-lg focus:outline-none focus:border-indigo-500 dark:text-white">
+                            <button onclick="addComment('post-2')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold uppercase rounded-lg transition">Post</button>
+                        </div>
+                        <div id="comments-list-post-2" class="space-y-1 pt-1"></div>
+                    </div>
+                </article>
+
+                <hr class="border-slate-200 dark:border-slate-800">
+
+                <!-- Post 3: Gaming Industry -->
+                <article class="post-item group flex flex-col md:flex-row gap-5 items-center" data-category="Gaming" data-post-id="post-3">
                     <div class="w-full md:w-5/12 aspect-video bg-slate-100 dark:bg-slate-900 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shrink-0">
                         <iframe src="https://www.youtube.com/embed/QdBZY2fkU-0" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="flex-grow flex flex-col justify-center w-full">
                         <span class="text-[10px] font-extrabold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-1.5 block">Gaming Industry</span>
                         <h2 class="text-xl font-black text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-indigo-600 transition-colors">
-                            Grand Theft Auto VI (GTA 6): Global Release Updates & Pre-Registration
+                            Grand Theft Auto VI (GTA 6): Global Release Updates & Pre-Registration Info
                         </h2>
                         <p class="text-slate-600 dark:text-slate-400 text-xs font-serif mb-3 leading-relaxed">
-                            Rockstar Games' upcoming masterpiece is setting global benchmarks across the industry.
+                            Rockstar Games' upcoming masterpiece is setting global benchmarks. Check official announcements and gameplay trailers.
                         </p>
                         
                         <div class="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-slate-800 text-xs">
-                            <a href="https://www.rockstargames.com/VI" target="_blank" class="font-bold text-indigo-600 dark:text-indigo-400 hover:underline">Official Portal &rarr;</a>
-                            <button onclick="handleLike('post-2')" class="font-bold flex items-center gap-1"><span id="like-icon-post-2">❤️</span> <span id="like-count-post-2">0</span></button>
+                            <a href="https://www.rockstargames.com/VI" target="_blank" class="font-bold text-indigo-600 dark:text-indigo-400 hover:underline">Official Rockstar Portal &rarr;</a>
+                            <button onclick="handleLike('post-3')" class="font-bold flex items-center gap-1"><span id="like-icon-post-3">❤️</span> <span id="like-count-post-3">0</span></button>
                         </div>
                         <div class="mt-2.5 flex gap-2 w-full">
-                            <input type="text" id="comment-input-post-2" placeholder="Comment..." class="text-xs bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-2.5 py-1.5 rounded-lg w-full focus:outline-none dark:text-white">
-                            <button onclick="addComment('post-2')" class="px-3 py-1.5 bg-indigo-600 text-white text-[10px] font-bold uppercase rounded-lg">Post</button>
+                            <input type="text" id="comment-input-post-3" placeholder="Comment..." class="text-xs bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-2.5 py-1.5 rounded-lg w-full focus:outline-none dark:text-white">
+                            <button onclick="addComment('post-3')" class="px-3 py-1.5 bg-indigo-600 text-white text-[10px] font-bold uppercase rounded-lg">Post</button>
                         </div>
-                        <div id="comments-list-post-2" class="mt-1.5 space-y-1"></div>
+                        <div id="comments-list-post-3" class="mt-1.5 space-y-1"></div>
                     </div>
                 </article>
 
@@ -220,51 +267,51 @@
             <!-- RIGHT COLUMN: Sidebar (Col span 4) -->
             <aside class="lg:col-span-4 space-y-8">
                 
-                <!-- Post 3 -->
-                <article class="post-item group bg-white dark:bg-slate-900/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs" data-category="Employment" data-post-id="post-3">
+                <!-- Post 4: Careers & Jobs -->
+                <article class="post-item group bg-white dark:bg-slate-900/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs" data-category="Careers" data-post-id="post-4">
                     <div class="flex items-center justify-between mb-2.5">
-                        <span class="text-[10px] font-extrabold tracking-widest text-blue-600 dark:text-blue-400 uppercase bg-blue-50 dark:bg-blue-950/50 px-2 py-0.5 rounded border border-blue-100 dark:border-blue-900">Careers</span>
+                        <span class="text-[10px] font-extrabold tracking-widest text-blue-600 dark:text-blue-400 uppercase bg-blue-50 dark:bg-blue-950/50 px-2 py-0.5 rounded border border-blue-100 dark:border-blue-900">Global Careers</span>
                         <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
                     </div>
                     <h2 class="text-lg font-black text-slate-900 dark:text-white mb-2.5 leading-snug group-hover:text-indigo-600 transition-colors">
-                        India & Global Job Markets 2026: Tech Hiring Surge
+                        Tech Hiring & Government Vacancies Surge Across India & US in 2026
                     </h2>
                     <div class="w-full aspect-video bg-slate-100 dark:bg-slate-900 mb-3 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800">
                         <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <p class="text-slate-600 dark:text-slate-400 text-xs font-serif mb-3 leading-relaxed">
-                        With major tech corporations expanding digital infrastructure, job seekers are pivoting toward AI automation skills.
+                        Major tech corporations and public sectors are actively recruiting skilled professionals proficient in cloud architecture and automation.
                     </p>
-                    <a href="https://www.ncs.gov.in/" target="_blank" class="text-[11px] font-bold text-indigo-600 dark:text-indigo-400 hover:underline block mb-3">National Career Portal &rarr;</a>
+                    <a href="https://www.ncs.gov.in/" target="_blank" class="text-[11px] font-bold text-indigo-600 dark:text-indigo-400 hover:underline block mb-3">National Career Service Portal &rarr;</a>
 
                     <div class="pt-2.5 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
-                        <button onclick="handleLike('post-3')" class="font-bold flex items-center gap-1"><span id="like-icon-post-3">❤️</span> <span id="like-count-post-3">0</span> Likes</button>
+                        <button onclick="handleLike('post-4')" class="font-bold flex items-center gap-1"><span id="like-icon-post-4">❤️</span> <span id="like-count-post-4">0</span> Likes</button>
                     </div>
                     <div class="mt-2.5 flex gap-2">
-                        <input type="text" id="comment-input-post-3" placeholder="Comment..." class="text-xs bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-2.5 py-1.5 rounded-lg w-full focus:outline-none dark:text-white">
-                        <button onclick="addComment('post-3')" class="px-3 py-1.5 bg-blue-600 text-white text-[10px] font-bold uppercase rounded-lg">Post</button>
+                        <input type="text" id="comment-input-post-4" placeholder="Comment..." class="text-xs bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-2.5 py-1.5 rounded-lg w-full focus:outline-none dark:text-white">
+                        <button onclick="addComment('post-4')" class="px-3 py-1.5 bg-blue-600 text-white text-[10px] font-bold uppercase rounded-lg">Post</button>
                     </div>
-                    <div id="comments-list-post-3" class="mt-1.5 space-y-1"></div>
+                    <div id="comments-list-post-4" class="mt-1.5 space-y-1"></div>
                 </article>
 
-                <!-- Trending Wire Box -->
+                <!-- Trending Wire Box with Real Links -->
                 <div class="bg-white dark:bg-slate-900/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-3">
                     <h3 class="font-black text-xs text-slate-900 dark:text-white uppercase tracking-wider flex items-center justify-between">
-                        <span>🔥 Trending Wire</span>
+                        <span>🔥 Global Trending Wire</span>
                         <span class="text-[9px] px-1.5 py-0.5 rounded bg-rose-500/10 text-rose-500 font-bold">LIVE</span>
                     </h3>
                     <ul class="space-y-3 text-xs">
                         <li class="article-border pb-2.5">
-                            <span class="text-[9px] font-black text-indigo-600 uppercase block mb-0.5">Programming</span>
-                            <a href="https://github.com" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">Automated scrapers gain developer adoption.</a>
+                            <span class="text-[9px] font-black text-indigo-600 uppercase block mb-0.5">Open Source</span>
+                            <a href="https://github.com/trending" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">GitHub Trending: Python automated news scrapers gain massive traction.</a>
                         </li>
                         <li class="article-border pb-2.5">
                             <span class="text-[9px] font-black text-emerald-600 uppercase block mb-0.5">World News</span>
-                            <a href="https://www.reuters.com/world/" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">International Digital Trade Summit 2026.</a>
+                            <a href="https://www.reuters.com/technology/" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">Reuters Tech: International Digital Trade Agreements finalized for 2026.</a>
                         </li>
                         <li class="pb-1">
-                            <span class="text-[9px] font-black text-violet-600 uppercase block mb-0.5">Technology</span>
-                            <a href="https://www.unrealengine.com/" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">Unreal Engine 5.6 ray tracing update.</a>
+                            <span class="text-[9px] font-black text-violet-600 uppercase block mb-0.5">Game Dev</span>
+                            <a href="https://www.unrealengine.com/en-US/blog" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">Unreal Engine 5.6 update introduces real-time neural ray tracing.</a>
                         </li>
                     </ul>
                 </div>
@@ -290,11 +337,11 @@
         <div id="about-section" class="hidden max-w-2xl mx-auto py-10 space-y-4 text-center">
             <h2 class="text-2xl font-black text-slate-900 dark:text-white uppercase">About InkSpire</h2>
             <div class="w-12 h-1 bg-indigo-600 mx-auto rounded-full"></div>
-            <p class="text-slate-600 dark:text-slate-300 font-serif text-sm leading-relaxed">Welcome to <strong>InkSpire</strong>, conceptualized, developed, and managed by <strong>Prasant Sagar</strong>. Our mission is to bridge independent developers and global readers through high-end digital publishing.</p>
+            <p class="text-slate-600 dark:text-slate-300 font-serif text-sm leading-relaxed">Welcome to <strong>InkSpire</strong>, conceptualized, developed, and managed by <strong>Prasant Sagar</strong> based in New Delhi, India. Our mission is to bridge independent digital publishers, tech developers, and global readers.</p>
         </div>
 
         <div id="contact-section" class="hidden max-w-2xl mx-auto py-10 space-y-4 text-center">
-            <h2 class="text-2xl font-black text-slate-900 dark:text-white uppercase">Contact Desk</h2>
+            <h2 class="text-2xl font-black text-slate-900 dark:text-white uppercase">Contact & Social Desk</h2>
             <div class="w-12 h-1 bg-indigo-600 mx-auto rounded-full"></div>
             <div class="inline-block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl text-left shadow-xs text-xs space-y-2">
                 <p class="text-slate-900 dark:text-white font-bold">Email: <span class="font-normal text-indigo-600">support@inkspire.global</span></p>
@@ -305,12 +352,12 @@
 
         <div id="privacy-section" class="hidden max-w-2xl mx-auto py-10 space-y-3 text-xs">
             <h2 class="text-xl font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">Privacy Policy</h2>
-            <p class="text-slate-600 dark:text-slate-300 font-serif leading-relaxed">At InkSpire, managed by Prasant Sagar, we respect confidentiality and adhere to standard global safety practices.</p>
+            <p class="text-slate-600 dark:text-slate-300 font-serif leading-relaxed">At InkSpire, managed by Prasant Sagar, user privacy and confidentiality are strictly maintained in accordance with global standards.</p>
         </div>
 
         <div id="terms-section" class="hidden max-w-2xl mx-auto py-10 space-y-3 text-xs">
             <h2 class="text-xl font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">Terms of Service</h2>
-            <p class="text-slate-600 dark:text-slate-300 font-serif leading-relaxed">All code snippets, programming guides, and media embeddings are for educational and journalistic dissemination.</p>
+            <p class="text-slate-600 dark:text-slate-300 font-serif leading-relaxed">All code snippets, essays, and media embeddings published on InkSpire are intended for educational and journalistic dissemination.</p>
         </div>
 
     </main>
@@ -326,14 +373,15 @@
                 <h4 class="font-bold text-indigo-400 uppercase mb-2 text-[11px]">Sections</h4>
                 <ul class="space-y-1.5 text-slate-300">
                     <li><button onclick="showSection('home')" class="hover:text-white">Front Page</button></li>
-                    <li><button onclick="filterCategory('Programming')" class="hover:text-white">Programming</button></li>
+                    <li><button onclick="filterCategory('AI & Tech')" class="hover:text-white">AI & Tech</button></li>
+                    <li><button onclick="filterCategory('E-Writing')" class="hover:text-white">E-Writing</button></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-indigo-400 uppercase mb-2 text-[11px]">Social</h4>
+                <h4 class="font-bold text-indigo-400 uppercase mb-2 text-[11px]">Social Desk</h4>
                 <ul class="space-y-1.5 text-slate-300">
-                    <li><a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-white">Instagram</a></li>
-                    <li><a href="https://x.com/kavinmusic13" target="_blank" class="hover:text-white">X (Twitter)</a></li>
+                    <li><a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-white">Instagram (@inkspire.8s)</a></li>
+                    <li><a href="https://x.com/kavinmusic13" target="_blank" class="hover:text-white">X / Twitter (@kavinmusic13)</a></li>
                 </ul>
             </div>
             <div>
@@ -346,7 +394,7 @@
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-8 mt-8 pt-4 border-t border-slate-800 text-[11px] text-slate-500 flex flex-col sm:flex-row justify-between items-center">
             <p>&copy; 2026 InkSpire. All rights reserved.</p>
-            <p class="mt-1 sm:mt-0">Managed by <strong class="text-white">Prasant Sagar</strong>.</p>
+            <p class="mt-1 sm:mt-0">Conceptualized, Developed & Managed by <strong class="text-white">Prasant Sagar</strong>.</p>
         </div>
     </footer>
 
@@ -355,7 +403,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const isDark = document.documentElement.classList.contains('dark');
             document.getElementById('dark-mode-btn-top').textContent = isDark ? 'Theme: Dark' : 'Theme: Light';
-            ['post-1', 'post-2', 'post-3'].forEach(postId => {
+            ['post-1', 'post-2', 'post-3', 'post-4'].forEach(postId => {
                 updateLikeUI(postId);
                 renderComments(postId);
             });
@@ -452,7 +500,7 @@
             if(!list) return;
             let comments = JSON.parse(localStorage.getItem(postId + '_comments')) || [];
             if(comments.length === 0) {
-                list.innerHTML = '<p class="text-[10px] text-slate-400 italic">No comments yet.</p>';
+                list.innerHTML = '<p class="text-[10px] text-slate-400 italic">No comments yet. Be the first to share your thoughts.</p>';
                 return;
             }
             list.innerHTML = comments.map(c => `
