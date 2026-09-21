@@ -43,13 +43,23 @@
     <!-- HEADER / NAVIGATION -->
     <header class="sticky top-0 z-40 bg-[#FBFBFA]/90 dark:bg-[#121212]/90 backdrop-blur-md border-b border-[#EAEAEA] dark:border-[#27272A]">
         <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <!-- Brand Logo & Name -->
-            <a href="#home" class="flex items-center gap-3 group">
-                <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold text-sm shadow-sm">
-                    IS
-                </div>
-                <span class="font-serif-custom font-bold text-lg tracking-tight">InkSpire</span>
-            </a>
+            
+            <!-- Left Side: 3 Dots / Hamburger Menu Button -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleMobileMenu()" aria-label="Open Menu" class="p-2 rounded-lg border border-[#EAEAEA] dark:border-[#27272A] text-[#1A1A1A] dark:text-white hover:border-accent transition-colors flex flex-col justify-center items-center gap-1 w-10 h-10">
+                    <span class="w-1.5 h-1.5 bg-current rounded-full"></span>
+                    <span class="w-1.5 h-1.5 bg-current rounded-full"></span>
+                    <span class="w-1.5 h-1.5 bg-current rounded-full"></span>
+                </button>
+
+                <!-- Brand Logo & Name -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold text-sm shadow-sm">
+                        IS
+                    </div>
+                    <span class="font-serif-custom font-bold text-lg tracking-tight">InkSpire</span>
+                </a>
+            </div>
 
             <!-- Desktop Navigation Links & Controls -->
             <div class="flex items-center gap-4">
@@ -68,49 +78,51 @@
                     <!-- Moon Icon -->
                     <svg id="moon-icon" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                 </button>
-
-                <!-- Mobile Menu Hamburger Button -->
-                <button onclick="toggleMobileMenu()" aria-label="Open Menu" class="md:hidden p-2 rounded-lg border border-[#EAEAEA] dark:border-[#27272A] text-[#1A1A1A] dark:text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </button>
             </div>
         </div>
     </header>
 
-    <!-- MOBILE FULLSCREEN MENU (MATCHING YOUR SCREENSHOT) -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#121212] text-white flex flex-col px-6 py-6 transform translate-x-full transition-transform duration-300 md:hidden overflow-y-auto">
-        <!-- Top bar with Logo / Brand and Close Button -->
-        <div class="flex items-center justify-between pb-8 border-b border-[#27272A]">
-            <span class="font-serif-custom font-bold text-xl tracking-tight">WRITER</span>
+    <!-- CLEAN FULLSCREEN MENU (OPENED VIA 3 DOTS) -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#121212] text-white flex flex-col px-6 py-6 transform translate-x-full transition-transform duration-300 overflow-y-auto">
+        <!-- Top bar with Brand and Close Button -->
+        <div class="flex items-center justify-between pb-6 border-b border-[#27272A]">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold text-sm">IS</div>
+                <span class="font-serif-custom font-bold text-xl tracking-tight">InkSpire Hub</span>
+            </div>
             <button onclick="toggleMobileMenu()" aria-label="Close Menu" class="p-2 text-white hover:opacity-80">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
 
-        <!-- Menu Links matching your image -->
+        <!-- Clean, Useful Navigation Links -->
         <div class="flex flex-col space-y-6 pt-8 text-lg font-medium">
-            <a href="#services" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors">
-                <span>Product</span>
-                <span class="text-xs text-[#9CA3AF]">▼</span>
+            <a href="#home" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors py-2 border-b border-[#27272A]/50">
+                <span>🏠 Home</span>
+                <span class="text-xs text-[#9CA3AF]">→</span>
             </a>
-            <a href="#services" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors">
-                <span>Solutions</span>
-                <span class="text-xs text-[#9CA3AF]">▼</span>
+            <a href="#services" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors py-2 border-b border-[#27272A]/50">
+                <span>💼 Hire Me / Services</span>
+                <span class="text-xs text-[#9CA3AF]">→</span>
             </a>
-            <a href="#articles" onclick="toggleMobileMenu()" class="hover:text-accent transition-colors">Research</a>
-            <a href="#process" onclick="toggleMobileMenu()" class="hover:text-accent transition-colors">Plans</a>
-            <a href="#testimonials" onclick="toggleMobileMenu()" class="hover:text-accent transition-colors">Customers</a>
-            <a href="#articles" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors">
-                <span>Resources</span>
-                <span class="text-xs text-[#9CA3AF]">▼</span>
+            <a href="#articles" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors py-2 border-b border-[#27272A]/50">
+                <span>📚 Articles Archive</span>
+                <span class="text-xs text-[#9CA3AF]">→</span>
             </a>
-            <a href="#services" onclick="toggleMobileMenu()" class="hover:text-accent transition-colors pt-2 border-t border-[#27272A]">Log in</a>
+            <a href="#process" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors py-2 border-b border-[#27272A]/50">
+                <span>⚙️ Writing Process</span>
+                <span class="text-xs text-[#9CA3AF]">→</span>
+            </a>
+            <a href="#testimonials" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors py-2 border-b border-[#27272A]/50">
+                <span>⭐ Client Testimonials</span>
+                <span class="text-xs text-[#9CA3AF]">→</span>
+            </a>
         </div>
 
-        <!-- Try for free CTA Button -->
+        <!-- Useful CTA Button at Bottom -->
         <div class="pt-8 mt-auto">
-            <a href="#services" onclick="toggleMobileMenu()" class="flex items-center justify-center w-full py-3.5 rounded-full bg-accent text-white font-medium text-sm shadow-lg hover:bg-accent/90 transition-colors">
-                Try for free
+            <a href="mailto:contact@inkspire.local" onclick="toggleMobileMenu()" class="flex items-center justify-center w-full py-3.5 rounded-xl bg-accent text-white font-medium text-sm shadow-lg hover:bg-accent/90 transition-colors">
+                Get in Touch with Prashant
             </a>
         </div>
     </div>
@@ -630,7 +642,7 @@
             }
         }
 
-        // Mobile Menu Toggle Logic
+        // Mobile Menu Toggle Logic (3 Dots Menu)
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             if (menu.classList.contains('translate-x-full')) {
