@@ -29,8 +29,7 @@
             <h1 class="text-2xl font-black text-indigo-600 dark:text-indigo-400 tracking-tight">InkSpire</h1>
             <nav class="flex items-center space-x-3">
                 <button onclick="toggleDarkMode()" id="dark-mode-btn" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition" title="Toggle Dark Mode">🌙</button>
-                <button onclick="showHome()" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 font-medium transition">Home</button>
-                <button onclick="showEditor()" class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition">Write Article</button>
+                <a href="#" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 font-medium transition">Home</a>
             </nav>
         </div>
     </header>
@@ -38,7 +37,7 @@
     <!-- Main Container -->
     <main class="max-w-7xl mx-auto px-4 py-8 flex-grow grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- Content Area -->
+        <!-- Content Area (Public view: Only reading) -->
         <section id="main-content" class="md:col-span-2 space-y-6">
             
             <!-- Banner Ad (728x90) -->
@@ -55,9 +54,9 @@
                 <script src="https://www.highrevenueformat.com/e32965a13148c46266f49efbbbee0632/invoke.js"></script>
             </div>
 
-            <!-- Dynamic posts or editor will be injected here -->
+            <!-- Posts Feed -->
             <div id="posts-container" class="space-y-6">
-                <!-- Sample Post matching video theme -->
+                <!-- Post 1 -->
                 <article class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden hover:shadow-md transition">
                     <div class="w-full h-64 bg-slate-200 dark:bg-slate-700">
                         <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
@@ -72,18 +71,10 @@
                         </div>
                     </div>
                 </article>
+
+                <!-- Aap jab bhi naya post jodna chahein, bas upar wale <article>...</article> ki tarah yahan ek aur copy-paste karke GitHub par update kar sakte hain -->
             </div>
 
-            <!-- Editor View (Hidden by default) -->
-            <div id="editor-view" class="hidden bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 space-y-4">
-                <h2 class="text-xl font-bold text-slate-900 dark:text-white">Create New Article</h2>
-                <input type="text" id="article-title" placeholder="Article Title..." class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white">
-                <input type="text" id="article-category" placeholder="Category (e.g. Tech, Lifestyle, Finance)" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white">
-                <input type="text" id="article-image" placeholder="Image URL (Optional)" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white">
-                <input type="text" id="article-video" placeholder="YouTube Video URL (Optional)" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white">
-                <textarea id="article-body" rows="8" placeholder="Write your content here..." class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white"></textarea>
-                <button onclick="publishArticle()" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-medium hover:bg-indigo-700 transition">Publish Article</button>
-            </div>
         </section>
 
         <!-- Sidebar -->
@@ -116,16 +107,6 @@
     </footer>
 
     <script>
-        function showHome() {
-            document.getElementById('posts-container').classList.remove('hidden');
-            document.getElementById('editor-view').classList.add('hidden');
-        }
-
-        function showEditor() {
-            document.getElementById('posts-container').classList.add('hidden');
-            document.getElementById('editor-view').classList.remove('hidden');
-        }
-
         function toggleDarkMode() {
             const html = document.documentElement;
             const btn = document.getElementById('dark-mode-btn');
@@ -136,60 +117,6 @@
                 html.classList.add('dark');
                 btn.textContent = '☀️';
             }
-        }
-
-        function publishArticle() {
-            const title = document.getElementById('article-title').value;
-            const category = document.getElementById('article-category').value;
-            const imageUrl = document.getElementById('article-image').value;
-            const videoUrl = document.getElementById('article-video').value;
-            const body = document.getElementById('article-body').value;
-
-            if(!title || !body) {
-                alert('Please fill in both title and body!');
-                return;
-            }
-
-            let mediaContent = '';
-            if(imageUrl) {
-                mediaContent += `<img src="${imageUrl}" alt="Post cover" class="w-full h-48 object-cover">`;
-            }
-            if(videoUrl) {
-                let embedUrl = videoUrl;
-                if(videoUrl.includes('watch?v=')) {
-                    embedUrl = videoUrl.replace('watch?v=', 'embed/');
-                } else if(videoUrl.includes('youtu.be/')) {
-                    embedUrl = videoUrl.replace('youtu.be/', 'www.youtube.com/embed/');
-                }
-                mediaContent += `<div class="w-full h-64"><iframe src="${embedUrl}" class="w-full h-full" frameborder="0" allowfullscreen></iframe></div>`;
-            }
-
-            const container = document.getElementById('posts-container');
-            const newArticle = document.createElement('article');
-            newArticle.className = "bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden hover:shadow-md transition";
-            newArticle.innerHTML = `
-                ${mediaContent}
-                <div class="p-6">
-                    <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">${category || 'General'}</span>
-                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1 mb-3">${title}</h2>
-                    <p class="text-slate-600 dark:text-slate-300 mb-4 whitespace-pre-line">${body}</p>
-                    <div class="flex items-center justify-between text-sm text-slate-400">
-                        <span>Admin/Space</span>
-                        <span>Just now</span>
-                    </div>
-                </div>
-            `;
-
-            container.prepend(newArticle);
-            alert('Article published successfully!');
-            
-            document.getElementById('article-title').value = '';
-            document.getElementById('article-category').value = '';
-            document.getElementById('article-image').value = '';
-            document.getElementById('article-video').value = '';
-            document.getElementById('article-body').value = '';
-
-            showHome();
         }
     </script>
 
