@@ -26,6 +26,10 @@
         .article-border { border-bottom: 1px solid #e2e8f0; }
         .dark .article-border { border-bottom: 1px solid #1e293b; }
         .dropdown-menu { transform-origin: top right; transition: transform 0.2s ease, opacity 0.2s ease; }
+        /* Google Translate Styling Adjustments */
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+        #google_translate_element select { background-color: #0f172a; color: #f8fafc; border: 1px solid #334155; padding: 2px 6px; border-radius: 6px; font-size: 11px; outline: none; cursor: pointer; }
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -39,13 +43,17 @@
 </head>
 <body class="bg-[#f8fafc] dark:bg-[#050811] text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300 font-sans text-sm">
 
-    <!-- Top Clean Utility Bar (Mobile Optimized) -->
-    <div class="bg-slate-900 dark:bg-black text-slate-300 text-[11px] py-2 px-3 sm:px-8 flex flex-col sm:flex-row justify-between items-center border-b border-slate-800 gap-1.5 sm:gap-0">
+    <!-- Top Clean Utility Bar -->
+    <div class="bg-slate-900 dark:bg-black text-slate-300 text-[11px] py-2 px-3 sm:px-8 flex flex-col sm:flex-row justify-between items-center border-b border-slate-800 gap-2 sm:gap-0">
         <div class="flex items-center space-x-2">
             <span class="font-black text-white tracking-widest uppercase bg-indigo-600 px-1.5 py-0.5 rounded text-[9px]">GLOBAL WIRE</span>
             <span id="live-top-clock" class="font-medium text-slate-300 text-[10px] sm:text-[11px]">Loading live time...</span>
         </div>
-        <div class="flex items-center space-x-4 font-medium text-[11px]">
+        
+        <div class="flex items-center space-x-4 font-medium text-[11px] flex-wrap justify-center">
+            <!-- Google Translate Widget Element (Hidden or shown as secondary option) -->
+            <div id="google_translate_element"></div>
+            
             <a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-white transition">Instagram</a>
             <a href="https://x.com/kavinmusic13" target="_blank" class="hover:text-white transition">X (Twitter)</a>
             <button onclick="toggleDarkMode()" id="dark-mode-btn-top" class="hover:text-white transition font-bold text-indigo-400">Dark Mode</button>
@@ -114,29 +122,13 @@
     <!-- Main Balanced Container -->
     <main class="max-w-7xl mx-auto px-4 sm:px-8 py-6 flex-grow w-full">
         
-        <!-- Top Ad Banner -->
-        <div class="mb-6 flex justify-center w-full overflow-hidden border-b border-slate-200 dark:border-slate-800 pb-5">
-            <div class="min-w-[300px] overflow-x-auto">
-                <script>
-                  atOptions = {
-                    'key' : 'e32965a13148c46266f49efbbbee0632',
-                    'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
-                    'params' : {}
-                  };
-                </script>
-                <script src="https://www.highrevenueformat.com/e32965a13148c46266f49efbbbee0632/invoke.js"></script>
-            </div>
-        </div>
-
         <!-- Dynamic Home Feed -->
         <div id="home-section" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             
-            <!-- LEFT COLUMN: Articles (Col span 8) -->
+            <!-- LEFT COLUMN: Articles -->
             <div class="lg:col-span-8 space-y-8 lg:border-r lg:border-slate-200 dark:lg:border-slate-800 lg:pr-10">
                 
-                <!-- Post 1: AI & Tech Trend -->
+                <!-- Post 1 -->
                 <article class="post-item group" data-category="AI & Tech" data-post-id="post-1">
                     <div class="w-full aspect-video bg-slate-100 dark:bg-slate-900 mb-3.5 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs">
                         <iframe src="https://www.youtube.com/embed/kqtD5dpn9C8" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
@@ -154,7 +146,7 @@
                     </h2>
                     
                     <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-serif mb-3 leading-relaxed">
-                        आधुनिक टेक इंडस्ट्री में आर्टिफिशियल इंटेलिजेंस और ऑटोमेशन ने डिजिटल ग्रोथ एजेंसियों के काम करने का तरीका पूरी तरह बदल दिया है। एपीआई इंटीग्रेशन और कस्टम स्क्रिप्ट्स के ज़रिए डेवलपर्स अब बिना रुके 24/7 ऑपरेशंस मैनेज कर रहे हैं। 
+                        Modern tech industries and automation have completely revolutionized digital growth agencies. Through custom API integrations and scripts, developers are scaling operations 24/7 globally.
                         <a href="https://github.com" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-bold underline ml-1">Explore Open Source Repos &rarr;</a>
                     </p>
 
@@ -192,58 +184,10 @@
                     </div>
                 </article>
 
-                <hr class="border-slate-200 dark:border-slate-800">
-
-                <!-- Post 2: E-Writing Feature -->
-                <article class="post-item group" data-category="E-Writing" data-post-id="post-2">
-                    <div class="flex items-center space-x-2.5 mb-2 flex-wrap gap-y-1">
-                        <span class="text-[10px] font-extrabold tracking-widest text-violet-600 dark:text-violet-400 uppercase bg-violet-50 dark:bg-violet-950/50 px-2 py-0.5 rounded border border-violet-100 dark:border-violet-900">E-Writing & Essay</span>
-                        <span class="text-[11px] font-medium text-slate-400 flex items-center gap-1">
-                            🕒 <span>September 21, 2026 • 17:15 IST</span>
-                        </span>
-                    </div>
-                    
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2.5 leading-snug group-hover:text-indigo-600 transition-colors cursor-pointer">
-                        The Psychology of Digital Minimalism: Crafting Stories in an Era of Infinite Feeds
-                    </h2>
-                    
-                    <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-serif mb-3 leading-relaxed">
-                        लेखन और डिजिटल कॉमिक्स जैसे 'MIDNIGHT REQUIEM' के निर्माण में, पाठक का ध्यान खींचना सबसे बड़ी कला है। जब सूचनाओं का अंबार हो, तब न्यूनतम शब्दों में गहरी बात कहना ही आधुनिक ई-राइटिंग की असली ताकत है।
-                    </p>
-
-                    <div class="bg-indigo-50 dark:bg-indigo-950/30 p-3.5 rounded-xl border border-indigo-100 dark:border-indigo-900 mb-3.5 text-xs font-serif text-slate-700 dark:text-slate-300 italic">
-                        "Great writing is not about how many words you use, but how deeply those words resonate within the reader's digital consciousness." — Editorial Insight
-                    </div>
-
-                    <div class="flex items-center justify-between border-t border-b border-slate-200 dark:border-slate-800 py-2.5 mb-3.5 text-xs">
-                        <div class="flex items-center space-x-2">
-                            <span class="w-6 h-6 rounded-full bg-violet-600 text-white font-bold flex items-center justify-center text-[10px]">EW</span>
-                            <div>
-                                <p class="font-bold text-slate-800 dark:text-slate-200 text-xs">InkSpire Literature Desk</p>
-                                <p class="text-[8px] text-slate-400 uppercase">Essay Publication • Published 3h ago</p>
-                            </div>
-                        </div>
-                        <button onclick="handleLike('post-2')" class="flex items-center space-x-1 font-bold text-slate-700 dark:text-slate-300 hover:text-indigo-600 bg-slate-100 dark:bg-slate-900 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800">
-                            <span id="like-icon-post-2">❤️</span>
-                            <span id="like-count-post-2">0</span>
-                        </button>
-                    </div>
-
-                    <div class="space-y-2 bg-slate-50 dark:bg-slate-900/40 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
-                        <div class="flex gap-2">
-                            <input type="text" id="comment-input-post-2" placeholder="Leave your thoughts..." class="flex-grow bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs px-3 py-1.5 rounded-lg focus:outline-none focus:border-indigo-500 dark:text-white">
-                            <button onclick="addComment('post-2')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[10px] font-bold uppercase rounded-lg transition">Post</button>
-                        </div>
-                        <div id="comments-list-post-2" class="space-y-1 pt-1"></div>
-                    </div>
-                </article>
-
             </div>
 
-            <!-- RIGHT COLUMN: Sidebar (Col span 4) -->
+            <!-- RIGHT COLUMN: Sidebar -->
             <aside class="lg:col-span-4 space-y-6">
-                
-                <!-- Trending Wire Box with Real Links -->
                 <div class="bg-white dark:bg-slate-900/60 p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-3">
                     <h3 class="font-black text-xs text-slate-900 dark:text-white uppercase tracking-wider flex items-center justify-between">
                         <span>🔥 Global Trending Wire</span>
@@ -251,155 +195,85 @@
                     </h3>
                     <ul class="space-y-3 text-xs">
                         <li class="article-border pb-2.5">
-                            <div class="flex justify-between text-[9px] text-slate-400 mb-0.5">
-                                <span class="font-black text-indigo-600 uppercase">Open Source</span>
-                                <span>15 mins ago</span>
-                            </div>
                             <a href="https://github.com/trending" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">GitHub Trending: Python automated news scrapers gain traction.</a>
-                        </li>
-                        <li class="article-border pb-2.5">
-                            <div class="flex justify-between text-[9px] text-slate-400 mb-0.5">
-                                <span class="font-black text-emerald-600 uppercase">World News</span>
-                                <span>45 mins ago</span>
-                            </div>
-                            <a href="https://www.reuters.com/technology/" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">Reuters Tech: International Digital Trade Agreements finalized.</a>
-                        </li>
-                        <li class="pb-1">
-                            <div class="flex justify-between text-[9px] text-slate-400 mb-0.5">
-                                <span class="font-black text-violet-600 uppercase">Game Dev</span>
-                                <span>2 hours ago</span>
-                            </div>
-                            <a href="https://www.unrealengine.com/en-US/blog" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">Unreal Engine 5.6 update introduces real-time neural tracing.</a>
                         </li>
                     </ul>
                 </div>
-
-                <!-- Sidebar Ad -->
-                <div class="bg-white dark:bg-slate-900 p-3 rounded-2xl border border-slate-200 dark:border-slate-800 flex justify-center shadow-xs overflow-hidden">
-                    <script>
-                      atOptions = {
-                        'key' : 'b7e3407c3c91326c0ad5904646274317',
-                        'format' : 'iframe',
-                        'height' : 250,
-                        'width' : 300,
-                        'params' : {}
-                      };
-                    </script>
-                    <script src="https://www.highrevenueformat.com/b7e3407c3c91326c0ad5904646274317/invoke.js"></script>
-                </div>
-
             </aside>
         </div>
 
         <!-- Corporate Sub-sections -->
         <div id="about-section" class="hidden max-w-2xl mx-auto py-10 space-y-4 text-center">
             <h2 class="text-2xl font-black text-slate-900 dark:text-white uppercase">About InkSpire</h2>
-            <div class="w-12 h-1 bg-indigo-600 mx-auto rounded-full"></div>
-            <p class="text-slate-600 dark:text-slate-300 font-serif text-sm leading-relaxed">Welcome to <strong>InkSpire</strong>, conceptualized, developed, and managed by <strong>Prasant Sagar</strong> based in New Delhi, India.</p>
+            <p class="text-slate-600 dark:text-slate-300 font-serif text-sm leading-relaxed">Conceptualized and managed by <strong>Prasant Sagar</strong> based in New Delhi, India.</p>
         </div>
-
         <div id="contact-section" class="hidden max-w-2xl mx-auto py-10 space-y-4 text-center">
-            <h2 class="text-2xl font-black text-slate-900 dark:text-white uppercase">Contact & Social Desk</h2>
-            <div class="w-12 h-1 bg-indigo-600 mx-auto rounded-full"></div>
-            <div class="inline-block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl text-left shadow-xs text-xs space-y-2">
-                <p class="text-slate-900 dark:text-white font-bold">Email: <span class="font-normal text-indigo-600">support@inkspire.global</span></p>
-                <p class="text-slate-900 dark:text-white font-bold">Instagram: <a href="https://www.instagram.com/inkspire.8s" target="_blank" class="font-normal text-indigo-600 underline">@inkspire.8s</a></p>
-                <p class="text-slate-900 dark:text-white font-bold">X (Twitter): <a href="https://x.com/kavinmusic13" target="_blank" class="font-normal text-indigo-600 underline">@kavinmusic13</a></p>
-            </div>
+            <h2 class="text-2xl font-black text-slate-900 dark:text-white uppercase">Contact Desk</h2>
         </div>
-
         <div id="privacy-section" class="hidden max-w-2xl mx-auto py-10 space-y-3 text-xs">
             <h2 class="text-xl font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">Privacy Policy</h2>
-            <p class="text-slate-600 dark:text-slate-300 font-serif leading-relaxed">At InkSpire, managed by Prasant Sagar, user privacy is strictly maintained.</p>
         </div>
-
         <div id="terms-section" class="hidden max-w-2xl mx-auto py-10 space-y-3 text-xs">
             <h2 class="text-xl font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">Terms of Service</h2>
-            <p class="text-slate-600 dark:text-slate-300 font-serif leading-relaxed">All code snippets and essays published on InkSpire are intended for educational dissemination.</p>
         </div>
-
     </main>
 
-    <!-- Compact Executive Footer -->
+    <!-- Footer -->
     <footer class="bg-slate-900 dark:bg-black text-white py-8 mt-auto border-t-2 border-indigo-600 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div>
-                <h4 class="font-black uppercase mb-2 text-xs">InkSpire</h4>
-                <p class="text-slate-400 font-serif text-[11px]">Global Tech & Publishing Wire.</p>
-            </div>
-            <div>
-                <h4 class="font-bold text-indigo-400 uppercase mb-2 text-[11px]">Sections</h4>
-                <ul class="space-y-1.5 text-slate-300">
-                    <li><button onclick="showSection('home')" class="hover:text-white">Front Page</button></li>
-                    <li><button onclick="filterCategory('AI & Tech')" class="hover:text-white">AI & Tech</button></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-indigo-400 uppercase mb-2 text-[11px]">Social Desk</h4>
-                <ul class="space-y-1.5 text-slate-300">
-                    <li><a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-white">Instagram</a></li>
-                    <li><a href="https://x.com/kavinmusic13" target="_blank" class="hover:text-white">X / Twitter</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-indigo-400 uppercase mb-2 text-[11px]">Legal</h4>
-                <ul class="space-y-1.5 text-slate-300">
-                    <li><button onclick="showSection('privacy')" class="hover:text-white">Privacy Policy</button></li>
-                    <li><button onclick="showSection('terms')" class="hover:text-white">Terms of Service</button></li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 mt-6 pt-3 border-t border-slate-800 text-[10px] text-slate-500 flex flex-col sm:flex-row justify-between items-center">
-            <p>&copy; 2026 InkSpire. All rights reserved.</p>
-            <p class="mt-1 sm:mt-0">Developed by <strong class="text-white">Prasant Sagar</strong>.</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 text-center text-[10px] text-slate-500">
+            <p>&copy; 2026 InkSpire. Developed by <strong class="text-white">Prasant Sagar</strong>.</p>
         </div>
     </footer>
+
+    <!-- Google Translate Script Initialization for Auto-Translate -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,es,fr,de,zh-CN,ja,ru,hi,ar',
+                autoDisplay: false
+            }, 'google_translate_element');
+
+            // Auto-detect browser/region language and trigger translation if non-Hindi region
+            setTimeout(function() {
+                var userLang = navigator.language || navigator.userLanguage; 
+                // अगर यूजर की भाषा अंग्रेजी या अन्य विदेशी है और हिंदी नहीं है, तो उसे अंग्रेजी/लोकल में दिखाएं
+                if (userLang && !userLang.startsWith('hi')) {
+                    var selectField = document.querySelector(".goog-te-combo");
+                    if (selectField) {
+                        selectField.value = "en"; // अमेरिका या अन्य देशों के लिए डिफ़ॉल्ट इंग्लिश सेट करें
+                        selectField.dispatchEvent(new Event('change'));
+                    }
+                }
+            }, 1000);
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const isDark = document.documentElement.classList.contains('dark');
             document.getElementById('dark-mode-btn-top').textContent = isDark ? 'Light Mode' : 'Dark Mode';
-            
             updateLiveClock();
             setInterval(updateLiveClock, 1000);
-
-            ['post-1', 'post-2'].forEach(postId => {
-                updateLikeUI(postId);
-                renderComments(postId);
-            });
         });
 
         function updateLiveClock() {
             const now = new Date();
-            const options = { 
-                month: 'short', 
-                day: 'numeric', 
-                hour: '2-digit', 
-                minute: '2-digit', 
-                second: '2-digit',
-                hour12: true 
-            };
-            const timeString = now.toLocaleDateString('en-US', options);
+            const options = { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
             const clockEl = document.getElementById('live-top-clock');
-            if(clockEl) {
-                clockEl.textContent = timeString + ' IST';
-            }
+            if(clockEl) clockEl.textContent = now.toLocaleDateString('en-US', options) + ' IST';
         }
 
         function toggleThreeDotMenu(event) {
             event.stopPropagation();
-            const menu = document.getElementById('three-dot-dropdown');
-            menu.classList.toggle('hidden');
-        }
-
-        function closeThreeDotMenu() {
-            const menu = document.getElementById('three-dot-dropdown');
-            if(menu) menu.classList.add('hidden');
+            document.getElementById('three-dot-dropdown').classList.toggle('hidden');
         }
 
         window.addEventListener('click', () => {
-            closeThreeDotMenu();
+            const menu = document.getElementById('three-dot-dropdown');
+            if(menu) menu.classList.add('hidden');
         });
 
         function showSection(sectionId) {
@@ -410,19 +284,6 @@
             const target = document.getElementById(sectionId + '-section');
             if(target) target.classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function filterCategory(category) {
-            showSection('home');
-            const posts = document.querySelectorAll('.post-item');
-            posts.forEach(post => {
-                const postCat = post.getAttribute('data-category');
-                if(category === 'All' || postCat === category) {
-                    post.style.display = '';
-                } else {
-                    post.style.display = 'none';
-                }
-            });
         }
 
         function toggleDarkMode() {
@@ -436,65 +297,6 @@
                 if(topBtn) topBtn.textContent = 'Light Mode';
             }
         }
-
-        function handleLike(postId) {
-            let likes = parseInt(localStorage.getItem(postId + '_likes')) || 0;
-            let liked = localStorage.getItem(postId + '_liked') === 'true';
-            if (!liked) {
-                likes += 1;
-                localStorage.setItem(postId + '_liked', 'true');
-            } else {
-                likes -= 1;
-                localStorage.setItem(postId + '_liked', 'false');
-            }
-            localStorage.setItem(postId + '_likes', likes);
-            updateLikeUI(postId);
-        }
-
-        function updateLikeUI(postId) {
-            let likes = localStorage.getItem(postId + '_likes') || 0;
-            let liked = localStorage.getItem(postId + '_liked') === 'true';
-            if(document.getElementById('like-count-' + postId)) {
-                document.getElementById('like-count-' + postId).textContent = likes;
-                document.getElementById('like-icon-' + postId).textContent = liked ? '❤️' : '🤍';
-            }
-        }
-
-        function addComment(postId) {
-            const input = document.getElementById('comment-input-' + postId);
-            if(!input) return;
-            const text = input.value.trim();
-            if(!text) return;
-            let comments = JSON.parse(localStorage.getItem(postId + '_comments')) || [];
-            comments.push({ text: text, date: 'Just now' });
-            localStorage.setItem(postId + '_comments', JSON.stringify(comments));
-            input.value = '';
-            renderComments(postId);
-        }
-
-        function renderComments(postId) {
-            const list = document.getElementById('comments-list-' + postId);
-            if(!list) return;
-            let comments = JSON.parse(localStorage.getItem(postId + '_comments')) || [];
-            if(comments.length === 0) {
-                list.innerHTML = '<p class="text-[10px] text-slate-400 italic">No comments yet.</p>';
-                return;
-            }
-            list.innerHTML = comments.map(c => `
-                <div class="py-1 border-b border-slate-200 dark:border-slate-800 text-[11px] flex justify-between items-center">
-                    <span class="text-slate-800 dark:text-slate-200 font-medium">${escapeHtml(c.text)}</span>
-                    <span class="text-[9px] text-indigo-500 font-bold uppercase">${c.date}</span>
-                </div>
-            `).join('');
-        }
-
-        function escapeHtml(str) {
-            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-        }
     </script>
-
-    <!-- Social Bar Ad Script -->
-    <script src="https://pl31443964.profitableratecpmnetwork.com/71/9b/68/719b68a75cd92f96024833025c747b48.js"></script>
-
 </body>
 </html>
