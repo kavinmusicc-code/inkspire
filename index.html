@@ -51,8 +51,8 @@
                 <span class="font-serif-custom font-bold text-lg tracking-tight">InkSpire</span>
             </a>
 
-            <!-- Navigation Links & Dark Mode Toggle -->
-            <div class="flex items-center gap-6">
+            <!-- Desktop Navigation Links & Controls -->
+            <div class="flex items-center gap-4">
                 <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-[#666666] dark:text-[#9CA3AF]">
                     <a href="#home" class="hover:text-[#1A1A1A] dark:hover:text-white transition-colors">Home</a>
                     <a href="#services" class="hover:text-[#1A1A1A] dark:hover:text-white transition-colors">Hire Me</a>
@@ -68,11 +68,54 @@
                     <!-- Moon Icon -->
                     <svg id="moon-icon" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                 </button>
+
+                <!-- Mobile Menu Hamburger Button -->
+                <button onclick="toggleMobileMenu()" aria-label="Open Menu" class="md:hidden p-2 rounded-lg border border-[#EAEAEA] dark:border-[#27272A] text-[#1A1A1A] dark:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- CLEAN SPONSORED BANNER (Safe & Clean Space) -->
+    <!-- MOBILE FULLSCREEN MENU (MATCHING YOUR SCREENSHOT) -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#121212] text-white flex flex-col px-6 py-6 transform translate-x-full transition-transform duration-300 md:hidden overflow-y-auto">
+        <!-- Top bar with Logo / Brand and Close Button -->
+        <div class="flex items-center justify-between pb-8 border-b border-[#27272A]">
+            <span class="font-serif-custom font-bold text-xl tracking-tight">WRITER</span>
+            <button onclick="toggleMobileMenu()" aria-label="Close Menu" class="p-2 text-white hover:opacity-80">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <!-- Menu Links matching your image -->
+        <div class="flex flex-col space-y-6 pt-8 text-lg font-medium">
+            <a href="#services" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors">
+                <span>Product</span>
+                <span class="text-xs text-[#9CA3AF]">▼</span>
+            </a>
+            <a href="#services" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors">
+                <span>Solutions</span>
+                <span class="text-xs text-[#9CA3AF]">▼</span>
+            </a>
+            <a href="#articles" onclick="toggleMobileMenu()" class="hover:text-accent transition-colors">Research</a>
+            <a href="#process" onclick="toggleMobileMenu()" class="hover:text-accent transition-colors">Plans</a>
+            <a href="#testimonials" onclick="toggleMobileMenu()" class="hover:text-accent transition-colors">Customers</a>
+            <a href="#articles" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors">
+                <span>Resources</span>
+                <span class="text-xs text-[#9CA3AF]">▼</span>
+            </a>
+            <a href="#services" onclick="toggleMobileMenu()" class="hover:text-accent transition-colors pt-2 border-t border-[#27272A]">Log in</a>
+        </div>
+
+        <!-- Try for free CTA Button -->
+        <div class="pt-8 mt-auto">
+            <a href="#services" onclick="toggleMobileMenu()" class="flex items-center justify-center w-full py-3.5 rounded-full bg-accent text-white font-medium text-sm shadow-lg hover:bg-accent/90 transition-colors">
+                Try for free
+            </a>
+        </div>
+    </div>
+
+    <!-- CLEAN SPONSORED BANNER -->
     <div class="w-full bg-[#EAEAEA]/30 dark:bg-[#27272A]/30 border-b border-[#EAEAEA] dark:border-[#27272A] py-2 overflow-hidden flex justify-center">
         <div class="max-w-[728px] w-full px-4 text-center">
             <div class="bg-[#EAEAEA]/50 dark:bg-[#27272A]/50 rounded flex items-center justify-center min-h-[40px] text-xs text-[#666666] dark:text-[#9CA3AF]">
@@ -105,10 +148,10 @@
             </div>
         </section>
 
-        <!-- OPTION 1: HIRE ME / WRITING SERVICES PAGE SECTION -->
+        <!-- HIRE ME / WRITING SERVICES PAGE SECTION -->
         <section id="services" class="border-t border-[#EAEAEA] dark:border-[#27272A] pt-16 space-y-8">
             <div class="space-y-2">
-                <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Option 1 — Professional Services</h2>
+                <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Professional Services</h2>
                 <h3 class="text-2xl font-bold font-serif-custom">Writing Services & Expertise</h3>
                 <p class="text-[#666666] dark:text-[#9CA3AF] text-sm">Need compelling content for your brand, agency, or digital storefront? Choose from tailored writing solutions below.</p>
             </div>
@@ -160,11 +203,11 @@
             </div>
         </section>
 
-        <!-- OPTION 2: MY ARTICLES & PUBLICATIONS ARCHIVE (5 ARTICLES) -->
+        <!-- MY ARTICLES & PUBLICATIONS ARCHIVE (5 ARTICLES) -->
         <section id="articles" class="border-t border-[#EAEAEA] dark:border-[#27272A] pt-16 space-y-12">
             <div class="border-b border-[#EAEAEA] dark:border-[#27272A] pb-4 flex items-center justify-between">
                 <div>
-                    <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Option 2 — Article Archive</h2>
+                    <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Article Archive</h2>
                     <h3 class="text-xl font-bold font-serif-custom mt-1">Trending Stories (5 Articles)</h3>
                 </div>
                 <span class="text-xs text-[#666666] dark:text-[#9CA3AF]">Curated by Webwriter</span>
@@ -325,10 +368,10 @@
             </div>
         </section>
 
-        <!-- OPTION 4: WRITING PROCESS & EXPERTISE SECTION -->
+        <!-- WRITING PROCESS & EXPERTISE SECTION -->
         <section id="process" class="border-t border-[#EAEAEA] dark:border-[#27272A] pt-16 space-y-8">
             <div class="space-y-2">
-                <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Option 4 — Work Methodology</h2>
+                <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Work Methodology</h2>
                 <h3 class="text-2xl font-bold font-serif-custom">My Writing Process & Expertise</h3>
                 <p class="text-[#666666] dark:text-[#9CA3AF] text-sm">How I turn complex topics into crystal-clear, high-converting digital reads.</p>
             </div>
@@ -358,10 +401,10 @@
             </div>
         </section>
 
-        <!-- OPTION 3: CLIENT TESTIMONIALS SECTION -->
+        <!-- CLIENT TESTIMONIALS SECTION -->
         <section id="testimonials" class="border-t border-[#EAEAEA] dark:border-[#27272A] pt-16 space-y-8">
             <div class="space-y-2">
-                <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Option 3 — Client Trust</h2>
+                <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Client Trust</h2>
                 <h3 class="text-2xl font-bold font-serif-custom">Praise & Testimonials</h3>
             </div>
 
@@ -385,11 +428,11 @@
             </div>
         </section>
 
-        <!-- OPTION 5: NEWSLETTER & DAILY INSIGHTS SUBSCRIPTION -->
+        <!-- NEWSLETTER & DAILY INSIGHTS SUBSCRIPTION -->
         <section class="border-t border-[#EAEAEA] dark:border-[#27272A] pt-16">
             <div class="border border-[#EAEAEA] dark:border-[#27272A] rounded-2xl p-8 bg-white dark:bg-[#1A1A1A] text-center space-y-6 max-w-2xl mx-auto">
                 <div class="space-y-2">
-                    <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Option 5 — Stay Connected</h2>
+                    <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Stay Connected</h2>
                     <h3 class="text-2xl font-bold font-serif-custom">Subscribe to InkSpire Insights</h3>
                     <p class="text-xs text-[#666666] dark:text-[#9CA3AF] max-w-md mx-auto">
                         Get my latest webwriting tips, content frameworks, and digital publication updates delivered straight to your inbox.
@@ -584,6 +627,16 @@
             } else {
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Mobile Menu Toggle Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('translate-x-full')) {
+                menu.classList.remove('translate-x-full');
+            } else {
+                menu.classList.add('translate-x-full');
             }
         }
 
