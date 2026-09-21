@@ -48,7 +48,8 @@
             <span class="hidden sm:inline">Monday, September 21, 2026</span>
         </div>
         <div class="flex items-center space-x-6 font-semibold">
-            <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="hover:text-white transition flex items-center gap-1.5"><span>📸</span> @inkspire.8s</a>
+            <a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-white transition flex items-center gap-1.5"><span>📸</span> @inkspire.8s</a>
+            <a href="https://x.com/kavinmusic13" target="_blank" class="hover:text-white transition flex items-center gap-1.5"><span>🏱</span> @kavinmusic13</a>
             <button onclick="toggleDarkMode()" id="dark-mode-btn-top" class="hover:text-white transition">Theme: Dark</button>
         </div>
     </div>
@@ -70,11 +71,8 @@
                 <div class="flex items-center justify-center gap-3 sm:gap-4 mb-1">
                     <!-- Custom SVG Premium Logo (Tech/Digital Node Theme) -->
                     <svg class="w-10 h-10 sm:w-14 sm:h-14 text-indigo-600 dark:text-indigo-500 group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Hexagon Border -->
-                        <path d="M50 8L86 28V72L50 92L14 72V28L50 8Z" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/>
-                        <!-- Inner 3D Lines -->
+                        <path d="M50 8L86 28V72L50 92L14 72V28L50 8Z" stroke="currentColor" stroke-width="6" stroke-linejoin="round" fill="#0b101b"/>
                         <path d="M50 8V50M14 28L50 50M86 28L50 50M14 72L50 50M86 72L50 50" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <!-- Center Core -->
                         <circle cx="50" cy="50" r="10" fill="currentColor"/>
                     </svg>
                     <!-- Text Logo -->
@@ -290,7 +288,8 @@
             <p class="text-slate-600 dark:text-slate-300 font-serif text-lg">For editorial pitches, media proposals, or technical inquiries, reach out directly to creator Prasant Sagar.</p>
             <div class="inline-block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-3xl text-left shadow-sm">
                 <p class="text-slate-900 dark:text-white font-bold mb-3">Email: <span class="font-normal text-indigo-600">support@inkspire.global</span></p>
-                <p class="text-slate-900 dark:text-white font-bold">Instagram Handle: <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="font-normal text-indigo-600 underline">@inkspire.8s</a></p>
+                <p class="text-slate-900 dark:text-white font-bold mb-2">Instagram Handle: <a href="https://www.instagram.com/inkspire.8s" target="_blank" class="font-normal text-indigo-600 underline">@inkspire.8s</a></p>
+                <p class="text-slate-900 dark:text-white font-bold">X (Twitter): <a href="https://x.com/kavinmusic13" target="_blank" class="font-normal text-indigo-600 underline">@kavinmusic13</a>[span_2](start_span)[span_2](end_span)</p>
             </div>
         </div>
 
@@ -326,7 +325,8 @@
                 <ul class="space-y-2 text-sm text-slate-300 font-medium">
                     <li><button onclick="showSection('about')" class="hover:text-white">About Publisher</button></li>
                     <li><button onclick="showSection('contact')" class="hover:text-white">Contact Desk</button></li>
-                    <li><a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="hover:text-white">Instagram Profile</a></li>
+                    <li><a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-white">Instagram Profile</a></li>
+                    <li><a href="https://x.com/kavinmusic13" target="_blank" class="hover:text-white">X (Twitter Profile)</a>[span_3](start_span)[span_3](end_span)</li>
                 </ul>
             </div>
             <div>
@@ -390,7 +390,6 @@
             }
         }
 
-        // --- Like and Comments Logic ---
         function handleLike(postId) {
             let likes = parseInt(localStorage.getItem(postId + '_likes')) || 0;
             let liked = localStorage.getItem(postId + '_liked') === 'true';
