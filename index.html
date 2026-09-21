@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkSpire - Global Tech, Gaming & Automated News</title>
+    <title>InkSpire - Global Intelligence & Digital Publishing</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -18,19 +18,15 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        .ticker-wrap { width: 100%; overflow: hidden; background-color: #1e293b; color: white; padding: 6px 0; border-bottom: 1px solid #334155; }
-        .ticker { display: inline-block; white-space: nowrap; padding-right: 100%; animation: ticker 25s linear infinite; }
+        .ticker-wrap { width: 100%; overflow: hidden; background-color: #0f172a; color: #f8fafc; border-bottom: 1px solid #1e293b; }
+        .ticker { display: inline-block; white-space: nowrap; padding-right: 100%; animation: ticker 30s linear infinite; }
         @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
-        
-        /* Reuters inspired neat borders */
         .article-border { border-bottom: 1px solid #e2e8f0; }
-        .dark .article-border { border-bottom: 1px solid #334155; }
-        
-        /* Hover image/video effect */
-        .media-zoom iframe { transition: transform 0.3s ease; }
-        .media-zoom:hover iframe { transform: scale(1.02); }
+        .dark .article-border { border-bottom: 1px solid #1e293b; }
+        .media-zoom iframe { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .media-zoom:hover iframe { transform: scale(1.015); }
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -43,58 +39,68 @@
       gtag('config', 'G-C2TQYXBJ7V');
     </script>
 </head>
-<body class="bg-[#f8f9fa] dark:bg-[#0b1120] text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300">
+<body class="bg-[#f9fafb] dark:bg-[#070b14] text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300 font-sans">
 
-    <!-- Top utility bar -->
-    <div class="bg-slate-900 dark:bg-black text-slate-300 text-xs py-1.5 px-4 sm:px-8 flex justify-between items-center hidden sm:flex border-b border-slate-800">
-        <div class="flex space-x-4">
-            <span class="font-bold text-white tracking-widest uppercase">Global Edition</span>
-            <span>September 21, 2026</span>
+    <!-- Executive Top Bar -->
+    <div class="bg-slate-900 dark:bg-black text-slate-400 text-xs py-2 px-4 sm:px-12 flex justify-between items-center border-b border-slate-800">
+        <div class="flex items-center space-x-4">
+            <span class="font-black text-white tracking-widest uppercase text-[11px] bg-indigo-600 px-2 py-0.5 rounded">GLOBAL WIRE</span>
+            <span class="hidden sm:inline">Monday, September 21, 2026</span>
         </div>
-        <div class="flex space-x-4 font-semibold">
-            <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="hover:text-white transition">Follow @inkspire.8s</a>
+        <div class="flex items-center space-x-6 font-semibold">
+            <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="hover:text-white transition flex items-center gap-1.5"><span>📸</span> @inkspire.8s</a>
             <button onclick="toggleDarkMode()" id="dark-mode-btn-top" class="hover:text-white transition">Theme: Dark</button>
         </div>
     </div>
 
-    <!-- Live News Ticker -->
-    <div class="ticker-wrap text-xs sm:text-sm font-semibold tracking-wide">
+    <!-- Live Breaking Ticker -->
+    <div class="ticker-wrap text-xs font-bold tracking-wide py-2">
         <div class="ticker">
-            <span class="text-rose-500 font-bold mr-2">LATEST:</span> 
-            GTA 6 Pre-Registration officially opens globally — Programming: New API released for automated Python news scrapers — Global Markets: Tech hiring surges across India and US — Next-Gen: Unreal Engine 5 AI Ray Tracing updates deployed.
+            <span class="text-indigo-400 font-black mr-2 uppercase tracking-widest">● LIVE FEED:</span> 
+            GTA 6 Pre-Registration breaks international records — Python automated news scraping API architectures deployed — Global tech hiring and government vacancies surge across India & US — Unreal Engine 5.6 neural rendering update live.
         </div>
     </div>
 
-    <!-- Main Header (Reuters Style) -->
-    <header class="bg-white dark:bg-[#0b1120] border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-8 py-5 sm:py-6 flex flex-col items-center justify-between">
+    <!-- Main Header (Bloomberg / Reuters Style Editorial Header) -->
+    <header class="bg-white dark:bg-[#0b101b] border-b border-slate-200 dark:border-slate-800/80 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-12 py-6 flex flex-col items-center justify-between">
             
-            <!-- Logo -->
-            <div class="cursor-pointer text-center mb-4 sm:mb-6" onclick="showSection('home')">
-                <h1 class="text-4xl sm:text-6xl font-black tracking-tighter text-slate-900 dark:text-white uppercase font-sans">
-                    Ink<span class="text-indigo-600 dark:text-indigo-500">Spire</span>
-                </h1>
-                <p class="text-xs sm:text-sm font-semibold tracking-[0.2em] text-slate-500 dark:text-slate-400 uppercase mt-1">Tech • Gaming • Automation</p>
+            <!-- Brand Logo with Custom SVG Icon -->
+            <div class="cursor-pointer text-center mb-6 flex flex-col items-center justify-center group" onclick="showSection('home')">
+                <div class="flex items-center justify-center gap-3 sm:gap-4 mb-1">
+                    <!-- Custom SVG Premium Logo (Tech/Digital Node Theme) -->
+                    <svg class="w-10 h-10 sm:w-14 sm:h-14 text-indigo-600 dark:text-indigo-500 group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Hexagon Border -->
+                        <path d="M50 8L86 28V72L50 92L14 72V28L50 8Z" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/>
+                        <!-- Inner 3D Lines -->
+                        <path d="M50 8V50M14 28L50 50M86 28L50 50M14 72L50 50M86 72L50 50" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Center Core -->
+                        <circle cx="50" cy="50" r="10" fill="currentColor"/>
+                    </svg>
+                    <!-- Text Logo -->
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tighter text-slate-900 dark:text-white uppercase font-sans">
+                        Ink<span class="text-indigo-600 dark:text-indigo-500">Spire</span>
+                    </h1>
+                </div>
+                <p class="text-[11px] sm:text-xs font-extrabold tracking-[0.3em] text-slate-500 dark:text-slate-400 uppercase mt-1.5">International Digital Intelligence & Publishing</p>
             </div>
             
-            <!-- Categories / Nav -->
-            <nav class="w-full border-t border-b border-slate-200 dark:border-slate-800 py-3 flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-8 text-xs sm:text-sm font-bold tracking-widest uppercase text-slate-600 dark:text-slate-300">
+            <!-- Category Navigation -->
+            <nav class="w-full border-t border-b border-slate-200 dark:border-slate-800 py-3 flex flex-wrap justify-center sm:justify-start gap-6 sm:gap-10 text-xs font-extrabold tracking-widest uppercase text-slate-600 dark:text-slate-300">
                 <button onclick="filterCategory('All')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Front Page</button>
                 <button onclick="filterCategory('Programming')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Programming</button>
                 <button onclick="filterCategory('Gaming')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Gaming</button>
                 <button onclick="filterCategory('Employment')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Careers</button>
                 <button onclick="showSection('about')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">About</button>
-                
-                <!-- Mobile only dark mode toggle -->
-                <button onclick="toggleDarkMode()" class="sm:hidden text-indigo-500">Theme</button>
+                <button onclick="showSection('contact')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Contact</button>
             </nav>
         </div>
     </header>
 
-    <!-- Main Container -->
-    <main class="max-w-[1400px] mx-auto px-4 sm:px-8 py-8 flex-grow w-full">
+    <!-- Main Layout Container -->
+    <main class="max-w-[1440px] mx-auto px-4 sm:px-12 py-10 flex-grow w-full">
         
-        <!-- Top Banner Ad -->
+        <!-- Top Ad Banner -->
         <div class="mb-10 flex justify-center w-full overflow-hidden border-b border-slate-200 dark:border-slate-800 pb-8">
             <div class="min-w-[300px]">
                 <script>
@@ -110,123 +116,152 @@
             </div>
         </div>
 
-        <!-- Dynamic Home Feed (Reuters Style Grid) -->
-        <div id="home-section" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <!-- Dynamic Home Feed -->
+        <div id="home-section" class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
             
-            <!-- LEFT COLUMN: Main Featured Story (Col span 8) -->
-            <div class="lg:col-span-8 space-y-10 border-r-0 lg:border-r border-slate-200 dark:border-slate-800 lg:pr-10">
+            <!-- LEFT COLUMN: Main Lead Stories (Col span 8) -->
+            <div class="lg:col-span-8 space-y-12 border-r-0 lg:border-r border-slate-200 dark:border-slate-800/80 lg:pr-12">
                 
-                <!-- Post 1: Lead Story (Programming) -->
+                <!-- Post 1: Lead Story (Programming & Automation) -->
                 <article class="post-item group" data-category="Programming" data-post-id="post-1">
-                    <div class="w-full aspect-video bg-slate-200 dark:bg-slate-900 mb-5 overflow-hidden media-zoom">
+                    <div class="w-full aspect-video bg-slate-200 dark:bg-slate-900 mb-6 overflow-hidden media-zoom rounded-xl shadow-md border border-slate-200/50 dark:border-slate-800">
                         <iframe src="https://www.youtube.com/embed/kqtD5dpn9C8" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
                     </div>
                     
-                    <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-2 block">Programming & Automation</span>
-                    <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mb-4 leading-[1.1] font-sans tracking-tight group-hover:text-indigo-600 transition-colors cursor-pointer">
-                        Building Automated Digital Media Feeds Using Python & APIs
+                    <div class="flex items-center space-x-3 mb-3">
+                        <span class="text-xs font-black tracking-widest text-indigo-600 dark:text-indigo-400 uppercase bg-indigo-50 dark:bg-indigo-950/60 px-3 py-1 rounded-md border border-indigo-100 dark:border-indigo-900">Programming & Automation</span>
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Sep 21, 2026</span>
+                    </div>
+                    
+                    <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mb-4 leading-[1.1] tracking-tight group-hover:text-indigo-600 transition-colors cursor-pointer">
+                        Building Automated Digital Media Feeds Using Python, APIs & Modern Web Stacks
                     </h2>
                     
-                    <p class="text-slate-600 dark:text-slate-400 text-lg sm:text-xl font-serif mb-6 leading-relaxed">
-                        आधुनिक डिजिटल पब्लिशिंग में न्यूज़पेपर या मीडिया साइट्स को ऑटोमेट करना मुख्य ट्रेंड बन गया है। डेवलपर्स वेब स्क्रैपिंग (Web Scraping) और API इंटीग्रेशन के ज़रिए ग्लोबल स्रोतों से लाइव डेटा कैसे फेच करते हैं, जानिए इसकी पूरी टेक्निकल प्रक्रिया।
+                    <p class="text-slate-600 dark:text-slate-300 text-lg sm:text-xl font-serif mb-6 leading-relaxed">
+                        आधुनिक डिजिटल पब्लिशिंग और जर्नलिज्म में, न्यूज़पेपर या मीडिया साइट्स को ऑटोमेट करना मुख्य ट्रेंड बन गया है। डेवलपर्स वेब स्क्रैपिंग (Web Scraping) और API इंटीग्रेशन के ज़रिए विभिन्न ग्लोबल स्रोतों से लाइव डेटा फेच करके हाई-स्पीड स्टैटिक प्लेटफॉर्म्स तैयार कर रहे हैं।
                     </p>
 
-                    <div class="bg-slate-100 dark:bg-slate-900 p-5 border-l-4 border-indigo-500 font-mono text-sm text-slate-800 dark:text-slate-300 mb-6 overflow-x-auto shadow-inner">
-                        # Python Script Example for Automated News Fetching<br>
+                    <div class="bg-slate-900 text-emerald-400 p-5 rounded-xl font-mono text-xs sm:text-sm mb-6 overflow-x-auto shadow-xl border border-slate-800">
+                        # Python Script Example for Automated News Pipeline<br>
                         import requests<br>
-                        response = requests.get('https://api.inkspire.global/trending')<br>
-                        news_data = response.json()
+                        response = requests.get('https://api.inkspire.global/v1/trending')<br>
+                        news_payload = response.json()<br>
+                        print(f"Successfully processed {len(news_payload)} global articles.")
                     </div>
                     
-                    <div class="flex items-center space-x-4 mb-6">
-                        <span class="text-xs font-bold uppercase tracking-widest text-slate-500">By Prasant Sagar</span>
-                        <span class="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700"></span>
-                        <span class="text-xs font-bold uppercase tracking-widest text-slate-500">6 MIN READ</span>
-                    </div>
-
-                    <!-- Minimal Like/Comment Section -->
-                    <div class="flex items-center gap-4 border-t border-b border-slate-200 dark:border-slate-800 py-3">
-                        <button onclick="handleLike('post-1')" class="flex items-center space-x-1.5 text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition">
-                            <span id="like-icon-post-1">❤️</span>
-                            <span id="like-count-post-1">0</span>
-                        </button>
-                        <div class="flex-grow flex items-center gap-2">
-                            <input type="text" id="comment-input-post-1" placeholder="Add a comment..." class="w-full bg-transparent border-none text-sm focus:ring-0 focus:outline-none dark:text-white placeholder-slate-400">
-                            <button onclick="addComment('post-1')" class="text-xs font-bold text-indigo-600 uppercase tracking-widest">Post</button>
+                    <div class="flex items-center justify-between border-t border-b border-slate-200 dark:border-slate-800 py-4 mb-6">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 rounded-full bg-indigo-600 text-white font-black flex items-center justify-center text-xs">PS</span>
+                            <div>
+                                <p class="text-xs font-extrabold uppercase tracking-widest text-slate-800 dark:text-slate-200">Prasant Sagar</p>
+                                <p class="text-[10px] text-slate-400 font-semibold uppercase">Lead Architect & Publisher</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <button onclick="handleLike('post-1')" class="flex items-center space-x-1.5 text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-indigo-600 transition bg-slate-100 dark:bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800">
+                                <span id="like-icon-post-1">❤️</span>
+                                <span id="like-count-post-1">0</span>
+                            </button>
                         </div>
                     </div>
-                    <div id="comments-list-post-1" class="space-y-2 mt-4"></div>
+
+                    <!-- Comment Section -->
+                    <div class="space-y-3 bg-slate-50 dark:bg-slate-900/50 p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
+                        <div class="flex gap-2">
+                            <input type="text" id="comment-input-post-1" placeholder="Share your professional thoughts..." class="flex-grow bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm px-4 py-2.5 rounded-xl focus:outline-none focus:border-indigo-500 dark:text-white">
+                            <button onclick="addComment('post-1')" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition shadow-sm">Post</button>
+                        </div>
+                        <div id="comments-list-post-1" class="space-y-2 pt-1"></div>
+                    </div>
                 </article>
 
                 <hr class="border-slate-200 dark:border-slate-800">
 
-                <!-- Post 2: Sub Featured (Gaming) -->
-                <article class="post-item group flex flex-col sm:flex-row gap-6" data-category="Gaming" data-post-id="post-2">
-                    <div class="w-full sm:w-2/5 aspect-video sm:aspect-square bg-slate-200 dark:bg-slate-900 overflow-hidden media-zoom shrink-0">
+                <!-- Post 2: Sub Featured (Gaming - GTA 6) -->
+                <article class="post-item group flex flex-col md:flex-row gap-6 items-center" data-category="Gaming" data-post-id="post-2">
+                    <div class="w-full md:w-1/2 aspect-video bg-slate-200 dark:bg-slate-900 overflow-hidden media-zoom rounded-xl border border-slate-200 dark:border-slate-800 shrink-0">
                         <iframe src="https://www.youtube.com/embed/QdBZY2fkU-0" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="flex-grow flex flex-col justify-center">
-                        <span class="text-xs font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-2 block">Gaming Industry</span>
+                        <span class="text-[11px] font-black tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-2 block">Gaming Industry</span>
                         <h2 class="text-2xl font-black text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-indigo-600 transition-colors">
-                            Grand Theft Auto VI (GTA 6): Global Release Updates
+                            Grand Theft Auto VI (GTA 6): Global Release Updates & Pre-Registration Info
                         </h2>
                         <p class="text-slate-600 dark:text-slate-400 text-sm font-serif mb-4 leading-relaxed">
-                            Rockstar Games' masterpiece is setting global benchmarks. Explore the latest mechanics, engines, and official updates straight from the developers.
+                            Rockstar Games' upcoming masterpiece is setting global benchmarks across the industry. Explore official developer updates and technical breakdowns.
                         </p>
-                        <a href="https://www.rockstargames.com/VI" target="_blank" class="text-xs font-bold uppercase tracking-widest text-slate-900 dark:text-white underline hover:text-indigo-600 dark:hover:text-indigo-400 transition w-max">Official Portal &rarr;</a>
                         
-                        <div class="mt-4 flex items-center space-x-3">
-                            <button onclick="handleLike('post-2')" class="text-xs font-bold flex items-center gap-1"><span id="like-icon-post-2">❤️</span> <span id="like-count-post-2">0</span></button>
-                            <input type="text" id="comment-input-post-2" placeholder="Comment..." class="text-xs bg-transparent border-b border-slate-300 dark:border-slate-700 w-32 focus:outline-none dark:text-white">
-                            <button onclick="addComment('post-2')" class="text-[10px] font-bold text-indigo-600 uppercase">Post</button>
+                        <div class="flex items-center justify-between pt-3 border-t border-slate-200 dark:border-slate-800">
+                            <a href="https://www.rockstargames.com/VI" target="_blank" class="text-xs font-black uppercase tracking-widest text-indigo-600 dark:text-indigo-400 hover:underline">Official Portal &rarr;</a>
+                            <div class="flex items-center space-x-3">
+                                <button onclick="handleLike('post-2')" class="text-xs font-bold flex items-center gap-1"><span id="like-icon-post-2">❤️</span> <span id="like-count-post-2">0</span></button>
+                            </div>
                         </div>
-                        <div id="comments-list-post-2" class="mt-2"></div>
+                        <div class="mt-3 flex gap-2 w-full">
+                            <input type="text" id="comment-input-post-2" placeholder="Comment..." class="text-xs bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-3 py-1.5 rounded-lg w-full focus:outline-none dark:text-white">
+                            <button onclick="addComment('post-2')" class="px-3 py-1.5 bg-indigo-600 text-white text-[10px] font-bold uppercase rounded-lg">Post</button>
+                        </div>
+                        <div id="comments-list-post-2" class="mt-2 space-y-1"></div>
                     </div>
                 </article>
 
             </div>
 
-            <!-- RIGHT COLUMN: Sidebar / Secondary News (Col span 4) -->
+            <!-- RIGHT COLUMN: Sidebar & Employment / Trending (Col span 4) -->
             <aside class="lg:col-span-4 space-y-10">
                 
-                <!-- Post 3: Employment (Sidebar Focus) -->
-                <article class="post-item group border-b border-slate-200 dark:border-slate-800 pb-8" data-category="Employment" data-post-id="post-3">
-                    <span class="text-xs font-bold tracking-widest text-rose-600 dark:text-rose-400 uppercase mb-2 block flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-rose-600 animate-pulse"></span> Employment
-                    </span>
+                <!-- Post 3: Employment Focus -->
+                <article class="post-item group bg-white dark:bg-slate-900/60 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm" data-category="Employment" data-post-id="post-3">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[11px] font-black tracking-widest text-blue-600 dark:text-blue-400 uppercase bg-blue-50 dark:bg-blue-950/60 px-2.5 py-1 rounded-md border border-blue-100 dark:border-blue-900">Employment & Jobs</span>
+                        <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+                    </div>
                     <h2 class="text-xl font-black text-slate-900 dark:text-white mb-3 leading-tight group-hover:text-indigo-600 transition-colors">
-                        India & Global Job Markets 2026: Tech Hiring Surges
+                        India & Global Job Markets 2026: Tech Hiring & Govt Vacancies Surge
                     </h2>
-                    <div class="w-full aspect-video bg-slate-200 dark:bg-slate-900 mb-4 overflow-hidden media-zoom">
+                    <div class="w-full aspect-video bg-slate-200 dark:bg-slate-900 mb-4 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 media-zoom">
                         <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <p class="text-slate-600 dark:text-slate-400 text-sm font-serif mb-4 leading-relaxed">
-                        With major tech corporations expanding digital infrastructure, job seekers are pivoting toward AI automation skills and remote engineering roles.
+                        With major tech corporations expanding digital infrastructure and public sectors announcing thousands of vacancies, job seekers are pivoting toward AI automation skills.
                     </p>
-                    <a href="https://www.ncs.gov.in/" target="_blank" class="text-xs font-bold uppercase tracking-widest text-slate-900 dark:text-white underline hover:text-indigo-600 transition">Career Portal &rarr;</a>
+                    <a href="https://www.ncs.gov.in/" target="_blank" class="text-xs font-black uppercase tracking-widest text-indigo-600 dark:text-indigo-400 hover:underline block mb-4">Explore National Career Portal &rarr;</a>
+
+                    <!-- Like & Comment -->
+                    <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                        <button onclick="handleLike('post-3')" class="text-xs font-bold flex items-center gap-1.5"><span id="like-icon-post-3">❤️</span> <span id="like-count-post-3">0</span> Likes</button>
+                    </div>
+                    <div class="mt-3 flex gap-2">
+                        <input type="text" id="comment-input-post-3" placeholder="Comment..." class="text-xs bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-3 py-1.5 rounded-lg w-full focus:outline-none dark:text-white">
+                        <button onclick="addComment('post-3')" class="px-3 py-1.5 bg-blue-600 text-white text-[10px] font-bold uppercase rounded-lg">Post</button>
+                    </div>
+                    <div id="comments-list-post-3" class="mt-2 space-y-1"></div>
                 </article>
 
-                <!-- Trending Topics List (Reuters style bullets) -->
-                <div class="pt-2 border-t-4 border-slate-900 dark:border-white">
-                    <h3 class="font-black text-lg text-slate-900 dark:text-white uppercase tracking-wider mb-5">More Top Stories</h3>
-                    <ul class="space-y-4">
-                        <li class="article-border pb-4">
-                            <span class="text-[10px] font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase block mb-1">Technology</span>
-                            <a href="#" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition text-sm leading-tight">Unreal Engine 5.6 brings hyper-realistic AI ray tracing to developers globally.</a>
+                <!-- Trending Worldwide Wire -->
+                <div class="bg-white dark:bg-slate-900/60 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+                    <h3 class="font-black text-base text-slate-900 dark:text-white uppercase tracking-wider flex items-center justify-between">
+                        <span>🔥 Trending Wire</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-rose-500/10 text-rose-500 font-extrabold">24/7 LIVE</span>
+                    </h3>
+                    <ul class="space-y-4 text-xs">
+                        <li class="article-border pb-3">
+                            <span class="text-[10px] font-black tracking-widest text-indigo-600 uppercase block mb-1">Programming</span>
+                            <a href="https://github.com" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition leading-snug">Automated news scrapers & API data pipelines gain massive developer adoption.</a>
                         </li>
-                        <li class="article-border pb-4">
-                            <span class="text-[10px] font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase block mb-1">Markets</span>
-                            <a href="#" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition text-sm leading-tight">Global digital trade pact signed in Geneva, impacting independent creators.</a>
+                        <li class="article-border pb-3">
+                            <span class="text-[10px] font-black tracking-widest text-emerald-600 uppercase block mb-1">World News</span>
+                            <a href="https://www.reuters.com/world/" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition leading-snug">International Digital Trade Summit 2026 concludes key agreements.</a>
                         </li>
-                        <li class="pb-2">
-                            <span class="text-[10px] font-bold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase block mb-1">Gaming Esports</span>
-                            <a href="#" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition text-sm leading-tight">Valorant Mobile beta registration shatters previous industry records.</a>
+                        <li class="pb-1">
+                            <span class="text-[10px] font-black tracking-widest text-violet-600 uppercase block mb-1">Technology</span>
+                            <a href="https://www.unrealengine.com/" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition leading-snug">Unreal Engine 5.6 revolutionizes real-time ray tracing.</a>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Sidebar Ad -->
-                <div class="bg-slate-50 dark:bg-[#111827] p-4 flex justify-center overflow-hidden border border-slate-200 dark:border-slate-800">
+                <div class="bg-white dark:bg-slate-900/65 p-4 rounded-3xl border border-slate-200 dark:border-slate-800 flex justify-center shadow-sm">
                     <script>
                       atOptions = {
                         'key' : 'b7e3407c3c91326c0ad5904646274317',
@@ -242,79 +277,80 @@
             </aside>
         </div>
 
-        <!-- Info Sections (About, Contact, Privacy, Terms) -->
-        <!-- These are designed like clean corporate pages -->
-        <div id="about-section" class="hidden max-w-3xl mx-auto py-10 space-y-6 text-center">
+        <!-- Corporate Info Sections -->
+        <div id="about-section" class="hidden max-w-3xl mx-auto py-14 space-y-6 text-center">
             <h2 class="text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight">About InkSpire</h2>
-            <div class="w-16 h-1 bg-indigo-600 mx-auto"></div>
-            <p class="text-slate-600 dark:text-slate-400 font-serif text-lg leading-relaxed">Welcome to <strong>InkSpire</strong>, conceptualized, developed, and managed by <strong>Prasant Sagar</strong>. Our mission is to bridge the gap between independent developers, gamers, and global readers through high-end digital publishing.</p>
+            <div class="w-16 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
+            <p class="text-slate-600 dark:text-slate-300 font-serif text-lg leading-relaxed">Welcome to <strong>InkSpire</strong>, conceptualized, developed, and managed by <strong>Prasant Sagar</strong>. Our mission is to bridge the gap between independent developers, gamers, and global readers through high-end digital publishing.</p>
         </div>
 
-        <div id="contact-section" class="hidden max-w-3xl mx-auto py-10 space-y-6 text-center">
-            <h2 class="text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Contact</h2>
-            <div class="w-16 h-1 bg-indigo-600 mx-auto"></div>
-            <p class="text-slate-600 dark:text-slate-400 font-serif text-lg">For media inquiries, reach out to creator Prasant Sagar.</p>
-            <div class="inline-block border border-slate-200 dark:border-slate-800 p-6 text-left w-full sm:w-auto">
-                <p class="text-slate-900 dark:text-white font-bold mb-2">Email: <span class="font-normal text-indigo-600">support@inkspire.global</span></p>
-                <p class="text-slate-900 dark:text-white font-bold">Instagram: <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="font-normal text-indigo-600 underline">@inkspire.8s</a></p>
+        <div id="contact-section" class="hidden max-w-3xl mx-auto py-14 space-y-6 text-center">
+            <h2 class="text-4xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Contact Desk</h2>
+            <div class="w-16 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
+            <p class="text-slate-600 dark:text-slate-300 font-serif text-lg">For editorial pitches, media proposals, or technical inquiries, reach out directly to creator Prasant Sagar.</p>
+            <div class="inline-block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-3xl text-left shadow-sm">
+                <p class="text-slate-900 dark:text-white font-bold mb-3">Email: <span class="font-normal text-indigo-600">support@inkspire.global</span></p>
+                <p class="text-slate-900 dark:text-white font-bold">Instagram Handle: <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="font-normal text-indigo-600 underline">@inkspire.8s</a></p>
             </div>
         </div>
 
-        <!-- Privacy & Terms kept clean and minimal -->
-        <div id="privacy-section" class="hidden max-w-3xl mx-auto py-10 space-y-4">
+        <div id="privacy-section" class="hidden max-w-3xl mx-auto py-14 space-y-4">
             <h2 class="text-3xl font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-4">Privacy Policy</h2>
-            <p class="text-slate-600 dark:text-slate-400 font-serif leading-relaxed">At InkSpire, managed by Prasant Sagar, we respect your privacy. This platform utilizes global ad networks and analytics. Data is processed securely following international standards.</p>
+            <p class="text-slate-600 dark:text-slate-300 font-serif leading-relaxed">At InkSpire, managed by Prasant Sagar, we respect your confidentiality. This platform utilizes secure global ad networks and performance analytics adhering to strict standards.</p>
         </div>
 
-        <div id="terms-section" class="hidden max-w-3xl mx-auto py-10 space-y-4">
+        <div id="terms-section" class="hidden max-w-3xl mx-auto py-14 space-y-4">
             <h2 class="text-3xl font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-4">Terms of Service</h2>
-            <p class="text-slate-600 dark:text-slate-400 font-serif leading-relaxed">By accessing InkSpire, you agree to our publishing terms. All code snippets and media embeddings are for educational and journalistic purposes.</p>
+            <p class="text-slate-600 dark:text-slate-300 font-serif leading-relaxed">By accessing InkSpire, you agree to our publishing terms. All code snippets, programming guides, and media embeddings are for educational and journalistic dissemination.</p>
         </div>
 
     </main>
 
-    <!-- Footer (Corporate Style) -->
-    <footer class="bg-slate-900 dark:bg-black text-white py-12 mt-auto border-t-[8px] border-indigo-600">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <!-- Executive Footer -->
+    <footer class="bg-slate-900 dark:bg-black text-white py-14 mt-auto border-t-4 border-indigo-600">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
             <div>
-                <h4 class="text-xl font-black tracking-tighter uppercase mb-4">InkSpire</h4>
-                <p class="text-slate-400 text-sm font-serif">Global Tech & Digital News</p>
+                <h4 class="text-2xl font-black tracking-tighter uppercase mb-3">InkSpire</h4>
+                <p class="text-slate-400 text-xs font-serif leading-relaxed">Global International Digital Publishing & Tech Wire.</p>
             </div>
             <div>
-                <h4 class="text-xs font-bold tracking-widest uppercase mb-4 text-slate-500">Sections</h4>
-                <ul class="space-y-2 text-sm text-slate-300">
-                    <li><button onclick="showSection('home')" class="hover:text-white">Home</button></li>
+                <h4 class="text-xs font-extrabold tracking-widest uppercase mb-4 text-indigo-400">Editorial Desk</h4>
+                <ul class="space-y-2 text-sm text-slate-300 font-medium">
+                    <li><button onclick="showSection('home')" class="hover:text-white">Front Page</button></li>
                     <li><button onclick="filterCategory('Programming')" class="hover:text-white">Programming</button></li>
                     <li><button onclick="filterCategory('Gaming')" class="hover:text-white">Gaming</button></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-xs font-bold tracking-widest uppercase mb-4 text-slate-500">Corporate</h4>
-                <ul class="space-y-2 text-sm text-slate-300">
-                    <li><button onclick="showSection('about')" class="hover:text-white">About Us</button></li>
-                    <li><button onclick="showSection('contact')" class="hover:text-white">Contact</button></li>
-                    <li><a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="hover:text-white">Instagram</a></li>
+                <h4 class="text-xs font-extrabold tracking-widest uppercase mb-4 text-indigo-400">Corporate</h4>
+                <ul class="space-y-2 text-sm text-slate-300 font-medium">
+                    <li><button onclick="showSection('about')" class="hover:text-white">About Publisher</button></li>
+                    <li><button onclick="showSection('contact')" class="hover:text-white">Contact Desk</button></li>
+                    <li><a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="hover:text-white">Instagram Profile</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-xs font-bold tracking-widest uppercase mb-4 text-slate-500">Legal</h4>
-                <ul class="space-y-2 text-sm text-slate-300">
+                <h4 class="text-xs font-extrabold tracking-widest uppercase mb-4 text-indigo-400">Governance</h4>
+                <ul class="space-y-2 text-sm text-slate-300 font-medium">
                     <li><button onclick="showSection('privacy')" class="hover:text-white">Privacy Policy</button></li>
-                    <li><button onclick="showSection('terms')" class="hover:text-white">Terms of Use</button></li>
+                    <li><button onclick="showSection('terms')" class="hover:text-white">Terms of Service</button></li>
                 </ul>
             </div>
         </div>
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-8 mt-12 pt-6 border-t border-slate-800 text-xs text-slate-500 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center">
-            <p>&copy; 2026 InkSpire. All rights reserved.</p>
-            <p class="mt-2 sm:mt-0">Designed & Managed by <strong class="text-white">Prasant Sagar</strong>.</p>
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-12 mt-12 pt-6 border-t border-slate-800 text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center">
+            <p>&copy; 2026 InkSpire. All international rights reserved.</p>
+            <p class="mt-2 sm:mt-0 font-semibold text-slate-400">Conceptualized, Developed & Managed by <strong class="text-white">Prasant Sagar</strong>.</p>
         </div>
     </footer>
 
     <script>
-        // Init theme text
         document.addEventListener('DOMContentLoaded', () => {
             const isDark = document.documentElement.classList.contains('dark');
             document.getElementById('dark-mode-btn-top').textContent = isDark ? 'Theme: Dark' : 'Theme: Light';
+            ['post-1', 'post-2', 'post-3'].forEach(postId => {
+                updateLikeUI(postId);
+                renderComments(postId);
+            });
         });
 
         function showSection(sectionId) {
@@ -355,13 +391,6 @@
         }
 
         // --- Like and Comments Logic ---
-        document.addEventListener("DOMContentLoaded", () => {
-            ['post-1', 'post-2', 'post-3'].forEach(postId => {
-                updateLikeUI(postId);
-                renderComments(postId);
-            });
-        });
-
         function handleLike(postId) {
             let likes = parseInt(localStorage.getItem(postId + '_likes')) || 0;
             let liked = localStorage.getItem(postId + '_liked') === 'true';
@@ -389,6 +418,7 @@
 
         function addComment(postId) {
             const input = document.getElementById('comment-input-' + postId);
+            if(!input) return;
             const text = input.value.trim();
             if(!text) return;
 
@@ -406,14 +436,14 @@
             let comments = JSON.parse(localStorage.getItem(postId + '_comments')) || [];
             
             if(comments.length === 0) {
-                list.innerHTML = '<p class="text-[10px] text-slate-400 italic">No comments yet.</p>';
+                list.innerHTML = '<p class="text-[10px] text-slate-400 italic">No comments yet. Be the first to join the professional discussion.</p>';
                 return;
             }
 
             list.innerHTML = comments.map(c => `
-                <div class="py-1.5 border-b border-slate-100 dark:border-slate-800 text-xs flex justify-between items-center">
-                    <span class="text-slate-800 dark:text-slate-200">${escapeHtml(c.text)}</span>
-                    <span class="text-[9px] text-slate-400 uppercase">${c.date}</span>
+                <div class="py-2 border-b border-slate-200 dark:border-slate-800 text-xs flex justify-between items-center">
+                    <span class="text-slate-800 dark:text-slate-200 font-medium">${escapeHtml(c.text)}</span>
+                    <span class="text-[9px] text-indigo-500 font-bold uppercase tracking-widest">${c.date}</span>
                 </div>
             `).join('');
         }
