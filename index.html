@@ -1,192 +1,80 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>InkSpire — Trending Webwriting, Creators & Visual Hub</title>
-    <!-- Tailwind CSS via CDN -->
+    <title>InkSpire Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        canvas: { light: '#FBFBFA', dark: '#121212' },
-                        charcoal: { light: '#1A1A1A', dark: '#F3F4F6' },
-                        muted: { light: '#666666', dark: '#9CA3AF' },
-                        subtle: { light: '#EAEAEA', dark: '#27272A' },
-                        accent: '#2563EB',
-                    },
-                    fontFamily: {
-                        serif: ['Merriweather', 'Georgia', 'serif'],
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                    }
-                }
-            }
-        }
+        tailwind.config = { darkMode: 'class' }
     </script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, .font-serif-custom { font-family: 'Merriweather', Georgia, serif; }
+        h1, h2, h3 { font-family: 'Merriweather', serif; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased selection:bg-accent selection:text-white bg-[#FBFBFA] dark:bg-[#121212] text-[#1A1A1A] dark:text-[#F3F4F6] transition-colors duration-300">
+<body class="bg-[#121212] text-[#F3F4F6] min-h-screen flex flex-col antialiased">
 
-    <!-- READING PROGRESS BAR -->
-    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-accent z-50 w-0 transition-all duration-100"></div>
-
-    <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-40 bg-[#FBFBFA]/90 dark:bg-[#121212]/90 backdrop-blur-md border-b border-[#EAEAEA] dark:border-[#27272A]">
-        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <button onclick="toggleMobileMenu()" aria-label="Open Menu" class="p-2 rounded-lg border border-[#EAEAEA] dark:border-[#27272A] text-[#1A1A1A] dark:text-white hover:border-accent transition-colors flex flex-col justify-center items-center gap-1 w-10 h-10">
-                    <span class="w-1.5 h-1.5 bg-current rounded-full"></span>
-                    <span class="w-1.5 h-1.5 bg-current rounded-full"></span>
-                    <span class="w-1.5 h-1.5 bg-current rounded-full"></span>
-                </button>
-                <a href="#home" class="flex items-center gap-3 group">
-                    <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold text-sm shadow-sm">IS</div>
-                    <span class="font-serif-custom font-bold text-lg tracking-tight">InkSpire Hub</span>
-                </a>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-[#666666] dark:text-[#9CA3AF]">
-                    <a href="#home" class="hover:text-[#1A1A1A] dark:hover:text-white transition-colors">Home</a>
-                    <a href="#creators" class="hover:text-[#1A1A1A] dark:hover:text-white transition-colors">Top Creators</a>
-                    <a href="#visuals" class="hover:text-[#1A1A1A] dark:hover:text-white transition-colors">Visual Showcase</a>
-                </nav>
-                <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="p-2 rounded-full border border-[#EAEAEA] dark:border-[#27272A] text-[#666666] dark:text-[#9CA3AF] hover:text-[#1A1A1A] dark:hover:text-white transition-colors">
-                    <svg id="sun-icon" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0 z"></path></svg>
-                    <svg id="moon-icon" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                </button>
-            </div>
+    <!-- HEADER -->
+    <header class="sticky top-0 z-40 bg-[#121212]/90 backdrop-blur-md border-b border-[#27272A]">
+        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="font-bold text-lg tracking-tight">InkSpire Hub</span>
+            <button onclick="vibratePhone(40); toggleMobileMenu();" class="p-2 border border-[#27272A] rounded-lg text-sm">Menu</button>
         </div>
     </header>
 
-    <!-- FULLSCREEN MENU -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#121212] text-white flex flex-col px-6 py-6 transform translate-x-full transition-transform duration-300 overflow-y-auto">
-        <div class="flex items-center justify-between pb-6 border-b border-[#27272A]">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-bold text-sm">IS</div>
-                <span class="font-serif-custom font-bold text-xl tracking-tight">InkSpire Menu</span>
-            </div>
-            <button onclick="toggleMobileMenu()" aria-label="Close Menu" class="p-2 text-white hover:opacity-80">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#121212] p-6 flex flex-col space-y-6 transform translate-x-full transition-transform duration-300">
+        <div class="flex justify-between items-center border-b border-[#27272A] pb-4">
+            <span class="font-bold text-xl">Menu</span>
+            <button onclick="vibratePhone(30); toggleMobileMenu();" class="text-xl">✕</button>
         </div>
-        <div class="flex flex-col space-y-6 pt-8 text-lg font-medium">
-            <a href="#home" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors py-2 border-b border-[#27272A]/50"><span>🏠 Home</span><span>→</span></a>
-            <a href="#creators" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors py-2 border-b border-[#27272A]/50"><span>👑 Top Creators Showcase</span><span>→</span></a>
-            <a href="#visuals" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-accent transition-colors py-2 border-b border-[#27272A]/50"><span>✨ Visual Showcase</span><span>→</span></a>
-        </div>
+        <a href="#home" onclick="vibratePhone(25); toggleMobileMenu();" class="text-lg py-2 border-b border-[#27272A]/50">Home</a>
+        <a href="#creators" onclick="vibratePhone(25); toggleMobileMenu();" class="text-lg py-2 border-b border-[#27272A]/50">Top Creators</a>
     </div>
 
     <!-- MAIN CONTENT -->
-    <main class="flex-grow max-w-4xl mx-auto px-6 py-12 w-full space-y-16">
-
-        <!-- HERO SECTION -->
-        <section id="home" class="space-y-6 pt-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold tracking-wide">
-                <span>🚀 Trending Creator Hub & Digital Publishing</span>
-            </div>
-            <h1 class="text-3xl sm:text-5xl font-bold tracking-tight leading-tight font-serif-custom text-[#1A1A1A] dark:text-white">
-                Unlocking Creator Secrets: From Sourav Joshi to Global Giant MrBeast.
-            </h1>
-            <p class="text-[#666666] dark:text-[#9CA3AF] text-base sm:text-xl leading-relaxed font-light">
-                Discover what's driving the world's biggest YouTubers, trending tech news, expert webwriting strategies, and creator ecosystems.
-            </p>
-            
-            <div class="relative w-full h-64 sm:h-80 overflow-hidden rounded-2xl border border-[#EAEAEA] dark:border-[#27272A] shadow-md">
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" alt="Hero Banner" class="w-full h-full object-cover">
-            </div>
+    <main class="flex-grow max-w-3xl mx-auto px-6 py-10 space-y-12 w-full">
+        <section id="home" class="space-y-4">
+            <h1 class="text-3xl font-bold">Unlocking Creator Secrets</h1>
+            <p class="text-[#9CA3AF] text-sm">Discover what's driving the world's biggest YouTubers and digital creators.</p>
+            <button onclick="vibratePhone(50)" class="px-5 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition">
+                Tap to Vibrate
+            </button>
         </section>
 
-        <!-- TOP CREATORS SECTION -->
-        <section id="creators" class="border-t border-[#EAEAEA] dark:border-[#27272A] pt-16 space-y-8">
-            <div class="space-y-2">
-                <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Global & National Icons</h2>
-                <h3 class="text-2xl font-bold font-serif-custom text-[#1A1A1A] dark:text-white">Top YouTubers Spotlight</h3>
+        <section id="creators" class="border-t border-[#27272A] pt-10 space-y-6">
+            <h2 class="text-xl font-bold">Top YouTubers Spotlight</h2>
+            <div class="border border-[#27272A] rounded-xl p-5 bg-[#1A1A1A] space-y-2">
+                <span class="text-xs bg-blue-600 px-2 py-0.5 rounded text-white inline-block">India's #1</span>
+                <h3 class="text-lg font-bold">Sourav Joshi Vlogs</h3>
+                <p class="text-xs text-[#9CA3AF]">Setting benchmarks in daily vlogging across India.</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div class="border border-[#EAEAEA] dark:border-[#27272A] rounded-xl overflow-hidden bg-white dark:bg-[#1A1A1A] p-6 space-y-3 shadow-sm">
-                    <span class="inline-block px-2.5 py-1 rounded bg-accent text-white text-xs font-semibold">India's #1 Vlogger</span>
-                    <h4 class="font-bold text-xl font-serif-custom text-[#1A1A1A] dark:text-white">Sourav Joshi Vlogs</h4>
-                    <p class="text-xs text-[#666666] dark:text-[#9CA3AF] leading-relaxed">
-                        Setting benchmarks in daily vlogging across India, building deep audience connection and community engagement.
-                    </p>
-                </div>
-                <div class="border border-[#EAEAEA] dark:border-[#27272A] rounded-xl overflow-hidden bg-white dark:bg-[#1A1A1A] p-6 space-y-3 shadow-sm">
-                    <span class="inline-block px-2.5 py-1 rounded bg-accent text-white text-xs font-semibold">Global #1 Creator</span>
-                    <h4 class="font-bold text-xl font-serif-custom text-[#1A1A1A] dark:text-white">MrBeast (Jimmy Donaldson)</h4>
-                    <p class="text-xs text-[#666666] dark:text-[#9CA3AF] leading-relaxed">
-                        Redefining global video production standards, high-end scaling, and massive audience engagement strategies.
-                    </p>
-                </div>
+            <div class="border border-[#27272A] rounded-xl p-5 bg-[#1A1A1A] space-y-2">
+                <span class="text-xs bg-blue-600 px-2 py-0.5 rounded text-white inline-block">Global #1</span>
+                <h3 class="text-lg font-bold">MrBeast</h3>
+                <p class="text-xs text-[#9CA3AF]">Redefining global video production standards.</p>
             </div>
         </section>
-
-        <!-- VISUAL SHOWCASE SECTION -->
-        <section id="visuals" class="border-t border-[#EAEAEA] dark:border-[#27272A] pt-16 space-y-8">
-            <div class="space-y-2">
-                <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Gallery</h2>
-                <h3 class="text-2xl font-bold font-serif-custom text-[#1A1A1A] dark:text-white">Clean Visual Showcase</h3>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div class="overflow-hidden rounded-xl border border-[#EAEAEA] dark:border-[#27272A] h-48">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop" alt="Coding Workspace" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="overflow-hidden rounded-xl border border-[#EAEAEA] dark:border-[#27272A] h-48">
-                    <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=600&auto=format&fit=crop" alt="Digital Abstract" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-[#EAEAEA] dark:border-[#27272A] mt-20 py-8 bg-[#FBFBFA] dark:bg-[#121212]">
-        <div class="max-w-4xl mx-auto px-6 text-center text-xs text-[#666666] dark:text-[#9CA3AF]">
-            <p>&copy; 2026 InkSpire Hub. All rights reserved.</p>
-        </div>
+    <footer class="border-t border-[#27272A] py-6 text-center text-xs text-[#9CA3AF]">
+        <p>&copy; 2026 InkSpire Hub</p>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- SCRIPT FOR VIBRATION & MENU -->
     <script>
-        window.addEventListener('scroll', () => {
-            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progress-bar').style.width = scrolled + '%';
-        });
-
-        function toggleDarkMode() {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
+        function vibratePhone(ms) {
+            if ("vibrate" in navigator) {
+                navigator.vibrate(ms);
             }
         }
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('translate-x-full');
-        }
-
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
         }
     </script>
 </body>
