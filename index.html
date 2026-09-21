@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkSpire | Substack Style Publication</title>
+    <title>InkSpire | Independent Publication</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
                         serif: ['Merriweather', 'Georgia', 'serif'],
                     },
                     colors: {
-                        substack: '#FF6719', // Substack Signature Orange Accent
+                        substack: '#FF6719',
                     }
                 }
             }
@@ -25,7 +25,6 @@
         body { background-color: #fbfbf9; color: #111111; }
         .substack-border { border-bottom: 1px solid #e6e6e2; }
         .substack-card:hover { transform: translateY(-2px); transition: all 0.2s ease; }
-        /* Google Translate Styling Adjustments */
         .goog-te-banner-frame.skiptranslate { display: none !important; }
         body { top: 0px !important; }
         #google_translate_element select { background-color: #ffffff; color: #111111; border: 1px solid #e6e6e2; padding: 3px 8px; border-radius: 4px; font-size: 11px; outline: none; cursor: pointer; }
@@ -42,17 +41,13 @@
 </head>
 <body class="min-h-screen flex flex-col font-sans antialiased">
 
-    <!-- Top Publication Header (Substack Style) -->
+    <!-- Header -->
     <header class="w-full bg-white substack-border sticky top-0 z-50">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            
-            <!-- Brand / Publication Name -->
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="showSection('home')">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <div class="w-7 h-7 bg-substack text-white font-bold flex items-center justify-center rounded text-sm">IS</div>
                 <span class="text-lg font-bold tracking-tight text-slate-900 font-serif">InkSpire</span>
             </div>
-
-            <!-- Header Right Actions: Translate & Subscribe Button -->
             <div class="flex items-center space-x-3">
                 <div id="google_translate_element"></div>
                 <button onclick="scrollToSubscribe()" class="bg-substack hover:bg-orange-600 text-white text-xs font-semibold px-4 py-2 rounded-full transition shadow-xs">
@@ -62,20 +57,19 @@
         </div>
     </header>
 
-    <!-- Main Substack Container -->
+    <!-- Main Container -->
     <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 flex-grow w-full space-y-12">
         
-        <!-- Hero Publication Info -->
+        <!-- Hero Section -->
         <section class="text-center space-y-4 py-6 substack-border">
             <span class="text-[11px] font-bold tracking-widest text-substack uppercase bg-orange-50 px-2.5 py-1 rounded-full border border-orange-100">Independent Publication</span>
             <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif leading-tight">
                 Digital Intelligence, Essays & Global Tech Workflows
             </h1>
             <p class="text-slate-600 font-serif text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-                A professional space by Prasant Sagar exploring autonomous AI workflows, digital publishing, and modern web architecture.
+                Exploring autonomous AI workflows, digital publishing, and modern web architecture.
             </p>
             
-            <!-- Quick Substack Subscribe Form -->
             <div class="max-w-md mx-auto pt-4 flex gap-2">
                 <input type="email" id="hero-email" placeholder="Type your email..." class="flex-grow bg-white border border-slate-300 px-4 py-2.5 text-xs rounded-lg focus:outline-none focus:border-substack">
                 <button onclick="handleSubscribe()" class="bg-slate-900 hover:bg-black text-white text-xs font-semibold px-5 py-2.5 rounded-lg transition">
@@ -84,75 +78,36 @@
             </div>
         </section>
 
-        <!-- Articles Feed (Substack Post List Style) -->
-        <div id="home-section" class="space-y-10">
-            
-            <!-- Post Item 1 -->
-            <article class="substack-card bg-white p-6 rounded-xl border border-slate-200/80 shadow-2xs space-y-4 cursor-pointer">
+        <!-- Articles Feed -->
+        <div class="space-y-10">
+            <article class="substack-card bg-white p-6 rounded-xl border border-slate-200/80 shadow-2xs space-y-4">
                 <div class="flex items-center justify-between text-xs text-slate-500">
                     <span class="font-semibold text-substack uppercase tracking-wider text-[10px]">AI & Tech Trends</span>
                     <span>Sep 21, 2026 • 3 min read</span>
                 </div>
                 
-                <h2 class="text-xl sm:text-2xl font-bold font-serif text-slate-900 leading-snug hover:text-substack transition-colors">
+                <h2 class="text-xl sm:text-2xl font-bold font-serif text-slate-900 leading-snug">
                     The Rise of Autonomous AI Workflows: How Developers are Scaling Digital Agencies in 2026
                 </h2>
                 
                 <p class="text-slate-600 font-serif text-sm leading-relaxed">
-                    Modern tech industries and automation have completely revolutionized digital growth agencies. Through custom API integrations and scripts, developers are scaling operations 24/7 globally.
+                    Modern tech industries and automation have completely revolutionized digital growth agencies through custom API integrations and scripts.
                 </p>
 
-                <!-- Embedded Video/Media Component -->
                 <div class="w-full aspect-video bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
                     <iframe src="https://www.youtube.com/embed/kqtD5dpn9C8" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
                 </div>
 
                 <div class="flex items-center justify-between pt-4 substack-border text-xs text-slate-500">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-6 h-6 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-[10px]">PS</div>
-                        <span class="font-semibold text-slate-900">Prasant Sagar</span>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <button onclick="handleLike('post-1')" class="hover:text-substack flex items-center gap-1 font-medium">
-                            ❤️ <span id="like-count-post-1">12</span>
-                        </button>
-                        <span>💬 4 comments</span>
-                    </div>
+                    <span class="font-semibold text-slate-900">Published by Editorial Desk</span>
+                    <button onclick="handleLike('post-1')" class="hover:text-substack flex items-center gap-1 font-medium">
+                        ❤️ <span id="like-count-post-1">12</span>
+                    </button>
                 </div>
             </article>
-
-            <!-- Post Item 2 -->
-            <article class="substack-card bg-white p-6 rounded-xl border border-slate-200/80 shadow-2xs space-y-4 cursor-pointer">
-                <div class="flex items-center justify-between text-xs text-slate-500">
-                    <span class="font-semibold text-substack uppercase tracking-wider text-[10px]">E-Writing & Publishing</span>
-                    <span>Sep 18, 2026 • 5 min read</span>
-                </div>
-                
-                <h2 class="text-xl sm:text-2xl font-bold font-serif text-slate-900 leading-snug hover:text-substack transition-colors">
-                    Crafting Digital Books and Graphic Novels for Global Distribution
-                </h2>
-                
-                <p class="text-slate-600 font-serif text-sm leading-relaxed">
-                    An inside look at structuring educational e-books and manga panel layouts for platforms like Amazon KDP and digital storefronts.
-                </p>
-
-                <div class="flex items-center justify-between pt-4 substack-border text-xs text-slate-500">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-6 h-6 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-[10px]">PS</div>
-                        <span class="font-semibold text-slate-900">Prasant Sagar</span>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <button onclick="handleLike('post-2')" class="hover:text-substack flex items-center gap-1 font-medium">
-                            ❤️ <span id="like-count-post-2">8</span>
-                        </button>
-                        <span>💬 2 comments</span>
-                    </div>
-                </div>
-            </article>
-
         </div>
 
-        <!-- Bottom Subscribe Box (Substack Signature Footer Box) -->
+        <!-- Subscribe Box Footer -->
         <section id="subscribe-box" class="bg-orange-50/60 border border-orange-100 rounded-2xl p-8 text-center space-y-4 my-12">
             <h3 class="text-xl font-bold font-serif text-slate-900">Subscribe to InkSpire</h3>
             <p class="text-slate-600 text-xs sm:text-sm font-serif max-w-md mx-auto">
@@ -168,10 +123,10 @@
 
     </main>
 
-    <!-- Substack Style Footer -->
+    <!-- Footer -->
     <footer class="w-full bg-white substack-border py-8 text-xs text-slate-500 mt-auto">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>&copy; 2026 InkSpire. Built by <strong class="text-slate-900">Prasant Sagar</strong>. Powered by Substack-inspired design.</p>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <p>&copy; 2026 InkSpire. All rights reserved.</p>
             <div class="flex space-x-4 font-medium">
                 <a href="https://x.com/kavinmusic13" target="_blank" class="hover:text-slate-900">Twitter</a>
                 <a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-slate-900">Instagram</a>
@@ -179,7 +134,7 @@
         </div>
     </footer>
 
-    <!-- Google Translate Script Initialization for Auto-Translate -->
+    <!-- Google Translate Script -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -188,7 +143,6 @@
                 autoDisplay: false
             }, 'google_translate_element');
 
-            // Auto-detect browser/region language and trigger translation if non-Hindi region
             setTimeout(function() {
                 var userLang = navigator.language || navigator.userLanguage; 
                 if (userLang && !userLang.startsWith('hi')) {
@@ -203,21 +157,18 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Interactive Scripts -->
+    <!-- Scripts -->
     <script>
         function scrollToSubscribe() {
             document.getElementById('subscribe-box').scrollIntoView({ behavior: 'smooth' });
         }
-
         function handleSubscribe() {
-            alert('Thank you for subscribing to InkSpire!');
+            alert('Thank you for subscribing!');
         }
-
         function handleLike(postId) {
             const countEl = document.getElementById(`like-count-${postId}`);
             if(countEl) {
-                let current = parseInt(countEl.textContent);
-                countEl.textContent = current + 1;
+                countEl.textContent = parseInt(countEl.textContent) + 1;
             }
         }
     </script>
