@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkSpire — Global Insights, Climate Trends & Independent Music</title>
+    <title>InkSpire — Global Insights, Webwriting, Climate Trends & Independent Music</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -56,9 +56,9 @@
             <div class="flex items-center gap-6">
                 <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-[#666666] dark:text-[#9CA3AF]">
                     <a href="#home" class="hover:text-[#1A1A1A] dark:hover:text-white transition-colors">Home</a>
-                    <a href="#articles" class="hover:text-[#1A1A1A] dark:hover:text-white transition-colors">Trending</a>
-                    <a href="#climate" class="hover:text-[#1A1A1A] dark:hover:text-white transition-colors">Climate & Tech</a>
-                    <a href="#article-view-3" class="hover:text-[#1A1A1A] dark:hover:text-white transition-colors">Music & AI</a>
+                    <a href="#articles" class="hover:text-[#1A1A1A] dark:hover:text-white transition-colors">Trending (5)</a>
+                    <a href="#climate" class="hover:text-[#1A1A1A] dark:hover:text-white transition-colors">Climate</a>
+                    <a href="#article-view-webwriting" class="hover:text-[#1A1A1A] dark:hover:text-white transition-colors">Webwriting</a>
                 </nav>
 
                 <!-- Dark Mode Toggle Button -->
@@ -91,25 +91,56 @@
                 <span>⚡ Featured Publication</span>
             </div>
             <h1 class="text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
-                Decoding the Intersection of Climate Tech, AI Soundscapes, and Digital Economies.
+                Decoding Webwriting, Climate Tech, AI Soundscapes, and Digital Economies.
             </h1>
             <p class="text-[#666666] dark:text-[#9CA3AF] text-base sm:text-xl leading-relaxed font-light">
-                A minimalist digital publication exploring environmental shifts, independent music curation, and modern intelligent automation.
+                A minimalist digital publication exploring modern webwriting, environmental shifts, independent music curation, and intelligent automation.
             </p>
         </section>
 
         <!-- GRID LAYOUT -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
             
-            <!-- ARTICLE FEED -->
+            <!-- ARTICLE FEED (5 ARTICLES) -->
             <section id="articles" class="lg:col-span-2 space-y-16">
                 <div class="border-b border-[#EAEAEA] dark:border-[#27272A] pb-4 flex items-center justify-between">
-                    <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Trending Stories (September 2026)</h2>
+                    <h2 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Trending Stories — 5 Articles</h2>
                     <span class="text-xs text-[#666666] dark:text-[#9CA3AF]">Curated by Prashant Sagar</span>
                 </div>
 
                 <div class="space-y-16">
-                    <!-- ARTICLE 1: CLIMATE & TECH -->
+                    
+                    <!-- ARTICLE 1: WEBWRITING & DIGITAL CONTENT (NEW) -->
+                    <article id="webwriting-feed" class="group space-y-4">
+                        <div class="flex items-center gap-3 text-xs text-[#666666] dark:text-[#9CA3AF]">
+                            <time datetime="2026-09-21">September 21, 2026</time>
+                            <span>•</span>
+                            <span class="text-accent font-medium">Webwriting & Content</span>
+                            <span>•</span>
+                            <span>4 min read</span>
+                        </div>
+                        
+                        <h2 class="text-2xl font-bold group-hover:text-accent transition-colors">
+                            <a href="#article-view-webwriting">The Art of Modern Webwriting: Capturing Attention in an AI-Driven Era</a>
+                        </h2>
+
+                        <p class="text-[#666666] dark:text-[#9CA3AF] text-base leading-relaxed font-light">
+                            Discover how digital content creators and copywriters are combining psychological triggers, SEO structuring, and concise storytelling to retain reader engagement online.
+                        </p>
+
+                        <div class="rounded-lg overflow-hidden border border-[#EAEAEA] dark:border-[#27272A] bg-[#EAEAEA]/50 dark:bg-[#27272A]/50 aspect-video">
+                            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop" alt="Webwriting" class="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-300">
+                        </div>
+
+                        <div>
+                            <a href="#article-view-webwriting" class="inline-flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors">
+                                Read full feature 
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ARTICLE 2: CLIMATE & TECH -->
                     <article id="climate" class="group space-y-4">
                         <div class="flex items-center gap-3 text-xs text-[#666666] dark:text-[#9CA3AF]">
                             <time datetime="2026-09-21">September 21, 2026</time>
@@ -139,7 +170,7 @@
                         </div>
                     </article>
 
-                    <!-- ARTICLE 2: TECH & SEMICONDUCTOR -->
+                    <!-- ARTICLE 3: TECH & SEMICONDUCTOR -->
                     <article class="group space-y-4">
                         <div class="flex items-center gap-3 text-xs text-[#666666] dark:text-[#9CA3AF]">
                             <time datetime="2026-09-21">September 21, 2026</time>
@@ -169,7 +200,7 @@
                         </div>
                     </article>
 
-                    <!-- ARTICLE 3: MUSIC & AI (#article-view-3) -->
+                    <!-- ARTICLE 4: MUSIC & AI -->
                     <article class="group space-y-4">
                         <div class="flex items-center gap-3 text-xs text-[#666666] dark:text-[#9CA3AF]">
                             <time datetime="2026-09-21">September 21, 2026</time>
@@ -198,6 +229,37 @@
                             </a>
                         </div>
                     </article>
+
+                    <!-- ARTICLE 5: DIGITAL AGENCIES & GROWTH -->
+                    <article class="group space-y-4">
+                        <div class="flex items-center gap-3 text-xs text-[#666666] dark:text-[#9CA3AF]">
+                            <time datetime="2026-09-21">September 21, 2026</time>
+                            <span>•</span>
+                            <span class="text-accent font-medium">Digital Agencies</span>
+                            <span>•</span>
+                            <span>3 min read</span>
+                        </div>
+                        
+                        <h2 class="text-2xl font-bold group-hover:text-accent transition-colors">
+                            <a href="#article-view-agencies">Scaling Digital Growth Agencies in the Modern Ecosystem</a>
+                        </h2>
+
+                        <p class="text-[#666666] dark:text-[#9CA3AF] text-base leading-relaxed font-light">
+                            A deep dive into how agile storefronts, high-converting landing pages, and automated brand workflows empower modern digital growth startups to scale faster.
+                        </p>
+
+                        <div class="rounded-lg overflow-hidden border border-[#EAEAEA] dark:border-[#27272A] bg-[#EAEAEA]/50 dark:bg-[#27272A]/50 aspect-video">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Digital Growth Agencies" class="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-300">
+                        </div>
+
+                        <div>
+                            <a href="#article-view-agencies" class="inline-flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors">
+                                Read full feature 
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </article>
+
                 </div>
             </section>
 
@@ -207,11 +269,48 @@
                 <div class="border border-[#EAEAEA] dark:border-[#27272A] rounded-xl p-5 space-y-3 bg-white dark:bg-[#1A1A1A]">
                     <h3 class="font-serif-custom font-bold text-sm">About InkSpire</h3>
                     <p class="text-xs text-[#666666] dark:text-[#9CA3AF] leading-relaxed font-light">
-                        InkSpire is an independent digital publication curating cutting-edge stories on technology, climate solutions, and modern media. Created by <strong>Prashant Sagar</strong>.
+                        InkSpire is an independent digital publication curating cutting-edge stories on webwriting, technology, climate solutions, and modern media. Created by <strong>Prashant Sagar</strong>.
                     </p>
                 </div>
             </aside>
         </div>
+
+        <!-- FULL ARTICLE VIEW: WEBWRITING (NEW) -->
+        <section id="article-view-webwriting" class="border-t border-[#EAEAEA] dark:border-[#27272A] pt-16 space-y-8">
+            <div class="space-y-4">
+                <a href="#home" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[#666666] dark:text-[#9CA3AF] hover:text-accent transition-colors">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path></svg>
+                    Back to Feed
+                </a>
+                <h1 class="text-3xl sm:text-4xl font-bold tracking-tight font-serif-custom">
+                    The Art of Modern Webwriting: Capturing Attention in an AI-Driven Era
+                </h1>
+                <div class="flex items-center gap-3 text-xs text-[#666666] dark:text-[#9CA3AF] pb-4 border-b border-[#EAEAEA] dark:border-[#27272A]">
+                    <time datetime="2026-09-21">September 21, 2026</time>
+                    <span>•</span>
+                    <span>Written by Prashant Sagar</span>
+                    <span>•</span>
+                    <span>4 min read</span>
+                </div>
+            </div>
+
+            <div class="prose max-w-none space-y-6 text-lg leading-relaxed font-light font-serif opacity-90">
+                <p>
+                    Webwriting is no longer just about stringing keywords together for search engine optimization. In today's hyper-connected ecosystem, digital content must resonate instantly with human psychology. Readers scan content in F-shaped patterns, meaning every heading, sub-headline, and opening sentence must carry immediate value.
+                </p>
+                <p>
+                    By blending concise storytelling, clean readability frameworks, and strategic calls to action, modern web writers can transform passive scrollers into deeply engaged community members. Whether writing for mobile-first landing pages or comprehensive digital publications, clarity and rhythm remain the ultimate competitive edges.
+                </p>
+            </div>
+
+            <!-- WORKING YOUTUBE VIDEO EMBED -->
+            <div class="space-y-3 pt-6">
+                <h3 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Featured Content Strategy Video</h3>
+                <div class="relative w-full overflow-hidden rounded-xl border border-[#EAEAEA] dark:border-[#27272A] aspect-video bg-black">
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" title="Webwriting Insights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
 
         <!-- FULL ARTICLE VIEW: CLIMATE TECH -->
         <section id="article-view-climate" class="border-t border-[#EAEAEA] dark:border-[#27272A] pt-16 space-y-8">
@@ -236,17 +335,6 @@
                 <p>
                     The convergence of ecological urgency and digital innovation has birthed a new era of climate engineering. Traditional energy grids, long plagued by inefficiency and fossil-fuel reliance, are undergoing a radical transformation driven by artificial intelligence and decentralized power systems.
                 </p>
-                <p>
-                    Machine learning algorithms now predict solar and wind output with incredible precision, neutralizing the historic volatility of renewable sources. As green architecture evolves, smart cities are emerging as living proof that sustainable scale is achievable without compromising economic velocity.
-                </p>
-            </div>
-
-            <!-- WORKING YOUTUBE VIDEO EMBED -->
-            <div class="space-y-3 pt-6">
-                <h3 class="text-xs uppercase tracking-widest text-[#666666] dark:text-[#9CA3AF] font-semibold">Featured Video Insight</h3>
-                <div class="relative w-full overflow-hidden rounded-xl border border-[#EAEAEA] dark:border-[#27272A] aspect-video bg-black">
-                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" title="Climate Tech Insights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
             </div>
         </section>
 
@@ -273,13 +361,10 @@
                 <p>
                     Analyzing the rapid expansion of semiconductor ecosystems reveals a profound shift in industrial policy. As nations race to secure supply chains, fabrication plants and specialized R&D centers are redefining regional technological landscapes.
                 </p>
-                <p>
-                    With targeted incentive structures and massive private sector participation, India is steadily positioning itself as a cornerstone for advanced hardware production.
-                </p>
             </div>
         </section>
 
-        <!-- FULL ARTICLE VIEW 3: MUSIC & AI (#article-view-3) -->
+        <!-- FULL ARTICLE VIEW 3: MUSIC & AI -->
         <section id="article-view-3" class="border-t border-[#EAEAEA] dark:border-[#27272A] pt-16 space-y-8">
             <div class="space-y-4">
                 <a href="#home" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[#666666] dark:text-[#9CA3AF] hover:text-accent transition-colors">
@@ -302,9 +387,6 @@
                 <p>
                     Independent music production has entered a golden era of technological democratization. By harnessing advanced neural audio models and prompt-based sound design tools, creators are building rich ambient and pop compositions in fraction of traditional timelines.
                 </p>
-                <p>
-                    Platforms like YouTube, streaming services, and global aggregators allow artists to distribute independent soundscapes directly to international audiences, bypassing traditional label friction entirely.
-                </p>
             </div>
 
             <!-- WORKING YOUTUBE VIDEO EMBED FOR ARTICLE 3 -->
@@ -313,6 +395,32 @@
                 <div class="relative w-full overflow-hidden rounded-xl border border-[#EAEAEA] dark:border-[#27272A] aspect-video bg-black">
                     <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube-nocookie.com/embed/jfKfPfyJRdk" title="Independent Music and Soundscapes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
+            </div>
+        </section>
+
+        <!-- FULL ARTICLE VIEW: DIGITAL AGENCIES -->
+        <section id="article-view-agencies" class="border-t border-[#EAEAEA] dark:border-[#27272A] pt-16 space-y-8">
+            <div class="space-y-4">
+                <a href="#home" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[#666666] dark:text-[#9CA3AF] hover:text-accent transition-colors">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path></svg>
+                    Back to Feed
+                </a>
+                <h1 class="text-3xl sm:text-4xl font-bold tracking-tight font-serif-custom">
+                    Scaling Digital Growth Agencies in the Modern Ecosystem
+                </h1>
+                <div class="flex items-center gap-3 text-xs text-[#666666] dark:text-[#9CA3AF] pb-4 border-b border-[#EAEAEA] dark:border-[#27272A]">
+                    <time datetime="2026-09-21">September 21, 2026</time>
+                    <span>•</span>
+                    <span>Written by Prashant Sagar</span>
+                    <span>•</span>
+                    <span>3 min read</span>
+                </div>
+            </div>
+
+            <div class="prose max-w-none space-y-6 text-lg leading-relaxed font-light font-serif opacity-90">
+                <p>
+                    Operating digital growth agencies requires a meticulous blend of web performance, clean aesthetic UI, and targeted conversion strategies. From lightweight landing pages built on Carrd to custom storefronts powered by React and Tailwind, modern digital entrepreneurs have unprecedented tools to scale their brands globally.
+                </p>
             </div>
         </section>
 
