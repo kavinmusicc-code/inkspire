@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prasant Sagar — Web Writer & Digital Creator</title>
+    <title>Prasant Sagar — Web Writer & Creator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = { darkMode: 'class' }
@@ -34,142 +34,124 @@
             <span class="font-serif font-bold text-xl">Menu</span>
             <button onclick="vibratePhone(20); toggleMobileMenu();" class="text-xl">✕</button>
         </div>
-        <a href="#articles" onclick="vibratePhone(25); toggleMobileMenu();" class="text-lg py-2 border-b border-[#27272A]/50">Articles & Posts</a>
-        <a href="#about" onclick="vibratePhone(25); toggleMobileMenu();" class="text-lg py-2 border-b border-[#27272A]/50">About Me</a>
+        <a href="#articles" onclick="vibratePhone(25); toggleMobileMenu();" class="text-lg py-2 border-b border-[#27272A]/50">Articles</a>
+        <a href="#about" onclick="vibratePhone(25); toggleMobileMenu();" class="text-lg py-2 border-b border-[#27272A]/50">About</a>
     </div>
 
     <!-- MAIN CONTENT -->
     <main class="flex-grow max-w-2xl mx-auto px-6 py-12 space-y-16 w-full">
         
-        <!-- HERO / WRITER INTRO -->
+        <!-- HERO -->
         <section id="home" class="space-y-6 pt-4">
             <div class="space-y-3">
-                <span class="text-xs font-mono uppercase tracking-widest text-blue-400 bg-blue-600/10 px-3 py-1 rounded-full border border-blue-600/20 inline-block">Web Writer & Creator Hub</span>
-                <h1 class="text-3xl sm:text-4xl font-serif font-bold leading-tight">Words, Stories & Digital Insights.</h1>
+                <span class="text-xs font-mono uppercase tracking-widest text-blue-400 bg-blue-600/10 px-3 py-1 rounded-full border border-blue-600/20 inline-block">Official Web Writing Hub</span>
+                <h1 class="text-3xl sm:text-4xl font-serif font-bold leading-tight">Fresh Insights, Stories & Digital Media.</h1>
                 <p class="text-[#9CA3AF] text-base leading-relaxed font-light">
-                    Hi, I'm Prasant Sagar. I write about digital growth, webwriting strategies, trending media, and share curated video insights. Welcome to my personal publishing space.
+                    Welcome to my clean publishing space. Here I share web writing strategies, digital notes, and curated video links with full admin control.
                 </p>
             </div>
         </section>
 
-        <!-- ARTICLES & POSTS FEED -->
+        <!-- ARTICLES SECTION -->
         <section id="articles" class="border-t border-[#27272A] pt-12 space-y-10">
             <div class="space-y-1">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Latest Publications</h2>
-                <h3 class="text-2xl font-serif font-bold">Articles & Media Feed</h3>
+                <h2 class="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Feed</h2>
+                <h3 class="text-2xl font-serif font-bold">Latest Articles & Updates</h3>
             </div>
 
-            <!-- Dynamic Articles Container -->
+            <!-- Dynamic Articles Feed -->
             <div id="articles-container" class="space-y-12">
-                <!-- JavaScript will load articles here -->
+                <!-- JavaScript loads articles here -->
             </div>
         </section>
 
         <!-- ABOUT SECTION -->
         <section id="about" class="border-t border-[#27272A] pt-12 space-y-4">
-            <h2 class="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">The Author</h2>
-            <h3 class="text-2xl font-serif font-bold">About Prasant Sagar</h3>
+            <h2 class="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Author</h2>
+            <h3 class="text-2xl font-serif font-bold">About Me</h3>
             <p class="text-[#9CA3AF] text-sm leading-relaxed font-light">
-                Operating from New Delhi, India, I focus on digital publishing, webwriting, and building online ecosystems. This site serves as my direct log for articles, notes, and media features.
+                I am a web writer and digital creator focused on building clean online spaces, publishing sharp articles, and curating engaging media content.
             </p>
         </section>
 
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-[#27272A] py-8 text-center text-xs text-[#9CA3AF] space-y-2">
+    <footer class="border-t border-[#27272A] py-8 text-center text-xs text-[#9CA3AF]">
         <p>&copy; 2026 Prasant Sagar. All rights reserved.</p>
-        <button onclick="vibratePhone(40)" class="text-blue-400 hover:underline">Tap for Haptic Test</button>
     </footer>
 
-    <!-- JAVASCRIPT FOR ADMIN POSTS & VIBRATION -->
+    <!-- SCRIPT -->
     <script>
         // =========================================================================
-        // ✍️ ADMIN ARTICLE MANAGER (यहाँ से आप अपने आर्टिकल्स, डेट और लिंक्स कंट्रोल करेंगे)
+        // ✍️ ADMIN POSTS CONTROL (यहाँ से आप अपनी नई पोस्ट, फोटो या यूट्यूब लिंक जोड़ेंगे)
         // =========================================================================
-        const writerArticles = [
+        const articlesList = [
             {
-                title: "How to Write Viral Headlines That Force Clicks in 2026",
+                title: "How to Write Clean and Engaging Content for the Web",
                 date: "September 21, 2026",
-                readTime: "4 min read",
-                category: "Webwriting",
-                image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop", // अगर फोटो नहीं चाहिए तो इसे "" खाली छोड़ सकते हैं
-                content: "Discover the psychological triggers and curiosity gaps used by top digital writers to skyrocket organic readership. Writing isn't just about stringing words together; it's about capturing human attention in the first three seconds.",
-                youtubeLink: "https://www.youtube.com/results?search_query=viral+blogging+headlines"
+                category: "Web Writing",
+                image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop", // फोटो लिंक (हटाना हो तो "" खाली कर दें)
+                content: "Web writing is completely different from traditional writing. You need shorter paragraphs, clear headings, and direct hooks to keep readers engaged from the very first second.",
+                youtubeLink: "https://www.youtube.com/results?search_query=web+writing+tips" // यूट्यूब लिंक (न हो तो "" खाली कर दें)
             },
             {
-                title: "Quick Note: Why Personal Voice Matters More Than AI Text",
-                date: "September 18, 2026",
-                readTime: "2 min read",
-                category: "Blogging Notes",
-                image: "", // 👈 इमेज खाली छोड़ने पर यह सुंदर टेक्स्ट-ओनली आर्टिकल या शॉर्ट नोट बन जाएगा
-                content: "As automated tools flood the internet with generic paragraphs, human experience and unique storytelling have become the ultimate currency for real web writers.",
+                title: "Quick Note: Starting Fresh with Minimalist Blogging",
+                date: "September 20, 2026",
+                category: "Quick Update",
+                image: "", // 👈 इमेज खाली छोड़ने पर यह सुंदर टेक्स्ट-ओनली पोस्ट बन जाएगी
+                content: "Sometimes keeping things simple is the best strategy. No clutter, just pure words and direct thoughts delivered to the audience.",
                 youtubeLink: ""
-            },
-            {
-                title: "The Evolution of Digital Content Creation & Video Ecosystems",
-                date: "September 15, 2026",
-                readTime: "5 min read",
-                category: "Media Trends",
-                image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
-                content: "An analytical look at how independent creators are shifting from standard blogging to multimedia hubs, combining long-form articles with high-impact video links.",
-                youtubeLink: "https://www.youtube.com/results?search_query=content+creation+trends"
             }
         ];
 
-        // Function to render professional writer layout
         function renderArticles() {
             const container = document.getElementById('articles-container');
             container.innerHTML = '';
 
-            writerArticles.forEach(article => {
-                let articleHTML = `
-                    article class="space-y-4 border-b border-[#27272A] pb-10">
+            articlesList.forEach(item => {
+                let html = `
+                    <article class="space-y-4 border-b border-[#27272A] pb-10">
                         <div class="flex items-center gap-3 text-xs text-[#9CA3AF] font-mono">
-                            <span class="text-blue-400 font-semibold">${article.category}</span>
+                            <span class="text-blue-400 font-semibold">${item.category}</span>
                             <span>•</span>
-                            <span>${article.date}</span>
-                            <span>•</span>
-                            <span>${article.readTime}</span>
+                            <span>${item.date}</span>
                         </div>
                         
-                        <h3 class="text-2xl sm:text-3xl font-serif font-bold leading-snug hover:text-blue-400 transition cursor-pointer">${article.title}</h3>
+                        <h3 class="text-2xl font-serif font-bold leading-snug">${item.title}</h3>
                         
-                        ${article.image && article.image.trim() !== "" ? `
-                            <div class="w-full h-56 sm:h-72 overflow-hidden rounded-xl border border-[#27272A] my-4">
-                                <img src="${article.image}" alt="${article.title}" class="w-full h-full object-cover">
+                        ${item.image && item.image.trim() !== "" ? `
+                            <div class="w-full h-56 overflow-hidden rounded-xl border border-[#27272A] my-4">
+                                <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
                             </div>
                         ` : ''}
 
-                        <p class="text-[#9CA3AF] text-sm sm:text-base leading-relaxed font-light">
-                            ${article.content}
+                        <p class="text-[#9CA3AF] text-sm leading-relaxed font-light">
+                            ${item.content}
                         </p>
 
-                        ${article.youtubeLink ? `
+                        ${item.youtubeLink ? `
                             <div class="pt-2">
-                                <a href="${article.youtubeLink}" target="_blank" onclick="vibratePhone(30)" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-red-400 hover:text-red-300 bg-red-600/10 px-4 py-2.5 rounded-lg border border-red-600/20 transition">
-                                    <span>▶ Watch Related Video on YouTube</span>
+                                <a href="${item.youtubeLink}" target="_blank" onclick="vibratePhone(30)" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-red-400 bg-red-600/10 px-4 py-2 rounded-lg border border-red-600/20 transition">
+                                    <span>▶ Watch Video on YouTube</span>
                                     <span>→</span>
                                 </a>
                             </div>
                         ` : ''}
                     </article>
                 `;
-                container.innerHTML += articleHTML;
+                container.innerHTML += html;
             });
         }
 
-        // Run on load
         window.onload = renderArticles;
 
-        // Vibration Function
         function vibratePhone(ms) {
             if ("vibrate" in navigator) {
                 navigator.vibrate(ms);
             }
         }
 
-        // Mobile Menu Toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('translate-x-full');
