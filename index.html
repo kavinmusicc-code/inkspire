@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkSpire Hub</title>
+    <title>InkSpire Hub — Global News & Webwriting Insights</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = { darkMode: 'class' }
@@ -19,8 +19,13 @@
     <!-- HEADER -->
     <header class="sticky top-0 z-40 bg-[#121212]/90 backdrop-blur-md border-b border-[#27272A]">
         <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
-            <span class="font-bold text-lg tracking-tight">InkSpire Hub</span>
-            <button onclick="vibratePhone(40); toggleMobileMenu();" class="p-2 border border-[#27272A] rounded-lg text-sm">Menu</button>
+            <a href="#home" onclick="vibratePhone(20)" class="font-bold text-lg tracking-tight">InkSpire Hub</a>
+            <nav class="hidden sm:flex items-center gap-6 text-sm text-[#9CA3AF]">
+                <a href="#blog" onclick="vibratePhone(20)" class="hover:text-white transition">Webwriting</a>
+                <a href="#news" onclick="vibratePhone(20)" class="hover:text-white transition">Global News</a>
+                <a href="#about" onclick="vibratePhone(20)" class="hover:text-white transition">About</a>
+            </nav>
+            <button onclick="vibratePhone(35); toggleMobileMenu();" class="sm:hidden p-2 border border-[#27272A] rounded-lg text-sm">Menu</button>
         </div>
     </header>
 
@@ -28,43 +33,85 @@
     <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#121212] p-6 flex flex-col space-y-6 transform translate-x-full transition-transform duration-300">
         <div class="flex justify-between items-center border-b border-[#27272A] pb-4">
             <span class="font-bold text-xl">Menu</span>
-            <button onclick="vibratePhone(30); toggleMobileMenu();" class="text-xl">✕</button>
+            <button onclick="vibratePhone(20); toggleMobileMenu();" class="text-xl">✕</button>
         </div>
-        <a href="#home" onclick="vibratePhone(25); toggleMobileMenu();" class="text-lg py-2 border-b border-[#27272A]/50">Home</a>
-        <a href="#creators" onclick="vibratePhone(25); toggleMobileMenu();" class="text-lg py-2 border-b border-[#27272A]/50">Top Creators</a>
+        <a href="#blog" onclick="vibratePhone(25); toggleMobileMenu();" class="text-lg py-2 border-b border-[#27272A]/50">Webwriting & Blogging</a>
+        <a href="#news" onclick="vibratePhone(25); toggleMobileMenu();" class="text-lg py-2 border-b border-[#27272A]/50">Trending Global News</a>
+        <a href="#about" onclick="vibratePhone(25); toggleMobileMenu();" class="text-lg py-2 border-b border-[#27272A]/50">About</a>
     </div>
 
     <!-- MAIN CONTENT -->
-    <main class="flex-grow max-w-3xl mx-auto px-6 py-10 space-y-12 w-full">
-        <section id="home" class="space-y-4">
-            <h1 class="text-3xl font-bold">Unlocking Creator Secrets</h1>
-            <p class="text-[#9CA3AF] text-sm">Discover what's driving the world's biggest YouTubers and digital creators.</p>
-            <button onclick="vibratePhone(50)" class="px-5 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition">
-                Tap to Vibrate
-            </button>
+    <main class="flex-grow max-w-3xl mx-auto px-6 py-10 space-y-16 w-full">
+        
+        <!-- HERO / INTRO -->
+        <section id="home" class="space-y-4 pt-4">
+            <span class="text-xs bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full font-medium inline-block">🚀 Viral Webwriting & News Hub</span>
+            <h1 class="text-3xl sm:text-4xl font-bold leading-tight">Mastering Modern Webwriting & Global Trends</h1>
+            <p class="text-[#9CA3AF] text-sm sm:text-base leading-relaxed">
+                Your ultimate destination for high-impact blogging strategies, viral content frameworks, and breaking global news updates designed to capture massive online traction.
+            </p>
         </section>
 
-        <section id="creators" class="border-t border-[#27272A] pt-10 space-y-6">
-            <h2 class="text-xl font-bold">Top YouTubers Spotlight</h2>
-            <div class="border border-[#27272A] rounded-xl p-5 bg-[#1A1A1A] space-y-2">
-                <span class="text-xs bg-blue-600 px-2 py-0.5 rounded text-white inline-block">India's #1</span>
-                <h3 class="text-lg font-bold">Sourav Joshi Vlogs</h3>
-                <p class="text-xs text-[#9CA3AF]">Setting benchmarks in daily vlogging across India.</p>
+        <!-- WEBWRITING & BLOGGING SECTION -->
+        <section id="blog" class="border-t border-[#27272A] pt-12 space-y-6">
+            <div class="space-y-1">
+                <h2 class="text-xs uppercase tracking-widest text-[#9CA3AF] font-semibold">Content Strategy</h2>
+                <h3 class="text-2xl font-bold">Webwriting & Blogging Insights</h3>
             </div>
-            <div class="border border-[#27272A] rounded-xl p-5 bg-[#1A1A1A] space-y-2">
-                <span class="text-xs bg-blue-600 px-2 py-0.5 rounded text-white inline-block">Global #1</span>
-                <h3 class="text-lg font-bold">MrBeast</h3>
-                <p class="text-xs text-[#9CA3AF]">Redefining global video production standards.</p>
+            <div class="space-y-4">
+                <div class="border border-[#27272A] rounded-xl p-5 bg-[#1A1A1A] space-y-2 hover:border-blue-600/50 transition">
+                    <span class="text-xs text-blue-400 font-semibold">SEO & Engagement</span>
+                    <h4 class="text-lg font-bold">How to Write Viral Headlines That Force Clicks</h4>
+                    <p class="text-xs text-[#9CA3AF] leading-relaxed">Discover the psychological triggers, curiosity gaps, and formatting rules used by top digital blogs to skyrocket their read-time and organic traffic.</p>
+                </div>
+                <div class="border border-[#27272A] rounded-xl p-5 bg-[#1A1A1A] space-y-2 hover:border-blue-600/50 transition">
+                    <span class="text-xs text-blue-400 font-semibold">Monetization</span>
+                    <h4 class="text-lg font-bold">The Blueprint for Scaling a Micro-Blog in 2026</h4>
+                    <p class="text-xs text-[#9CA3AF] leading-relaxed">A step-by-step framework on structuring long-form content, leveraging AI assistance ethically, and retaining user attention from the first sentence.</p>
+                </div>
             </div>
         </section>
+
+        <!-- TRENDING GLOBAL NEWS SECTION -->
+        <section id="news" class="border-t border-[#27272A] pt-12 space-y-6">
+            <div class="space-y-1">
+                <h2 class="text-xs uppercase tracking-widest text-[#9CA3AF] font-semibold">Real-Time Radar</h2>
+                <h3 class="text-2xl font-bold">Trending Global News</h3>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="border border-[#27272A] rounded-xl p-5 bg-[#1A1A1A] space-y-2">
+                    <span class="text-xs bg-blue-600 px-2 py-0.5 rounded text-white inline-block">Tech & AI</span>
+                    <h4 class="text-base font-bold">The Shift in AI-Driven Content Creation Ecosystems</h4>
+                    <p class="text-xs text-[#9CA3AF]">How global creators are adapting their publishing workflows to meet changing search engine algorithms.</p>
+                </div>
+                <div class="border border-[#27272A] rounded-xl p-5 bg-[#1A1A1A] space-y-2">
+                    <span class="text-xs bg-blue-600 px-2 py-0.5 rounded text-white inline-block">Media & Culture</span>
+                    <h4 class="text-base font-bold">Global Creator Economy Milestones</h4>
+                    <p class="text-xs text-[#9CA3AF]">Breaking down how top-tier independent digital production teams are changing global entertainment standards.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="border-t border-[#27272A] pt-12 space-y-4">
+            <div class="space-y-1">
+                <h2 class="text-xs uppercase tracking-widest text-[#9CA3AF] font-semibold">Background</h2>
+                <h3 class="text-2xl font-bold">About InkSpire Hub</h3>
+            </div>
+            <p class="text-[#9CA3AF] text-sm leading-relaxed">
+                InkSpire Hub is built for modern creators, digital writers, and news enthusiasts who want straight-to-the-point, high-value content. Our mission is to dissect what makes content viral, analyze global digital trends, and deliver sharp webwriting frameworks that cut through the noise.
+            </p>
+        </section>
+
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-[#27272A] py-6 text-center text-xs text-[#9CA3AF]">
-        <p>&copy; 2026 InkSpire Hub</p>
+    <footer class="border-t border-[#27272A] py-8 text-center text-xs text-[#9CA3AF] space-y-2">
+        <p>&copy; 2026 InkSpire Hub. All rights reserved.</p>
+        <button onclick="vibratePhone(40)" class="text-blue-400 hover:underline">Tap for Haptic Feedback Test</button>
     </footer>
 
-    <!-- SCRIPT FOR VIBRATION & MENU -->
+    <!-- SCRIPT FOR VIBRATION & MOBILE MENU -->
     <script>
         function vibratePhone(ms) {
             if ("vibrate" in navigator) {
