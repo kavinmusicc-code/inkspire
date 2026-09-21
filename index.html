@@ -16,14 +16,15 @@
       gtag('config', 'G-C2TQYXBJ7V');
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans min-h-screen flex flex-col transition-colors duration-200">
 
     <!-- Header -->
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-black text-indigo-600 tracking-tight">InkSpire</h1>
-            <nav class="flex space-x-4">
-                <button onclick="showHome()" class="text-slate-600 hover:text-indigo-600 font-medium transition">Home</button>
+            <h1 class="text-2xl font-black text-indigo-600 dark:text-indigo-400 tracking-tight">InkSpire</h1>
+            <nav class="flex items-center space-x-3">
+                <button onclick="toggleDarkMode()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition" title="Toggle Dark Mode">🌙</button>
+                <button onclick="showHome()" class="text-slate-600 dark:text-slate-300 hover:text-indigo-600 font-medium transition">Home</button>
                 <button onclick="showEditor()" class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-indigo-700 transition">Write Article</button>
             </nav>
         </div>
@@ -36,7 +37,7 @@
         <section id="main-content" class="md:col-span-2 space-y-6">
             
             <!-- Banner Ad (728x90) -->
-            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex justify-center overflow-hidden">
+            <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex justify-center overflow-hidden">
                 <script>
                   atOptions = {
                     'key' : 'e32965a13148c46266f49efbbbee0632',
@@ -52,40 +53,45 @@
             <!-- Dynamic posts or editor will be injected here -->
             <div id="posts-container" class="space-y-6">
                 <!-- Sample Post -->
-                <article class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
-                    <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Technology</span>
-                    <h2 class="text-2xl font-bold text-slate-900 mt-1 mb-3">The Future of Web Writing and AI Content Platforms</h2>
-                    <p class="text-slate-600 line-clamp-3 mb-4">Discover how modern creators are leveraging simple web tools and monetization layers to build independent publishing businesses online.</p>
-                    <div class="flex items-center justify-between text-sm text-slate-400">
-                        <span>Admin/Space</span>
-                        <span>Sep 21, 2026</span>
+                <article class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" alt="Post cover" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Technology</span>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1 mb-3">The Future of Web Writing and AI Content Platforms</h2>
+                        <p class="text-slate-600 dark:text-slate-300 line-clamp-3 mb-4">Discover how modern creators are leveraging simple web tools and monetization layers to build independent publishing businesses online.</p>
+                        <div class="flex items-center justify-between text-sm text-slate-400">
+                            <span>Admin/Space</span>
+                            <span>Sep 21, 2026</span>
+                        </div>
                     </div>
                 </article>
             </div>
 
             <!-- Editor View (Hidden by default) -->
-            <div id="editor-view" class="hidden bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
-                <h2 class="text-xl font-bold text-slate-900">Create New Article</h2>
-                <input type="text" id="article-title" placeholder="Article Title..." class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                <input type="text" id="article-category" placeholder="Category (e.g. Tech, Lifestyle, Finance)" class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                <textarea id="article-body" rows="8" placeholder="Write your content here..." class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+            <div id="editor-view" class="hidden bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 space-y-4">
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white">Create New Article</h2>
+                <input type="text" id="article-title" placeholder="Article Title..." class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white">
+                <input type="text" id="article-category" placeholder="Category (e.g. Tech, Lifestyle, Finance)" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white">
+                <input type="text" id="article-image" placeholder="Image URL (Optional)" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white">
+                <input type="text" id="article-video" placeholder="YouTube Video URL (Optional)" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white">
+                <textarea id="article-body" rows="8" placeholder="Write your content here..." class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white"></textarea>
                 <button onclick="publishArticle()" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-medium hover:bg-indigo-700 transition">Publish Article</button>
             </div>
         </section>
 
         <!-- Sidebar -->
         <aside class="space-y-6">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                <h3 class="font-bold text-slate-900 mb-2">About InkSpire</h3>
-                <p class="text-sm text-slate-600">A clean, modern platform for writers and creators to share thoughts, stories, and ideas with the world seamlessly.</p>
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                <h3 class="font-bold text-slate-900 dark:text-white mb-2">About InkSpire</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">A clean, modern platform for writers and creators to share thoughts, stories, and ideas with the world seamlessly.</p>
             </div>
 
             <!-- Banner Ad (300x250) -->
-            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex justify-center">
+            <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex justify-center">
                 <script>
                   atOptions = {
                     'key' : 'b7e3407c3c91326c0ad5904646274317',
-                    * 'format' : 'iframe',
+                    'format' : 'iframe',
                     'height' : 250,
                     'width' : 300,
                     'params' : {}
@@ -98,7 +104,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-sm text-slate-500">
+    <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 py-6 text-center text-sm text-slate-500 dark:text-slate-400">
         <p>&copy; 2026 InkSpire. All rights reserved.</p>
     </footer>
 
@@ -113,9 +119,15 @@
             document.getElementById('editor-view').classList.remove('hidden');
         }
 
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+
         function publishArticle() {
             const title = document.getElementById('article-title').value;
             const category = document.getElementById('article-category').value;
+            const imageUrl = document.getElementById('article-image').value;
+            const videoUrl = document.getElementById('article-video').value;
             const body = document.getElementById('article-body').value;
 
             if(!title || !body) {
@@ -123,7 +135,45 @@
                 return;
             }
 
+            let mediaContent = '';
+            if(imageUrl) {
+                mediaContent += `<img src="${imageUrl}" alt="Post cover" class="w-full h-48 object-cover">`;
+            }
+            if(videoUrl) {
+                let embedUrl = videoUrl;
+                if(videoUrl.includes('watch?v=')) {
+                    embedUrl = videoUrl.replace('watch?v=', 'embed/');
+                } else if(videoUrl.includes('youtu.be/')) {
+                    embedUrl = videoUrl.replace('youtu.be/', 'www.youtube.com/embed/');
+                }
+                mediaContent += `<div class="w-full"><iframe src="${embedUrl}" class="w-full h-64" frameborder="0" allowfullscreen></iframe></div>`;
+            }
+
+            const container = document.getElementById('posts-container');
+            const newArticle = document.createElement('article');
+            newArticle.className = "bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden hover:shadow-md transition";
+            newArticle.innerHTML = `
+                ${mediaContent}
+                <div class="p-6">
+                    <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">${category || 'General'}</span>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1 mb-3">${title}</h2>
+                    <p class="text-slate-600 dark:text-slate-300 mb-4 whitespace-pre-line">${body}</p>
+                    <div class="flex items-center justify-between text-sm text-slate-400">
+                        <span>Admin/Space</span>
+                        <span>Just now</span>
+                    </div>
+                </div>
+            `;
+
+            container.prepend(newArticle);
             alert('Article published successfully!');
+            
+            document.getElementById('article-title').value = '';
+            document.getElementById('article-category').value = '';
+            document.getElementById('article-image').value = '';
+            document.getElementById('article-video').value = '';
+            document.getElementById('article-body').value = '';
+
             showHome();
         }
     </script>
