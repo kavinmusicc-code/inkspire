@@ -51,7 +51,7 @@
         </div>
         
         <div class="flex items-center space-x-4 font-medium text-[11px] flex-wrap justify-center">
-            <!-- Google Translate Widget Element (Hidden or shown as secondary option) -->
+            <!-- Google Translate Widget Element (Auto Language Detection) -->
             <div id="google_translate_element"></div>
             
             <a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-white transition">Instagram</a>
@@ -186,7 +186,7 @@
 
             </div>
 
-            <!-- RIGHT COLUMN: Sidebar -->
+            <!-- RIGHT COLUMN: Sidebar (Clean, No Social Bar or Unsafe Ads) -->
             <aside class="lg:col-span-4 space-y-6">
                 <div class="bg-white dark:bg-slate-900/60 p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-3">
                     <h3 class="font-black text-xs text-slate-900 dark:text-white uppercase tracking-wider flex items-center justify-between">
@@ -237,11 +237,10 @@
             // Auto-detect browser/region language and trigger translation if non-Hindi region
             setTimeout(function() {
                 var userLang = navigator.language || navigator.userLanguage; 
-                // अगर यूजर की भाषा अंग्रेजी या अन्य विदेशी है और हिंदी नहीं है, तो उसे अंग्रेजी/लोकल में दिखाएं
                 if (userLang && !userLang.startsWith('hi')) {
                     var selectField = document.querySelector(".goog-te-combo");
                     if (selectField) {
-                        selectField.value = "en"; // अमेरिका या अन्य देशों के लिए डिफ़ॉल्ट इंग्लिश सेट करें
+                        selectField.value = "en"; 
                         selectField.dispatchEvent(new Event('change'));
                     }
                 }
@@ -250,7 +249,7 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Scripts -->
+    <!-- Core Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const isDark = document.documentElement.classList.contains('dark');
