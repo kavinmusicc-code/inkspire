@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InkSpire — Articles, Photos & Digital Insights</title>
+    
+    <!-- SEO Open Graph (OG) Meta Tags -->
+    <meta name="description" content="A minimalist publication documenting high-tech manufacturing shifts, modern financial infrastructures, and digital transformation. Created and curated by Prashant Sagar.">
+    <meta property="og:title" content="InkSpire — Articles, Photos & Digital Insights">
+    <meta property="og:description" content="A minimalist publication documenting high-tech manufacturing shifts, modern financial infrastructures, and digital transformation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kavinmusicc-code.github.io/inkspire/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop">
+
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Popunder / Global Ad Script in Head Tag -->
@@ -47,9 +56,10 @@
     <!-- HEADER / NAVIGATION -->
     <header class="sticky top-0 z-50 bg-[#FBFBFA]/90 backdrop-blur-md border-b border-subtle">
         <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <!-- Brand Logo & Name (Using direct embedded 3D Hexagon Logo data) -->
+            <!-- Brand Logo & Name -->
             <a href="#home" class="flex items-center gap-3 group">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD<div>...</div>" alt="InkSpire Logo" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop'" class="w-8 h-8 rounded-full object-cover border border-subtle group-hover:opacity-90 transition-opacity bg-charcoal">
+                <!-- Logo Image Placeholder -->
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=120&auto=format&fit=crop" alt="InkSpire Logo" class="w-8 h-8 rounded-full object-cover border border-subtle group-hover:opacity-90 transition-opacity">
                 <span class="font-serif-custom font-bold text-lg tracking-tight text-charcoal">InkSpire</span>
             </a>
 
@@ -111,6 +121,8 @@
                         <div class="flex items-center gap-3 text-xs text-muted">
                             <time datetime="2026-09-21">September 21, 2026</time>
                             <span>•</span>
+                            <span>4 min read</span>
+                            <span>•</span>
                             <span class="text-accent font-medium">Tech & India</span>
                             <span>•</span>
                             <span>By Prashant Sagar</span>
@@ -142,6 +154,8 @@
                     <article class="group space-y-4">
                         <div class="flex items-center gap-3 text-xs text-muted">
                             <time datetime="2026-09-21">September 21, 2026</time>
+                            <span>•</span>
+                            <span>5 min read</span>
                             <span>•</span>
                             <span class="text-accent font-medium">Global Economy & Video Brief</span>
                             <span>•</span>
@@ -175,6 +189,8 @@
                         <div class="flex items-center gap-3 text-xs text-muted">
                             <time datetime="2026-09-21">September 21, 2026</time>
                             <span>•</span>
+                            <span>3 min read</span>
+                            <span>•</span>
                             <span class="text-accent font-medium">Finance</span>
                             <span>•</span>
                             <span>By Prashant Sagar</span>
@@ -201,38 +217,6 @@
                         </div>
                     </article>
                     <!-- END ARTICLE 3 -->
-
-                    <!-- BEGIN ARTICLE 4 (NEWLY ADDED) -->
-                    <article class="group space-y-4">
-                        <div class="flex items-center gap-3 text-xs text-muted">
-                            <time datetime="2026-09-21">September 21, 2026</time>
-                            <span>•</span>
-                            <span class="text-accent font-medium">AI & Automation</span>
-                            <span>•</span>
-                            <span>By Prashant Sagar</span>
-                        </div>
-                        
-                        <h2 class="text-2xl font-bold text-charcoal group-hover:text-accent transition-colors">
-                            <a href="#article-view-4">AI Workflows & The Future of Independent Digital Agencies</a>
-                        </h2>
-
-                        <p class="text-muted text-base leading-relaxed font-light">
-                            Exploring how automated agent infrastructures, API pipelines, and LLM-driven components are scaling agency output while maintaining high-tier minimalist standards.
-                        </p>
-
-                        <!-- Media Placeholder -->
-                        <div class="rounded-lg overflow-hidden border border-subtle bg-subtle/50 aspect-video">
-                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" alt="AI Workflows and Digital Agencies" class="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-300">
-                        </div>
-
-                        <div>
-                            <a href="#article-view-4" class="inline-flex items-center gap-2 text-sm font-medium text-charcoal hover:text-accent transition-colors">
-                                Read full article 
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </a>
-                        </div>
-                    </article>
-                    <!-- END ARTICLE 4 -->
 
                 </div>
             </section>
@@ -265,7 +249,7 @@
 
         </div>
 
-        <!-- DETAILED ARTICLE VIEW SECTION 1 -->
+        <!-- DETAILED ARTICLE VIEW SECTION (Simulated Detail View for Article 1) -->
         <section id="article-view-1" class="border-t border-subtle pt-16 space-y-8">
             <div class="space-y-4">
                 <a href="#home" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-muted hover:text-charcoal transition-colors">
@@ -278,12 +262,15 @@
                 <div class="flex items-center gap-3 text-xs text-muted pb-4 border-b border-subtle">
                     <time datetime="2026-09-21">September 21, 2026</time>
                     <span>•</span>
+                    <span>4 min read</span>
+                    <span>•</span>
                     <span>Written by Prashant Sagar</span>
                     <span>•</span>
                     <span>Published under InkSpire Editorial</span>
                 </div>
             </div>
 
+            <!-- Article Body Typography Optimized for Reading -->
             <div class="prose prose-neutral max-w-none space-y-6 text-charcoal/90 text-lg leading-relaxed font-light font-serif">
                 <p class="first-letter:text-4xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-charcoal">
                     Analyzing the rapid expansion of semiconductor ecosystems reveals a profound shift in industrial policy. As nations race to secure supply chains, fabrication plants and specialized R&D centers are redefining regional technological landscapes.
@@ -291,39 +278,16 @@
                 <p>
                     With targeted incentive structures and massive private sector participation, India is steadily positioning itself as a cornerstone for advanced hardware production. This transition extends beyond assembly lines, fostering deep expertise in silicon design, packaging innovations, and automated quality assurance.
                 </p>
-            </div>
-        </section>
-
-        <!-- DETAILED ARTICLE VIEW SECTION 4 (NEWLY ADDED) -->
-        <section id="article-view-4" class="border-t border-subtle pt-16 space-y-8">
-            <div class="space-y-4">
-                <a href="#home" class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-muted hover:text-charcoal transition-colors">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path></svg>
-                    Back to Feed
-                </a>
-                <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal font-serif-custom">
-                    AI Workflows & The Future of Independent Digital Agencies
-                </h1>
-                <div class="flex items-center gap-3 text-xs text-muted pb-4 border-b border-subtle">
-                    <time datetime="2026-09-21">September 21, 2026</time>
-                    <span>•</span>
-                    <span>Written by Prashant Sagar</span>
-                    <span>•</span>
-                    <span>Published under InkSpire Editorial</span>
-                </div>
+                <h3 class="text-xl font-bold text-charcoal font-sans pt-4">The Multiplier Effect on Domestic Tech</h3>
+                <p>
+                    Building a robust domestic semiconductor ecosystem creates cascading benefits across automotive electronics, consumer hardware, and industrial IoT. By streamlining regulatory pathways and fostering talent pools, the current trajectory points toward sustained, long-term economic acceleration.
+                </p>
             </div>
 
-            <div class="prose prose-neutral max-w-none space-y-6 text-charcoal/90 text-lg leading-relaxed font-light font-serif">
-                <p class="first-letter:text-4xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-charcoal">
-                    The modern landscape of digital agencies is undergoing a fundamental restructuring. By leveraging modular AI pipelines and command-line automation tools, small development teams can now match the output velocity of much larger corporations.
-                </p>
-                <p>
-                    Integrating custom API gateways and automated content architectures eliminates the repetitive friction of digital production. This allows creators and engineers to focus purely on high-level UI/UX design, strategic execution, and architectural scaling.
-                </p>
-                <h3 class="text-xl font-bold text-charcoal font-sans pt-4">Sustainable Growth Through Automation</h3>
-                <p>
-                    As static web hosting and serverless workflows become the standard, maintaining clean, performant codebases ensures long-term operational resilience and instant publishing freedom.
-                </p>
+            <!-- Bottom Read Next Navigation -->
+            <div class="pt-8 border-t border-subtle flex justify-between items-center text-sm font-medium">
+                <a href="#home" class="text-muted hover:text-charcoal transition-colors">&larr; Back to all stories</a>
+                <a href="#article-view-2" class="text-accent hover:underline flex items-center gap-1">Read Next: Global Digital Transformation &rarr;</a>
             </div>
         </section>
 
