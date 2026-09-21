@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkSpire - Global Gaming, Tech & World News Platform</title>
+    <title>InkSpire - Global Gaming, Tech, World News & Career Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -36,12 +36,13 @@
             </div>
             
             <!-- Category Navigation -->
-            <nav class="flex flex-wrap justify-center items-center gap-1.5 text-sm font-semibold">
+            <nav class="flex flex-wrap justify-center items-center gap-1.5 text-xs sm:text-sm font-semibold">
                 <button onclick="filterCategory('All')" class="px-3 py-1.5 rounded-xl bg-indigo-600 text-white shadow-sm transition hover:opacity-90">All</button>
                 <button onclick="filterCategory('Gaming')" class="px-3 py-1.5 rounded-xl bg-slate-200/70 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Gaming</button>
                 <button onclick="filterCategory('Technology')" class="px-3 py-1.5 rounded-xl bg-slate-200/70 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Tech</button>
                 <button onclick="filterCategory('AI')" class="px-3 py-1.5 rounded-xl bg-slate-200/70 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition">AI</button>
-                <button onclick="filterCategory('Global')" class="px-3 py-1.5 rounded-xl bg-slate-200/70 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition">🌍 World News</button>
+                <button onclick="filterCategory('Global')" class="px-3 py-1.5 rounded-xl bg-slate-200/70 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition">🌍 World</button>
+                <button onclick="filterCategory('Employment')" class="px-3 py-1.5 rounded-xl bg-slate-200/70 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition">💼 Employment</button>
             </nav>
 
             <div class="flex items-center space-x-2">
@@ -76,6 +77,46 @@
             <!-- Dynamic Home Feed / Articles -->
             <div id="home-section" class="space-y-6">
                 
+                <!-- Post 5: Employment & Career News (India & Global) -->
+                <article class="post-item bg-white dark:bg-slate-900 rounded-3xl shadow-sm hover:shadow-md border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300" data-category="Employment" data-post-id="post-5">
+                    <div class="w-full h-64 sm:h-72 bg-slate-200 dark:bg-slate-950 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80" alt="Employment and Career" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5 sm:p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 uppercase tracking-wider">Employment & Jobs</span>
+                            <span class="text-xs text-slate-400 font-medium">Sep 21, 2026</span>
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mb-3">Global & India Job Markets 2026: Tech Hiring, AI Roles & Government Vacancies Surge</h2>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base mb-5 leading-relaxed">The employment landscape across India and international markets is shifting rapidly in 2026. With major tech corporations expanding digital infrastructure and public sectors announcing thousands of government job openings, job seekers are pivoting toward AI automation skills, remote engineering roles, and core administrative positions.</p>
+                        
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-slate-800 mb-5">
+                            <a href="https://www.ncs.gov.in/" target="_blank" class="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl transition shadow-sm">
+                                <span>Explore National Career Portal</span>
+                                <span>&rarr;</span>
+                            </a>
+                            <span class="text-xs sm:text-sm font-semibold text-slate-500 dark:text-slate-400">By Prasant Sagar</span>
+                        </div>
+
+                        <!-- Like & Comments Component -->
+                        <div class="bg-slate-50 dark:bg-slate-950/60 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <button onclick="handleLike('post-5')" class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-bold shadow-sm hover:border-indigo-500 transition">
+                                    <span id="like-icon-post-5">❤️</span>
+                                    <span id="like-count-post-5">0</span>
+                                    <span>Likes</span>
+                                </button>
+                                <span class="text-[11px] text-blue-500 font-bold uppercase tracking-wider">Community</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <input type="text" id="comment-input-post-5" placeholder="Write a comment..." class="flex-grow px-3 py-2 text-xs sm:text-sm rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-indigo-500 dark:text-white">
+                                <button onclick="addComment('post-5')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold rounded-xl transition shadow-sm">Post</button>
+                            </div>
+                            <div id="comments-list-post-5" class="space-y-2 pt-1"></div>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- Post 1: GTA 6 (Gaming) -->
                 <article class="post-item bg-white dark:bg-slate-900 rounded-3xl shadow-sm hover:shadow-md border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300" data-category="Gaming" data-post-id="post-1">
                     <div class="w-full h-64 sm:h-72 bg-slate-200 dark:bg-slate-950 relative">
@@ -116,7 +157,7 @@
                     </div>
                 </article>
 
-                <!-- Post 4: Global News Trend (New Addition) -->
+                <!-- Post 4: Global News Trend -->
                 <article class="post-item bg-white dark:bg-slate-900 rounded-3xl shadow-sm hover:shadow-md border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300" data-category="Global" data-post-id="post-4">
                     <div class="w-full h-64 sm:h-72 bg-slate-200 dark:bg-slate-950 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1000&q=80" alt="World News" class="w-full h-full object-cover">
@@ -196,52 +237,12 @@
                     </div>
                 </article>
 
-                <!-- Post 3: AI & Unreal Engine 5 -->
-                <article class="post-item bg-white dark:bg-slate-900 rounded-3xl shadow-sm hover:shadow-md border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300" data-category="Technology" data-post-id="post-3">
-                    <div class="w-full h-64 sm:h-72 bg-slate-200 dark:bg-slate-950 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=80" alt="Gaming Tech" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-5 sm:p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800 uppercase tracking-wider">Tech</span>
-                            <span class="text-xs text-slate-400 font-medium">Sep 21, 2026</span>
-                        </div>
-                        <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mb-3">How AI Ray Tracing & Unreal Engine 5 are Redefining Modern Games</h2>
-                        <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base mb-5 leading-relaxed">The integration of advanced neural rendering and hardware-accelerated ray tracing has pushed game graphics to hyper-realistic levels. Developers worldwide are leveraging these tools to build immersive interactive universes.</p>
-                        
-                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-slate-100 dark:border-slate-800 mb-5">
-                            <a href="https://www.unrealengine.com/" target="_blank" class="inline-flex items-center space-x-2 text-xs sm:text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-xl transition shadow-sm">
-                                <span>Explore Unreal Engine 5</span>
-                                <span>&rarr;</span>
-                            </a>
-                            <span class="text-xs sm:text-sm font-semibold text-slate-500 dark:text-slate-400">By Prasant Sagar</span>
-                        </div>
-
-                        <!-- Like & Comments Component -->
-                        <div class="bg-slate-50 dark:bg-slate-950/60 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-3">
-                            <div class="flex items-center justify-between">
-                                <button onclick="handleLike('post-3')" class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-bold shadow-sm hover:border-indigo-500 transition">
-                                    <span id="like-icon-post-3">❤️</span>
-                                    <span id="like-count-post-3">0</span>
-                                    <span>Likes</span>
-                                </button>
-                                <span class="text-[11px] text-indigo-500 font-bold uppercase tracking-wider">Community</span>
-                            </div>
-                            <div class="flex gap-2">
-                                <input type="text" id="comment-input-post-3" placeholder="Write a comment..." class="flex-grow px-3 py-2 text-xs sm:text-sm rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-indigo-500 dark:text-white">
-                                <button onclick="addComment('post-3')" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold rounded-xl transition shadow-sm">Post</button>
-                            </div>
-                            <div id="comments-list-post-3" class="space-y-2 pt-1"></div>
-                        </div>
-                    </div>
-                </article>
-
             </div>
 
             <!-- About Us Section -->
             <div id="about-section" class="hidden bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 space-y-4">
                 <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">About InkSpire</h2>
-                <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">Welcome to <strong>InkSpire</strong>, conceptualized, developed, and managed by <strong>Prasant Sagar</strong>. It is your premier global destination for high-impact insights across gaming, technology, world news, and digital creativity.</p>
+                <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">Welcome to <strong>InkSpire</strong>, conceptualized, developed, and managed by <strong>Prasant Sagar</strong>. It is your premier global destination for high-impact insights across gaming, technology, employment news, world events, and digital creativity.</p>
             </div>
 
             <!-- Contact Us Section -->
@@ -270,13 +271,17 @@
 
         <!-- Sidebar -->
         <aside class="space-y-6">
-            <!-- Trending News Widget (Like major web portals) -->
+            <!-- Trending News Widget -->
             <div class="bg-white dark:bg-slate-900 p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 space-y-4">
                 <h3 class="font-black text-slate-900 dark:text-white text-base flex items-center justify-between">
                     <span>🔥 Trending Worldwide</span>
                     <span class="text-xs px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-500 font-bold">LIVE</span>
                 </h3>
                 <div class="space-y-3 text-xs sm:text-sm">
+                    <a href="https://www.ncs.gov.in/" target="_blank" class="block p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <span class="text-[10px] text-blue-500 font-extrabold uppercase">Employment</span>
+                        <p class="font-bold text-slate-800 dark:text-slate-200 mt-0.5">India & Global Tech Hiring & Govt Vacancies Surge</p>
+                    </a>
                     <a href="https://www.rockstargames.com/VI" target="_blank" class="block p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
                         <span class="text-[10px] text-indigo-500 font-extrabold uppercase">Gaming</span>
                         <p class="font-bold text-slate-800 dark:text-slate-200 mt-0.5">GTA 6 Pre-Registration Updates & World Map Breakdown</p>
@@ -284,10 +289,6 @@
                     <a href="https://www.reuters.com/world/" target="_blank" class="block p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
                         <span class="text-[10px] text-emerald-500 font-extrabold uppercase">World News</span>
                         <p class="font-bold text-slate-800 dark:text-slate-200 mt-0.5">Global Economic Summit 2026 Concludes in Geneva</p>
-                    </a>
-                    <a href="https://www.unrealengine.com/" target="_blank" class="block p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-                        <span class="text-[10px] text-violet-500 font-extrabold uppercase">Technology</span>
-                        <p class="font-bold text-slate-800 dark:text-slate-200 mt-0.5">Unreal Engine 5.6 Update Brings Neural Rendering</p>
                     </a>
                 </div>
             </div>
@@ -370,7 +371,7 @@
 
         // --- Like and Comments Logic ---
         document.addEventListener("DOMContentLoaded", () => {
-            ['post-1', 'post-2', 'post-3', 'post-4'].forEach(postId => {
+            ['post-1', 'post-2', 'post-4', 'post-5'].forEach(postId => {
                 updateLikeUI(postId);
                 renderComments(postId);
             });
