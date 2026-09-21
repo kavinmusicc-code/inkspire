@@ -39,11 +39,11 @@
 </head>
 <body class="bg-[#f8fafc] dark:bg-[#050811] text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300 font-sans text-sm">
 
-    <!-- Top Utility Bar -->
+    <!-- Top Utility Bar with Live Real-time Clock -->
     <div class="bg-slate-900 dark:bg-black text-slate-400 text-[11px] py-1.5 px-4 sm:px-8 flex justify-between items-center border-b border-slate-800">
         <div class="flex items-center space-x-3">
             <span class="font-black text-white tracking-widest uppercase bg-indigo-600 px-1.5 py-0.5 rounded text-[10px]">GLOBAL WIRE</span>
-            <span class="hidden sm:inline">Monday, September 21, 2026</span>
+            <span id="live-top-clock" class="font-medium text-slate-300">Loading live time...</span>
         </div>
         <div class="flex items-center space-x-5 font-medium">
             <a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-white transition">Instagram</a>
@@ -142,9 +142,11 @@
                         <iframe src="https://www.youtube.com/embed/kqtD5dpn9C8" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
                     </div>
                     
-                    <div class="flex items-center space-x-3 mb-2">
+                    <div class="flex items-center space-x-3 mb-2 flex-wrap gap-y-1">
                         <span class="text-[10px] font-extrabold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase bg-indigo-50 dark:bg-indigo-950/50 px-2.5 py-0.5 rounded border border-indigo-100 dark:border-indigo-900">AI & Tech Trends</span>
-                        <span class="text-[11px] font-semibold text-slate-400">Sep 21, 2026</span>
+                        <span class="text-[11px] font-semibold text-slate-400 flex items-center gap-1">
+                            🕒 <span class="article-timestamp" data-time="2026-09-21T18:30:00Z">September 21, 2026 • 18:30 IST</span>
+                        </span>
                     </div>
                     
                     <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-3 leading-snug group-hover:text-indigo-600 transition-colors cursor-pointer">
@@ -168,7 +170,7 @@
                             <span class="w-7 h-7 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-[10px]">PS</span>
                             <div>
                                 <p class="font-bold text-slate-800 dark:text-slate-200">Prasant Sagar</p>
-                                <p class="text-[9px] text-slate-400 uppercase">Editor-in-Chief</p>
+                                <p class="text-[9px] text-slate-400 uppercase">Editor-in-Chief • Published 1h ago</p>
                             </div>
                         </div>
                         <div class="flex items-center space-x-3">
@@ -194,9 +196,11 @@
 
                 <!-- Post 2: E-Writing Feature -->
                 <article class="post-item group" data-category="E-Writing" data-post-id="post-2">
-                    <div class="flex items-center space-x-3 mb-2">
+                    <div class="flex items-center space-x-3 mb-2 flex-wrap gap-y-1">
                         <span class="text-[10px] font-extrabold tracking-widest text-violet-600 dark:text-violet-400 uppercase bg-violet-50 dark:bg-violet-950/50 px-2.5 py-0.5 rounded border border-violet-100 dark:border-violet-900">E-Writing & Essay</span>
-                        <span class="text-[11px] font-semibold text-slate-400">Digital Publishing Series</span>
+                        <span class="text-[11px] font-semibold text-slate-400 flex items-center gap-1">
+                            🕒 <span>September 21, 2026 • 17:15 IST</span>
+                        </span>
                     </div>
                     
                     <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-3 leading-snug group-hover:text-indigo-600 transition-colors cursor-pointer">
@@ -216,7 +220,7 @@
                             <span class="w-7 h-7 rounded-full bg-violet-600 text-white font-bold flex items-center justify-center text-[10px]">EW</span>
                             <div>
                                 <p class="font-bold text-slate-800 dark:text-slate-200">InkSpire Literature Desk</p>
-                                <p class="text-[9px] text-slate-400 uppercase">Essay Publication</p>
+                                <p class="text-[9px] text-slate-400 uppercase">Essay Publication • Published 3h ago</p>
                             </div>
                         </div>
                         <button onclick="handleLike('post-2')" class="flex items-center space-x-1 font-bold text-slate-700 dark:text-slate-300 hover:text-indigo-600 bg-slate-100 dark:bg-slate-900 px-3 py-1 rounded-lg border border-slate-200 dark:border-slate-800">
@@ -242,7 +246,10 @@
                         <iframe src="https://www.youtube.com/embed/QdBZY2fkU-0" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="flex-grow flex flex-col justify-center w-full">
-                        <span class="text-[10px] font-extrabold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase mb-1.5 block">Gaming Industry</span>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="text-[10px] font-extrabold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase">Gaming Industry</span>
+                            <span class="text-[10px] text-slate-400 font-medium">🕒 Sep 21, 2026 • 15:00 IST</span>
+                        </div>
                         <h2 class="text-xl font-black text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-indigo-600 transition-colors">
                             Grand Theft Auto VI (GTA 6): Global Release Updates & Pre-Registration Info
                         </h2>
@@ -271,7 +278,7 @@
                 <article class="post-item group bg-white dark:bg-slate-900/60 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs" data-category="Careers" data-post-id="post-4">
                     <div class="flex items-center justify-between mb-2.5">
                         <span class="text-[10px] font-extrabold tracking-widest text-blue-600 dark:text-blue-400 uppercase bg-blue-50 dark:bg-blue-950/50 px-2 py-0.5 rounded border border-blue-100 dark:border-blue-900">Global Careers</span>
-                        <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+                        <span class="text-[10px] text-slate-400 font-medium">🕒 4h ago</span>
                     </div>
                     <h2 class="text-lg font-black text-slate-900 dark:text-white mb-2.5 leading-snug group-hover:text-indigo-600 transition-colors">
                         Tech Hiring & Government Vacancies Surge Across India & US in 2026
@@ -302,15 +309,24 @@
                     </h3>
                     <ul class="space-y-3 text-xs">
                         <li class="article-border pb-2.5">
-                            <span class="text-[9px] font-black text-indigo-600 uppercase block mb-0.5">Open Source</span>
+                            <div class="flex justify-between text-[9px] text-slate-400 mb-0.5">
+                                <span class="font-black text-indigo-600 uppercase">Open Source</span>
+                                <span>15 mins ago</span>
+                            </div>
                             <a href="https://github.com/trending" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">GitHub Trending: Python automated news scrapers gain massive traction.</a>
                         </li>
                         <li class="article-border pb-2.5">
-                            <span class="text-[9px] font-black text-emerald-600 uppercase block mb-0.5">World News</span>
+                            <div class="flex justify-between text-[9px] text-slate-400 mb-0.5">
+                                <span class="font-black text-emerald-600 uppercase">World News</span>
+                                <span>45 mins ago</span>
+                            </div>
                             <a href="https://www.reuters.com/technology/" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">Reuters Tech: International Digital Trade Agreements finalized for 2026.</a>
                         </li>
                         <li class="pb-1">
-                            <span class="text-[9px] font-black text-violet-600 uppercase block mb-0.5">Game Dev</span>
+                            <div class="flex justify-between text-[9px] text-slate-400 mb-0.5">
+                                <span class="font-black text-violet-600 uppercase">Game Dev</span>
+                                <span>2 hours ago</span>
+                            </div>
                             <a href="https://www.unrealengine.com/en-US/blog" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">Unreal Engine 5.6 update introduces real-time neural ray tracing.</a>
                         </li>
                     </ul>
@@ -403,11 +419,36 @@
         document.addEventListener('DOMContentLoaded', () => {
             const isDark = document.documentElement.classList.contains('dark');
             document.getElementById('dark-mode-btn-top').textContent = isDark ? 'Theme: Dark' : 'Theme: Light';
+            
+            // Initialize live top clock
+            updateLiveClock();
+            setInterval(updateLiveClock, 1000);
+
             ['post-1', 'post-2', 'post-3', 'post-4'].forEach(postId => {
                 updateLikeUI(postId);
                 renderComments(postId);
             });
         });
+
+        // Live Real-Time Clock Function
+        function updateLiveClock() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: true 
+            };
+            const timeString = now.toLocaleDateString('en-US', options);
+            const clockEl = document.getElementById('live-top-clock');
+            if(clockEl) {
+                clockEl.textContent = timeString + ' IST';
+            }
+        }
 
         // Toggle Three-Dot Menu
         function toggleThreeDotMenu(event) {
