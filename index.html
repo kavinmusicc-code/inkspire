@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkSpire - Global Intelligence & Digital Publishing</title>
+    <title>InkSpire | Substack Style Publication</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        serif: ['Merriweather', 'serif'],
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        serif: ['Merriweather', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        substack: '#FF6719', // Substack Signature Orange Accent
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     <style>
-        .ticker-wrap { width: 100%; overflow: hidden; background-color: #0f172a; color: #f8fafc; border-bottom: 1px solid #1e293b; }
-        .ticker { display: inline-block; white-space: nowrap; padding-right: 100%; animation: ticker 40s linear infinite; }
-        @keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
-        .article-border { border-bottom: 1px solid #e2e8f0; }
-        .dark .article-border { border-bottom: 1px solid #1e293b; }
-        .dropdown-menu { transform-origin: top right; transition: transform 0.2s ease, opacity 0.2s ease; }
+        body { background-color: #fbfbf9; color: #111111; }
+        .substack-border { border-bottom: 1px solid #e6e6e2; }
+        .substack-card:hover { transform: translateY(-2px); transition: all 0.2s ease; }
         /* Google Translate Styling Adjustments */
         .goog-te-banner-frame.skiptranslate { display: none !important; }
         body { top: 0px !important; }
-        #google_translate_element select { background-color: #0f172a; color: #f8fafc; border: 1px solid #334155; padding: 2px 6px; border-radius: 6px; font-size: 11px; outline: none; cursor: pointer; }
+        #google_translate_element select { background-color: #ffffff; color: #111111; border: 1px solid #e6e6e2; padding: 3px 8px; border-radius: 4px; font-size: 11px; outline: none; cursor: pointer; }
     </style>
 
     <!-- Google tag (gtag.js) -->
@@ -41,187 +40,142 @@
       gtag('config', 'G-C2TQYXBJ7V');
     </script>
 </head>
-<body class="bg-[#f8fafc] dark:bg-[#050811] text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300 font-sans text-sm">
+<body class="min-h-screen flex flex-col font-sans antialiased">
 
-    <!-- Top Clean Utility Bar -->
-    <div class="bg-slate-900 dark:bg-black text-slate-300 text-[11px] py-2 px-3 sm:px-8 flex flex-col sm:flex-row justify-between items-center border-b border-slate-800 gap-2 sm:gap-0">
-        <div class="flex items-center space-x-2">
-            <span class="font-black text-white tracking-widest uppercase bg-indigo-600 px-1.5 py-0.5 rounded text-[9px]">GLOBAL WIRE</span>
-            <span id="live-top-clock" class="font-medium text-slate-300 text-[10px] sm:text-[11px]">Loading live time...</span>
-        </div>
-        
-        <div class="flex items-center space-x-4 font-medium text-[11px] flex-wrap justify-center">
-            <!-- Google Translate Widget Element (Auto Language Detection) -->
-            <div id="google_translate_element"></div>
+    <!-- Top Publication Header (Substack Style) -->
+    <header class="w-full bg-white substack-border sticky top-0 z-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             
-            <a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-white transition">Instagram</a>
-            <a href="https://x.com/kavinmusic13" target="_blank" class="hover:text-white transition">X (Twitter)</a>
-            <button onclick="toggleDarkMode()" id="dark-mode-btn-top" class="hover:text-white transition font-bold text-indigo-400">Dark Mode</button>
-        </div>
-    </div>
-
-    <!-- Live Ticker with Global Topics -->
-    <div class="ticker-wrap text-xs font-semibold py-1.5">
-        <div class="ticker">
-            <span class="text-indigo-400 font-bold mr-2">● BREAKING WIRE:</span> 
-            OpenAI & Google release next-gen neural reasoning agents — Global tech hiring surges across New Delhi & Silicon Valley — GTA 6 pre-orders break digital storefront records — Python automated CI/CD pipelines become industry standard.
-        </div>
-    </div>
-
-    <!-- Main Clean Header -->
-    <header class="bg-white dark:bg-[#0a0f1d] border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 shadow-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
-            
-            <!-- Compact Logo & Brand -->
-            <div class="cursor-pointer flex items-center space-x-2.5 group" onclick="showSection('home')">
-                <svg class="w-7 h-7 text-indigo-600 dark:text-indigo-500 group-hover:scale-105 transition-transform shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 8L86 28V72L50 92L14 72V28L50 8Z" stroke="currentColor" stroke-width="6" stroke-linejoin="round" fill="#0a0f1d"/>
-                    <path d="M50 8V50M14 28L50 50M86 28L50 50M14 72L50 50M86 72L50 50" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="50" cy="50" r="10" fill="currentColor"/>
-                </svg>
-                <div>
-                    <h1 class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white uppercase font-sans leading-none">
-                        Ink<span class="text-indigo-600 dark:text-indigo-500">Spire</span>
-                    </h1>
-                    <span class="text-[8px] sm:text-[9px] font-bold tracking-widest text-slate-400 uppercase">Global Digital Intelligence</span>
-                </div>
+            <!-- Brand / Publication Name -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="showSection('home')">
+                <div class="w-7 h-7 bg-substack text-white font-bold flex items-center justify-center rounded text-sm">IS</div>
+                <span class="text-lg font-bold tracking-tight text-slate-900 font-serif">InkSpire</span>
             </div>
-            
-            <!-- Desktop Navigation Links -->
-            <nav class="hidden md:flex items-center space-x-6 text-xs font-bold tracking-wider uppercase text-slate-600 dark:text-slate-300">
-                <button onclick="filterCategory('All')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Front Page</button>
-                <button onclick="filterCategory('AI & Tech')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">AI & Tech</button>
-                <button onclick="filterCategory('E-Writing')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">E-Writing</button>
-                <button onclick="filterCategory('Gaming')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Gaming</button>
-                <button onclick="filterCategory('Careers')" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Careers</button>
-            </nav>
 
-            <!-- Professional Three-Dot Menu Options -->
-            <div class="relative">
-                <button onclick="toggleThreeDotMenu(event)" class="w-9 h-9 rounded-lg bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-800 transition font-black text-lg">
-                    ⋮
+            <!-- Header Right Actions: Translate & Subscribe Button -->
+            <div class="flex items-center space-x-3">
+                <div id="google_translate_element"></div>
+                <button onclick="scrollToSubscribe()" class="bg-substack hover:bg-orange-600 text-white text-xs font-semibold px-4 py-2 rounded-full transition shadow-xs">
+                    Subscribe
                 </button>
-                
-                <!-- Dropdown Menu Box -->
-                <div id="three-dot-dropdown" class="hidden absolute right-0 mt-2 w-52 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl py-2 z-50 dropdown-menu">
-                    <div class="px-4 py-1.5 text-[10px] font-black uppercase text-slate-400 tracking-wider border-b border-slate-100 dark:border-slate-800 mb-1">Quick Navigation</div>
-                    <button onclick="filterCategory('All'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Front Page</button>
-                    <button onclick="filterCategory('AI & Tech'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">AI & Tech Trends</button>
-                    <button onclick="filterCategory('E-Writing'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">E-Writing Essays</button>
-                    <button onclick="filterCategory('Gaming'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Gaming Industry</button>
-                    <button onclick="filterCategory('Careers'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Global Careers</button>
-                    <div class="border-t border-slate-100 dark:border-slate-800 my-1"></div>
-                    <button onclick="showSection('about'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">About Publisher</button>
-                    <button onclick="showSection('contact'); closeThreeDotMenu();" class="w-full text-left px-4 py-2 text-xs font-semibold hover:bg-indigo-50 dark:hover:bg-slate-800 transition">Contact & Socials</button>
-                </div>
             </div>
-
         </div>
     </header>
 
-    <!-- Main Balanced Container -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-8 py-6 flex-grow w-full">
+    <!-- Main Substack Container -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 flex-grow w-full space-y-12">
         
-        <!-- Dynamic Home Feed -->
-        <div id="home-section" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+        <!-- Hero Publication Info -->
+        <section class="text-center space-y-4 py-6 substack-border">
+            <span class="text-[11px] font-bold tracking-widest text-substack uppercase bg-orange-50 px-2.5 py-1 rounded-full border border-orange-100">Independent Publication</span>
+            <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif leading-tight">
+                Digital Intelligence, Essays & Global Tech Workflows
+            </h1>
+            <p class="text-slate-600 font-serif text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+                A professional space by Prasant Sagar exploring autonomous AI workflows, digital publishing, and modern web architecture.
+            </p>
             
-            <!-- LEFT COLUMN: Articles -->
-            <div class="lg:col-span-8 space-y-8 lg:border-r lg:border-slate-200 dark:lg:border-slate-800 lg:pr-10">
-                
-                <!-- Post 1 -->
-                <article class="post-item group" data-category="AI & Tech" data-post-id="post-1">
-                    <div class="w-full aspect-video bg-slate-100 dark:bg-slate-900 mb-3.5 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shadow-xs">
-                        <iframe src="https://www.youtube.com/embed/kqtD5dpn9C8" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    
-                    <div class="flex items-center space-x-2.5 mb-2 flex-wrap gap-y-1">
-                        <span class="text-[10px] font-extrabold tracking-widest text-indigo-600 dark:text-indigo-400 uppercase bg-indigo-50 dark:bg-indigo-950/50 px-2 py-0.5 rounded border border-indigo-100 dark:border-indigo-900">AI & Tech Trends</span>
-                        <span class="text-[11px] font-medium text-slate-400 flex items-center gap-1">
-                            🕒 <span class="article-timestamp">September 21, 2026 • 18:30 IST</span>
-                        </span>
-                    </div>
-                    
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2.5 leading-snug group-hover:text-indigo-600 transition-colors cursor-pointer">
-                        The Rise of Autonomous AI Workflows: How Developers are Scaling Digital Agencies in 2026
-                    </h2>
-                    
-                    <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm font-serif mb-3 leading-relaxed">
-                        Modern tech industries and automation have completely revolutionized digital growth agencies. Through custom API integrations and scripts, developers are scaling operations 24/7 globally.
-                        <a href="https://github.com" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-bold underline ml-1">Explore Open Source Repos &rarr;</a>
-                    </p>
-
-                    <div class="bg-slate-900 text-emerald-400 p-3.5 rounded-xl font-mono text-[11px] mb-3.5 overflow-x-auto border border-slate-800">
-                        # Neural API Request Sample<br>
-                        import openai<br>
-                        response = openai.ChatCompletion.create(model="gpt-4", messages=[{"role": "user", "content": "Scale agency metrics"}])<br>
-                        print("Workflow successfully optimized.")
-                    </div>
-                    
-                    <div class="flex items-center justify-between border-t border-b border-slate-200 dark:border-slate-800 py-2.5 mb-3.5 text-xs">
-                        <div class="flex items-center space-x-2">
-                            <span class="w-6 h-6 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-[10px]">PS</span>
-                            <div>
-                                <p class="font-bold text-slate-800 dark:text-slate-200 text-xs">Prasant Sagar</p>
-                                <p class="text-[8px] text-slate-400 uppercase">Editor-in-Chief • Published 1h ago</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <a href="https://x.com/kavinmusic13" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-bold hover:underline hidden sm:inline">Discuss on X &rarr;</a>
-                            <button onclick="handleLike('post-1')" class="flex items-center space-x-1 font-bold text-slate-700 dark:text-slate-300 hover:text-indigo-600 bg-slate-100 dark:bg-slate-900 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800">
-                                <span id="like-icon-post-1">❤️</span>
-                                <span id="like-count-post-1">0</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Comment Box -->
-                    <div class="space-y-2 bg-slate-50 dark:bg-slate-900/40 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
-                        <div class="flex gap-2">
-                            <input type="text" id="comment-input-post-1" placeholder="Join the discussion..." class="flex-grow bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs px-3 py-1.5 rounded-lg focus:outline-none focus:border-indigo-500 dark:text-white">
-                            <button onclick="addComment('post-1')" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-[10px] font-bold uppercase rounded-lg transition">Post</button>
-                        </div>
-                        <div id="comments-list-post-1" class="space-y-1 pt-1"></div>
-                    </div>
-                </article>
-
+            <!-- Quick Substack Subscribe Form -->
+            <div class="max-w-md mx-auto pt-4 flex gap-2">
+                <input type="email" id="hero-email" placeholder="Type your email..." class="flex-grow bg-white border border-slate-300 px-4 py-2.5 text-xs rounded-lg focus:outline-none focus:border-substack">
+                <button onclick="handleSubscribe()" class="bg-slate-900 hover:bg-black text-white text-xs font-semibold px-5 py-2.5 rounded-lg transition">
+                    Sign up
+                </button>
             </div>
+        </section>
 
-            <!-- RIGHT COLUMN: Sidebar (Clean, No Social Bar or Unsafe Ads) -->
-            <aside class="lg:col-span-4 space-y-6">
-                <div class="bg-white dark:bg-slate-900/60 p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-3">
-                    <h3 class="font-black text-xs text-slate-900 dark:text-white uppercase tracking-wider flex items-center justify-between">
-                        <span>🔥 Global Trending Wire</span>
-                        <span class="text-[9px] px-1.5 py-0.5 rounded bg-rose-500/10 text-rose-500 font-bold">LIVE</span>
-                    </h3>
-                    <ul class="space-y-3 text-xs">
-                        <li class="article-border pb-2.5">
-                            <a href="https://github.com/trending" target="_blank" class="font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 transition">GitHub Trending: Python automated news scrapers gain traction.</a>
-                        </li>
-                    </ul>
+        <!-- Articles Feed (Substack Post List Style) -->
+        <div id="home-section" class="space-y-10">
+            
+            <!-- Post Item 1 -->
+            <article class="substack-card bg-white p-6 rounded-xl border border-slate-200/80 shadow-2xs space-y-4 cursor-pointer">
+                <div class="flex items-center justify-between text-xs text-slate-500">
+                    <span class="font-semibold text-substack uppercase tracking-wider text-[10px]">AI & Tech Trends</span>
+                    <span>Sep 21, 2026 • 3 min read</span>
                 </div>
-            </aside>
+                
+                <h2 class="text-xl sm:text-2xl font-bold font-serif text-slate-900 leading-snug hover:text-substack transition-colors">
+                    The Rise of Autonomous AI Workflows: How Developers are Scaling Digital Agencies in 2026
+                </h2>
+                
+                <p class="text-slate-600 font-serif text-sm leading-relaxed">
+                    Modern tech industries and automation have completely revolutionized digital growth agencies. Through custom API integrations and scripts, developers are scaling operations 24/7 globally.
+                </p>
+
+                <!-- Embedded Video/Media Component -->
+                <div class="w-full aspect-video bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
+                    <iframe src="https://www.youtube.com/embed/kqtD5dpn9C8" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="flex items-center justify-between pt-4 substack-border text-xs text-slate-500">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-6 h-6 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-[10px]">PS</div>
+                        <span class="font-semibold text-slate-900">Prasant Sagar</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button onclick="handleLike('post-1')" class="hover:text-substack flex items-center gap-1 font-medium">
+                            ❤️ <span id="like-count-post-1">12</span>
+                        </button>
+                        <span>💬 4 comments</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post Item 2 -->
+            <article class="substack-card bg-white p-6 rounded-xl border border-slate-200/80 shadow-2xs space-y-4 cursor-pointer">
+                <div class="flex items-center justify-between text-xs text-slate-500">
+                    <span class="font-semibold text-substack uppercase tracking-wider text-[10px]">E-Writing & Publishing</span>
+                    <span>Sep 18, 2026 • 5 min read</span>
+                </div>
+                
+                <h2 class="text-xl sm:text-2xl font-bold font-serif text-slate-900 leading-snug hover:text-substack transition-colors">
+                    Crafting Digital Books and Graphic Novels for Global Distribution
+                </h2>
+                
+                <p class="text-slate-600 font-serif text-sm leading-relaxed">
+                    An inside look at structuring educational e-books and manga panel layouts for platforms like Amazon KDP and digital storefronts.
+                </p>
+
+                <div class="flex items-center justify-between pt-4 substack-border text-xs text-slate-500">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-6 h-6 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-[10px]">PS</div>
+                        <span class="font-semibold text-slate-900">Prasant Sagar</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button onclick="handleLike('post-2')" class="hover:text-substack flex items-center gap-1 font-medium">
+                            ❤️ <span id="like-count-post-2">8</span>
+                        </button>
+                        <span>💬 2 comments</span>
+                    </div>
+                </div>
+            </article>
+
         </div>
 
-        <!-- Corporate Sub-sections -->
-        <div id="about-section" class="hidden max-w-2xl mx-auto py-10 space-y-4 text-center">
-            <h2 class="text-2xl font-black text-slate-900 dark:text-white uppercase">About InkSpire</h2>
-            <p class="text-slate-600 dark:text-slate-300 font-serif text-sm leading-relaxed">Conceptualized and managed by <strong>Prasant Sagar</strong> based in New Delhi, India.</p>
-        </div>
-        <div id="contact-section" class="hidden max-w-2xl mx-auto py-10 space-y-4 text-center">
-            <h2 class="text-2xl font-black text-slate-900 dark:text-white uppercase">Contact Desk</h2>
-        </div>
-        <div id="privacy-section" class="hidden max-w-2xl mx-auto py-10 space-y-3 text-xs">
-            <h2 class="text-xl font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">Privacy Policy</h2>
-        </div>
-        <div id="terms-section" class="hidden max-w-2xl mx-auto py-10 space-y-3 text-xs">
-            <h2 class="text-xl font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">Terms of Service</h2>
-        </div>
+        <!-- Bottom Subscribe Box (Substack Signature Footer Box) -->
+        <section id="subscribe-box" class="bg-orange-50/60 border border-orange-100 rounded-2xl p-8 text-center space-y-4 my-12">
+            <h3 class="text-xl font-bold font-serif text-slate-900">Subscribe to InkSpire</h3>
+            <p class="text-slate-600 text-xs sm:text-sm font-serif max-w-md mx-auto">
+                Never miss an update. Every new post is sent directly to your email inbox.
+            </p>
+            <div class="max-w-sm mx-auto flex gap-2 pt-2">
+                <input type="email" placeholder="Your email address" class="flex-grow bg-white border border-slate-300 px-4 py-2.5 text-xs rounded-lg focus:outline-none focus:border-substack">
+                <button onclick="handleSubscribe()" class="bg-substack hover:bg-orange-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition">
+                    Continue
+                </button>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 dark:bg-black text-white py-8 mt-auto border-t-2 border-indigo-600 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 text-center text-[10px] text-slate-500">
-            <p>&copy; 2026 InkSpire. Developed by <strong class="text-white">Prasant Sagar</strong>.</p>
+    <!-- Substack Style Footer -->
+    <footer class="w-full bg-white substack-border py-8 text-xs text-slate-500 mt-auto">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 InkSpire. Built by <strong class="text-slate-900">Prasant Sagar</strong>. Powered by Substack-inspired design.</p>
+            <div class="flex space-x-4 font-medium">
+                <a href="https://x.com/kavinmusic13" target="_blank" class="hover:text-slate-900">Twitter</a>
+                <a href="https://www.instagram.com/inkspire.8s" target="_blank" class="hover:text-slate-900">Instagram</a>
+            </div>
         </div>
     </footer>
 
@@ -249,51 +203,21 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Core Scripts -->
+    <!-- Interactive Scripts -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const isDark = document.documentElement.classList.contains('dark');
-            document.getElementById('dark-mode-btn-top').textContent = isDark ? 'Light Mode' : 'Dark Mode';
-            updateLiveClock();
-            setInterval(updateLiveClock, 1000);
-        });
-
-        function updateLiveClock() {
-            const now = new Date();
-            const options = { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-            const clockEl = document.getElementById('live-top-clock');
-            if(clockEl) clockEl.textContent = now.toLocaleDateString('en-US', options) + ' IST';
+        function scrollToSubscribe() {
+            document.getElementById('subscribe-box').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function toggleThreeDotMenu(event) {
-            event.stopPropagation();
-            document.getElementById('three-dot-dropdown').classList.toggle('hidden');
+        function handleSubscribe() {
+            alert('Thank you for subscribing to InkSpire!');
         }
 
-        window.addEventListener('click', () => {
-            const menu = document.getElementById('three-dot-dropdown');
-            if(menu) menu.classList.add('hidden');
-        });
-
-        function showSection(sectionId) {
-            ['home', 'about', 'contact', 'privacy', 'terms'].forEach(s => {
-                const el = document.getElementById(s + '-section');
-                if(el) el.classList.add('hidden');
-            });
-            const target = document.getElementById(sectionId + '-section');
-            if(target) target.classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function toggleDarkMode() {
-            const html = document.documentElement;
-            const topBtn = document.getElementById('dark-mode-btn-top');
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                if(topBtn) topBtn.textContent = 'Dark Mode';
-            } else {
-                html.classList.add('dark');
-                if(topBtn) topBtn.textContent = 'Light Mode';
+        function handleLike(postId) {
+            const countEl = document.getElementById(`like-count-${postId}`);
+            if(countEl) {
+                let current = parseInt(countEl.textContent);
+                countEl.textContent = current + 1;
             }
         }
     </script>
