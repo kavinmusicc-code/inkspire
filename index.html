@@ -1,36 +1,1819 @@
-<!doctype html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23171717' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 19l7-7 3 3-7 7-3-3z'></path><path d='M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z'></path><path d='M2 2l7.586 7.586'></path><circle cx='11' cy='11' r='2'></circle></svg>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary SEO -->
-    <title>InkSpire — Professional Web Writing</title>
-    <meta name="title" content="InkSpire — Professional Web Writing" />
-    <meta name="description" content="InkSpire creates clear, engaging website copy, articles, SEO content, and marketing copy for modern brands and businesses." />
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://inkspire.studio/" />
-    <meta property="og:title" content="InkSpire — Professional Web Writing" />
-    <meta property="og:description" content="InkSpire creates clear, engaging website copy, articles, SEO content, and marketing copy for modern brands and businesses." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://inkspire.studio/" />
-    <meta property="twitter:title" content="InkSpire — Professional Web Writing" />
-    <meta property="twitter:description" content="InkSpire creates clear, engaging website copy, articles, SEO content, and marketing copy for modern brands and businesses." />
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80" />
+  <title>InkSpire — Professional Web Writing</title>
+  <meta
+    name="description"
+    content="InkSpire creates clear, engaging website copy, articles, SEO content, and marketing copy for modern brands and businesses."
+  />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-neutral-50 text-neutral-950 font-sans antialiased selection:bg-neutral-200 selection:text-neutral-900">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <meta property="og:title" content="InkSpire — Professional Web Writing" />
+  <meta
+    property="og:description"
+    content="Clear writing for brands, businesses, creators, and ideas that deserve attention."
+  />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --black: #111111;
+      --dark: #1b1b1b;
+      --white: #ffffff;
+      --paper: #f7f7f5;
+      --muted: #737373;
+      --line: #d9d9d6;
+      --accent: #b3261e;
+      --max: 1380px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* =========================
+       TOP BAR
+    ========================= */
+
+    .topbar {
+      background: var(--black);
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .topbar-inner {
+      min-height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .topbar span:last-child {
+      opacity: 0.7;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.06em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    nav a {
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 1px;
+      background: var(--black);
+      transition: width 0.25s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--black);
+      color: white;
+      padding: 11px 16px;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+    }
+
+    .nav-cta::after {
+      display: none;
+    }
+
+    .menu-btn {
+      display: none;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       CATEGORY BAR
+    ========================= */
+
+    .category-bar {
+      border-bottom: 1px solid var(--line);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .category-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .categories {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      min-width: max-content;
+    }
+
+    .categories a {
+      padding: 12px 22px;
+      border-right: 1px solid var(--line);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: 0.2s ease;
+    }
+
+    .categories a:first-child {
+      border-left: 1px solid var(--line);
+    }
+
+    .categories a:hover {
+      background: var(--black);
+      color: white;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 75px 0 65px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.55fr 0.75fr;
+      gap: 60px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 9px;
+    }
+
+    .hero h1 {
+      font-size: clamp(58px, 8vw, 122px);
+      line-height: 0.88;
+      letter-spacing: -0.065em;
+      max-width: 1000px;
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .hero-copy {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.55;
+      max-width: 470px;
+      margin-bottom: 25px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border: 1px solid var(--black);
+      background: var(--black);
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: white;
+      color: var(--black);
+    }
+
+    .btn-light:hover {
+      color: white;
+    }
+
+    .hero-art {
+      min-height: 310px;
+      background:
+        linear-gradient(135deg, transparent 49%, var(--black) 50%, var(--black) 51%, transparent 52%),
+        linear-gradient(45deg, transparent 49%, var(--accent) 50%, var(--accent) 51%, transparent 52%);
+      background-size: 100% 100%, 100% 100%;
+      border: 1px solid var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-art::before {
+      content: "INK";
+      position: absolute;
+      font-size: 150px;
+      font-weight: 700;
+      letter-spacing: -0.1em;
+      opacity: 0.05;
+      right: -15px;
+      bottom: -20px;
+    }
+
+    .hero-art-label {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 35px;
+      border-bottom: 2px solid var(--black);
+      padding-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 40px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .section-label {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       FEATURED
+    ========================= */
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.8fr;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .featured-main {
+      min-height: 460px;
+      padding: 40px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: var(--paper);
+    }
+
+    .featured-main .category,
+    .article .category,
+    .project .category {
+      color: var(--accent);
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .featured-main h3 {
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      max-width: 850px;
+      margin-bottom: 20px;
+    }
+
+    .featured-main p {
+      font-family: Arial, sans-serif;
+      color: #555;
+      max-width: 650px;
+      margin-bottom: 25px;
+    }
+
+    .side-articles {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    .article {
+      padding: 28px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: 0.25s ease;
+    }
+
+    .article:hover {
+      background: var(--paper);
+    }
+
+    .article h4 {
+      font-size: 27px;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      margin-bottom: 10px;
+    }
+
+    .article p {
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .service {
+      padding: 30px;
+      min-height: 300px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      transition: 0.25s ease;
+    }
+
+    .service:hover {
+      background: var(--black);
+      color: white;
+    }
+
+    .service-number {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      opacity: 0.55;
+      margin-bottom: 70px;
+    }
+
+    .service h3 {
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 15px;
+    }
+
+    .service p {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .service:hover p {
+      color: #ccc;
+    }
+
+    /* =========================
+       STATEMENT
+    ========================= */
+
+    .statement {
+      background: var(--black);
+      color: white;
+    }
+
+    .statement-inner {
+      max-width: 1100px;
+    }
+
+    .statement small {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #aaa;
+    }
+
+    .statement h2 {
+      font-size: clamp(48px, 7vw, 100px);
+      line-height: 0.92;
+      letter-spacing: -0.065em;
+      margin: 20px 0 35px;
+    }
+
+    .statement h2 span {
+      color: #aaa;
+    }
+
+    .statement p {
+      max-width: 650px;
+      font-family: Arial, sans-serif;
+      color: #bbb;
+      font-size: 16px;
+    }
+
+    /* =========================
+       PORTFOLIO
+    ========================= */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .project {
+      min-height: 360px;
+      padding: 32px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.25s ease;
+    }
+
+    .project:hover {
+      background: var(--paper);
+    }
+
+    .sample-tag {
+      display: inline-block;
+      border: 1px solid var(--line);
+      padding: 5px 8px;
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .project h3 {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      margin-bottom: 15px;
+    }
+
+    .project p {
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      max-width: 480px;
+    }
+
+    .project-link {
+      margin-top: 25px;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* =========================
+       PROCESS
+    ========================= */
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .step {
+      padding: 30px;
+      min-height: 240px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .step-number {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .step h3 {
+      font-size: 28px;
+      margin: 65px 0 10px;
+      letter-spacing: -0.04em;
+    }
+
+    .step p {
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       WRITING
+    ========================= */
+
+    .writing-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .writing-item {
+      display: grid;
+      grid-template-columns: 150px 1fr 130px;
+      gap: 25px;
+      align-items: center;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+      transition: 0.2s ease;
+    }
+
+    .writing-item:hover {
+      padding-left: 12px;
+      background: var(--paper);
+    }
+
+    .writing-meta {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .writing-item h3 {
+      font-size: 29px;
+      line-height: 1;
+      letter-spacing: -0.035em;
+    }
+
+    .read-time {
+      text-align: right;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.4fr;
+      gap: 70px;
+    }
+
+    .about-title {
+      font-size: clamp(45px, 6vw, 80px);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+    }
+
+    .about-copy {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      max-width: 750px;
+    }
+
+    .about-copy p + p {
+      margin-top: 20px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      background: var(--paper);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .contact-title {
+      font-size: clamp(50px, 6vw, 90px);
+      line-height: 0.9;
+      letter-spacing: -0.065em;
+      margin-bottom: 25px;
+    }
+
+    .contact-copy {
+      font-family: Arial, sans-serif;
+      color: #555;
+      max-width: 500px;
+    }
+
+    .contact-social {
+      margin-top: 35px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .social {
+      border-bottom: 1px solid var(--black);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding-bottom: 4px;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    label {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: white;
+      padding: 13px;
+      outline: none;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--black);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-message {
+      display: none;
+      padding: 12px;
+      background: #eee;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: var(--black);
+      color: white;
+      padding: 50px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 50px;
+    }
+
+    .footer-logo {
+      font-size: 45px;
+      font-weight: 700;
+      letter-spacing: -0.06em;
+    }
+
+    .footer-logo span {
+      color: #d7473d;
+    }
+
+    .footer-description {
+      font-family: Arial, sans-serif;
+      color: #aaa;
+      max-width: 380px;
+      margin-top: 15px;
+    }
+
+    .footer-heading {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 15px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: #d7473d;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #777;
+    }
+
+    /* =========================
+       REVEAL
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1000px) {
+      .hero-grid,
+      .featured-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        min-height: 240px;
+      }
+
+      .services-grid,
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .featured-main {
+        min-height: 390px;
+      }
+
+      .side-articles {
+        grid-template-rows: none;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .writing-item {
+        grid-template-columns: 120px 1fr 100px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .topbar-inner {
+        min-height: 30px;
+        font-size: 9px;
+      }
+
+      .header-inner {
+        min-height: 65px;
+      }
+
+      .logo {
+        font-size: 29px;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: white;
+        border-bottom: 1px solid var(--line);
+        padding: 18px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-cta {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 55px 0 45px;
+      }
+
+      .hero h1 {
+        font-size: clamp(52px, 16vw, 85px);
+      }
+
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .section-head {
+        margin-bottom: 25px;
+      }
+
+      .side-articles {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-main {
+        padding: 25px;
+        min-height: 390px;
+      }
+
+      .featured-main h3 {
+        font-size: 42px;
+      }
+
+      .services-grid,
+      .portfolio-grid,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .service {
+        min-height: 250px;
+      }
+
+      .service-number {
+        margin-bottom: 45px;
+      }
+
+      .project {
+        min-height: 300px;
+      }
+
+      .writing-item {
+        grid-template-columns: 1fr;
+        gap: 9px;
+      }
+
+      .writing-item h3 {
+        font-size: 25px;
+      }
+
+      .read-time {
+        text-align: left;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-title {
+        font-size: 58px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>InkSpire / Web Writing Studio</span>
+      <span>Clear words. Stronger ideas.</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+
+      <a href="#home" class="logo">
+        Ink<span>Spire</span>
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        Menu
+      </button>
+
+      <nav id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#writing">Writing</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Start a Project</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- CATEGORY BAR -->
+  <div class="category-bar">
+    <div class="container categories">
+      <a href="#services">Web Writing</a>
+      <a href="#services">Copywriting</a>
+      <a href="#services">SEO</a>
+      <a href="#writing">Blogs</a>
+      <a href="#services">Marketing</a>
+      <a href="#work">Brand Content</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="reveal">
+          <div class="eyebrow">Web Writing Studio</div>
+
+          <h1>
+            Words that move <em>ideas</em> forward.
+          </h1>
+        </div>
+
+        <div class="reveal">
+          <p class="hero-copy">
+            Clear, engaging web writing for brands, businesses,
+            creators, and ideas that deserve to be understood.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="btn">View My Work</a>
+            <a href="#contact" class="btn btn-light">Start a Project</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container" style="margin-top:45px;">
+        <div class="hero-art reveal">
+          <span class="hero-art-label">InkSpire Editorial</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED WRITING -->
+    <section id="writing">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <h2 class="section-title">Featured Writing</h2>
+          <span class="section-label">InkSpire / Editorial</span>
+        </div>
+
+        <div class="featured-grid">
+
+          <article class="featured-main reveal">
+            <div>
+              <div class="category">Web Copy / Sample</div>
+
+              <h3>
+                How Better Website Writing Turns Visitors Into Readers
+              </h3>
+
+              <p>
+                A practical look at how structure, clarity, tone,
+                and purposeful messaging can make a website easier
+                to understand and more engaging.
+              </p>
+
+              <a href="#contact" class="btn">
+                Read Article
+              </a>
+            </div>
+          </article>
+
+          <div class="side-articles">
+
+            <article class="article reveal">
+              <div class="category">SEO Content</div>
+              <h4>Writing for Humans and Search</h4>
+              <p>
+                Clear content can serve both readers and search intent
+                when structure and purpose come first.
+              </p>
+            </article>
+
+            <article class="article reveal">
+              <div class="category">Brand Writing</div>
+              <h4>Finding the Right Voice for Your Brand</h4>
+              <p>
+                A strong brand voice helps businesses communicate
+                consistently across digital platforms.
+              </p>
+            </article>
+
+            <article class="article reveal">
+              <div class="category">Blog Writing</div>
+              <h4>Why Clear Ideas Need Clear Writing</h4>
+              <p>
+                Good ideas become more useful when readers can
+                understand them without unnecessary friction.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <h2 class="section-title">What I Write</h2>
+          <span class="section-label">Services</span>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service reveal">
+            <div class="service-number">01</div>
+            <h3>Website Copy</h3>
+            <p>
+              Landing pages, homepage copy, About pages,
+              service pages, and website messaging.
+            </p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-number">02</div>
+            <h3>Blog &amp; Articles</h3>
+            <p>
+              Research-driven articles, guides, explainers,
+              and long-form web content.
+            </p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-number">03</div>
+            <h3>SEO Content</h3>
+            <p>
+              Readable, search-focused content structured
+              around topics and user intent.
+            </p>
+          </article>
+
+          <article class="service reveal">
+            <div class="service-number">04</div>
+            <h3>Marketing Copy</h3>
+            <p>
+              Product copy, email copy, campaign messaging,
+              and promotional content.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- STATEMENT -->
+    <section class="statement">
+      <div class="container statement-inner reveal">
+
+        <small>InkSpire / Editorial Principle</small>
+
+        <h2>
+          Good writing doesn't just fill a page.
+          <span>It gives the page a purpose.</span>
+        </h2>
+
+        <p>
+          InkSpire focuses on clear, useful, human-centered writing
+          that helps readers understand what matters.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="work">
+      <div class="container">
+
+        <div class="section-head reveal">
+          <h2 class="section-title">Selected Work</h2>
+          <span class="section-label">Sample Projects</span>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <article class="project reveal">
+            <div>
+              <span class="sample-tag">Sample Project</span>
+              <div class="category">Website Copy</div>
+
+              <h3>
+                Building a Clearer Digital Presence
+              </h3>
+
+              <p>
+                A sample website-copy project focused on
+                clear messaging and stronger information hierarchy.
+              </p>
+            </div>
+
+            <a href="#contact" class="project-link">
+              Read Sample →
+            </a>
+          </article>
+
+          <article class="project reveal">
+            <div>
+              <span class="sample-tag">Sample Project</span>
+              <div class="category">Blog Article</div>
+
+              <h3>
+                The Future of AI for Small Businesses
+              </h3>
+
+              <p>
+                A sample educational article exploring how
+                emerging technology can affect everyday businesses.
+              </p>
+            </div>
+
+            <a href="#contact" class="project-link">
+              Read Sample →
+            </a>
+          </article>
+
+          <article class="project reveal">
+            <div>
+              <span class="sample-tag">Sample Project</span>
+              <div class="category">SEO Content</div>
+
+              <h3>
+                A Practical Guide to Building an Online Brand
+              </h3>
+
+              <p>
+                A sample SEO-focused guide structured around
+                reader intent, clarity, and useful information.
+              </p>
+            </div>
+
+            <a href="#contact" class="project-link">
+              Read Sample →
+            </a>
+          </article>
+
+          <article class="project reveal">
+            <div>
+              <span class="sample-tag">Sample Project</span>
+              <div class="category">Product Copy</div>
+
+              <h3>
+                Turning Features Into Benefits
+              </h3>
+
+              <p>
+                A sample product-copy concept showing how
+                features can be translated into clear customer value.
+              </p>
+            </div>
+
+            <a href="#contact" class="project-link">
+              Read Sample →
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section>
+      <div class="container">
+
+        <div class="section-head reveal">
+          <h2 class="section-title">From Idea to Published</h2>
+          <span class="section-label">Process</span>
+        </div>
+
+        <div class="process">
+
+          <article class="step reveal">
+            <div class="step-number">01</div>
+            <h3>Discover</h3>
+            <p>
+              Understand the audience, goals, topic, and brand.
+            </p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step-number">02</div>
+            <h3>Research</h3>
+            <p>
+              Develop the topic, gather information,
+              and build the content structure.
+            </p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step-number">03</div>
+            <h3>Write</h3>
+            <p>
+              Turn ideas into clear, engaging,
+              purposeful copy.
+            </p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step-number">04</div>
+            <h3>Refine</h3>
+            <p>
+              Edit, polish, and prepare the final
+              content for publication.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST WRITING -->
+    <section>
+      <div class="container">
+
+        <div class="section-head reveal">
+          <h2 class="section-title">Latest from InkSpire</h2>
+          <span class="section-label">Sample Articles</span>
+        </div>
+
+        <div class="writing-list">
+
+          <article class="writing-item reveal">
+            <div class="writing-meta">
+              Web Copy
+            </div>
+
+            <h3>
+              Writing Better Website Copy
+            </h3>
+
+            <div class="read-time">
+              Sample · 5 min
+            </div>
+          </article>
+
+          <article class="writing-item reveal">
+            <div class="writing-meta">
+              Digital
+            </div>
+
+            <h3>
+              Building a Strong Online Presence
+            </h3>
+
+            <div class="read-time">
+              Sample · 6 min
+            </div>
+          </article>
+
+          <article class="writing-item reveal">
+            <div class="writing-meta">
+              Content
+            </div>
+
+            <h3>
+              Why Clear Content Matters
+            </h3>
+
+            <div class="read-time">
+              Sample · 4 min
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container about-grid">
+
+        <div class="reveal">
+          <div class="eyebrow">About InkSpire</div>
+
+          <h2 class="about-title">
+            Writing with purpose.
+          </h2>
+        </div>
+
+        <div class="about-copy reveal">
+          <p>
+            InkSpire is a web-writing studio focused on creating
+            clear, engaging, and purposeful digital content.
+          </p>
+
+          <p>
+            The goal is simple:
+            help ideas become easier to understand.
+          </p>
+
+          <p>
+            From website copy and articles to SEO content and
+            marketing messaging, every piece starts with the
+            reader and the purpose behind the words.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+
+        <div class="reveal">
+
+          <div class="eyebrow">Let's Work Together</div>
+
+          <h2 class="contact-title">
+            Have an idea worth writing?
+          </h2>
+
+          <p class="contact-copy">
+            Tell me what you're building, what you need written,
+            and where you want to take it.
+          </p>
+
+          <div class="contact-social">
+
+            <a
+              class="social"
+              href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+
+            <a
+              class="social"
+              href="https://x.com/kavinmusic13"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              X
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="reveal">
+
+          <form id="contactForm">
+
+            <div class="form-row">
+
+              <div>
+                <label for="name">Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+
+            </div>
+
+            <div class="form-row">
+
+              <div>
+                <label for="company">Company / Brand</label>
+                <input
+                  id="company"
+                  name="company"
+                  type="text"
+                  placeholder="Optional"
+                />
+              </div>
+
+              <div>
+                <label for="project">Project Type</label>
+
+                <select id="project" name="project">
+                  <option value="">Select one</option>
+                  <option>Website Copy</option>
+                  <option>Blog / Article</option>
+                  <option>SEO Content</option>
+                  <option>Marketing Copy</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell me about your project..."
+                required
+              ></textarea>
+            </div>
+
+            <button class="btn" type="submit">
+              Send Project Inquiry
+            </button>
+
+            <div class="form-message" id="formMessage"></div>
+
+          </form>
+
+          <p
+            style="
+              margin-top:18px;
+              font-family:Arial,sans-serif;
+              font-size:12px;
+              color:#777;
+            "
+          >
+            Prefer email?
+            <strong>hello@yourdomain.com</strong>
+            <br />
+            Replace this placeholder with your real email address.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <div class="footer-logo">
+            Ink<span>Spire</span>
+          </div>
+
+          <p class="footer-description">
+            Professional web writing for ideas, brands,
+            and businesses that want to communicate clearly.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-heading">Navigation</div>
+
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
+            <a href="#writing">Writing</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-heading">Follow InkSpire</div>
+
+          <div class="footer-links">
+
+            <a
+              href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram ↗
+            </a>
+
+            <a
+              href="https://x.com/kavinmusic13"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              X ↗
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 InkSpire. All rights reserved.
+        </span>
+
+        <span>
+          Clear words. Stronger ideas.
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mainNav = document.getElementById("mainNav");
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("open");
+
+      menuBtn.setAttribute("aria-expanded", isOpen);
+
+      menuBtn.textContent = isOpen ? "Close" : "Menu";
+    });
+
+    document.querySelectorAll("#mainNav a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "Menu";
+      });
+    });
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    /* =========================
+       CONTACT FORM
+    ========================= */
+
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      formMessage.style.display = "block";
+
+      formMessage.textContent =
+        "Your inquiry is ready. Connect this form to Formspree, Netlify Forms, or your own backend to receive real submissions.";
+
+      contactForm.reset();
+    });
+  </script>
+
+</body>
 </html>
