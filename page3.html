@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INKSPIRE - Global Intelligence Hub (Modules 21-30)</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+        }
+        header { 
+            background-color: var(--card-bg); 
+            border-bottom: 1px solid var(--border-color); 
+            padding: 2.5rem 1rem; 
+            text-align: center; 
+            margin-bottom: 2rem; 
+        }
+        header h1 { margin: 0; font-size: 2rem; color: var(--primary); letter-spacing: -0.5px; }
+        header p { margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.95rem; }
+        .container { width: 100%; max-width: 650px; margin: 0 auto; padding: 0 1rem; }
+        .search-box {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-size: 0.95rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            outline: none;
+            background: #fff;
+            transition: all 0.2s;
+        }
+        .search-box:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        .article { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 12px; 
+            margin-bottom: 1.5rem; 
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .article:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+        }
+        .article img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .article-content {
+            padding: 1.5rem;
+        }
+        .article h2 { 
+            font-size: 1.15rem; 
+            color: #0f172a; 
+            margin-top: 0; 
+            margin-bottom: 0.7rem; 
+            line-height: 1.4;
+        }
+        .definition-box { 
+            background: #f1f5f9; 
+            border-left: 4px solid var(--primary); 
+            padding: 0.75rem 1rem; 
+            margin: 0.8rem 0; 
+            font-size: 0.9rem; 
+            color: #334155; 
+            border-radius: 0 6px 6px 0; 
+        }
+        .article p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+        .cat-tag { 
+            display: inline-block; 
+            font-size: 0.7rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            background: #e0e7ff; 
+            color: var(--primary-dark); 
+            padding: 3px 8px; 
+            border-radius: 4px; 
+            margin-bottom: 0.6rem; 
+        }
+        /* Pagination Styling */
+        .pagination { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 8px; 
+            margin: 3rem 0; 
+        }
+        .pagination a { 
+            padding: 8px 14px; 
+            background: #fff; 
+            border: 1px solid var(--border-color); 
+            color: var(--primary); 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            transition: all 0.2s;
+        }
+        .pagination a.active { 
+            background: var(--primary); 
+            color: #fff; 
+            border-color: var(--primary); 
+        }
+        .pagination a:hover:not(.active) {
+            background: #f1f5f9;
+        }
+        footer { 
+            text-align: center; 
+            padding: 2.5rem 1rem; 
+            background-color: #1e293b; 
+            color: #94a3b8; 
+            font-size: 0.85rem; 
+            margin-top: 4rem; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>INKSPIRE HUB</h1>
+        <p>Global Intelligence & Deep-Tech Modules (Modules 21 - 30)</p>
+    </header>
+
+    <div class="container">
+        <!-- Search Filter Input -->
+        <input type="text" id="searchInput" class="search-box" placeholder="Search modules 21-30..." onkeyup="filterModules()">
+
+        <div id="modulesContainer">
+            <!-- Module 21 -->
+            <div class="article" data-title="21 synthetic biology genetic engineering biofoundries metabolic pathways">
+                <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80" alt="Synthetic Biology">
+                <div class="article-content">
+                    <span class="cat-tag">Synthetic Biology</span>
+                    <h2>21. Synthetic Biology, Automated Biofoundries & Metabolic Engineering</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Programming cellular DNA sequences using automated foundry pipelines to manufacture sustainable bio-materials and medicines.</div>
+                    <p>Biotech research facilities utilize automated plasmid assembly and high-throughput screening to engineer custom microbes capable of digesting complex chemical waste.</p>
+                </div>
+            </div>
+
+            <!-- Module 22 -->
+            <div class="article" data-title="22 decentralized finance defi liquidity pools smart contracts crypto protocols">
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80" alt="Decentralized Finance">
+                <div class="article-content">
+                    <span class="cat-tag">Fintech & DeFi</span>
+                    <h2>22. Decentralized Finance Protocols, Automated Market Makers & Liquidity Pools</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Non-custodial financial networks running on smart contracts to enable permissionless peer-to-peer lending and trading.</div>
+                    <p>Global liquidity protocols utilize cryptographic verification and decentralized governance models to streamline international capital allocation without intermediaries.</p>
+                </div>
+            </div>
+
+            <!-- Module 23 -->
+            <div class="article" data-title="23 advanced materials graphene nanomaterials carbon nanotubes structural engineering">
+                <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=800&q=80" alt="Advanced Materials">
+                <div class="article-content">
+                    <span class="cat-tag">Advanced Materials</span>
+                    <h2>23. Graphene, Carbon Nanotubes & Ultra-Lightweight Structural Materials</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Two-dimensional atomic crystals exhibiting unprecedented tensile strength, electrical conductivity, and thermal performance.</div>
+                    <p>Aerospace and electronics manufacturers integrate nanomaterial composites to reinforce vehicle hulls and dissipate heat in high-density processors.</p>
+                </div>
+            </div>
+
+            <!-- Module 24 -->
+            <div class="article" data-title="24 autonomous drones aerial logistics unmanned aerial vehicles uav surveillance">
+                <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=800&q=80" alt="Autonomous Drones">
+                <div class="article-content">
+                    <span class="cat-tag">Aerial Robotics</span>
+                    <h2>24. Autonomous Drones, Swarm Intelligence & Last-Mile Aerial Delivery</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Decentralized swarm coordination algorithms enabling unmanned aerial vehicles to execute complex mapping and cargo transport.</div>
+                    <p>Logistics operators deploy autonomous drone networks to expedite emergency medical supply delivery across congested urban and rural terrains.</p>
+                </div>
+            </div>
+
+            <!-- Module 25 -->
+            <div class="article" data-title="25 fusion energy magnetic confinement tokamak plasma physics clean power">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Fusion Energy">
+                <div class="article-content">
+                    <span class="cat-tag">Clean Energy</span>
+                    <h2>25. Nuclear Fusion Reactors, Magnetic Confinement & Plasma Physics</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Replicating stellar core conditions inside tokamak magnetic chambers to generate limitless clean energy with zero long-lived radioactive waste.</div>
+                    <p>International scientific collaborations achieve sustained high-temperature plasma confinement milestones, bringing commercial fusion power closer to reality.</p>
+                </div>
+            </div>
+
+            <!-- Module 26 -->
+            <div class="article" data-title="26 semantic web knowledge graphs semantic intelligence large language models">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Knowledge Graphs">
+                <div class="article-content">
+                    <span class="cat-tag">Information Architecture</span>
+                    <h2>26. Semantic Knowledge Graphs, Enterprise Ontologies & Data Interoperability</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Structured relational graph networks connecting disparate organizational data points to power intelligent search and inference engines.</div>
+                    <p>Enterprise data teams deploy vector-augmented knowledge graphs to eliminate data silos and improve context retrieval accuracy for AI systems.</p>
+                </div>
+            </div>
+
+            <!-- Module 27 -->
+            <div class="article" data-title="27 edge computing edge ai internet of things iot decentralized processing">
+                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=800&q=80" alt="Edge Computing">
+                <div class="article-content">
+                    <span class="cat-tag">Edge Computing</span>
+                    <h2>27. Edge AI Processing, Low-Latency IoT Gateways & Localized Inference</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Executing machine learning models directly on localized hardware chips to eliminate cloud dependency and network lag.</div>
+                    <p>Industrial sensor networks process operational anomalies locally at the device level, ensuring instant safety shutdowns without relying on remote data centers.</p>
+                </div>
+            </div>
+
+            <!-- Module 28 -->
+            <div class="article" data-title="28 digital identity self sovereign identity blockchain credentials security">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Digital Identity">
+                <div class="article-content">
+                    <span class="cat-tag">Digital Security</span>
+                    <h2>28. Self-Sovereign Digital Identity, Decentralized Credentials & Privacy</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Cryptographically secure, user-controlled digital wallets replacing vulnerable centralized identity databases.</div>
+                    <p>Governments and digital institutions adopt verifiable credential frameworks to allow citizens to prove attributes online without exposing underlying personal data.</p>
+                </div>
+            </div>
+
+            <!-- Module 29 -->
+            <div class="article" data-title="29 oceanography marine robotics autonomous underwater vehicles deep sea exploration">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Marine Robotics">
+                <div class="article-content">
+                    <span class="cat-tag">Ocean Tech</span>
+                    <h2>29. Autonomous Underwater Vehicles & Deep-Sea Environmental Mapping</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Pressure-resistant robotic submersibles mapping uncharted oceanic trenches and monitoring fragile marine ecosystems.</div>
+                    <p>Marine research institutions deploy long-range underwater gliders to track ocean current shifts, salinity levels, and deep-sea biodiversity patterns.</p>
+                </div>
+            </div>
+
+            <!-- Module 30 -->
+            <div class="article" data-title="30 circular economy sustainable manufacturing waste valorization industrial ecology">
+                <img src="https://images.unsplash.com/photo-1532996122724-e3c3fa9a0d35?auto=format&fit=crop&w=800&q=80" alt="Circular Economy">
+                <div class="article-content">
+                    <span class="cat-tag">Industrial Ecology</span>
+                    <h2>30. Circular Economy Frameworks, Waste Valorization & Industrial Ecology</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Designing closed-loop production cycles where industrial byproducts and consumer waste serve as raw inputs for new goods.</div>
+                    <p>Manufacturing clusters adopt industrial symbiosis practices, sharing thermal energy and material outputs to eliminate landfill waste completely.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination Links -->
+        <div class="pagination">
+            <a href="page2.html">&laquo; Prev</a>
+            <a href="index.html">1</a>
+            <a href="page2.html">2</a>
+            <a href="page3.html" class="active">3</a>
+            <a href="page4.html">4</a>
+            <a href="page4.html">Next &raquo;</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 INKSPIRE. All Rights Reserved. Modules 21-30 Compilation.</p>
+    </footer>
+
+    <script>
+        function filterModules() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let articles = document.getElementsByClassName('article');
+            for (let i = 0; i < articles.length; i++) {
+                let title = articles[i].getAttribute('data-title') || articles[i].innerText.toLowerCase();
+                articles[i].style.display = title.includes(input) ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
