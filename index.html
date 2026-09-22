@@ -3,240 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prasant Sagar | Web Writer & Digital Creator Portfolio</title>
+    <title>Prasant Sagar | Elite Digital Agency & Content Studio</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         body {
-            background-color: #0b0f19;
-            color: #e2e8f0;
-            line-height: 1.6;
-            scroll-behavior: smooth;
+            background-color: #07090e;
+            color: #f1f5f9;
+            line-height: 1.7;
+            overflow-x: hidden;
         }
         header {
-            background: rgba(17, 24, 39, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 40px;
+            background: rgba(7, 9, 14, 0.9);
+            backdrop-filter: blur(12px);
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
         .logo {
-            font-size: 1.6rem;
-            font-weight: bold;
-            color: #d4af37;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f3e7ab 0%, #d4af37 50%, #aa7c11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        nav {
+            display: flex;
+            gap: 30px;
         }
         nav a {
-            color: #cbd5e1;
+            color: #94a3b8;
             text-decoration: none;
-            margin-left: 25px;
-            transition: color 0.3s;
             font-size: 0.95rem;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
         nav a:hover {
             color: #d4af37;
         }
         .hero {
+            padding: 180px 5% 120px 5%;
             text-align: center;
-            padding: 130px 20px 90px 20px;
-            background: linear-gradient(to bottom, #111827, #0b0f19);
+            background: radial-gradient(circle at center, #111827 0%, #07090e 100%);
+            position: relative;
         }
-        .hero-badge {
+        .hero-tag {
             display: inline-block;
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(212, 175, 55, 0.08);
             color: #d4af37;
-            padding: 6px 16px;
-            border-radius: 20px;
+            padding: 8px 20px;
+            border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 600;
             border: 1px solid rgba(212, 175, 55, 0.3);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 25px;
             color: #ffffff;
             letter-spacing: -1px;
-            line-height: 1.2;
+            line-height: 1.15;
         }
         .hero h1 span {
-            color: #d4af37;
+            background: linear-gradient(135deg, #f3e7ab 0%, #d4af37 50%, #aa7c11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: #94a3b8;
-            max-width: 700px;
-            margin: 0 auto 35px auto;
+            max-width: 750px;
+            margin: 0 auto 40px auto;
+            font-weight: 400;
         }
-        .btn-group {
+        .btn-box {
             display: flex;
-            gap: 15px;
             justify-content: center;
-            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #d4af37, #aa7c11);
-            color: #0b0f19;
-            padding: 14px 32px;
-            border-radius: 6px;
+        .btn-gold {
+            background: linear-gradient(135deg, #f3e7ab 0%, #d4af37 50%, #aa7c11 100%);
+            color: #07090e;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: 700;
             text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s, opacity 0.3s;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
         }
         .btn-outline {
             background: transparent;
-            color: #d4af37;
-            border: 1px solid rgba(212, 175, 55, 0.5);
-            box-shadow: none;
+            color: #f1f5f9;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
         }
-        .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
+        .btn-outline:hover {
+            border-color: #d4af37;
+            color: #d4af37;
+        }
+        .features-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: -50px auto 0 auto;
+            padding: 0 5%;
+            position: relative;
+            z-index: 10;
+        }
+        .feature-box {
+            background: #111827;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        .feature-box h3 {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+        .feature-box p {
+            color: #94a3b8;
+            font-size: 0.9rem;
         }
         section {
-            padding: 90px 20px;
-            max-width: 1100px;
+            padding: 110px 5%;
+            max-width: 1200px;
             margin: 0 auto;
         }
         section h2 {
             text-align: center;
             font-size: 2.5rem;
+            font-weight: 800;
             margin-bottom: 15px;
             color: #ffffff;
-            letter-spacing: -0.5px;
         }
         section h2 span {
             color: #d4af37;
         }
-        .section-subtitle {
+        .section-desc {
             text-align: center;
             color: #94a3b8;
-            margin-bottom: 50px;
+            max-width: 600px;
+            margin: 0 auto 60px auto;
             font-size: 1.05rem;
         }
-        .services-grid, .portfolio-grid, .stats-grid {
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
-        .service-card, .portfolio-card {
-            background: #111827;
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+        .card {
+            background: #0f172a;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        .service-card:hover, .portfolio-card:hover {
+        .card:hover {
             border-color: #d4af37;
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
         }
-        .service-card h3, .portfolio-card h3 {
-            margin-bottom: 15px;
-            color: #d4af37;
+        .card h3 {
             font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
-        .service-card p, .portfolio-card p {
-            color: #94a3b8;
-            font-size: 0.98rem;
-            margin-bottom: 20px;
-        }
-        .tag {
-            display: inline-block;
-            background: #0b0f19;
-            color: #d4af37;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            font-weight: 500;
-        }
-        .stats-section {
-            background: #111827;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 50px 20px;
-            margin: 40px 0;
-        }
-        .stats-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: #d4af37;
-            margin-bottom: 5px;
-        }
-        .stat-item p {
+        .card p {
             color: #94a3b8;
             font-size: 0.95rem;
+            margin-bottom: 25px;
         }
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #94a3b8;
-            font-size: 1.15rem;
+        .badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.1);
+            color: #d4af37;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 650px;
-            margin: 0 auto;
+        .contact-card {
             background: #111827;
-            padding: 40px;
-            border-radius: 12px;
             border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
         }
-        .contact-form input, .contact-form textarea {
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
             padding: 16px;
-            background: #0b0f19;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: #07090e;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             color: #ffffff;
             font-size: 1rem;
             outline: none;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s ease;
         }
-        .contact-form input:focus, .contact-form textarea:focus {
+        .form-group input:focus, .form-group textarea:focus {
             border-color: #d4af37;
         }
-        .contact-form textarea {
+        .form-group textarea {
             resize: vertical;
             height: 150px;
         }
         footer {
             text-align: center;
-            padding: 40px;
-            background: #111827;
+            padding: 40px 5%;
+            background: #07090e;
             color: #64748b;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
         }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            header { padding: 15px 20px; }
-            .btn-group { flex-direction: column; width: 100%; }
-            .btn { width: 100%; text-align: center; }
+            header { padding: 15px 5%; }
+            nav { display: none; }
+            .hero { padding: 140px 5% 80px 5%; }
+            .contact-card { padding: 25px; }
         }
     </style>
 </head>
@@ -246,108 +268,112 @@
         <div class="logo">Prasant Sagar</div>
         <nav>
             <a href="#services">Services</a>
-            <a href="#portfolio">Works</a>
+            <a href="#works">Portfolio</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-badge">Web Writer & Digital Creator</div>
-        <h1>Crafting Impactful Words & <span>Digital Experiences</span></h1>
-        <p>Professional web content creation, digital agency branding (UPWEAVE, Wixevo, LUMIVOX), original e-books, and multimedia publishing.</p>
-        <div class="btn-group">
-            <a href="#contact" class="btn">Get in Touch</a>
-            <a href="#portfolio" class="btn btn-outline">View My Work</a>
+        <div class="hero-tag">Elite Digital Enterprise & Media Studio</div>
+        <h1>Elevating Brands Through <span>Elite Copy & Web Systems</span></h1>
+        <p>Strategic web writing, digital growth agency infrastructure (UPWEAVE, Wixevo, LUMIVOX), and high-impact publishing designed for global industry leaders.</p>
+        <div class="btn-box">
+            <a href="#contact" class="btn-gold">Schedule Consultation</a>
+            <a href="#works" class="btn-outline">Explore Ventures</a>
         </div>
     </section>
 
-    <div class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>3+</h3>
-                <p>Digital Growth Agencies Built</p>
-            </div>
-            <div class="stat-item">
-                <h3>Multiple</h3>
-                <p>Published E-Books & Comics</p>
-            </div>
-            <div class="stat-item">
-                <h3>Global</h3>
-                <p>Music & Content Distribution</p>
-            </div>
+    <div class="features-bar">
+        <div class="feature-box">
+            <h3>3+</h3>
+            <p>Digital Growth Ventures Built</p>
+        </div>
+        <div class="feature-box">
+            <h3>Global</h3>
+            <p>Media & Content Reach</p>
+        </div>
+        <div class="feature-box">
+            <h3>100%</h3>
+            <p>Professional Execution</p>
         </div>
     </div>
 
     <section id="services">
         <h2>Core <span>Expertise</span></h2>
-        <p class="section-subtitle">Specialized web writing, design, and digital publishing services.</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Web Content & SEO Writing</h3>
-                <p>Engaging landing pages, strategic website copywriting, and well-researched SEO blogs designed to drive growth.</p>
-                <span class="tag">Web Growth</span>
+        <p class="section-desc">Delivering top-tier precision in writing, branding, and digital commerce.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h3>High-Impact Web Writing</h3>
+                <p>Strategic website copywriting, persuasive landing page designs, and data-driven SEO content built to scale engagement.</p>
+                <span class="badge">Growth Writing</span>
             </div>
-            <div class="service-card">
-                <h3>E-Books & Digital Guides</h3>
-                <p>Authoritative digital books and guides covering AI automation, personal finance, and modern productivity blueprints.</p>
-                <span class="tag">Publishing</span>
+            <div class="card">
+                <h3>Digital Publishing & E-Books</h3>
+                <p>Authoritative digital e-books, guides, and visual comic series (such as MIDNIGHT REQUIEM) crafted with deep narrative flow.</p>
+                <span class="badge">Publishing</span>
             </div>
-            <div class="service-card">
-                <h3>Brand Assets & Storefronts</h3>
-                <p>Designing modern storefront layouts, graphic mockups, and digital brand identities for online businesses.</p>
-                <span class="tag">Branding</span>
+            <div class="card">
+                <h3>Agency Branding & Storefronts</h3>
+                <p>Complete web asset creation, digital storefront design, and modern UI engineering for digital growth agencies.</p>
+                <span class="badge">Enterprise UI</span>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" style="background: #0e1422; max-width: 100%; padding: 90px 20px;">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <h2>Actual <span>Projects & Works</span></h2>
-            <p class="section-subtitle">A showcase of real creative ventures and digital properties.</p>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
+    <section id="works" style="background: #090e17;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2>Active <span>Ventures & Works</span></h2>
+            <p class="section-desc">A showcase of real platforms, agencies, and creative properties.</p>
+            <div class="grid-3">
+                <div class="card">
                     <h3>UPWEAVE & LUMIVOX</h3>
-                    <p>Digital growth agencies and modern web storefronts developed with high-performance UI and compelling web copy.</p>
-                    <span class="tag">Agency / Storefront</span>
+                    <p>High-performance digital growth agencies and e-commerce storefronts engineered with modern tech stacks and sleek interfaces.</p>
+                    <span class="badge">Agencies</span>
                 </div>
-                <div class="portfolio-card">
-                    <h3>"MIDNIGHT REQUIEM" & E-Books</h3>
-                    <p>Authored original manga/comic series and educational e-books focusing on AI automation and modern income blueprints.</p>
-                    <span class="tag">Comics & E-Books</span>
+                <div class="card">
+                    <h3>Original E-Books & Comics</h3>
+                    <p>Authored digital assets including productivity guides, AI automation handbooks, and immersive comic titles like "MIDNIGHT REQUIEM".</p>
+                    <span class="badge">E-Books / Comics</span>
                 </div>
-                <div class="portfolio-card">
+                <div class="card">
                     <h3>ondaMusicaLab & Kavin Music</h3>
-                    <p>Original music tracks distributed globally across major streaming platforms, paired with digital media content.</p>
-                    <span class="tag">Music Production</span>
+                    <p>Original music production and global multi-platform distribution channels reaching international listeners.</p>
+                    <span class="badge">Global Music</span>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="about">
-        <h2>About <span>Me</span></h2>
-        <p class="section-subtitle">The creator behind the digital brands.</p>
-        <div class="about-content">
-            <p>
-                Hello! I am Prasant Sagar, a multi-disciplinary digital creator, web writer, and entrepreneur based in New Delhi, India. I specialize in building web agencies (UPWEAVE, Wixevo, LUMIVOX), publishing original e-books and comics, and distributing original music globally.
-            </p>
+        <h2>About The <span>Founder</span></h2>
+        <p class="section-desc">Driving innovation at the intersection of words and digital systems.</p>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; color: #94a3b8; font-size: 1.12rem;">
+            <p>I am Prasant Sagar, a New Delhi-based entrepreneur, digital creator, and web writer. My work spans across managing digital growth agencies (UPWEAVE, Wixevo, LUMIVOX), authoring professional e-books and comics, and distributing original music worldwide. I focus on building high-value digital experiences that combine robust strategy with flawless design.</p>
         </div>
     </section>
 
     <section id="contact">
-        <h2>Let's <span>Connect</span></h2>
-        <p class="section-subtitle">Have a project or inquiry? Send a message below.</p>
-        <form class="contact-form" action="#" method="POST">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email Address" required>
-            <textarea placeholder="Write your project details or message here..." required></textarea>
-            <button type="submit" class="btn" style="border:none; cursor:pointer; width: 100%;">Send Message</button>
-        </form>
+        <div class="contact-card">
+            <h2>Let's Build <span>Together</span></h2>
+            <p class="section-desc" style="margin-bottom: 30px;">Directly connect for professional inquiries, projects, or collaborations.</p>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name or Company" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email Address" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Describe your project scope or proposal..." required></textarea>
+                </div>
+                <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer;">Send Business Inquiry</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Prasant Sagar. All rights reserved.</p>
+        <p>&copy; 2026 Prasant Sagar. All rights reserved. Designed for Global Excellence.</p>
     </footer>
 
 </body>
