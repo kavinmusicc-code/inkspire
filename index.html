@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inkspire | Official Portfolio & Creator Hub</title>
+    <title>Inkspire | Professional Web Writing & Content Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --bg-deep: #0b0f19;
+            --bg-card: #111827;
+            --accent-cyan: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(56, 189, 248, 0.2);
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
         body {
-            background-color: #07090e;
-            color: #f1f5f9;
-            line-height: 1.7;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            line-height: 1.8;
             overflow-x: hidden;
         }
         header {
-            background: rgba(7, 9, 14, 0.9);
-            backdrop-filter: blur(12px);
-            padding: 20px 5%;
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(16px);
+            padding: 20px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -28,66 +38,68 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #f3e7ab 0%, #d4af37 50%, #aa7c11 100%);
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
         nav {
             display: flex;
-            gap: 30px;
+            gap: 35px;
         }
         nav a {
-            color: #94a3b8;
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
             transition: color 0.3s ease;
         }
         nav a:hover {
-            color: #d4af37;
+            color: var(--accent-cyan);
         }
         .hero {
-            padding: 180px 5% 120px 5%;
+            padding: 190px 6% 120px 6%;
             text-align: center;
-            background: radial-gradient(circle at center, #111827 0%, #07090e 100%);
+            background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.08) 0%, rgba(11, 15, 25, 0) 70%);
             position: relative;
         }
         .hero-tag {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.08);
-            color: #d4af37;
-            padding: 8px 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-cyan);
+            padding: 8px 22px;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 600;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid var(--border-color);
             margin-bottom: 25px;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-size: clamp(2.8rem, 5vw, 5rem);
             font-weight: 800;
             margin-bottom: 25px;
             color: #ffffff;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
             line-height: 1.15;
         }
         .hero h1 span {
-            background: linear-gradient(135deg, #f3e7ab 0%, #d4af37 50%, #aa7c11 100%);
+            background: linear-gradient(135deg, #38bdf8 0%, #a855f7 50%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .hero p {
-            font-size: 1.15rem;
-            color: #94a3b8;
+            font-size: 1.2rem;
+            color: var(--text-muted);
             max-width: 750px;
             margin: 0 auto 40px auto;
             font-weight: 400;
@@ -98,145 +110,155 @@
             gap: 20px;
             flex-wrap: wrap;
         }
-        .btn-gold {
-            background: linear-gradient(135deg, #f3e7ab 0%, #d4af37 50%, #aa7c11 100%);
-            color: #07090e;
-            padding: 15px 35px;
-            border-radius: 8px;
+        .btn-primary {
+            background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+            color: #ffffff;
+            padding: 16px 36px;
+            border-radius: 12px;
             font-weight: 700;
             text-decoration: none;
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .btn-gold:hover {
+        .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.45);
         }
-        .btn-outline {
-            background: transparent;
-            color: #f1f5f9;
-            padding: 15px 35px;
-            border-radius: 8px;
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-main);
+            padding: 16px 36px;
+            border-radius: 12px;
             font-weight: 600;
             text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
-        .btn-outline:hover {
-            border-color: #d4af37;
-            color: #d4af37;
+        .btn-secondary:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
         }
         section {
-            padding: 100px 5%;
-            max-width: 1200px;
+            padding: 110px 6%;
+            max-width: 1280px;
             margin: 0 auto;
         }
         section h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: 800;
             margin-bottom: 15px;
             color: #ffffff;
+            letter-spacing: -0.5px;
         }
         section h2 span {
-            color: #d4af37;
+            color: var(--accent-cyan);
         }
         .section-desc {
             text-align: center;
-            color: #94a3b8;
-            max-width: 600px;
-            margin: 0 auto 50px auto;
-            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 60px auto;
+            font-size: 1.1rem;
         }
-        .grid-3 {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 30px;
         }
-        .card {
-            background: #0f172a;
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .service-card {
+            background: var(--bg-card);
+            padding: 45px 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
             transition: all 0.3s ease;
             position: relative;
-            text-align: center;
         }
-        .card:hover {
-            border-color: #d4af37;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        .service-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
-        .card h3 {
-            font-size: 1.3rem;
+        .service-card i {
+            font-size: 2.2rem;
+            color: var(--accent-cyan);
+            margin-bottom: 25px;
+        }
+        .service-card h3 {
+            font-size: 1.35rem;
             color: #ffffff;
             margin-bottom: 15px;
             font-weight: 700;
         }
-        .card p {
-            color: #94a3b8;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
         }
-        .card a {
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-        .card a:hover {
-            text-decoration: underline;
-        }
-        .contact-box {
-            background: #111827;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 20px;
-            padding: 50px;
-            max-width: 800px;
+        .creator-box {
+            background: linear-gradient(145deg, #111827 0%, #0d1322 100%);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 24px;
+            padding: 60px;
+            max-width: 900px;
             margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
             text-align: center;
+        }
+        .creator-box h3 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        .creator-box p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            line-height: 1.9;
         }
         .social-links {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            margin-top: 30px;
         }
         .social-btn {
-            background: #07090e;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            color: #f1f5f9;
-            padding: 12px 25px;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--text-main);
+            padding: 14px 28px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             transition: all 0.3s ease;
         }
         .social-btn:hover {
-            background: #d4af37;
-            color: #07090e;
-            border-color: #d4af37;
+            background: var(--accent-cyan);
+            color: #0b0f19;
+            border-color: var(--accent-cyan);
+            transform: translateY(-2px);
         }
         footer {
             text-align: center;
-            padding: 40px 5%;
-            background: #07090e;
-            color: #64748b;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.9rem;
+            padding: 50px 6%;
+            background: #07090f;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.95rem;
         }
         footer span {
-            color: #d4af37;
+            color: var(--accent-cyan);
             font-weight: 600;
         }
         @media (max-width: 768px) {
             header { padding: 15px 5%; }
             nav { display: none; }
-            .hero { padding: 140px 5% 80px 5%; }
-            .contact-box { padding: 30px 20px; }
+            .hero { padding: 150px 5% 90px 5%; }
+            .creator-box { padding: 35px 20px; }
         }
     </style>
 </head>
@@ -245,68 +267,67 @@
     <header>
         <div class="logo">Inkspire</div>
         <nav>
+            <a href="#services">Writing Services</a>
             <a href="#about">About Creator</a>
-            <a href="#channels">Official Channels</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-tag">Created & Developed by Prashant Sagar</div>
-        <h1>Welcome to <span>Inkspire</span> Creator Hub</h1>
-        <p>A professional digital enterprise and content platform built from scratch with elite design systems and modern web architecture.</p>
+        <div class="hero-tag">
+            <i class="fa-solid fa-pen-nib"></i> Professional Web Writing & Content Hub
+        </div>
+        <h1>Crafting Compelling Stories & <br><span>Digital Content</span> That Converts</h1>
+        <p>Welcome to Inkspire. Elevating brands, websites, and digital audiences through expert web copywriting, strategic content creation, and engaging narratives.</p>
         <div class="btn-box">
-            <a href="#contact" class="btn-gold">Get in Touch</a>
-            <a href="#channels" class="btn-outline">Explore Channels</a>
+            <a href="#contact" class="btn-primary">Connect With Creator</a>
+            <a href="#services" class="btn-secondary">Explore Services</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Web Writing & <span>Content Services</span></h2>
+        <p class="section-desc">Tailored textual and editorial solutions designed to captivate readers and scale digital growth.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-file-lines"></i>
+                <h3>Web Copywriting</h3>
+                <p>High-converting landing page copy, brand storytelling, and engaging website content crafted to turn visitors into loyal customers.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-feather"></i>
+                <h3>Content Strategy & Blogs</h3>
+                <p>SEO-optimized articles, creative columns, and structured digital publications built to establish authority and drive organic traffic.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-bullhorn"></i>
+                <h3>Digital Brand Voice</h3>
+                <p>Developing unique brand messaging, crisp taglines, and immersive tonal guidelines tailored for modern digital ecosystems.</p>
+            </div>
         </div>
     </section>
 
     <section id="about">
-        <h2>About The <span>Creator</span></h2>
-        <p class="section-desc">The visionary behind the design, code, and execution.</p>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; color: #94a3b8; font-size: 1.1rem; background: #111827; padding: 40px; border-radius: 16px; border: 1px solid rgba(212, 175, 55, 0.2);">
-            <p>Inkspire is conceptualized, designed, and fully developed by <strong>Prashant Sagar</strong>. Combining high-end aesthetic UI standards with powerful digital infrastructure, this platform represents precision in execution and modern web craftsmanship.</p>
-        </div>
-    </section>
-
-    <section id="channels" style="background: #090e17;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2>Official <span>Social Channels</span></h2>
-            <p class="section-desc">Connect directly across official social networks.</p>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>X (Twitter)</h3>
-                    <p>Follow updates and insights on the official handle.</p>
-                    <a href="https://x.com/kavinmusic13" target="_blank">Visit X Profile &rarr;</a>
-                </div>
-                <div class="card">
-                    <h3>Instagram</h3>
-                    <p>Check out visual assets, creative works, and updates.</p>
-                    <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank">Visit Instagram &rarr;</a>
-                </div>
-                <div class="card">
-                    <h3>Direct Support Email</h3>
-                    <p>Send direct inquiries or project proposals.</p>
-                    <a href="mailto:Inkspiresupporteng@gmail.com">Send Email &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="contact-box">
-            <h2>Official <span>Contact Channels</span></h2>
-            <p class="section-desc" style="margin-bottom: 20px;">Reach out instantly via email or social networks below.</p>
+        <div class="creator-box">
+            <h3>Designed & Authored by Prashant Sagar</h3>
+            <p>Inkspire is built and directed by <strong>Prashant Sagar</strong>, a passionate digital creator and web writer based in New Delhi, India. Combining advanced web presentation with elite content structuring, every piece of work reflects precision, creativity, and editorial mastery.</p>
             <div class="social-links">
-                <a href="mailto:Inkspiresupporteng@gmail.com" class="social-btn">📧 Inkspiresupporteng@gmail.com</a>
-                <a href="https://x.com/kavinmusic13" target="_blank" class="social-btn">✖ X (Twitter)</a>
-                <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="social-btn">📸 Instagram</a>
+                <a href="mailto:Inkspiresupporteng@gmail.com" class="social-btn"><i class="fa-solid fa-envelope"></i> Email Support</a>
+                <a href="https://x.com/kavinmusic13" target="_blank" class="social-btn"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
+                <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
             </div>
+        </div>
+    </section>
+
+    <section id="contact" style="padding-top: 20px;">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <h2>Get in <span>Touch</span></h2>
+            <p class="section-desc">Have a project, collaboration, or writing inquiry? Reach out directly through the channels above.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Inkspire. Designed and Developed by <span>Prashant Sagar</span>. All rights reserved.</p>
+        <p>&copy; 2026 Inkspire. Created and Developed by <span>Prashant Sagar</span>. All rights reserved.</p>
     </footer>
 
 </body>
