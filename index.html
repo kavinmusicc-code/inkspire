@@ -1,2463 +1,2824 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+<meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>InkSpire — News, Ideas & Intelligence</title>
+<title>InkSpire — Ideas, Explained.</title>
 
-  <meta
-    name="description"
-    content="InkSpire covers world news, India, business, technology and artificial intelligence with clear, original web writing."
-  >
+<meta name="description"
+content="InkSpire publishes original stories, explainers and analysis across technology, AI, India, world affairs and digital business.">
 
-  <meta
-    name="keywords"
-    content="InkSpire, world news, India news, technology, AI, business, web writing"
-  >
+<meta name="author" content="Prashant Sagar">
 
-  <meta name="author" content="Prashant Sagar">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="robots" content="index, follow, max-image-preview:large">
 
-  <link
-    rel="canonical"
-    href="https://kavinmusicc-code.github.io/inkspire/"
-  >
+<link rel="canonical"
+href="https://kavinmusicc-code.github.io/inkspire/">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta
-    property="og:title"
-    content="InkSpire — News, Ideas & Intelligence"
-  >
-  <meta
-    property="og:description"
-    content="Clear, original writing on world news, India, business, technology and AI."
-  >
-  <meta
-    property="og:url"
-    content="https://kavinmusicc-code.github.io/inkspire/"
-  >
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="InkSpire — Ideas, Explained.">
+<meta property="og:description"
+content="Original stories, explainers and analysis from InkSpire.">
+<meta property="og:url"
+content="https://kavinmusicc-code.github.io/inkspire/">
+<meta property="og:site_name" content="InkSpire">
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta
-    name="twitter:title"
-    content="InkSpire — News, Ideas & Intelligence"
-  >
-  <meta
-    name="twitter:description"
-    content="Clear, original writing on world news, India, business, technology and AI."
-  >
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="InkSpire">
+<meta name="twitter:description"
+content="Original stories, explainers and analysis.">
 
-  <!-- =========================================================
-       GOOGLE ANALYTICS 4
-       ========================================================= -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2TQYXBJ7V"></script>
 
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-C2TQYXBJ7V">
-  </script>
+<script>
+window.dataLayer = window.dataLayer || [];
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
+function gtag(){
+  dataLayer.push(arguments);
+}
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+gtag('js', new Date());
+gtag('config', 'G-C2TQYXBJ7V');
+</script>
 
-    gtag('js', new Date());
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"NewsMediaOrganization",
+  "name":"InkSpire",
+  "url":"https://kavinmusicc-code.github.io/inkspire/",
+  "founder":{
+    "@type":"Person",
+    "name":"Prashant Sagar"
+  },
+  "sameAs":[
+    "https://www.instagram.com/inkspire.8s/"
+  ]
+}
+</script>
 
-    gtag('config', 'G-C2TQYXBJ7V');
-  </script>
+<style>
+
+:root{
+  --bg:#080b12;
+  --card:#101621;
+  --card2:#141b28;
+  --text:#f5f7fb;
+  --muted:#9ba6b8;
+  --line:#222b3a;
+  --accent:#7889ff;
+  --accent2:#a56dff;
+  --max:1180px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:
+  radial-gradient(
+    circle at 15% 0%,
+    rgba(120,137,255,.13),
+    transparent 30%
+  ),
+  var(--bg);
+
+  color:var(--text);
+
+  font-family:
+  Inter,
+  system-ui,
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  sans-serif;
+
+  line-height:1.7;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input{
+  font:inherit;
+}
+
+.container{
+  width:min(var(--max),calc(100% - 32px));
+  margin:auto;
+}
 
 
-  <!-- =========================================================
-       GOOGLE ADSENSE
+/* HEADER */
 
-       IMPORTANT:
-       AdSense approval ke BAAD Google jo exact code dega,
-       wahi yahan paste karna hai.
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
 
-       Fake publisher ID mat lagana.
-       ========================================================= -->
+  background:rgba(8,11,18,.88);
+
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  min-height:72px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+
+  font-weight:900;
+  letter-spacing:-.5px;
+}
+
+.logo{
+  width:39px;
+  height:39px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:11px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #687aff,
+    #a568ff
+  );
+
+  font-weight:1000;
+
+  box-shadow:
+  0 8px 30px rgba(120,137,255,.2);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.nav-links a{
+  color:#c7cfdd;
+  font-size:.9rem;
+}
+
+.nav-links a:hover{
+  color:white;
+}
+
+.menu{
+  display:none;
+  border:0;
+  background:none;
+  color:white;
+  font-size:1.5rem;
+}
 
 
-  <!-- =========================================================
-       NEWS MEDIA STRUCTURED DATA
-       ========================================================= -->
+/* HERO */
 
-  <script type="application/ld+json">
+.hero{
+  padding:90px 0 70px;
+  border-bottom:1px solid var(--line);
+}
 
-  {
-    "@context": "https://schema.org",
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:50px;
+  align-items:end;
+}
 
-    "@type": "NewsMediaOrganization",
+.eyebrow{
+  display:inline-block;
 
-    "name": "InkSpire",
+  padding:7px 13px;
 
-    "url": "https://kavinmusicc-code.github.io/inkspire/",
+  border:1px solid #2b3650;
 
-    "description": "News, ideas and intelligence covering world, India, business, technology and AI.",
+  border-radius:999px;
 
-    "founder": {
-      "@type": "Person",
-      "name": "Prashant Sagar"
-    },
+  color:#aeb8ff;
 
-    "sameAs": [
-      "https://www.instagram.com/inkspire.8s/"
-    ]
+  font-size:.75rem;
+
+  font-weight:800;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+
+  margin-bottom:22px;
+}
+
+.hero h1{
+  font-size:clamp(3rem,7vw,6rem);
+
+  line-height:.95;
+
+  letter-spacing:-4px;
+}
+
+.hero h1 span{
+  background:
+  linear-gradient(
+    90deg,
+    #8292ff,
+    #b477ff
+  );
+
+  -webkit-background-clip:text;
+
+  color:transparent;
+}
+
+.hero p{
+  color:var(--muted);
+
+  max-width:700px;
+
+  margin-top:25px;
+
+  font-size:1.05rem;
+}
+
+.hero-side{
+  border-left:1px solid var(--line);
+
+  padding-left:28px;
+}
+
+.hero-side strong{
+  display:block;
+
+  font-size:2rem;
+}
+
+.hero-side span{
+  color:var(--muted);
+
+  font-size:.9rem;
+}
+
+
+/* ADS */
+
+.ad-slot{
+  min-height:100px;
+
+  max-width:970px;
+
+  margin:28px auto;
+
+  border:1px dashed #30394a;
+
+  border-radius:14px;
+
+  display:grid;
+
+  place-items:center;
+
+  color:#657084;
+
+  font-size:.7rem;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08em;
+}
+
+
+/* SECTION */
+
+section{
+  padding:70px 0;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+
+  margin-bottom:28px;
+}
+
+.section-head h2{
+  font-size:2rem;
+  letter-spacing:-1px;
+}
+
+.section-head p{
+  color:var(--muted);
+}
+
+
+/* FILTERS */
+
+.filters{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+
+  margin-bottom:22px;
+}
+
+.filter{
+  cursor:pointer;
+
+  background:#0d121c;
+
+  border:1px solid var(--line);
+
+  color:#aeb7c7;
+
+  border-radius:999px;
+
+  padding:8px 14px;
+
+  font-size:.8rem;
+}
+
+.filter:hover,
+.filter.active{
+  background:#202a43;
+  color:white;
+  border-color:#3c4c75;
+}
+
+
+/* SEARCH */
+
+.search{
+  width:100%;
+
+  padding:15px 18px;
+
+  margin-bottom:25px;
+
+  border-radius:13px;
+
+  border:1px solid var(--line);
+
+  background:#0c111a;
+
+  color:white;
+
+  outline:none;
+}
+
+.search:focus{
+  border-color:#5367a5;
+}
+
+
+/* ARTICLES */
+
+.articles{
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:18px;
+}
+
+.article-card{
+  background:
+  linear-gradient(
+    180deg,
+    rgba(255,255,255,.025),
+    transparent
+  ),
+  var(--card);
+
+  border:1px solid var(--line);
+
+  border-radius:18px;
+
+  padding:24px;
+
+  transition:.2s;
+}
+
+.article-card:hover{
+  transform:translateY(-3px);
+
+  border-color:#3a465d;
+}
+
+.tag{
+  color:#9daaff;
+
+  font-size:.7rem;
+
+  text-transform:uppercase;
+
+  letter-spacing:.1em;
+
+  font-weight:800;
+}
+
+.article-card h3{
+  font-size:1.25rem;
+
+  line-height:1.25;
+
+  margin:12px 0;
+}
+
+.article-card p{
+  color:var(--muted);
+
+  font-size:.91rem;
+}
+
+.article-meta{
+  color:#6f7b8d;
+
+  font-size:.75rem;
+
+  margin-top:18px;
+}
+
+.read{
+  display:inline-block;
+
+  margin-top:18px;
+
+  color:white;
+
+  font-weight:700;
+
+  font-size:.83rem;
+}
+
+
+/* FEATURE */
+
+.feature{
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:20px;
+}
+
+.feature-box{
+  background:var(--card);
+
+  border:1px solid var(--line);
+
+  border-radius:20px;
+
+  padding:32px;
+}
+
+.feature-box h3{
+  font-size:1.8rem;
+
+  line-height:1.2;
+
+  margin:12px 0;
+}
+
+.feature-box p{
+  color:var(--muted);
+}
+
+
+/* ABOUT */
+
+.about{
+  max-width:850px;
+}
+
+.about h2{
+  font-size:2.3rem;
+
+  line-height:1.1;
+
+  margin:12px 0 20px;
+}
+
+.about p{
+  color:var(--muted);
+
+  margin-bottom:16px;
+}
+
+
+/* CONTACT */
+
+.contact-grid{
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:20px;
+}
+
+.contact-card{
+  background:var(--card);
+
+  border:1px solid var(--line);
+
+  border-radius:20px;
+
+  padding:30px;
+}
+
+.contact-card p{
+  color:var(--muted);
+}
+
+.social{
+  display:inline-block;
+
+  margin-top:20px;
+
+  padding:10px 15px;
+
+  border:1px solid var(--line);
+
+  border-radius:10px;
+}
+
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--line);
+
+  padding:45px 0;
+
+  color:#7f8999;
+}
+
+.footer-grid{
+  display:grid;
+
+  grid-template-columns:
+  2fr 1fr 1fr;
+
+  gap:30px;
+}
+
+footer h3{
+  color:white;
+
+  margin-bottom:12px;
+}
+
+footer a{
+  display:block;
+
+  margin:7px 0;
+
+  font-size:.88rem;
+}
+
+footer a:hover{
+  color:white;
+}
+
+.copyright{
+  border-top:1px solid var(--line);
+
+  margin-top:30px;
+
+  padding-top:20px;
+
+  font-size:.78rem;
+}
+
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+
+  inset:0;
+
+  z-index:3000;
+
+  background:rgba(0,0,0,.76);
+
+  backdrop-filter:blur(8px);
+
+  display:none;
+
+  padding:20px;
+
+  overflow-y:auto;
+}
+
+.modal.open{
+  display:block;
+}
+
+.modal-box{
+  width:min(850px,100%);
+
+  margin:40px auto;
+
+  background:#0d131e;
+
+  border:1px solid var(--line);
+
+  border-radius:22px;
+
+  padding:36px;
+
+  position:relative;
+}
+
+.close{
+  position:absolute;
+
+  right:18px;
+  top:13px;
+
+  background:none;
+
+  border:0;
+
+  color:#9ba6b8;
+
+  font-size:1.8rem;
+
+  cursor:pointer;
+}
+
+.modal-box h2{
+  font-size:clamp(2rem,5vw,3.2rem);
+
+  line-height:1.05;
+
+  margin:20px 0;
+}
+
+.modal-box p{
+  color:#b7c0cf;
+
+  margin:18px 0;
+}
+
+.source-box{
+  margin-top:30px;
+
+  padding:18px;
+
+  border:1px solid var(--line);
+
+  border-radius:14px;
+
+  background:#111824;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .nav-links{
+    position:absolute;
+
+    top:72px;
+    left:0;
+    right:0;
+
+    background:#090d15;
+
+    border-bottom:1px solid var(--line);
+
+    padding:20px;
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:flex-start;
   }
 
-  </script>
+  .nav-links.open{
+    display:flex;
+  }
 
+  .menu{
+    display:block;
+  }
 
-  <!-- =========================================================
-       CSS
-       ========================================================= -->
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
 
-  <style>
+  .hero-side{
+    border-left:0;
 
-    :root {
+    border-top:1px solid var(--line);
 
-      --bg: #07090f;
+    padding:25px 0 0;
+  }
 
-      --panel: #0e121b;
+  .articles{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
 
-      --panel2: #111722;
+  .footer-grid{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
 
-      --text: #f4f7fb;
+}
 
-      --muted: #9aa6b6;
+@media(max-width:600px){
 
-      --line: #202938;
+  .container{
+    width:calc(100% - 22px);
+  }
 
-      --accent: #7c5cff;
+  .hero{
+    padding:65px 0 45px;
+  }
 
-      --accent2: #21c7ff;
+  .hero h1{
+    letter-spacing:-2.5px;
+  }
 
-      --max: 1180px;
+  section{
+    padding:50px 0;
+  }
 
-    }
+  .articles,
+  .feature,
+  .contact-grid,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
 
+  .modal-box{
+    padding:28px 20px;
+  }
 
-    * {
-      box-sizing: border-box;
-    }
+}
 
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-
-    body {
-
-      margin: 0;
-
-      background:
-        radial-gradient(
-          circle at 20% 0%,
-          #12162b 0,
-          #07090f 38%
-        );
-
-      color: var(--text);
-
-      font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Arial,
-        sans-serif;
-
-      line-height: 1.6;
-
-    }
-
-
-    a {
-
-      color: inherit;
-
-      text-decoration: none;
-
-    }
-
-
-    button,
-    input {
-
-      font: inherit;
-
-    }
-
-
-    .wrap {
-
-      width: min(
-        var(--max),
-        calc(100% - 32px)
-      );
-
-      margin: auto;
-
-    }
-
-
-    /* =========================================================
-       HEADER
-       ========================================================= */
-
-    header {
-
-      position: sticky;
-
-      top: 0;
-
-      z-index: 50;
-
-      background:
-        rgba(7, 9, 15, 0.88);
-
-      backdrop-filter: blur(14px);
-
-      border-bottom:
-        1px solid var(--line);
-
-    }
-
-
-    .nav {
-
-      height: 72px;
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 26px;
-
-    }
-
-
-    .brand {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 10px;
-
-      font-weight: 900;
-
-      letter-spacing: .5px;
-
-      font-size: 21px;
-
-      margin-right: auto;
-
-    }
-
-
-    .mark {
-
-      width: 36px;
-
-      height: 36px;
-
-      border-radius: 11px;
-
-      background:
-        linear-gradient(
-          135deg,
-          var(--accent),
-          var(--accent2)
-        );
-
-      display: grid;
-
-      place-items: center;
-
-      color: white;
-
-      font-weight: 900;
-
-      box-shadow:
-        0 0 30px #6555ff55;
-
-    }
-
-
-    nav {
-
-      display: flex;
-
-      gap: 18px;
-
-      align-items: center;
-
-    }
-
-
-    nav a {
-
-      font-size: 14px;
-
-      color: #c6cfdb;
-
-    }
-
-
-    nav a:hover {
-
-      color: white;
-
-    }
-
-
-    .searchBtn,
-    .menuBtn {
-
-      border:
-        1px solid var(--line);
-
-      background: #0d1119;
-
-      color: white;
-
-      border-radius: 10px;
-
-      padding: 9px 12px;
-
-      cursor: pointer;
-
-    }
-
-
-    .menuBtn {
-
-      display: none;
-
-    }
-
-
-    /* =========================================================
-       HERO
-       ========================================================= */
-
-    .hero {
-
-      padding: 82px 0 55px;
-
-    }
-
-
-    .eyebrow {
-
-      color: #aeb8ff;
-
-      text-transform: uppercase;
-
-      letter-spacing: 2px;
-
-      font-size: 12px;
-
-      font-weight: 800;
-
-    }
-
-
-    .hero h1 {
-
-      font-size:
-        clamp(42px, 7vw, 78px);
-
-      line-height: .98;
-
-      max-width: 900px;
-
-      margin: 13px 0 20px;
-
-      letter-spacing: -3px;
-
-    }
-
-
-    .gradient {
-
-      background:
-        linear-gradient(
-          90deg,
-          #fff,
-          #9d8cff,
-          #57d8ff
-        );
-
-      -webkit-background-clip: text;
-
-      background-clip: text;
-
-      color: transparent;
-
-    }
-
-
-    .hero p {
-
-      max-width: 700px;
-
-      color: var(--muted);
-
-      font-size: 18px;
-
-    }
-
-
-    .actions {
-
-      display: flex;
-
-      gap: 12px;
-
-      flex-wrap: wrap;
-
-      margin-top: 28px;
-
-    }
-
-
-    .btn {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding: 11px 16px;
-
-      border-radius: 10px;
-
-      border:
-        1px solid var(--line);
-
-      background: #101620;
-
-      color: white;
-
-      font-weight: 750;
-
-      cursor: pointer;
-
-    }
-
-
-    .btn.primary {
-
-      background:
-        linear-gradient(
-          135deg,
-          #6f4fff,
-          #16bde9
-        );
-
-      border: 0;
-
-    }
-
-
-    /* =========================================================
-       SECTIONS
-       ========================================================= */
-
-    section {
-
-      padding: 35px 0;
-
-    }
-
-
-    .sectionHead {
-
-      display: flex;
-
-      align-items: end;
-
-      justify-content: space-between;
-
-      gap: 20px;
-
-      margin-bottom: 18px;
-
-    }
-
-
-    .sectionHead h2 {
-
-      font-size: 28px;
-
-      margin: 0;
-
-    }
-
-
-    .sectionHead p {
-
-      color: var(--muted);
-
-      margin: 0;
-
-    }
-
-
-    /* =========================================================
-       STORIES
-       ========================================================= */
-
-    .grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 16px;
-
-    }
-
-
-    .card {
-
-      background:
-        linear-gradient(
-          180deg,
-          #101620,
-          #0c1018
-        );
-
-      border:
-        1px solid var(--line);
-
-      border-radius: 16px;
-
-      padding: 20px;
-
-      min-height: 210px;
-
-    }
-
-
-    .tag {
-
-      font-size: 11px;
-
-      color: #a99cff;
-
-      text-transform: uppercase;
-
-      font-weight: 850;
-
-      letter-spacing: 1.4px;
-
-    }
-
-
-    .card h3 {
-
-      font-size: 21px;
-
-      line-height: 1.2;
-
-      margin: 11px 0;
-
-    }
-
-
-    .card p {
-
-      color: var(--muted);
-
-      font-size: 14px;
-
-    }
-
-
-    .meta {
-
-      color: #718096;
-
-      font-size: 12px;
-
-    }
-
-
-    .card .read {
-
-      display: inline-block;
-
-      margin-top: 13px;
-
-      color: #b9c7ff;
-
-      font-weight: 750;
-
-      font-size: 13px;
-
-    }
-
-
-    /* =========================================================
-       LIVE
-       ========================================================= */
-
-    .live {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 16px;
-
-    }
-
-
-    .liveCard {
-
-      min-height: 190px;
-
-      border-radius: 16px;
-
-      border:
-        1px solid #293244;
-
-      background:
-        linear-gradient(
-          135deg,
-          #0b0d13,
-          #171c29
-        );
-
-      padding: 20px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: space-between;
-
-    }
-
-
-    .liveTop {
-
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 12px;
-
-    }
-
-
-    .liveDot {
-
-      color: #ff6876;
-
-      font-weight: 900;
-
-      font-size: 12px;
-
-    }
-
-
-    .liveCard h3 {
-
-      font-size: 24px;
-
-      margin: 8px 0;
-
-    }
-
-
-    .source {
-
-      color: #9aa6b6;
-
-      font-size: 13px;
-
-    }
-
-
-    /* =========================================================
-       ADSENSE PLACEHOLDER
-       ========================================================= */
-
-    .ad-slot {
-
-      min-height: 96px;
-
-      border:
-        1px dashed #2a3343;
-
-      border-radius: 12px;
-
-      background: #0a0e15;
-
-      color: #667085;
-
-      display: grid;
-
-      place-items: center;
-
-      text-align: center;
-
-      margin: 28px 0;
-
-      font-size: 12px;
-
-    }
-
-
-    .ad-slot strong {
-
-      display: block;
-
-      color: #8994a5;
-
-      margin-bottom: 3px;
-
-    }
-
-
-    .ad-slot small {
-
-      display: block;
-
-    }
-
-
-    /* =========================================================
-       FILTERS
-       ========================================================= */
-
-    .filters {
-
-      display: flex;
-
-      gap: 8px;
-
-      flex-wrap: wrap;
-
-      margin-bottom: 18px;
-
-    }
-
-
-    .filter {
-
-      border:
-        1px solid var(--line);
-
-      background: #0d121a;
-
-      color: #b9c3d0;
-
-      border-radius: 999px;
-
-      padding: 7px 12px;
-
-      cursor: pointer;
-
-      font-size: 12px;
-
-    }
-
-
-    .filter.active {
-
-      background: #1b1637;
-
-      color: white;
-
-      border-color: #6e59ff;
-
-    }
-
-
-    /* =========================================================
-       ABOUT
-       ========================================================= */
-
-    .about {
-
-      display: grid;
-
-      grid-template-columns:
-        1.4fr .8fr;
-
-      gap: 18px;
-
-    }
-
-
-    .panel {
-
-      background: var(--panel);
-
-      border:
-        1px solid var(--line);
-
-      border-radius: 16px;
-
-      padding: 24px;
-
-    }
-
-
-    .panel p {
-
-      color: var(--muted);
-
-    }
-
-
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
-    footer {
-
-      border-top:
-        1px solid var(--line);
-
-      margin-top: 50px;
-
-      padding: 35px 0 28px;
-
-      color: #8d98a8;
-
-    }
-
-
-    .footerGrid {
-
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 20px;
-
-      flex-wrap: wrap;
-
-    }
-
-
-    .footerLinks {
-
-      display: flex;
-
-      gap: 16px;
-
-      flex-wrap: wrap;
-
-      font-size: 13px;
-
-    }
-
-
-    .credit {
-
-      margin-top: 25px;
-
-      font-size: 12px;
-
-    }
-
-
-    /* =========================================================
-       MODAL
-       ========================================================= */
-
-    dialog {
-
-      border:
-        1px solid #2a3343;
-
-      border-radius: 18px;
-
-      background: #0b1018;
-
-      color: white;
-
-      width:
-        min(760px, calc(100% - 28px));
-
-      padding: 0;
-
-      box-shadow:
-        0 30px 100px #000b;
-
-    }
-
-
-    .modal {
-
-      padding: 25px;
-
-    }
-
-
-    .modal h2 {
-
-      line-height: 1.15;
-
-    }
-
-
-    .modal p {
-
-      color: #aab5c4;
-
-    }
-
-
-    .close {
-
-      float: right;
-
-      border: 0;
-
-      background: transparent;
-
-      color: white;
-
-      font-size: 25px;
-
-      cursor: pointer;
-
-    }
-
-
-    .modalInput {
-
-      width: 100%;
-
-      background: #080c12;
-
-      border:
-        1px solid var(--line);
-
-      color: white;
-
-      padding: 12px;
-
-      border-radius: 10px;
-
-      margin: 7px 0 14px;
-
-    }
-
-
-    /* =========================================================
-       MOBILE
-       ========================================================= */
-
-    @media(max-width:850px) {
-
-      nav {
-        display: none;
-      }
-
-
-      .menuBtn {
-        display: block;
-      }
-
-
-      .grid,
-      .live {
-
-        grid-template-columns:
-          1fr 1fr;
-
-      }
-
-
-      .about {
-
-        grid-template-columns: 1fr;
-
-      }
-
-      .hero {
-
-        padding-top: 55px;
-
-      }
-
-    }
-
-
-    @media(max-width:560px) {
-
-      .wrap {
-
-        width:
-          min(
-            var(--max),
-            calc(100% - 22px)
-          );
-
-      }
-
-
-      .grid,
-      .live {
-
-        grid-template-columns: 1fr;
-
-      }
-
-
-      .nav {
-
-        height: 64px;
-
-      }
-
-
-      .hero h1 {
-
-        letter-spacing: -2px;
-
-      }
-
-
-      .hero p {
-
-        font-size: 16px;
-
-      }
-
-
-      .sectionHead {
-
-        align-items: flex-start;
-
-        flex-direction: column;
-
-      }
-
-    }
-
-
-    .mobileNav {
-
-      display: none;
-
-      border-top:
-        1px solid var(--line);
-
-      padding: 12px 0;
-
-    }
-
-
-    .mobileNav.open {
-
-      display: grid;
-
-      gap: 8px;
-
-    }
-
-
-    .mobileNav a {
-
-      padding: 9px 4px;
-
-      color: #cbd4df;
-
-    }
-
-  </style>
-
+</style>
 </head>
 
 
 <body>
 
 
-  <!-- =========================================================
-       HEADER
-       ========================================================= -->
+<!-- HEADER -->
 
-  <header>
+<header>
 
-    <div class="wrap nav">
+<div class="container nav">
 
-      <a
-        class="brand"
-        href="#home"
-        aria-label="InkSpire home"
-      >
-
-        <span class="mark">
-          I
-        </span>
-
-        InkSpire
-
-      </a>
-
+<a href="#home" class="brand">
 
-      <nav>
+<span class="logo">I</span>
 
-        <a href="#latest">
-          Latest
-        </a>
+<span>INKSPIRE</span>
 
-        <a href="#world">
-          World
-        </a>
+</a>
 
-        <a href="#india">
-          India
-        </a>
 
-        <a href="#technology">
-          Technology
-        </a>
+<button
+class="menu"
+id="menuBtn"
+aria-label="Open menu"
+>
+☰
+</button>
 
-        <a href="#ai">
-          AI
-        </a>
 
-        <a href="#business">
-          Business
-        </a>
+<nav class="nav-links" id="navLinks">
 
-      </nav>
+<a href="#latest">Latest</a>
 
+<a href="#world">World</a>
 
-      <button
-        class="searchBtn"
-        onclick="openSearch()"
-      >
-        Search
-      </button>
+<a href="#india">India</a>
 
+<a href="#technology">Technology</a>
 
-      <button
-        class="menuBtn"
-        onclick="toggleMenu()"
-        aria-label="Open menu"
-      >
-        ☰
-      </button>
+<a href="#ai">AI</a>
 
-    </div>
+<a href="#business">Business</a>
 
+<a href="#about">About</a>
 
-    <div
-      id="mobileNav"
-      class="mobileNav wrap"
-    >
+<a href="#contact">Contact</a>
 
-      <a
-        href="#latest"
-        onclick="closeMenu()"
-      >
-        Latest
-      </a>
+</nav>
 
-      <a
-        href="#world"
-        onclick="closeMenu()"
-      >
-        World
-      </a>
+</div>
 
-      <a
-        href="#india"
-        onclick="closeMenu()"
-      >
-        India
-      </a>
+</header>
 
-      <a
-        href="#technology"
-        onclick="closeMenu()"
-      >
-        Technology
-      </a>
 
-      <a
-        href="#ai"
-        onclick="closeMenu()"
-      >
-        AI
-      </a>
 
-      <a
-        href="#business"
-        onclick="closeMenu()"
-      >
-        Business
-      </a>
+<main id="home">
 
-    </div>
 
-  </header>
+<!-- HERO -->
 
+<section class="hero">
 
-  <!-- =========================================================
-       MAIN
-       ========================================================= -->
+<div class="container hero-grid">
 
-  <main id="home">
+<div>
 
-    <div class="wrap">
+<div class="eyebrow">
+Independent Digital Publication
+</div>
 
+<h1>
+Ideas,
+<span>explained.</span>
+</h1>
 
-      <!-- HERO -->
+<p>
+InkSpire publishes original stories, explainers and
+analysis across technology, artificial intelligence,
+India, world affairs and digital business.
+</p>
 
-      <section class="hero">
+</div>
 
-        <div class="eyebrow">
-          Independent web publication
-        </div>
 
+<div class="hero-side">
 
-        <h1>
+<strong>INKSPIRE</strong>
 
-          News, ideas &
+<span>
+Independent writing.
+Clear context.
+Global perspective.
+</span>
 
-          <span class="gradient">
-            intelligence.
-          </span>
+</div>
 
-        </h1>
+</div>
 
+</section>
 
-        <p>
 
-          InkSpire publishes clear,
-          original web writing across
-          world affairs, India, business,
-          technology and artificial intelligence.
 
-        </p>
+<!-- AD SLOT -->
 
+<div class="container">
 
-        <div class="actions">
+<div class="ad-slot">
+Advertisement
+</div>
 
-          <a
-            class="btn primary"
-            href="#latest"
-          >
-            Explore stories →
-          </a>
+</div>
 
 
-          <button
-            class="btn"
-            onclick="openSearch()"
-          >
-            Search InkSpire
-          </button>
 
-        </div>
+<!-- LATEST -->
 
-      </section>
+<section id="latest">
 
+<div class="container">
 
-      <!-- =====================================================
-           ADSENSE SLOT #1
-           ===================================================== -->
 
-      <div
-        class="ad-slot"
-        aria-label="Advertisement"
-      >
+<div class="section-head">
 
-        <div>
+<div>
 
-          <strong>
-            ADVERTISEMENT
-          </strong>
+<h2>Latest Stories</h2>
 
-          <small>
-            Ad space — activates after
-            AdSense approval and code is added.
-          </small>
+<p>
+Original InkSpire publication.
+</p>
 
-        </div>
+</div>
 
-      </div>
+</div>
 
 
-      <!-- =====================================================
-           LATEST
-           ===================================================== -->
+<!-- FILTERS -->
 
-      <section id="latest">
+<div class="filters">
 
-        <div class="sectionHead">
+<button
+class="filter active"
+data-filter="all"
+>
+All
+</button>
 
-          <div>
+<button
+class="filter"
+data-filter="ai"
+>
+AI
+</button>
 
-            <h2>
-              Latest stories
-            </h2>
+<button
+class="filter"
+data-filter="technology"
+>
+Technology
+</button>
 
-            <p>
-              Original InkSpire editorial space.
-            </p>
+<button
+class="filter"
+data-filter="india"
+>
+India
+</button>
 
-          </div>
+<button
+class="filter"
+data-filter="world"
+>
+World
+</button>
 
-        </div>
+<button
+class="filter"
+data-filter="business"
+>
+Business
+</button>
 
+</div>
 
-        <!-- FILTERS -->
 
-        <div class="filters">
+<!-- SEARCH -->
 
-          <button
-            class="filter active"
-            onclick="filterCards('all',this)"
-          >
-            All
-          </button>
+<input
+type="search"
+id="searchInput"
+class="search"
+placeholder="Search InkSpire..."
+aria-label="Search InkSpire articles"
+>
 
 
-          <button
-            class="filter"
-            onclick="filterCards('World',this)"
-          >
-            World
-          </button>
 
+<div class="articles" id="articleGrid">
 
-          <button
-            class="filter"
-            onclick="filterCards('India',this)"
-          >
-            India
-          </button>
 
+<!-- 01 -->
 
-          <button
-            class="filter"
-            onclick="filterCards('Technology',this)"
-          >
-            Technology
-          </button>
+<article
+class="article-card"
+data-category="ai"
+data-search="artificial intelligence everyday work future productivity"
+>
 
+<div class="tag">AI</div>
 
-          <button
-            class="filter"
-            onclick="filterCards('AI',this)"
-          >
-            AI
-          </button>
+<h3>
+How Artificial Intelligence Is Changing Everyday Work
+</h3>
 
+<p>
+Artificial intelligence is moving from experimental
+technology into everyday digital workflows. The bigger
+change is how people divide work between humans and
+software.
+</p>
 
-          <button
-            class="filter"
-            onclick="filterCards('Business',this)"
-          >
-            Business
-          </button>
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
-        </div>
+<a
+href="#"
+class="read"
+data-article="ai-work"
+>
+Read article →
+</a>
 
+</article>
 
-        <!-- STORY GRID -->
 
-        <div
-          id="stories"
-          class="grid"
-        >
 
+<!-- 02 -->
 
-          <!-- STORY 1 -->
+<article
+class="article-card"
+data-category="technology"
+data-search="smartphone technology mobile computer camera internet"
+>
 
-          <article
-            class="card"
-            data-cat="AI"
-          >
+<div class="tag">Technology</div>
 
-            <span class="tag">
-              AI
-            </span>
+<h3>
+The Smartphone Is Becoming More Than a Communication Device
+</h3>
 
+<p>
+Modern smartphones combine communication, photography,
+payments, entertainment and increasingly powerful
+computing capabilities.
+</p>
 
-            <h3>
-              The AI shift is changing how people work and create
-            </h3>
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
+<a
+href="#"
+class="read"
+data-article="smartphone"
+>
+Read article →
+</a>
 
-            <p>
-              A practical look at the growing role
-              of AI in everyday digital work,
-              research and content creation.
-            </p>
+</article>
 
 
-            <span class="meta">
-              InkSpire Originals · Analysis
-            </span>
 
+<!-- 03 -->
 
-            <br>
+<article
+class="article-card"
+data-category="india"
+data-search="india digital economy internet users technology"
+>
 
+<div class="tag">India</div>
 
-            <a
-              class="read"
-              href="#"
-              onclick="article(event,'The AI shift is changing how people work and create','AI')"
-            >
-              Read article →
-            </a>
+<h3>
+India's Digital Economy and the New Internet User
+</h3>
 
-          </article>
+<p>
+The growth of smartphones and digital services is
+changing how people communicate, learn, shop and
+work across India's internet ecosystem.
+</p>
 
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
-          <!-- STORY 2 -->
+<a
+href="#"
+class="read"
+data-article="india-digital"
+>
+Read article →
+</a>
 
-          <article
-            class="card"
-            data-cat="Technology"
-          >
+</article>
 
-            <span class="tag">
-              Technology
-            </span>
 
 
-            <h3>
-              What the next generation of web experiences could look like
-            </h3>
+<!-- 04 -->
 
+<article
+class="article-card"
+data-category="world"
+data-search="technology world global economy digital international"
+>
 
-            <p>
-              Fast interfaces, useful search
-              and responsible automation are
-              reshaping the modern web.
-            </p>
+<div class="tag">World</div>
 
+<h3>
+Why Technology Has Become a Global Issue
+</h3>
 
-            <span class="meta">
-              InkSpire Originals · Technology
-            </span>
+<p>
+Technology now affects trade, communication, security
+and economic competition far beyond the technology
+industry itself.
+</p>
 
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
-            <br>
+<a
+href="#"
+class="read"
+data-article="global-tech"
+>
+Read article →
+</a>
 
+</article>
 
-            <a
-              class="read"
-              href="#"
-              onclick="article(event,'What the next generation of web experiences could look like','Technology')"
-            >
-              Read article →
-            </a>
 
-          </article>
 
+<!-- 05 -->
 
-          <!-- STORY 3 -->
+<article
+class="article-card"
+data-category="business"
+data-search="digital business creator economy startup online business"
+>
 
-          <article
-            class="card"
-            data-cat="India"
-          >
+<div class="tag">Business</div>
 
-            <span class="tag">
-              India
-            </span>
+<h3>
+The Rise of Small Digital Businesses
+</h3>
 
+<p>
+Digital platforms have lowered some barriers for
+independent creators and small businesses to publish,
+sell and build audiences online.
+</p>
 
-            <h3>
-              India's digital economy: the signals worth watching
-            </h3>
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
+<a
+href="#"
+class="read"
+data-article="digital-business"
+>
+Read article →
+</a>
 
-            <p>
-              Key themes across startups,
-              digital services, technology adoption
-              and online business.
-            </p>
+</article>
 
 
-            <span class="meta">
-              InkSpire Originals · India
-            </span>
 
+<!-- 06 -->
 
-            <br>
+<article
+class="article-card"
+data-category="technology"
+data-search="privacy internet data security online digital"
+>
 
+<div class="tag">Technology</div>
 
-            <a
-              class="read"
-              href="#"
-              onclick="article(event,&quot;India's digital economy: the signals worth watching&quot;,'India')"
-            >
-              Read article →
-            </a>
+<h3>
+Why Digital Privacy Matters More Than Ever
+</h3>
 
-          </article>
+<p>
+Everyday online activity can generate information about
+users and devices. Understanding privacy settings is
+becoming an important digital skill.
+</p>
 
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
-          <!-- STORY 4 -->
+<a
+href="#"
+class="read"
+data-article="privacy"
+>
+Read article →
+</a>
 
-          <article
-            class="card"
-            data-cat="World"
-          >
+</article>
 
-            <span class="tag">
-              World
-            </span>
 
 
-            <h3>
-              Global developments shaping the digital age
-            </h3>
+<!-- 07 -->
 
+<article
+class="article-card"
+data-category="ai"
+data-search="AI education students learning artificial intelligence"
+>
 
-            <p>
-              A neutral explainer format for
-              understanding major international
-              developments and their context.
-            </p>
+<div class="tag">AI</div>
 
+<h3>
+How AI Could Change the Way People Learn
+</h3>
 
-            <span class="meta">
-              InkSpire Originals · World
-            </span>
+<p>
+AI can explain concepts, create practice exercises and
+adapt information to different learning styles, but
+human judgement remains important.
+</p>
 
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
-            <br>
+<a
+href="#"
+class="read"
+data-article="ai-learning"
+>
+Read article →
+</a>
 
+</article>
 
-            <a
-              class="read"
-              href="#"
-              onclick="article(event,'Global developments shaping the digital age','World')"
-            >
-              Read article →
-            </a>
 
-          </article>
 
+<!-- 08 -->
 
-          <!-- STORY 5 -->
+<article
+class="article-card"
+data-category="technology"
+data-search="cloud computing internet software technology"
+>
 
-          <article
-            class="card"
-            data-cat="Business"
-          >
+<div class="tag">Technology</div>
 
-            <span class="tag">
-              Business
-            </span>
+<h3>
+Why Cloud Computing Became Invisible Infrastructure
+</h3>
 
+<p>
+Many digital services depend on computing infrastructure
+that users rarely see. Cloud technology has changed how
+software is built, delivered and scaled.
+</p>
 
-            <h3>
-              Business signals: technology, markets and digital growth
-            </h3>
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
+<a
+href="#"
+class="read"
+data-article="cloud"
+>
+Read article →
+</a>
 
-            <p>
-              Clear writing on the business
-              stories behind products, platforms
-              and changing consumer behaviour.
-            </p>
+</article>
 
 
-            <span class="meta">
-              InkSpire Originals · Business
-            </span>
 
+<!-- 09 -->
 
-            <br>
+<article
+class="article-card"
+data-category="business"
+data-search="creator economy internet business independent creator"
+>
 
+<div class="tag">Business</div>
 
-            <a
-              class="read"
-              href="#"
-              onclick="article(event,'Business signals: technology, markets and digital growth','Business')"
-            >
-              Read article →
-            </a>
+<h3>
+The Creator Economy Is Becoming a Real Business Sector
+</h3>
 
-          </article>
+<p>
+Creators are increasingly combining audiences, digital
+products, services and communities into independent
+business models.
+</p>
 
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
-          <!-- STORY 6 -->
+<a
+href="#"
+class="read"
+data-article="creator-economy"
+>
+Read article →
+</a>
 
-          <article
-            class="card"
-            data-cat="Technology"
-          >
+</article>
 
-            <span class="tag">
-              Technology
-            </span>
 
 
-            <h3>
-              Why speed and simplicity matter on the modern web
-            </h3>
+<!-- 10 -->
 
+<article
+class="article-card"
+data-category="india"
+data-search="india startups technology young entrepreneurs digital"
+>
 
-            <p>
-              Performance, accessibility and
-              mobile-first design are becoming
-              central to useful websites.
-            </p>
+<div class="tag">India</div>
 
+<h3>
+Why Digital Tools Are Changing Small Businesses in India
+</h3>
 
-            <span class="meta">
-              InkSpire Originals · Technology
-            </span>
+<p>
+Affordable software and online platforms are giving
+small businesses new ways to communicate with customers,
+manage operations and reach wider markets.
+</p>
 
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
-            <br>
+<a
+href="#"
+class="read"
+data-article="india-business"
+>
+Read article →
+</a>
 
+</article>
 
-            <a
-              class="read"
-              href="#"
-              onclick="article(event,'Why speed and simplicity matter on the modern web','Technology')"
-            >
-              Read article →
-            </a>
 
-          </article>
 
+<!-- 11 -->
 
-        </div>
+<article
+class="article-card"
+data-category="world"
+data-search="internet globalization digital communication world"
+>
 
-      </section>
+<div class="tag">World</div>
 
+<h3>
+How the Internet Changed the Meaning of Distance
+</h3>
 
-      <!-- =====================================================
-           ADSENSE SLOT #2
-           ===================================================== -->
+<p>
+Digital communication allows information, ideas and
+services to move across borders almost instantly,
+changing how people work and communicate.
+</p>
 
-      <div
-        class="ad-slot"
-        aria-label="Advertisement"
-      >
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
-        <div>
+<a
+href="#"
+class="read"
+data-article="internet-distance"
+>
+Read article →
+</a>
 
-          <strong>
-            ADVERTISEMENT
-          </strong>
+</article>
 
-          <small>
-            Second ad position —
-            insert Google-generated code
-            only after approval.
-          </small>
 
-        </div>
 
-      </div>
+<!-- 12 -->
 
+<article
+class="article-card"
+data-category="ai"
+data-search="AI human judgement verification misinformation technology"
+>
 
-      <!-- =====================================================
-           WORLD
-           ===================================================== -->
+<div class="tag">AI</div>
 
-      <section id="world">
+<h3>
+The Most Important AI Skill May Be Knowing When to Verify
+</h3>
 
-        <div class="sectionHead">
+<p>
+AI can produce convincing answers quickly, but speed does
+not automatically mean accuracy. Verification remains an
+important part of responsible AI use.
+</p>
 
-          <div>
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
-            <h2>
-              World
-            </h2>
+<a
+href="#"
+class="read"
+data-article="ai-verification"
+>
+Read article →
+</a>
 
-            <p>
-              International context and explainers.
-            </p>
+</article>
 
-          </div>
 
-        </div>
+</div>
 
+</div>
 
-        <div class="panel">
+</section>
 
-          <p>
 
-            Use this section for original,
-            sourced world coverage.
 
-            For current political or breaking-news
-            claims, verify facts against reliable
-            current sources before publishing.
+<!-- AD -->
 
-          </p>
+<div class="container">
 
-        </div>
+<div class="ad-slot">
+Advertisement
+</div>
 
-      </section>
+</div>
 
 
-      <!-- =====================================================
-           INDIA
-           ===================================================== -->
 
-      <section id="india">
+<!-- WORLD -->
 
-        <div class="sectionHead">
+<section id="world">
 
-          <div>
+<div class="container">
 
-            <h2>
-              India
-            </h2>
+<div class="feature">
 
-            <p>
-              India-focused reporting and analysis.
-            </p>
 
-          </div>
+<div class="feature-box">
 
-        </div>
+<div class="tag">WORLD</div>
 
+<h3>
+Global stories need context, not just headlines.
+</h3>
 
-        <div class="panel">
+<p>
+InkSpire focuses on explaining important developments
+and the broader technology, economic and social context
+around them.
+</p>
 
-          <p>
+</div>
 
-            Publish original India stories
-            with clear dates, sources and attribution.
 
-            Avoid copying full articles from
-            other publishers.
+<div class="feature-box">
 
-          </p>
+<div class="tag">SOURCES</div>
 
-        </div>
+<h3>
+Original writing with clear references.
+</h3>
 
-      </section>
+<p>
+When external reporting or research is used, the source
+should be identified clearly rather than presenting
+third-party material as original reporting.
+</p>
 
+</div>
 
-      <!-- =====================================================
-           TECHNOLOGY
-           ===================================================== -->
 
-      <section id="technology">
+</div>
 
-        <div class="sectionHead">
+</div>
 
-          <div>
+</section>
 
-            <h2>
-              Technology
-            </h2>
 
-            <p>
-              Products, platforms and the web.
-            </p>
 
-          </div>
+<!-- INDIA -->
 
-        </div>
+<section id="india">
 
+<div class="container about">
 
-        <div class="panel">
+<div class="tag">INDIA</div>
 
-          <p>
+<h2>
+India through a digital lens.
+</h2>
 
-            Explain technology clearly,
-            add useful context, and link readers
-            to the original source when reporting facts.
+<p>
+India's digital ecosystem is changing how people work,
+learn, communicate and build businesses.
+</p>
 
-          </p>
+<p>
+InkSpire explores these changes through explainers,
+technology stories and original analysis.
+</p>
 
-        </div>
+</div>
 
-      </section>
+</section>
 
 
-      <!-- =====================================================
-           AI
-           ===================================================== -->
 
-      <section id="ai">
+<!-- TECHNOLOGY -->
 
-        <div class="sectionHead">
+<section id="technology">
 
-          <div>
+<div class="container">
 
-            <h2>
-              AI
-            </h2>
+<div class="section-head">
 
-            <p>
-              Artificial intelligence and its real-world impact.
-            </p>
+<div>
 
-          </div>
+<div class="tag">TECHNOLOGY</div>
 
-        </div>
+<h2>
+Technology explained simply.
+</h2>
 
+</div>
 
-        <div class="panel">
+</div>
 
-          <p>
 
-            Cover AI tools, research, products
-            and trends with transparent sourcing
-            and a clear distinction between fact,
-            analysis and opinion.
+<div class="feature">
 
-          </p>
+<div class="feature-box">
 
-        </div>
+<h3>
+Devices
+</h3>
 
-      </section>
+<p>
+Smartphones, computers, cameras and consumer
+technology explained through practical writing.
+</p>
 
+</div>
 
-      <!-- =====================================================
-           BUSINESS
-           ===================================================== -->
 
-      <section id="business">
+<div class="feature-box">
 
-        <div class="sectionHead">
+<h3>
+Internet
+</h3>
 
-          <div>
+<p>
+Digital platforms, privacy, software and the
+changing internet ecosystem.
+</p>
 
-            <h2>
-              Business
-            </h2>
+</div>
 
-            <p>
-              Companies, markets and digital growth.
-            </p>
+</div>
 
-          </div>
+</div>
 
-        </div>
+</section>
 
 
-        <div class="panel">
 
-          <p>
+<!-- AI -->
 
-            Build useful business explainers
-            around verified information and identify
-            the relevant time period for changing data.
+<section id="ai">
 
-          </p>
+<div class="container">
 
-        </div>
+<div class="feature">
 
-      </section>
 
+<div class="feature-box">
 
-      <!-- =====================================================
-           ABOUT
-           ===================================================== -->
+<div class="tag">ARTIFICIAL INTELLIGENCE</div>
 
-      <section id="about">
+<h3>
+Understanding AI beyond the hype.
+</h3>
 
-        <div class="sectionHead">
+<p>
+InkSpire explores artificial intelligence through
+practical explainers that distinguish technology,
+claims and expectations.
+</p>
 
-          <div>
+</div>
 
-            <h2>
-              About InkSpire
-            </h2>
 
-            <p>
-              A focused publication built around useful web writing.
-            </p>
+<div class="feature-box">
 
-          </div>
+<div class="tag">EDITORIAL</div>
 
-        </div>
+<h3>
+Evidence before conclusions.
+</h3>
 
+<p>
+Technology claims should be checked against reliable
+sources before being presented as facts.
+</p>
 
-        <div class="about">
+</div>
 
 
-          <div class="panel">
+</div>
 
-            <p>
+</div>
 
-              InkSpire is an independent web publication
-              focused on clear writing about world affairs,
-              India, business, technology and AI.
+</section>
 
-            </p>
 
 
-            <p>
+<!-- BUSINESS -->
 
-              Our goal is simple:
-              make complex digital and current topics
-              easier to understand while keeping sourcing
-              and context visible.
+<section id="business">
 
-            </p>
+<div class="container about">
 
-          </div>
+<div class="tag">BUSINESS</div>
 
+<h2>
+Digital business and the creator economy.
+</h2>
 
-          <div class="panel">
+<p>
+Online platforms have created new opportunities for
+independent creators, freelancers and small businesses.
+</p>
 
-            <strong>
-              Editorial principle
-            </strong>
+<p>
+InkSpire examines the tools, models and changing
+behaviour behind the digital economy.
+</p>
 
+</div>
 
-            <p>
+</section>
 
-              Original writing ·
-              Clear attribution ·
-              Useful context ·
-              Mobile-first reading
 
-            </p>
 
-          </div>
+<!-- ABOUT -->
 
+<section id="about">
 
-        </div>
+<div class="container about">
 
-      </section>
+<div class="tag">ABOUT INKSPIRE</div>
 
+<h2>
+A small publication with a global ambition.
+</h2>
 
-      <!-- =====================================================
-           CONTACT
-           ===================================================== -->
+<p>
+InkSpire is an independent digital publication focused
+on technology, artificial intelligence, India, world
+affairs and digital business.
+</p>
 
-      <section id="contact">
+<p>
+Our objective is to publish useful original writing in
+a clear format while identifying external sources when
+they are used.
+</p>
 
-        <div class="sectionHead">
+<p>
+InkSpire does not represent any government, political
+party, company or organization unless explicitly stated.
+</p>
 
-          <div>
+</div>
 
-            <h2>
-              Contact
-            </h2>
+</section>
 
-            <p>
-              For feedback, corrections and collaboration.
-            </p>
 
-          </div>
 
-        </div>
+<!-- CONTACT -->
 
+<section id="contact">
 
-        <div class="panel">
+<div class="container">
 
-          <p>
+<div class="section-head">
 
-            Email:
-            <strong>
-              Use your preferred public email here
-            </strong>
+<div>
 
-          </p>
+<div class="tag">CONTACT</div>
 
+<h2>
+Contact InkSpire
+</h2>
 
-          <p>
+<p>
+For feedback, corrections, partnerships or general
+inquiries.
+</p>
 
-            Instagram:
+</div>
 
-            <a
-              href="https://www.instagram.com/inkspire.8s/"
-              target="_blank"
-              rel="noopener"
-            >
-              @inkspire.8s
-            </a>
+</div>
 
-          </p>
 
-        </div>
+<div class="contact-grid">
 
-      </section>
 
+<div class="contact-card">
 
-    </div>
+<h3>
+Editorial
+</h3>
 
-  </main>
+<p>
+For corrections or questions about published material,
+use the official InkSpire contact channel.
+</p>
 
+</div>
 
-  <!-- =========================================================
-       FOOTER
-       ========================================================= -->
 
-  <footer>
+<div class="contact-card">
 
-    <div class="wrap">
+<h3>
+Instagram
+</h3>
 
-      <div class="footerGrid">
+<p>
+Follow InkSpire for publication updates.
+</p>
 
+<a
+class="social"
+href="https://www.instagram.com/inkspire.8s/"
+target="_blank"
+rel="noopener noreferrer"
+>
+Instagram →
+</a>
 
-        <div>
+</div>
 
-          <strong>
-            INKSPIRE
-          </strong>
 
+</div>
 
-          <div class="credit">
+</div>
 
-            Made by Prashant Sagar
+</section>
 
-          </div>
+</main>
 
-        </div>
 
 
-        <div class="footerLinks">
+<!-- FOOTER -->
 
-          <a href="#about">
-            About
-          </a>
+<footer>
 
+<div class="container">
 
-          <a href="#contact">
-            Contact
-          </a>
+<div class="footer-grid">
 
 
-          <a
-            href="#"
-            onclick="showPolicy(event,'Privacy Policy','InkSpire respects reader privacy. Analytics and advertising services may use cookies or similar technologies. Update this page with the exact disclosures required for the services you activate before publishing.')"
-          >
-            Privacy
-          </a>
+<div>
 
+<h3>INKSPIRE</h3>
 
-          <a
-            href="#"
-            onclick="showPolicy(event,'Terms','Content on InkSpire is provided for informational purposes. Add your final terms, copyright policy and correction procedure before launch.')"
-          >
-            Terms
-          </a>
+<p>
+Independent stories, explainers and analysis.
+</p>
 
+</div>
 
-          <a
-            href="https://www.instagram.com/inkspire.8s/"
-            target="_blank"
-            rel="noopener"
-          >
-            Instagram
-          </a>
 
-        </div>
+<div>
 
-      </div>
+<h3>Explore</h3>
 
+<a href="#latest">Latest</a>
 
-      <div class="credit">
+<a href="#world">World</a>
 
-        ©
-        <span id="year"></span>
-        InkSpire.
-        All rights reserved.
+<a href="#india">India</a>
 
-      </div>
+<a href="#technology">Technology</a>
 
-    </div>
+<a href="#ai">AI</a>
 
-  </footer>
+<a href="#business">Business</a>
 
+</div>
 
-  <!-- =========================================================
-       MODAL
-       ========================================================= -->
 
-  <dialog id="modal">
+<div>
 
-    <div class="modal">
+<h3>Legal</h3>
 
-      <button
-        class="close"
-        onclick="closeModal()"
-      >
-        ×
-      </button>
+<a href="#" data-policy="privacy">
+Privacy Policy
+</a>
 
+<a href="#" data-policy="terms">
+Terms of Use
+</a>
 
-      <div id="modalContent"></div>
+<a
+href="https://www.instagram.com/inkspire.8s/"
+target="_blank"
+rel="noopener noreferrer"
+>
+Instagram
+</a>
 
-    </div>
+</div>
 
-  </dialog>
 
+</div>
 
-  <!-- =========================================================
-       JAVASCRIPT
-       ========================================================= -->
 
-  <script>
+<div class="copyright">
 
-    const modal =
-      document.getElementById("modal");
+© <span id="year"></span> InkSpire.
+Made by Prashant Sagar.
 
+</div>
 
-    const stories =
-      [
-        ...document.querySelectorAll(
-          "#stories .card"
-        )
-      ];
+</div>
 
+</footer>
 
-    document.getElementById(
-      "year"
-    ).textContent =
-      new Date().getFullYear();
 
 
-    /* MOBILE MENU */
+<!-- ARTICLE MODAL -->
 
-    function toggleMenu() {
+<div class="modal" id="articleModal">
 
-      document
-        .getElementById("mobileNav")
-        .classList
-        .toggle("open");
+<div class="modal-box">
 
-    }
+<button
+class="close"
+id="closeArticle"
+>
+×
+</button>
 
+<div
+class="tag"
+id="articleCategory"
+>
+ARTICLE
+</div>
 
-    function closeMenu() {
+<h2 id="articleTitle"></h2>
 
-      document
-        .getElementById("mobileNav")
-        .classList
-        .remove("open");
+<div class="article-meta">
+By Prashant Sagar · InkSpire
+</div>
 
-    }
+<div id="articleContent"></div>
 
+<div class="source-box">
 
-    /* CATEGORY FILTER */
+<strong>
+Editorial note
+</strong>
 
-    function filterCards(
-      category,
-      button
-    ) {
+<p>
+This is original InkSpire editorial content.
+For articles containing external reporting,
+research or data, the relevant source should
+be listed here before publication.
+</p>
 
-      document
-        .querySelectorAll(".filter")
-        .forEach(
-          item =>
-            item.classList.remove(
-              "active"
-            )
-        );
+</div>
 
+</div>
 
-      button.classList.add("active");
+</div>
 
 
-      stories.forEach(
-        story => {
 
-          story.style.display =
-            category === "all" ||
-            story.dataset.cat === category
-              ? "block"
-              : "none";
+<!-- POLICY MODAL -->
 
-        }
-      );
+<div class="modal" id="policyModal">
 
-    }
+<div class="modal-box">
 
+<button
+class="close"
+id="closePolicy"
+>
+×
+</button>
 
-    /* SEARCH */
+<div
+class="tag"
+id="policyTag"
+>
+POLICY
+</div>
 
-    function openSearch() {
+<h2 id="policyTitle"></h2>
 
-      document.getElementById(
-        "modalContent"
-      ).innerHTML = `
+<div id="policyContent"></div>
 
-        <h2>
-          Search InkSpire
-        </h2>
+</div>
 
-        <input
-          id="searchInput"
-          class="modalInput"
-          placeholder="Search stories..."
-          oninput="runSearch()"
-        >
+</div>
 
-        <div id="searchResults">
 
-          <p>
-            Type a keyword to search.
-          </p>
 
-        </div>
+<script>
 
-      `;
 
+/* YEAR */
 
-      modal.showModal();
+document.getElementById("year").textContent =
+new Date().getFullYear();
 
 
-      setTimeout(
-        () => {
 
-          document
-            .getElementById(
-              "searchInput"
-            )
-            .focus();
+/* MOBILE MENU */
 
-        },
-        50
-      );
+const menuBtn =
+document.getElementById("menuBtn");
 
-    }
+const navLinks =
+document.getElementById("navLinks");
 
+menuBtn.addEventListener("click",()=>{
 
-    function runSearch() {
+navLinks.classList.toggle("open");
 
-      const query =
-        document
-          .getElementById(
-            "searchInput"
-          )
-          .value
-          .toLowerCase()
-          .trim();
+});
 
 
-      const results =
-        document.getElementById(
-          "searchResults"
-        );
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
 
+link.addEventListener("click",()=>{
 
-      if (!query) {
+navLinks.classList.remove("open");
 
-        results.innerHTML =
-          "<p>Type a keyword to search.</p>";
+});
 
-        return;
+});
 
-      }
 
 
-      const hits =
-        stories.filter(
-          story =>
-            story.innerText
-              .toLowerCase()
-              .includes(query)
-        );
+/* ARTICLES */
 
+const articles = {
 
-      if (!hits.length) {
 
-        results.innerHTML =
-          "<p>No matching InkSpire story found.</p>";
+"ai-work":{
 
-        return;
+category:"AI",
 
-      }
+title:
+"How Artificial Intelligence Is Changing Everyday Work",
 
+content:`
 
-      results.innerHTML =
-        hits
-          .map(
-            story => `
+<p>
+Artificial intelligence has moved beyond the idea of a
+technology used only by researchers and large technology
+companies. AI tools are increasingly becoming part of
+ordinary digital work, including writing, research,
+software development, design and customer support.
+</p>
 
-              <p>
+<p>
+One of the biggest changes is the ability to delegate
+individual steps of a workflow to software. A person can
+use an AI system to create a first draft, organise
+information, explain a difficult concept or generate
+ideas before making the final decision themselves.
+</p>
 
-                <strong>
-                  ${
-                    story
-                      .querySelector("h3")
-                      .innerText
-                  }
-                </strong>
+<p>
+This changes the role of the human worker. Instead of
+spending every minute producing the first version of
+something, people can spend more time checking,
+editing and deciding what deserves to be published.
+</p>
 
-                <br>
+<p>
+That also makes verification important. AI-generated
+information can contain mistakes, incomplete context or
+unsupported claims. Human review remains essential when
+accuracy matters.
+</p>
 
-                <span class="meta">
-                  ${story.dataset.cat}
-                </span>
+<p>
+The practical value of AI therefore depends not only on
+what a system can generate, but on how responsibly people
+use the output.
+</p>
 
-              </p>
+`
 
-            `
-          )
-          .join("");
+},
 
-    }
 
 
-    /* ARTICLE MODAL */
+"smartphone":{
 
-    function article(
-      event,
-      title,
-      category
-    ) {
+category:"Technology",
 
-      event.preventDefault();
+title:
+"The Smartphone Is Becoming More Than a Communication Device",
 
+content:`
 
-      document.getElementById(
-        "modalContent"
-      ).innerHTML = `
+<p>
+The smartphone has gradually become one of the most
+versatile pieces of technology in everyday life. A single
+device can combine communication, photography, navigation,
+payments, entertainment and productivity.
+</p>
 
-        <span class="tag">
-          ${category}
-        </span>
+<p>
+Modern mobile processors can perform tasks that once
+required a traditional computer. Applications have also
+turned phones into tools for education, banking, creative
+work and business.
+</p>
 
-        <h2>
-          ${title}
-        </h2>
+<p>
+The camera is another important part of this transformation.
+For many people, the smartphone is now their primary camera,
+video recorder and document scanner.
+</p>
 
-        <p>
+<p>
+Software is becoming just as important as hardware.
+Updates can introduce new capabilities without requiring
+users to purchase a completely new device.
+</p>
 
-          This is an InkSpire original
-          article page preview.
+<p>
+The smartphone's evolution shows how computing is becoming
+less visible while becoming more integrated into daily life.
+</p>
 
-          Replace this preview with your
-          fully researched article,
-          publication date, author,
-          sources and original-source
-          links before publishing the story.
+`
 
-        </p>
+},
 
-        <p class="meta">
 
-          Category:
-          ${category}
-          ·
-          InkSpire Originals
 
-        </p>
+"india-digital":{
 
-        <a
-          class="btn primary"
-          href="#contact"
-          onclick="closeModal()"
-        >
-          Contact InkSpire
-        </a>
+category:"India",
 
-      `;
+title:
+"India's Digital Economy and the New Internet User",
 
+content:`
 
-      modal.showModal();
+<p>
+India's internet ecosystem has created new ways for people
+to communicate, learn, shop, work and access digital services.
+</p>
 
-    }
+<p>
+The spread of smartphones has made the internet accessible
+from almost anywhere with a mobile connection. This has
+changed the relationship between consumers and businesses.
+</p>
 
+<p>
+A small business can now communicate with customers through
+digital platforms, accept online payments and promote its
+products without depending entirely on traditional advertising.
+</p>
 
-    /* POLICY MODAL */
+<p>
+Education has also changed. Tutorials, courses and learning
+resources can be accessed from a mobile device, allowing
+people to learn outside traditional classrooms.
+</p>
 
-    function showPolicy(
-      event,
-      title,
-      text
-    ) {
+<p>
+The next challenge is making digital participation safer
+and more useful. Users need better awareness of privacy,
+fraud, misinformation and responsible online behaviour.
+</p>
 
-      event.preventDefault();
+`
 
+},
 
-      document.getElementById(
-        "modalContent"
-      ).innerHTML = `
 
-        <h2>
-          ${title}
-        </h2>
 
-        <p>
-          ${text}
-        </p>
+"global-tech":{
 
-      `;
+category:"World",
 
+title:
+"Why Technology Has Become a Global Issue",
 
-      modal.showModal();
+content:`
 
-    }
+<p>
+Technology is no longer an issue limited to technology
+companies. Computing, artificial intelligence, digital
+infrastructure and semiconductors increasingly influence
+international trade and economic policy.
+</p>
 
+<p>
+A major technological development can affect businesses,
+workers and consumers in different countries at the same
+time.
+</p>
 
-    /* CLOSE */
+<p>
+Digital platforms also connect people across borders,
+making information move faster than traditional forms
+of communication.
+</p>
 
-    function closeModal() {
+<p>
+This creates opportunities as well as challenges.
+Countries and companies have to think about innovation,
+security, competition and access at the same time.
+</p>
 
-      modal.close();
+<p>
+Understanding technology therefore requires looking beyond
+individual products and considering the wider systems
+around them.
+</p>
 
-    }
+`
 
+},
 
-    /* OUTSIDE CLICK */
 
-    modal.addEventListener(
-      "click",
-      event => {
 
-        if (
-          event.target === modal
-        ) {
+"digital-business":{
 
-          closeModal();
+category:"Business",
 
-        }
+title:
+"The Rise of Small Digital Businesses",
 
-      }
-    );
+content:`
 
+<p>
+Digital platforms have lowered some traditional barriers
+to starting a small business.
+</p>
 
-    /* ESC */
+<p>
+A creator can publish content, build an audience, sell
+digital products and communicate with customers using
+online services that are accessible from a small operation.
+</p>
 
-    document.addEventListener(
-      "keydown",
-      event => {
+<p>
+This does not mean that building a digital business is
+automatic. Competition is high and audiences have many
+choices.
+</p>
 
-        if (
-          event.key === "Escape" &&
-          modal.open
-        ) {
+<p>
+Trust has become one of the most important assets for
+independent businesses. Customers need clear information,
+useful products and reliable communication.
+</p>
 
-          closeModal();
+<p>
+The strongest digital businesses are therefore not simply
+about technology. They combine technology with a clear
+understanding of what people actually need.
+</p>
 
-        }
+`
 
-      }
-    );
+},
 
-  </script>
 
+
+"privacy":{
+
+category:"Technology",
+
+title:
+"Why Digital Privacy Matters More Than Ever",
+
+content:`
+
+<p>
+Everyday online activity can generate information about
+devices, preferences, accounts and browsing behaviour.
+</p>
+
+<p>
+People often agree to permissions and privacy settings
+without fully understanding what information a service
+may collect.
+</p>
+
+<p>
+Basic digital privacy habits can reduce unnecessary risk.
+Users can review application permissions, use strong
+passwords, enable multi-factor authentication and keep
+software updated.
+</p>
+
+<p>
+Privacy also requires understanding the services people
+choose to use. Different platforms have different policies
+and data practices.
+</p>
+
+<p>
+Digital privacy is therefore not simply a technical topic.
+It is also about making informed decisions about the
+services we use every day.
+</p>
+
+`
+
+},
+
+
+
+"ai-learning":{
+
+category:"AI",
+
+title:
+"How AI Could Change the Way People Learn",
+
+content:`
+
+<p>
+Artificial intelligence can act as an additional learning
+assistant by explaining concepts, generating practice
+questions and presenting information in different ways.
+</p>
+
+<p>
+For a student who does not understand a topic, an AI system
+can provide another explanation or break a complex subject
+into smaller steps.
+</p>
+
+<p>
+However, learning is not simply about receiving answers.
+Students still need to understand concepts, practise
+independently and evaluate whether an explanation is correct.
+</p>
+
+<p>
+There is also a risk of becoming dependent on generated
+answers. If AI completes every difficult step, the learner
+may miss the opportunity to develop their own reasoning skills.
+</p>
+
+<p>
+The useful role of AI in education may therefore be as a
+support tool rather than a replacement for learning itself.
+</p>
+
+`
+
+},
+
+
+
+"cloud":{
+
+category:"Technology",
+
+title:
+"Why Cloud Computing Became Invisible Infrastructure",
+
+content:`
+
+<p>
+Many of the digital services people use every day depend
+on computing infrastructure that they never see.
+</p>
+
+<p>
+Cloud computing allows organisations to rent computing,
+storage and networking resources rather than building all
+of the infrastructure themselves.
+</p>
+
+<p>
+This has changed how software companies operate. A service
+can increase its computing capacity as demand changes,
+without requiring every user to own powerful hardware.
+</p>
+
+<p>
+Cloud services are also important for collaboration.
+Files, applications and data can be accessed from multiple
+devices and locations.
+</p>
+
+<p>
+The result is an unusual kind of technology: infrastructure
+that becomes more important while becoming less visible
+to ordinary users.
+</p>
+
+`
+
+},
+
+
+
+"creator-economy":{
+
+category:"Business",
+
+title:
+"The Creator Economy Is Becoming a Real Business Sector",
+
+content:`
+
+<p>
+The internet has changed the relationship between creators
+and their audiences.
+</p>
+
+<p>
+A person can publish videos, articles, music, designs or
+educational material without needing a traditional media
+company to distribute the work.
+</p>
+
+<p>
+Audiences can also become customers. Creators may offer
+memberships, digital products, services, courses or other
+forms of value.
+</p>
+
+<p>
+However, audience size alone does not guarantee a sustainable
+business. A creator needs a clear purpose and something
+valuable to offer.
+</p>
+
+<p>
+The creator economy is therefore developing into a mixture
+of media, entrepreneurship and community building.
+</p>
+
+`
+
+},
+
+
+
+"india-business":{
+
+category:"India",
+
+title:
+"Why Digital Tools Are Changing Small Businesses in India",
+
+content:`
+
+<p>
+Digital tools are giving small businesses new ways to
+communicate with customers and organise daily operations.
+</p>
+
+<p>
+Online payments can simplify transactions, while messaging
+platforms can help businesses maintain direct communication
+with customers.
+</p>
+
+<p>
+Digital marketing also allows a small company to reach
+people outside its immediate neighbourhood.
+</p>
+
+<p>
+Software can assist with accounting, scheduling, inventory
+and customer management, reducing some repetitive tasks.
+</p>
+
+<p>
+The challenge is choosing tools that genuinely solve a
+problem rather than adding unnecessary complexity.
+</p>
+
+`
+
+},
+
+
+
+"internet-distance":{
+
+category:"World",
+
+title:
+"How the Internet Changed the Meaning of Distance",
+
+content:`
+
+<p>
+For most of human history, distance limited how quickly
+people could exchange information.
+</p>
+
+<p>
+The internet changed that relationship. A message can now
+travel across continents almost instantly.
+</p>
+
+<p>
+This has transformed business, education, entertainment
+and personal relationships.
+</p>
+
+<p>
+Remote work allows people to contribute to organisations
+without necessarily living near an office. Online education
+can connect teachers and students across geographical
+boundaries.
+</p>
+
+<p>
+The internet has not eliminated physical distance, but it
+has dramatically reduced the importance of distance for
+many forms of communication.
+</p>
+
+`
+
+},
+
+
+
+"ai-verification":{
+
+category:"AI",
+
+title:
+"The Most Important AI Skill May Be Knowing When to Verify",
+
+content:`
+
+<p>
+AI systems can produce answers in seconds, but speed and
+accuracy are not the same thing.
+</p>
+
+<p>
+Generated information can sometimes contain incorrect
+facts, missing context or confident explanations that
+appear convincing even when they are wrong.
+</p>
+
+<p>
+Verification is therefore an important skill when using
+AI for research, education, business or publishing.
+</p>
+
+<p>
+A simple approach is to identify important factual claims
+and compare them with reliable primary or authoritative
+sources.
+</p>
+
+<p>
+The goal is not to reject AI. The goal is to understand
+where generated output can help and where independent
+verification is necessary.
+</p>
+
+`
+
+}
+
+};
+
+
+
+/* ARTICLE MODAL */
+
+const articleModal =
+document.getElementById("articleModal");
+
+const articleTitle =
+document.getElementById("articleTitle");
+
+const articleCategory =
+document.getElementById("articleCategory");
+
+const articleContent =
+document.getElementById("articleContent");
+
+
+document.querySelectorAll("[data-article]")
+.forEach(link=>{
+
+link.addEventListener("click",e=>{
+
+e.preventDefault();
+
+const id =
+link.dataset.article;
+
+const article =
+articles[id];
+
+if(!article) return;
+
+articleCategory.textContent =
+article.category;
+
+articleTitle.textContent =
+article.title;
+
+articleContent.innerHTML =
+article.content;
+
+articleModal.classList.add("open");
+
+document.body.style.overflow="hidden";
+
+});
+
+});
+
+
+function closeArticle(){
+
+articleModal.classList.remove("open");
+
+document.body.style.overflow="";
+
+}
+
+
+document.getElementById("closeArticle")
+.addEventListener("click",closeArticle);
+
+
+articleModal.addEventListener("click",e=>{
+
+if(e.target===articleModal){
+
+closeArticle();
+
+}
+
+});
+
+
+
+/* FILTER */
+
+const filters =
+document.querySelectorAll(".filter");
+
+const cards =
+document.querySelectorAll(".article-card");
+
+
+filters.forEach(filter=>{
+
+filter.addEventListener("click",()=>{
+
+filters.forEach(x=>
+x.classList.remove("active")
+);
+
+filter.classList.add("active");
+
+const category =
+filter.dataset.filter;
+
+cards.forEach(card=>{
+
+if(
+category==="all" ||
+card.dataset.category===category
+){
+
+card.style.display="";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+});
+
+});
+
+
+
+/* SEARCH */
+
+const searchInput =
+document.getElementById("searchInput");
+
+
+searchInput.addEventListener("input",()=>{
+
+const query =
+searchInput.value
+.toLowerCase()
+.trim();
+
+
+cards.forEach(card=>{
+
+const text =
+(
+card.dataset.search +
+" " +
+card.innerText
+).toLowerCase();
+
+
+card.style.display =
+text.includes(query)
+? ""
+: "none";
+
+});
+
+});
+
+
+
+/* POLICY */
+
+const policies={
+
+privacy:{
+
+title:"Privacy Policy",
+
+content:`
+
+<p>
+InkSpire respects the privacy of visitors to this website.
+</p>
+
+<p>
+This website may use Google Analytics to understand
+website traffic and how visitors interact with pages.
+</p>
+
+<p>
+If advertising services such as Google AdSense are enabled,
+advertising technologies may use cookies or similar
+technologies according to the applicable Google policies.
+</p>
+
+<p>
+Visitors should review Google's privacy and advertising
+information for details about how those services process
+information.
+</p>
+
+<p>
+InkSpire does not intentionally request sensitive personal
+information through ordinary article browsing.
+</p>
+
+<p>
+This policy should be updated if InkSpire introduces new
+forms, accounts, newsletters, advertising systems or other
+third-party services.
+</p>
+
+`
+
+},
+
+
+terms:{
+
+title:"Terms of Use",
+
+content:`
+
+<p>
+The information published by InkSpire is provided for
+general informational purposes.
+</p>
+
+<p>
+InkSpire aims to publish original writing and identify
+external sources when they are used.
+</p>
+
+<p>
+Readers should not reproduce or commercially redistribute
+InkSpire's original articles without appropriate permission.
+</p>
+
+<p>
+External websites linked from InkSpire are operated by
+third parties. InkSpire is not responsible for changes
+to those websites.
+</p>
+
+`
+
+}
+
+};
+
+
+const policyModal =
+document.getElementById("policyModal");
+
+const policyTitle =
+document.getElementById("policyTitle");
+
+const policyContent =
+document.getElementById("policyContent");
+
+
+document.querySelectorAll("[data-policy]")
+.forEach(link=>{
+
+link.addEventListener("click",e=>{
+
+e.preventDefault();
+
+const policy =
+policies[link.dataset.policy];
+
+if(!policy) return;
+
+policyTitle.textContent =
+policy.title;
+
+policyContent.innerHTML =
+policy.content;
+
+policyModal.classList.add("open");
+
+document.body.style.overflow="hidden";
+
+});
+
+});
+
+
+document.getElementById("closePolicy")
+.addEventListener("click",()=>{
+
+policyModal.classList.remove("open");
+
+document.body.style.overflow="";
+
+});
+
+
+policyModal.addEventListener("click",e=>{
+
+if(e.target===policyModal){
+
+policyModal.classList.remove("open");
+
+document.body.style.overflow="";
+
+}
+
+});
+
+
+/* ESC */
+
+document.addEventListener("keydown",e=>{
+
+if(e.key==="Escape"){
+
+articleModal.classList.remove("open");
+
+policyModal.classList.remove("open");
+
+document.body.style.overflow="";
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
