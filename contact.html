@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INKSPIRE - Global Intelligence Hub: 500+ Dynamic Modules</title>
+    <title>INKSPIRE - Global Intelligence Hub: Expanded Modules</title>
     <!-- Google Analytics Measurement ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2TQYXBJ7V"></script>
     <script>
@@ -54,7 +54,7 @@
 
     <header>
         <h1>INKSPIRE</h1>
-        <p>Global Intelligence Hub: Custom & 500+ Dynamic Modules</p>
+        <p>Global Intelligence Hub: Expanded Dynamic Modules</p>
     </header>
 
     <nav>
@@ -83,27 +83,36 @@
     </div>
 
     <script>
-        // Database containing custom and bulk modules
+        // Database containing expanded custom modules up to 115+ and beyond
         const database = [
             { id: 1, cat: 'scholarship', title: '1. Fully Funded US Fulbright Foreign Student Program Master Guide', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80', def: 'The Fulbright Program is the flagship international educational exchange grant sponsored by the US government.', desc: 'Enables graduate students and researchers to study in the United States with full financial coverage.' },
             { id: 2, cat: 'banking', title: '2. Agentic AI and Autonomous Banking Financial Transformations', img: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1200&q=80', def: 'Agentic Banking refers to automated financial AI models executing complex transactions autonomously.', desc: 'Major international banks deploy software agents to optimize liquidity management and regulatory compliance.' },
+            { id: 105, cat: 'ai', title: '105. Brain-Computer Interfaces (BCIs): Translating Neural Signals into Digital Commands', img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80', def: 'BCI hardware interfaces bridge human neurological activity directly with digital operating systems.', desc: 'Neural engineering enables paralyzed individuals to control computers and communicate seamlessly through direct thought processing.' },
             
-            // ==========================================
-            // Yahan se aap 105 ya uske baad ke naye custom contents add kar sakte hain:
-            // ==========================================
-            { id: 105, cat: 'ai', title: '105. Custom Neural Network Optimization in Edge Devices', img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80', def: 'Edge AI optimization reduces model size for local deployment.', desc: 'Yeh mera naya custom content hai jo maine 105 ke baad add kiya hai.' },
-            { id: 106, cat: 'space', title: '106. Advanced Deep Space Communication Protocols', img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80', def: 'Laser communications in deep space missions.', desc: 'Yeh 106 number ka naya article hai.' }
+            // Newly Added Custom Modules starting from 106 onwards:
+            { id: 106, cat: 'space', title: '106. Advanced Deep Space Laser Communications and Orbital Relays', img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80', def: 'Deep space optical communication utilizes near-infrared lasers to transmit data at rates far exceeding traditional radio waves.', desc: 'Crucial for high-bandwidth data transmission from crewed Mars missions and outer solar system probes.' },
+            { id: 107, cat: 'ai', title: '107. Neuromorphic Computing Architectures Mimicking Human Brain Synapses', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80', def: 'Neuromorphic chips process information using event-driven spikes similar to biological neural networks.', desc: 'Drastically reduces power consumption in artificial intelligence edge processing and sensory robotics.' },
+            { id: 108, cat: 'banking', title: '108. Decentralized Autonomous Organizations (DAOs) in Global Venture Funding', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80', def: 'DAOs are blockchain-governed entities operating through transparent smart contracts without central management.', desc: 'Redefining global venture capital distribution and community-driven project financing across borders.' },
+            { id: 109, cat: 'scholarship', title: '109. Rhodes Scholarships at Oxford University: Global Leadership Awards', img: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80', def: 'The Rhodes Scholarship is the oldest and most celebrated international fellowship program worldwide.', desc: 'Provides full financial sponsorship for postgraduate studies at the prestigious University of Oxford.' },
+            { id: 110, cat: 'news', title: '110. Global Green Energy Corridors and Supergrid Interconnections', img: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80', def: 'Trans-continental supergrids transmit renewable electricity across international borders via high-voltage direct current.', desc: 'Enables countries to share solar and wind power surpluses dynamically to stabilize regional power grids.' },
+            { id: 111, cat: 'ai', title: '111. Quantum Machine Learning Algorithms for Accelerated Molecular Simulation', img: 'https://images.unsplash.com/photo-1509017174183-0b7e0278f1ec?auto=format&fit=crop&w=1200&q=80', def: 'Quantum machine learning merges quantum computing principles with statistical learning algorithms.', desc: 'Solves complex chemical simulations exponentially faster than classical supercomputers.' },
+            { id: 112, cat: 'space', title: '112. In-Situ Resource Utilization (ISRU) for Permanent Lunar Habitats', img: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80', def: 'ISRU involves harvesting local materials such as water ice and regolith on planetary bodies.', desc: 'Reduces the economic burden of launching supplies from Earth for sustained deep space exploration.' },
+            { id: 113, cat: 'banking', title: '113. Real-Time Cross-Border B2B Payments via Distributed Ledger Tech', img: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80', def: 'Distributed ledger payment rails settle international commercial invoices instantaneously.', desc: 'Eliminates traditional multi-day clearing delays and high intermediary exchange fees.' },
+            { id: 114, cat: 'scholarship', title: '114. Knight-Hennessy Scholars Program at Stanford University', img: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80', def: 'A multidisciplinary graduate scholarship designed to prepare emerging leaders to address complex global challenges.', desc: 'Covers full tuition and living stipends for graduate study across any school at Stanford University.' },
+            { id: 115, cat: 'news', title: '115. Autonomous Maritime Freight Corridors and Smart Port Logistics', img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80', def: 'Smart ports utilize IoT sensors, AI scheduling, and autonomous cranes to optimize cargo processing.', desc: 'Significantly reduces vessel turnaround times and port congestion in international shipping.' }
         ];
 
-        // Agar aapko aur automatic 500+ tak ke modules chahiye toh yeh loop unhe generate kar dega:
-        for (let i = 107; i <= 500; i++) {
+        // Automatic bulk generator for remaining modules up to 500+
+        const autoCategories = ['scholarship', 'banking', 'ai', 'news', 'space'];
+        for (let i = 116; i <= 500; i++) {
+            let catType = autoCategories[i % autoCategories.length];
             database.push({
                 id: i,
-                cat: 'ai',
-                title: `${i}. Global Intelligence Module Series #${i}`,
-                img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
-                def: `Definition for module ${i} focusing on scalable technologies.`,
-                desc: `Detailed description and global market analysis for intelligence module number ${i}.`
+                cat: catType,
+                title: `${i}. Global Intelligence Briefing Series Module #${i}`,
+                img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
+                def: `Definition: Advanced sectoral overview and framework guidelines for intelligence module number ${i}.`,
+                desc: `Comprehensive analysis detailing cross-border impacts, technological integration, and future adoption forecasts for module #${i}.`
             });
         }
 
