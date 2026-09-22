@@ -18,147 +18,138 @@
         header h1 { margin: 0; font-size: 2.3rem; color: #4f46e5; letter-spacing: 0.5px; }
         header p { margin: 0.5rem 0 0; color: #64748b; font-size: 1.05rem; padding: 0 0.5rem; }
         nav { background-color: #1e293b; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; padding: 0.9rem; }
-        nav a { color: #f8fafc; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        nav a { color: #f8fafc; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
         nav a:hover { color: #818cf8; }
         .controls-container { max-width: 900px; margin: 2rem auto 0; padding: 0 1rem; text-align: center; }
-        .search-input { width: 100%; padding: 0.9rem 1.2rem; font-size: 1.05rem; border: 1px solid #cbd5e1; border-radius: 8px; outline: none; margin-bottom: 1.2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .search-input { width: 100%; padding: 0.9rem 1.2rem; font-size: 1.05rem; border: 1px solid #cbd5e1; border-radius: 8px; outline: none; margin-bottom: 1.2rem; }
         .search-input:focus { border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); }
         .filter-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
-        .filter-btn { background: #e2e8f0; border: none; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; color: #334155; cursor: pointer; transition: all 0.2s; }
+        .filter-btn { background: #e2e8f0; border: none; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; color: #334155; cursor: pointer; }
         .filter-btn:hover, .filter-btn.active { background: #4f46e5; color: white; }
         .container { width: 100%; max-width: 900px; margin: 0 auto; padding: 0 1rem; }
         .article { background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 10px; margin-bottom: 2.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
         .article img { width: 100%; height: 260px; object-fit: cover; border-radius: 8px; margin-bottom: 1.2rem; }
-        .article h2 { font-size: 1.5rem; color: #0f172a; margin-top: 0; margin-bottom: 0.8rem; line-height: 1.3; }
+        .article h2 { font-size: 1.5rem; color: #0f172a; margin-top: 0; margin-bottom: 0.8rem; }
         .definition-box { background: #f1f5f9; border-left: 4px solid #4f46e5; padding: 1.2rem; margin: 1.2rem 0; font-size: 1rem; color: #334155; border-radius: 0 6px 6px 0; }
         .article p { color: #475569; font-size: 1.05rem; margin-bottom: 1.2rem; }
-        .ad-box { text-align: center; margin: 2rem 0; padding: 0.8rem; background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 8px; overflow: hidden; }
+        .ad-box { text-align: center; margin: 2rem 0; padding: 0.8rem; background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 8px; }
         footer { text-align: center; padding: 2.5rem 1rem; background-color: #1e293b; color: #94a3b8; font-size: 0.9rem; margin-top: 4rem; }
-        @media (min-width: 768px) {
-            .container { padding: 0 1.5rem; }
-            .article { padding: 2.5rem; }
-            .article img { height: 400px; }
-            .article h2 { font-size: 1.8rem; }
-        }
+        @media (min-width: 768px) { .article { padding: 2.5rem; } .article img { height: 400px; } }
     </style>
 </head>
 <body>
-
     <header>
         <h1>INKSPIRE</h1>
         <p>Global Intelligence, Tech & Worldwide Fashion Trends Hub</p>
     </header>
-
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="privacy.html">Privacy Policy</a>
     </nav>
-
     <div class="controls-container">
-        <input type="text" id="searchInput" class="search-input" placeholder="Search across global modules starting from 105..." onkeyup="filterArticles()">
-        
+        <input type="text" id="searchInput" class="search-input" placeholder="Search modules..." onkeyup="searchModules()">
         <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filterByCategory('all')">All Modules</button>
-            <button class="filter-btn" onclick="filterByCategory('fashion')">Global Fashion</button>
-            <button class="filter-btn" onclick="filterByCategory('scholarship')">Scholarships</button>
-            <button class="filter-btn" onclick="filterByCategory('banking')">Global Banking</button>
-            <button class="filter-btn" onclick="filterByCategory('ai')">AI & Tech</button>
-            <button class="filter-btn" onclick="filterByCategory('space')">Space & Deep Tech</button>
+            <button class="filter-btn active" onclick="filterCat('all')">All Modules</button>
+            <button class="filter-btn" onclick="filterCat('fashion')">Global Fashion</button>
+            <button class="filter-btn" onclick="filterCat('scholarship')">Scholarships</button>
+            <button class="filter-btn" onclick="filterCat('banking')">Global Banking</button>
+            <button class="filter-btn" onclick="filterCat('ai')">AI & Tech</button>
+            <button class="filter-btn" onclick="filterCat('space')">Space & Deep Tech</button>
         </div>
     </div>
+    
+    <div class="container" id="articlesContainer">
+        <div class="ad-box">
+            <script>atOptions = {'key':'e32965a13148c46266f49efbbbee0632','format':'iframe','height':90,'width':728,'params':{}};</script>
+            <script src="https://www.highrevenueformat.com/e32965a13148c46266f49efbbbee0632/invoke.js"></script>
+        </div>
 
-    <div class="container" id="articlesContainer"></div>
+        <!-- Module 105 -->
+        <div class="article" data-cat="ai">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="Module 105">
+            <h2>105. Brain-Computer Interfaces (BCIs): Translating Neural Signals into Digital Commands</h2>
+            <div class="definition-box"><strong>Definition:</strong> BCI hardware interfaces bridge human neurological activity directly with digital operating systems.</div>
+            <p>Neural engineering enables paralyzed individuals to control computers and communicate seamlessly through direct thought processing.</p>
+        </div>
+
+        <!-- Module 106 -->
+        <div class="article" data-cat="fashion">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80" alt="Module 106">
+            <h2>106. Sustainable Streetwear and Eco-Friendly Apparel Trends</h2>
+            <div class="definition-box"><strong>Definition:</strong> Sustainable fashion integrates organic fabrics, zero-waste tailoring, and ethical supply chain transparency.</div>
+            <p>Global metropolitan hubs are shifting rapidly toward biodegradable textiles, circular economy clothing, and durable urban streetwear.</p>
+        </div>
+
+        <!-- Module 107 -->
+        <div class="article" data-cat="scholarship">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" alt="Module 107">
+            <h2>107. Fully Funded US Fulbright Foreign Student Program Master Guide</h2>
+            <div class="definition-box"><strong>Definition:</strong> The Fulbright Program is the flagship international educational exchange grant sponsored by the US government.</div>
+            <p>Enables high-achieving graduate students, artists, and young professionals to study and conduct research in the United States.</p>
+        </div>
+
+        <!-- Module 108 -->
+        <div class="article" data-cat="banking">
+            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1200&q=80" alt="Module 108">
+            <h2>108. Agentic AI and Autonomous Banking Financial Transformations</h2>
+            <div class="definition-box"><strong>Definition:</strong> Agentic Banking refers to automated financial AI models executing complex transactions and risk assessments autonomously.</div>
+            <p>Major international banks deploy advanced software agents to optimize liquidity management and fraud detection in real time.</p>
+        </div>
+
+        <!-- Module 109 -->
+        <div class="article" data-cat="space">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" alt="Module 109">
+            <h2>109. In-Situ Resource Utilization for Permanent Lunar Habitats</h2>
+            <div class="definition-box"><strong>Definition:</strong> ISRU involves harvesting local planetary materials such as water ice and lunar regolith.</div>
+            <p>Reduces the economic and logistical burden of launching heavy supplies from Earth, enabling sustained human presence on the Moon.</p>
+        </div>
+
+        <!-- Module 110 -->
+        <div class="article" data-cat="ai">
+            <img src="https://images.unsplash.com/photo-1509017174183-0b7e0278f1ec?auto=format&fit=crop&w=1200&q=80" alt="Module 110">
+            <h2>110. Quantum Machine Learning Algorithms for Molecular Simulation</h2>
+            <div class="definition-box"><strong>Definition:</strong> Quantum machine learning merges quantum computing principles with statistical learning algorithms.</div>
+            <p>Solves complex chemical and pharmaceutical simulations exponentially faster than classical supercomputers, revolutionizing drug discovery.</p>
+        </div>
+
+        <!-- Note: Aap chahen toh isme aur modules jod sakte hain. Agla hissa (Part 2) mangne par baki modules mil jayenge. -->
+    </div>
 
     <script>
-        const database = [];
-        const cats = ['fashion', 'scholarship', 'banking', 'ai', 'space'];
-        const imgs = {
-            fashion: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80',
-            scholarship: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
-            banking: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1200&q=80',
-            ai: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80',
-            space: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'
-        };
-
-        // मॉड्यूल 105 से शुरू होकर आगे के सभी कंटेंट्स का लूप
-        for(let i = 105; i <= 1105; i++) {
-            let c = cats[i % cats.length];
-            database.push({
-                id: i, 
-                cat: c,
-                title: i + '. Global Intelligence & Strategic Technology Briefing Series Module #' + i,
-                img: imgs[c],
-                def: 'Definition: Advanced cross-sectoral framework, empirical data metrics, and future scalability analysis for global module number ' + i + '.',
-                desc: 'Comprehensive worldwide report detailing international market dynamics, regulatory compliance standards, and multi-industry adoption forecasts for module #' + i + ' across key economic zones.'
-            });
-        }
-
-        function renderArticles(filter = 'all', search = '') {
-            const container = document.getElementById('articlesContainer');
-            let html = '<div class="ad-box"><script>atOptions = { "key" : "e32965a13148c46266f49efbbbee0632", "format" : "iframe", "height" : 90, "width" : 728, "params" : {} };<\/script><script src="https://www.highrevenueformat.com/e32965a13148c46266f49efbbbee0632/invoke.js"></script></div>';
-
-            let filtered = database.filter(function(item) {
-                let matchesCat = (filter === 'all' || item.cat === filter);
-                let matchesSearch = item.title.toLowerCase().includes(search) || item.desc.toLowerCase().includes(search) || item.def.toLowerCase().includes(search);
-                return matchesCat && matchesSearch;
-            });
-
-            if (filtered.length === 0) {
-                html += '<div class="article" style="text-align: center; padding: 3rem;"><h3>No matching modules found!</h3></div>';
-            } else {
-                filtered.slice(0, 300).forEach(function(item) {
-                    html += '<div class="article" data-category="' + item.cat + '">';
-                    html += '<img src="' + item.img + '" alt="' + item.title + '">';
-                    html += '<h2>' + item.title + '</h2>';
-                    html += '<div class="definition-box"><strong>Definition:</strong> ' + item.def + '</div>';
-                    html += '<p>' + item.desc + '</p>';
-                    html += '</div>';
-                });
+        function searchModules() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let articles = document.getElementsByClassName('article');
+            for (let i = 0; i < articles.length; i++) {
+                let text = articles[i].innerText.toLowerCase();
+                if (text.includes(input)) {
+                    articles[i].style.display = "";
+                } else {
+                    articles[i].style.display = "none";
+                }
             }
-
-            container.innerHTML = html;
         }
-
-        let currentCategory = 'all';
-
-        function filterByCategory(category) {
-            currentCategory = category;
+        function filterCat(cat) {
             let buttons = document.getElementsByClassName('filter-btn');
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove('active');
-            }
+            for (let b of buttons) b.classList.remove('active');
             event.target.classList.add('active');
-            let searchVal = document.getElementById('searchInput').value.toLowerCase();
-            renderArticles(currentCategory, searchVal);
+            let articles = document.getElementsByClassName('article');
+            for (let i = 0; i < articles.length; i++) {
+                if (cat === 'all' || articles[i].getAttribute('data-cat') === cat) {
+                    articles[i].style.display = "";
+                } else {
+                    articles[i].style.display = "none";
+                }
+            }
         }
-
-        function filterArticles() {
-            let searchVal = document.getElementById('searchInput').value.toLowerCase();
-            renderArticles(currentCategory, searchVal);
-        }
-
-        window.onload = function() {
-            renderArticles();
-        };
     </script>
 
-    <!-- Hidden Google Translate Element -->
     <div id="google_translate_element" style="display:none;"></div>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <!-- Popunder Script -->
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="https://pl31443964.profitableratecpmnetwork.com/71/9b/68/719b68a75cd92f96024833025c747b48.js"></script>
-
     <footer>
-        <p>&copy; 2026 INKSPIRE. All rights reserved. Empowering Global Creators, Scholars, Bankers, Fashion Enthusiasts and Innovators Worldwide.</p>
+        <p>&copy; 2026 INKSPIRE. All rights reserved. Empowering Global Creators, Scholars, Bankers and Innovators Worldwide.</p>
     </footer>
-
 </body>
 </html>
