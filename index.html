@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inkspire | Professional Web Writing & Content Hub</title>
+    <title>Prashant Sagar | Professional Web Writer & Content Creator</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-deep: #0b0f19;
-            --bg-card: #111827;
+            --bg-deep: #0a0f1d;
+            --bg-card: #131b2e;
             --accent-cyan: #38bdf8;
+            --accent-purple: #c084fc;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border-color: rgba(56, 189, 248, 0.2);
@@ -28,7 +29,7 @@
             overflow-x: hidden;
         }
         header {
-            background: rgba(11, 15, 25, 0.9);
+            background: rgba(10, 15, 29, 0.9);
             backdrop-filter: blur(16px);
             padding: 20px 6%;
             display: flex;
@@ -41,17 +42,17 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         .logo {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            background: linear-gradient(135deg, #38bdf8 0%, #c084fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
         nav {
             display: flex;
-            gap: 35px;
+            gap: 30px;
         }
         nav a {
             color: var(--text-muted);
@@ -64,10 +65,9 @@
             color: var(--accent-cyan);
         }
         .hero {
-            padding: 190px 6% 120px 6%;
+            padding: 180px 6% 100px 6%;
             text-align: center;
-            background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.08) 0%, rgba(11, 15, 25, 0) 70%);
-            position: relative;
+            background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.08) 0%, rgba(10, 15, 29, 0) 70%);
         }
         .hero-tag {
             display: inline-flex;
@@ -75,22 +75,22 @@
             gap: 8px;
             background: rgba(56, 189, 248, 0.1);
             color: var(--accent-cyan);
-            padding: 8px 22px;
+            padding: 8px 20px;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 600;
             border: 1px solid var(--border-color);
             margin-bottom: 25px;
-            letter-spacing: 1px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .hero h1 {
-            font-size: clamp(2.8rem, 5vw, 5rem);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             font-weight: 800;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: #ffffff;
-            letter-spacing: -1.5px;
-            line-height: 1.15;
+            letter-spacing: -1px;
+            line-height: 1.2;
         }
         .hero h1 span {
             background: linear-gradient(135deg, #38bdf8 0%, #a855f7 50%, #ec4899 100%);
@@ -98,36 +98,34 @@
             -webkit-text-fill-color: transparent;
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 750px;
+            max-width: 700px;
             margin: 0 auto 40px auto;
-            font-weight: 400;
         }
         .btn-box {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 18px;
             flex-wrap: wrap;
         }
         .btn-primary {
             background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
             color: #ffffff;
-            padding: 16px 36px;
+            padding: 15px 32px;
             border-radius: 12px;
             font-weight: 700;
             text-decoration: none;
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+            transition: transform 0.3s ease;
         }
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.45);
         }
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.04);
             color: var(--text-main);
-            padding: 16px 36px;
+            padding: 15px 32px;
             border-radius: 12px;
             font-weight: 600;
             text-decoration: none;
@@ -139,17 +137,16 @@
             color: var(--accent-cyan);
         }
         section {
-            padding: 110px 6%;
+            padding: 100px 6%;
             max-width: 1280px;
             margin: 0 auto;
         }
         section h2 {
             text-align: center;
-            font-size: 2.6rem;
+            font-size: 2.4rem;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #ffffff;
-            letter-spacing: -0.5px;
         }
         section h2 span {
             color: var(--accent-cyan);
@@ -157,98 +154,107 @@
         .section-desc {
             text-align: center;
             color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto 60px auto;
-            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            font-size: 1.05rem;
         }
-        .services-grid {
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
-        .service-card {
+        .card {
             background: var(--bg-card);
-            padding: 45px 35px;
-            border-radius: 20px;
+            padding: 40px 30px;
+            border-radius: 18px;
             border: 1px solid rgba(255, 255, 255, 0.06);
             transition: all 0.3s ease;
-            position: relative;
         }
-        .service-card:hover {
+        .card:hover {
             border-color: var(--accent-cyan);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-        .service-card i {
-            font-size: 2.2rem;
+        .card i {
+            font-size: 2rem;
             color: var(--accent-cyan);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
-        .service-card h3 {
-            font-size: 1.35rem;
+        .card h3 {
+            font-size: 1.3rem;
             color: #ffffff;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 700;
         }
-        .service-card p {
+        .card p {
             color: var(--text-muted);
-            font-size: 0.98rem;
+            font-size: 0.95rem;
+        }
+        .portfolio-tag {
+            display: inline-block;
+            background: rgba(192, 132, 252, 0.1);
+            color: var(--accent-purple);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
         .creator-box {
-            background: linear-gradient(145deg, #111827 0%, #0d1322 100%);
-            border: 1px solid rgba(56, 189, 248, 0.25);
-            border-radius: 24px;
-            padding: 60px;
-            max-width: 900px;
+            background: linear-gradient(145deg, #131b2e 0%, #0d1322 100%);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 22px;
+            padding: 50px;
+            max-width: 850px;
             margin: 0 auto;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
             text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
         .creator-box h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #ffffff;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             font-family: 'Playfair Display', serif;
         }
         .creator-box p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 35px;
-            line-height: 1.9;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
         }
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
         .social-btn {
             background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-main);
-            padding: 14px 28px;
-            border-radius: 12px;
+            padding: 12px 24px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             transition: all 0.3s ease;
         }
         .social-btn:hover {
             background: var(--accent-cyan);
-            color: #0b0f19;
+            color: #0a0f1d;
             border-color: var(--accent-cyan);
-            transform: translateY(-2px);
         }
         footer {
             text-align: center;
-            padding: 50px 6%;
-            background: #07090f;
+            padding: 40px 6%;
+            background: #070a13;
             color: var(--text-muted);
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
         }
         footer span {
             color: var(--accent-cyan);
@@ -257,8 +263,8 @@
         @media (max-width: 768px) {
             header { padding: 15px 5%; }
             nav { display: none; }
-            .hero { padding: 150px 5% 90px 5%; }
-            .creator-box { padding: 35px 20px; }
+            .hero { padding: 140px 5% 80px 5%; }
+            .creator-box { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -267,63 +273,84 @@
     <header>
         <div class="logo">Inkspire</div>
         <nav>
-            <a href="#services">Writing Services</a>
-            <a href="#about">About Creator</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Real Work</a>
+            <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-tag">
-            <i class="fa-solid fa-pen-nib"></i> Professional Web Writing & Content Hub
+            <i class="fa-solid fa-pen-nib"></i> Professional Web Content Hub
         </div>
-        <h1>Crafting Compelling Stories & <br><span>Digital Content</span> That Converts</h1>
-        <p>Welcome to Inkspire. Elevating brands, websites, and digital audiences through expert web copywriting, strategic content creation, and engaging narratives.</p>
+        <h1>Words That Engage, Connect, & <br><span>Drive Real Growth</span></h1>
+        <p>Hi, I'm Prashant Sagar. I craft compelling web copy, strategic digital content, and engaging narratives designed to elevate modern brands and digital platforms.</p>
         <div class="btn-box">
-            <a href="#contact" class="btn-primary">Connect With Creator</a>
-            <a href="#services" class="btn-secondary">Explore Services</a>
+            <a href="#portfolio" class="btn-primary">Explore My Work</a>
+            <a href="#contact" class="btn-secondary">Let's Collaborate</a>
         </div>
     </section>
 
     <section id="services">
-        <h2>Web Writing & <span>Content Services</span></h2>
-        <p class="section-desc">Tailored textual and editorial solutions designed to captivate readers and scale digital growth.</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fa-solid fa-file-lines"></i>
+        <h2>Content <span>Services</span></h2>
+        <p class="section-desc">Tailored writing and editorial solutions built to establish authority and captivate online audiences.</p>
+        <div class="grid-3">
+            <div class="card">
+                <i class="fa-solid fa-file-code"></i>
                 <h3>Web Copywriting</h3>
-                <p>High-converting landing page copy, brand storytelling, and engaging website content crafted to turn visitors into loyal customers.</p>
+                <p>High-converting landing page texts, product descriptions, and web layouts designed to turn visitors into active users.</p>
             </div>
-            <div class="service-card">
-                <i class="fa-solid fa-feather"></i>
-                <h3>Content Strategy & Blogs</h3>
-                <p>SEO-optimized articles, creative columns, and structured digital publications built to establish authority and drive organic traffic.</p>
+            <div class="card">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>Digital Publishing & E-Books</h3>
+                <p>Structured e-books, professional guides, and digital manga/comic storytelling series crafted with creative depth.</p>
             </div>
-            <div class="service-card">
+            <div class="card">
                 <i class="fa-solid fa-bullhorn"></i>
-                <h3>Digital Brand Voice</h3>
-                <p>Developing unique brand messaging, crisp taglines, and immersive tonal guidelines tailored for modern digital ecosystems.</p>
+                <h3>Brand Messaging & Blogs</h3>
+                <p>SEO-friendly articles, catchy taglines, and distinct digital voice guidelines for agencies and online stores.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" style="background: rgba(255,255,255,0.01);">
+        <h2>Featured Real <span>Works & Projects</span></h2>
+        <p class="section-desc">A snapshot of live digital properties, brand content, and creative projects authored and developed.</p>
+        <div class="grid-3">
+            <div class="card">
+                <span class="portfolio-tag">Digital Agency</span>
+                <h3>UPWEAVE & Wixevo</h3>
+                <p>Developed modern web landing pages, growth agency content assets, and digital storefront branding.</p>
+            </div>
+            <div class="card">
+                <span class="portfolio-tag">Publishing & Stories</span>
+                <h3>MIDNIGHT REQUIEM</h3>
+                <p>Authored digital comic series, manga panels, and educational e-books focused on tech and productivity.</p>
+            </div>
+            <div class="card">
+                <span class="portfolio-tag">Media & Audio</span>
+                <h3>ondaMusicaLab & Kavin Music</h3>
+                <p>Managed release content, metadata, and original creative distributions across global streaming platforms.</p>
             </div>
         </div>
     </section>
 
     <section id="about">
         <div class="creator-box">
-            <h3>Designed & Authored by Prashant Sagar</h3>
-            <p>Inkspire is built and directed by <strong>Prashant Sagar</strong>, a passionate digital creator and web writer based in New Delhi, India. Combining advanced web presentation with elite content structuring, every piece of work reflects precision, creativity, and editorial mastery.</p>
+            <h3>About the Author & Creator</h3>
+            <p>Authored and built entirely by <strong>Prashant Sagar</strong>, based in New Delhi, India. Combining modern web development standards (React, Vite, Tailwind, Carrd) with elite editorial writing, every project reflects passion, precision, and digital excellence.</p>
             <div class="social-links">
-                <a href="mailto:Inkspiresupporteng@gmail.com" class="social-btn"><i class="fa-solid fa-envelope"></i> Email Support</a>
+                <a href="mailto:Inkspiresupporteng@gmail.com" class="social-btn"><i class="fa-solid fa-envelope"></i> Email Me</a>
                 <a href="https://x.com/kavinmusic13" target="_blank" class="social-btn"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
                 <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
             </div>
         </div>
     </section>
 
-    <section id="contact" style="padding-top: 20px;">
-        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-            <h2>Get in <span>Touch</span></h2>
-            <p class="section-desc">Have a project, collaboration, or writing inquiry? Reach out directly through the channels above.</p>
-        </div>
+    <section id="contact" style="padding-top: 10px; text-align: center;">
+        <h2>Ready to Start a <span>Project?</span></h2>
+        <p class="section-desc">Reach out directly via email or social channels for writing collaborations, web copy, or inquiries.</p>
     </section>
 
     <footer>
