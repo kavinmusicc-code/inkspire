@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INKSPIRE - Global Intelligence Hub (Modules 41-50)</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+        }
+        header { 
+            background-color: var(--card-bg); 
+            border-bottom: 1px solid var(--border-color); 
+            padding: 2.5rem 1rem; 
+            text-align: center; 
+            margin-bottom: 2rem; 
+        }
+        header h1 { margin: 0; font-size: 2rem; color: var(--primary); letter-spacing: -0.5px; }
+        header p { margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.95rem; }
+        .container { width: 100%; max-width: 650px; margin: 0 auto; padding: 0 1rem; }
+        .search-box {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-size: 0.95rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            outline: none;
+            background: #fff;
+            transition: all 0.2s;
+        }
+        .search-box:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        .article { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 12px; 
+            margin-bottom: 1.5rem; 
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .article:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+        }
+        .article img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .article-content {
+            padding: 1.5rem;
+        }
+        .article h2 { 
+            font-size: 1.15rem; 
+            color: #0f172a; 
+            margin-top: 0; 
+            margin-bottom: 0.7rem; 
+            line-height: 1.4;
+        }
+        .definition-box { 
+            background: #f1f5f9; 
+            border-left: 4px solid var(--primary); 
+            padding: 0.75rem 1rem; 
+            margin: 0.8rem 0; 
+            font-size: 0.9rem; 
+            color: #334155; 
+            border-radius: 0 6px 6px 0; 
+        }
+        .article p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+        .cat-tag { 
+            display: inline-block; 
+            font-size: 0.7rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            background: #e0e7ff; 
+            color: var(--primary-dark); 
+            padding: 3px 8px; 
+            border-radius: 4px; 
+            margin-bottom: 0.6rem; 
+        }
+        /* Pagination Styling */
+        .pagination { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 8px; 
+            margin: 3rem 0; 
+        }
+        .pagination a { 
+            padding: 8px 14px; 
+            background: #fff; 
+            border: 1px solid var(--border-color); 
+            color: var(--primary); 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            transition: all 0.2s;
+        }
+        .pagination a.active { 
+            background: var(--primary); 
+            color: #fff; 
+            border-color: var(--primary); 
+        }
+        .pagination a:hover:not(.active) {
+            background: #f1f5f9;
+        }
+        footer { 
+            text-align: center; 
+            padding: 2.5rem 1rem; 
+            background-color: #1e293b; 
+            color: #94a3b8; 
+            font-size: 0.85rem; 
+            margin-top: 4rem; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>INKSPIRE HUB</h1>
+        <p>Global Intelligence & Deep-Tech Modules (Modules 41 - 50)</p>
+    </header>
+
+    <div class="container">
+        <!-- Search Filter Input -->
+        <input type="text" id="searchInput" class="search-box" placeholder="Search modules 41-50..." onkeyup="filterModules()">
+
+        <div id="modulesContainer">
+            <!-- Module 41 -->
+            <div class="article" data-title="41 neuromorphic computing brain inspired hardware cognitive chips">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Neuromorphic Computing">
+                <div class="article-content">
+                    <span class="cat-tag">Neuromorphic Hardware</span>
+                    <h2>41. Neuromorphic Computing & Brain-Inspired Silicon Architecture</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Microchips designed to mimic biological neural networks, processing asynchronous spike signals with extreme energy efficiency.</div>
+                    <p>AI hardware researchers deploy neuromorphic processing units to execute real-time sensory pattern recognition at a fraction of traditional power consumption.</p>
+                </div>
+            </div>
+
+            <!-- Module 42 -->
+            <div class="article" data-title="42 automated code synthesis ai software engineering self healing systems">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Automated Software Engineering">
+                <div class="article-content">
+                    <span class="cat-tag">Software Engineering</span>
+                    <h2>42. AI-Driven Code Synthesis & Self-Healing Software Architecture</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Autonomous agent pipelines that write, test, debug, and refactor complex codebase modules with minimal human intervention.</div>
+                    <p>Enterprise engineering teams integrate automated testing and synthesis loops to accelerate software product delivery cycles securely.</p>
+                </div>
+            </div>
+
+            <!-- Module 43 -->
+            <div class="article" data-title="43 vertical farming controlled environment agriculture urban food security">
+                <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80" alt="Vertical Farming">
+                <div class="article-content">
+                    <span class="cat-tag">AgriTech Systems</span>
+                    <h2>43. Controlled-Environment Vertical Farming & Hydroponic Ecosystems</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Multitier indoor farming facilities utilizing LED light spectrum tuning and nutrient recycling to maximize crop yields.</div>
+                    <p>Urban agricultural hubs produce high-density leafy greens year-round while consuming significantly less land and freshwater than conventional farms.</p>
+                </div>
+            </div>
+
+            <!-- Module 44 -->
+            <div class="article" data-title="44 planetary defense near earth objects asteroid tracking space exploration">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Planetary Defense">
+                <div class="article-content">
+                    <span class="cat-tag">Space Security</span>
+                    <h2>44. Planetary Defense, Near-Earth Object Tracking & Deflection Physics</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Automated telescope arrays and kinetic impactor simulations designed to detect and redirect hazardous space asteroids.</div>
+                    <p>Global space agencies collaborate on optical tracking databases to monitor orbital trajectories and safeguard Earth against potential cosmic impacts.</p>
+                </div>
+            </div>
+
+            <!-- Module 45 -->
+            <div class="article" data-title="45 synthetic media deepfake detection digital watermarking authenticity">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Synthetic Media Verification">
+                <div class="article-content">
+                    <span class="cat-tag">Media Integrity</span>
+                    <h2>45. Synthetic Media Cryptography, Watermarking & Deepfake Countermeasures</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Cryptographic metadata embedding and forensic AI models verifying the authentic origin of digital photos, audio, and video.</p>
+                    <p>Journalistic platforms and media networks utilize decentralized verification standards to protect public discourse from manipulated disinformation campaigns.</p>
+                </div>
+            </div>
+
+            <!-- Module 46 -->
+            <div class="article" data-title="46 decentralized autonomous logistics supply chain routing optimization">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Decentralized Logistics">
+                <div class="article-content">
+                    <span class="cat-tag">Logistics Network</span>
+                    <h2>46. Decentralized Freight Networks & Autonomous Supply Chain Routing</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Distributed ledger tracking paired with predictive AI agents dynamically rerouting cargo shipments based on real-time disruption data.</div>
+                    <p>Global distribution enterprises deploy automated freight optimization nodes to lower fuel emissions and eliminate transit bottlenecks.</p>
+                </div>
+            </div>
+
+            <!-- Module 47 -->
+            <div class="article" data-title="47 immersive education generative virtual worlds spatial learning">
+                <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80" alt="Immersive Education">
+                <div class="article-content">
+                    <span class="cat-tag">Immersive EdTech</span>
+                    <h2>47. Generative Virtual Worlds & Experiential Spatial Classrooms</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Real-time AI-generated 3D simulation environments enabling students to interact with historical events and scientific phenomena firsthand.</div>
+                    <p>Schools and universities incorporate spatial computing headsets to deliver high-engagement experiential learning across abstract scientific subjects.</p>
+                </div>
+            </div>
+
+            <!-- Module 48 -->
+            <div class="article" data-title="48 advanced battery recycling critical mineral recovery circular tech">
+                <img src="https://images.unsplash.com/photo-1532996122724-e3c3fa9a0d35?auto=format&fit=crop&w=800&q=80" alt="Battery Recycling">
+                <div class="article-content">
+                    <span class="cat-tag">Circular Clean-Tech</span>
+                    <h2>48. Advanced Battery Recycling, Hydrometallurgy & Critical Mineral Recovery</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Closed-loop chemical extraction processes recovering high-purity lithium, cobalt, and nickel from spent energy storage cells.</div>
+                    <p>Clean-tech recycling facilities scale hydrometallurgical refining plants to secure domestic supply chains for next-generation electric vehicle batteries.</p>
+                </div>
+            </div>
+
+            <!-- Module 49 -->
+            <div class="article" data-title="49 bioelectronics implantable devices bio compatible sensors health tech">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Bioelectronics">
+                <div class="article-content">
+                    <span class="cat-tag">Bioelectronics</span>
+                    <h2>49. Implantable Bioelectronic Sensors & Biodegradable Medical Diagnostics</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Flexible, biocompatible micro-sensors that monitor internal physiological parameters and dissolve safely after therapeutic use.</div>
+                    <p>Clinical researchers pioneer transient electronics to provide post-operative monitoring without requiring surgical device extraction procedures.</p>
+                </div>
+            </div>
+
+            <!-- Module 50 -->
+            <div class="article" data-title="50 post quantum cryptography lattice based cryptography cybersecurity future">
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80" alt="Post-Quantum Cryptography">
+                <div class="article-content">
+                    <span class="cat-tag">Post-Quantum Security</span>
+                    <h2>50. Post-Quantum Cryptography, Lattice-Based Algorithms & Data Armor</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Advanced mathematical encryption schemes designed to remain completely secure against attacks from powerful quantum computers.</div>
+                    <p>Global cybersecurity frameworks mandate the transition to lattice-based cryptographic standards to protect sensitive state and corporate infrastructure.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination Links -->
+        <div class="pagination">
+            <a href="page4.html">&laquo; Prev</a>
+            <a href="index.html">1</a>
+            <a href="page2.html">2</a>
+            <a href="page3.html">3</a>
+            <a href="page4.html">4</a>
+            <a href="page5.html" class="active">5</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 INKSPIRE. All Rights Reserved. Modules 41-50 Compilation.</p>
+    </footer>
+
+    <script>
+        function filterModules() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let articles = document.getElementsByClassName('article');
+            for (let i = 0; i < articles.length; i++) {
+                let title = articles[i].getAttribute('data-title') || articles[i].innerText.toLowerCase();
+                articles[i].style.display = title.includes(input) ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
