@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inkspire | Elite Digital Agency & Content Studio</title>
+    <title>Inkspire | Official Portfolio & Creator Hub</title>
     <style>
         * {
             margin: 0;
@@ -126,36 +126,8 @@
             border-color: #d4af37;
             color: #d4af37;
         }
-        .features-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: -50px auto 0 auto;
-            padding: 0 5%;
-            position: relative;
-            z-index: 10;
-        }
-        .feature-box {
-            background: #111827;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            text-align: center;
-        }
-        .feature-box h3 {
-            font-size: 2rem;
-            color: #d4af37;
-            margin-bottom: 8px;
-            font-weight: 800;
-        }
-        .feature-box p {
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
         section {
-            padding: 110px 5%;
+            padding: 100px 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -173,7 +145,7 @@
             text-align: center;
             color: #94a3b8;
             max-width: 600px;
-            margin: 0 auto 60px auto;
+            margin: 0 auto 50px auto;
             font-size: 1.05rem;
         }
         .grid-3 {
@@ -188,7 +160,7 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
+            text-align: center;
         }
         .card:hover {
             border-color: #d4af37;
@@ -196,7 +168,7 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.6);
         }
         .card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #ffffff;
             margin-bottom: 15px;
             font-weight: 700;
@@ -204,47 +176,49 @@
         .card p {
             color: #94a3b8;
             font-size: 0.95rem;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
-        .badge {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.1);
+        .card a {
             color: #d4af37;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 0.8rem;
+            text-decoration: none;
             font-weight: 600;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 0.95rem;
         }
-        .contact-card {
+        .card a:hover {
+            text-decoration: underline;
+        }
+        .contact-box {
             background: #111827;
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 20px;
             padding: 50px;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            text-align: center;
         }
-        .form-group {
-            margin-bottom: 20px;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 16px;
+        .social-btn {
             background: #07090e;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #f1f5f9;
+            padding: 12px 25px;
             border-radius: 8px;
-            color: #ffffff;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s ease;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
-        .form-group input:focus, .form-group textarea:focus {
+        .social-btn:hover {
+            background: #d4af37;
+            color: #07090e;
             border-color: #d4af37;
-        }
-        .form-group textarea {
-            resize: vertical;
-            height: 150px;
         }
         footer {
             text-align: center;
@@ -254,11 +228,15 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 0.9rem;
         }
+        footer span {
+            color: #d4af37;
+            font-weight: 600;
+        }
         @media (max-width: 768px) {
             header { padding: 15px 5%; }
             nav { display: none; }
             .hero { padding: 140px 5% 80px 5%; }
-            .contact-card { padding: 25px; }
+            .contact-box { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -267,113 +245,68 @@
     <header>
         <div class="logo">Inkspire</div>
         <nav>
-            <a href="#services">Services</a>
-            <a href="#works">Portfolio</a>
-            <a href="#about">About</a>
+            <a href="#about">About Creator</a>
+            <a href="#channels">Official Channels</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-tag">Elite Digital Agency & Content Studio</div>
-        <h1>Elevating Brands Through <span>Elite Copy & Web Systems</span></h1>
-        <p>Strategic web writing, digital growth agency infrastructure, and high-impact publishing designed for global industry leaders.</p>
+        <div class="hero-tag">Created & Developed by Prashant Sagar</div>
+        <h1>Welcome to <span>Inkspire</span> Creator Hub</h1>
+        <p>A professional digital enterprise and content platform built from scratch with elite design systems and modern web architecture.</p>
         <div class="btn-box">
-            <a href="#contact" class="btn-gold">Schedule Consultation</a>
-            <a href="#works" class="btn-outline">Explore Ventures</a>
-        </div>
-    </section>
-
-    <div class="features-bar">
-        <div class="feature-box">
-            <h3>3+</h3>
-            <p>Digital Growth Ventures Built</p>
-        </div>
-        <div class="feature-box">
-            <h3>Global</h3>
-            <p>Media & Content Reach</p>
-        </div>
-        <div class="feature-box">
-            <h3>100%</h3>
-            <p>Professional Execution</p>
-        </div>
-    </div>
-
-    <section id="services">
-        <h2>Core <span>Expertise</span></h2>
-        <p class="section-desc">Delivering top-tier precision in writing, branding, and digital commerce.</p>
-        <div class="grid-3">
-            <div class="card">
-                <h3>High-Impact Web Writing</h3>
-                <p>Strategic website copywriting, persuasive landing page designs, and data-driven SEO content built to scale engagement.</p>
-                <span class="badge">Growth Writing</span>
-            </div>
-            <div class="card">
-                <h3>Digital Publishing & E-Books</h3>
-                <p>Authoritative digital e-books, guides, and visual comic series crafted with deep narrative flow and professional layouts.</p>
-                <span class="badge">Publishing</span>
-            </div>
-            <div class="card">
-                <h3>Agency Branding & Storefronts</h3>
-                <p>Complete web asset creation, digital storefront design, and modern UI engineering for digital growth agencies.</p>
-                <span class="badge">Enterprise UI</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="works" style="background: #090e17;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2>Active <span>Ventures & Works</span></h2>
-            <p class="section-desc">A showcase of real platforms, agencies, and creative properties.</p>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Growth Agencies & Storefronts</h3>
-                    <p>High-performance digital growth agencies and e-commerce storefronts engineered with modern tech stacks and sleek interfaces.</p>
-                    <span class="badge">Agencies</span>
-                </div>
-                <div class="card">
-                    <h3>Original E-Books & Comics</h3>
-                    <p>Authored digital assets including productivity guides, AI automation handbooks, and immersive narrative titles.</p>
-                    <span class="badge">E-Books / Comics</span>
-                </div>
-                <div class="card">
-                    <h3>Music Production & Distribution</h3>
-                    <p>Original music production and global multi-platform distribution channels reaching international listeners.</p>
-                    <span class="badge">Global Music</span>
-                </div>
-            </div>
+            <a href="#contact" class="btn-gold">Get in Touch</a>
+            <a href="#channels" class="btn-outline">Explore Channels</a>
         </div>
     </section>
 
     <section id="about">
-        <h2>About <span>Inkspire</span></h2>
-        <p class="section-desc">Driving innovation at the intersection of words and digital systems.</p>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; color: #94a3b8; font-size: 1.12rem;">
-            <p>Inkspire is an elite digital enterprise and content studio specializing in building high-performance web growth agencies, publishing professional e-books and visual series, and managing global media projects. We focus on delivering high-value digital experiences that combine robust strategy with flawless execution.</p>
+        <h2>About The <span>Creator</span></h2>
+        <p class="section-desc">The visionary behind the design, code, and execution.</p>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; color: #94a3b8; font-size: 1.1rem; background: #111827; padding: 40px; border-radius: 16px; border: 1px solid rgba(212, 175, 55, 0.2);">
+            <p>Inkspire is conceptualized, designed, and fully developed by <strong>Prashant Sagar</strong>. Combining high-end aesthetic UI standards with powerful digital infrastructure, this platform represents precision in execution and modern web craftsmanship.</p>
+        </div>
+    </section>
+
+    <section id="channels" style="background: #090e17;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2>Official <span>Social Channels</span></h2>
+            <p class="section-desc">Connect directly across official social networks.</p>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>X (Twitter)</h3>
+                    <p>Follow updates and insights on the official handle.</p>
+                    <a href="https://x.com/kavinmusic13" target="_blank">Visit X Profile &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Instagram</h3>
+                    <p>Check out visual assets, creative works, and updates.</p>
+                    <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank">Visit Instagram &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>Direct Support Email</h3>
+                    <p>Send direct inquiries or project proposals.</p>
+                    <a href="mailto:Inkspiresupporteng@gmail.com">Send Email &rarr;</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="contact">
-        <div class="contact-card">
-            <h2>Let's Build <span>Together</span></h2>
-            <p class="section-desc" style="margin-bottom: 30px;">Directly connect for professional inquiries, projects, or collaborations.</p>
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <input type="text" placeholder="Your Name or Company" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Your Email Address" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Describe your project scope or proposal..." required></textarea>
-                </div>
-                <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer;">Send Business Inquiry</button>
-            </form>
+        <div class="contact-box">
+            <h2>Official <span>Contact Channels</span></h2>
+            <p class="section-desc" style="margin-bottom: 20px;">Reach out instantly via email or social networks below.</p>
+            <div class="social-links">
+                <a href="mailto:Inkspiresupporteng@gmail.com" class="social-btn">📧 Inkspiresupporteng@gmail.com</a>
+                <a href="https://x.com/kavinmusic13" target="_blank" class="social-btn">✖ X (Twitter)</a>
+                <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="social-btn">📸 Instagram</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Inkspire. All rights reserved. Designed for Global Excellence.</p>
+        <p>&copy; 2026 Inkspire. Designed and Developed by <span>Prashant Sagar</span>. All rights reserved.</p>
     </footer>
 
 </body>
