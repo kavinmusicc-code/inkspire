@@ -199,17 +199,18 @@
     </div>
 
     <div class="main-container">
-        <!-- Left Column: Articles & Admin Post Creator -->
+        <!-- Left Column: Articles & Hidden Admin Post Creator -->
         <div class="content-area">
             
-            <!-- Admin CMS Post Creator Section -->
-            <div class="admin-panel">
-                <h2>Admin Post Creator</h2>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Enter your admin password to publish a new post, image, or video directly to the site.</p>
+            <!-- Hidden Admin CMS Panel (Only visible via secret link) -->
+            <div id="admin-container" class="admin-panel" style="display: none;">
+                <h2>Admin Post Creator (Secret Panel)</h2>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Welcome back, Admin! Enter your password to publish new content or video.</p>
+                
                 <div id="login-box">
                     <label><strong>Admin Password:</strong></label>
                     <input type="password" id="admin-pass" placeholder="Enter password...">
-                    <button onclick="verifyAdmin()">Login / Unlock Creator</button>
+                    <button onclick="verifyAdmin()">Unlock Creator</button>
                 </div>
                 
                 <div id="creator-box" style="display: none; margin-top: 1rem;">
@@ -340,6 +341,12 @@
     <script src="https://pl31443964.profitableratecpmnetwork.com/71/9b/68/719b68a75cd92f96024833025c747b48.js"></script>
 
     <script>
+        // Check if URL has secret admin query parameter (e.g. ?admin=true)
+        const urlParams = new URLSearchParams(window.location.search);
+        if(urlParams.get('admin') === 'true') {
+            document.getElementById('admin-container').style.display = 'block';
+        }
+
         function verifyAdmin() {
             const pass = document.getElementById('admin-pass').value;
             if(pass === '5VKGY2EL63DF') {
@@ -347,7 +354,7 @@
                 document.getElementById('creator-box').style.display = 'block';
                 alert('Admin login successful!');
             } else {
-                alert('Incorrect password! Please try again.');
+                alert('Incorrect password!');
             }
         }
 
@@ -384,7 +391,6 @@
 
             dynamicContainer.prepend(newCard);
 
-            // Clear inputs
             document.getElementById('post-title').value = '';
             document.getElementById('post-content').value = '';
             document.getElementById('post-media').value = '';
