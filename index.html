@@ -1,83 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
 
   <title>InkSpire — News, Ideas & Intelligence</title>
 
   <meta
     name="description"
-    content="InkSpire brings together the latest world, India, business, technology and AI stories with source-based reporting and useful analysis."
-  >
+    content="InkSpire brings together the latest world, India, technology, AI and business stories with clear, source-led web writing."
+  />
 
   <meta
     name="keywords"
-    content="InkSpire, news, India news, world news, technology, AI, business, latest news, web writing"
-  >
+    content="InkSpire, news, India news, world news, AI news, technology news, business news, web writing"
+  />
 
-  <meta name="author" content="Prashant Sagar">
+  <meta name="author" content="Prashant Sagar" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
-  <meta name="robots" content="index, follow">
-
-  <meta name="theme-color" content="#0b0e18">
-
-  <link rel="canonical" href="https://kavinmusicc-code.github.io/inkspire/">
+  <link
+    rel="canonical"
+    href="https://kavinmusicc-code.github.io/inkspire/"
+  />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="InkSpire — News, Ideas & Intelligence">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="InkSpire — News, Ideas & Intelligence" />
   <meta
     property="og:description"
-    content="Independent web writing covering world, India, business, technology and AI."
-  >
-  <meta property="og:url" content="https://kavinmusicc-code.github.io/inkspire/">
-  <meta property="og:image" content="logo.png">
+    content="World, India, AI, technology and business stories from InkSpire."
+  />
+  <meta
+    property="og:url"
+    content="https://kavinmusicc-code.github.io/inkspire/"
+  />
+  <meta property="og:site_name" content="InkSpire" />
 
-  <!-- Twitter/X -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="InkSpire — News, Ideas & Intelligence">
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="InkSpire — News, Ideas & Intelligence" />
   <meta
     name="twitter:description"
-    content="World, India, technology, business and AI stories."
-  >
-  <meta name="twitter:image" content="logo.png">
+    content="News, ideas and intelligence from InkSpire."
+  />
 
-  <!-- Favicon -->
-  <link rel="icon" href="logo.png">
+  <!-- Google Analytics 4 -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-C2TQYXBJ7V"
+  ></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "G-C2TQYXBJ7V");
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsMediaOrganization",
+    "name": "InkSpire",
+    "url": "https://kavinmusicc-code.github.io/inkspire/",
+    "description": "InkSpire is a web publication covering world, India, technology, AI and business.",
+    "founder": {
+      "@type": "Person",
+      "name": "Prashant Sagar"
+    },
+    "sameAs": [
+      "https://www.instagram.com/inkspire.8s/",
+      "https://x.com/"
+    ]
+  }
+  </script>
 
   <style>
-    /* =========================================================
-       INKSpire
-       Complete single-file website
-       ========================================================= */
-
     :root {
-      --bg: #080b13;
-      --bg-soft: #0d111c;
-      --panel: #111622;
-      --panel-2: #151b29;
-      --border: rgba(255,255,255,.09);
-
-      --text: #f5f7fb;
-      --muted: #98a2b3;
-      --muted-2: #697386;
-
-      --accent: #7772ff;
-      --accent-2: #a29eff;
-      --accent-soft: rgba(119,114,255,.14);
-
-      --green: #35d49a;
-      --red: #ff647c;
-
-      --max: 1240px;
-
+      --bg: #f6f6f3;
+      --surface: #ffffff;
+      --surface-2: #eeeeeb;
+      --text: #111318;
+      --muted: #6b6e76;
+      --line: #deded9;
+      --dark: #0c0d12;
+      --dark-2: #151720;
+      --accent: #6157e8;
+      --accent-2: #8d86ff;
+      --success: #18a66a;
+      --danger: #df3f3f;
+      --max: 1220px;
       --radius: 18px;
-      --radius-sm: 12px;
-
-      --shadow:
-        0 20px 60px rgba(0,0,0,.28);
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
     }
 
     * {
@@ -93,24 +118,15 @@
     body {
       font-family:
         Inter,
+        ui-sans-serif,
+        system-ui,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
-        Roboto,
-        Arial,
         sans-serif;
-
-      background:
-        radial-gradient(
-          circle at 80% -10%,
-          rgba(119,114,255,.12),
-          transparent 35%
-        ),
-        var(--bg);
-
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      min-height: 100vh;
     }
 
     body.modal-open {
@@ -136,393 +152,268 @@
       display: block;
     }
 
-    ::selection {
-      background: var(--accent);
-      color: white;
+    .container {
+      width: min(var(--max), calc(100% - 36px));
+      margin: auto;
     }
 
-    /* =========================================================
+    /* =========================
        HEADER
-       ========================================================= */
+    ========================== */
 
-    .site-header {
+    header {
       position: sticky;
       top: 0;
       z-index: 1000;
-
-      background: rgba(8,11,19,.86);
+      background: rgba(246, 246, 243, 0.92);
       backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
-    .header-inner {
-      width: min(var(--max), calc(100% - 32px));
-      margin: auto;
-
+    .nav {
       min-height: 76px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 20px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      flex-shrink: 0;
+      min-width: max-content;
     }
 
-    .brand-logo {
+    .brand-mark {
       width: 44px;
       height: 44px;
       border-radius: 50%;
+      background: #0d1019;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
 
-      object-fit: cover;
-
-      background: #0b0e18;
-
-      border: 1px solid rgba(255,255,255,.12);
-
-      box-shadow:
-        0 0 24px rgba(119,114,255,.15);
+    .brand-mark svg {
+      width: 33px;
+      height: 33px;
     }
 
     .brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.05;
-    }
-
-    .brand-name {
-      font-size: 21px;
+      font-size: 23px;
       font-weight: 850;
-      letter-spacing: -.6px;
+      letter-spacing: -1px;
     }
 
-    .brand-tagline {
-      color: var(--muted);
-      font-size: 10px;
-      margin-top: 4px;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
+    .brand-text span {
+      color: var(--accent);
     }
 
-    .desktop-nav {
+    .nav-links {
       display: flex;
       align-items: center;
       gap: 4px;
     }
 
-    .nav-link {
-      color: #b9c0cd;
-      font-size: 14px;
-      font-weight: 600;
-
+    .nav-links a {
       padding: 9px 11px;
-      border-radius: 9px;
-
-      transition:
-        background .2s ease,
-        color .2s ease;
+      font-size: 14px;
+      font-weight: 700;
+      color: #454750;
+      border-radius: 10px;
+      transition: 0.2s;
     }
 
-    .nav-link:hover,
-    .nav-link.active {
-      background: var(--accent-soft);
-      color: white;
+    .nav-links a:hover {
+      background: var(--surface);
+      color: var(--text);
     }
 
-    .header-actions {
+    .nav-actions {
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .icon-btn {
-      width: 40px;
-      height: 40px;
-
-      border-radius: 10px;
-
-      border: 1px solid var(--border);
-
-      background: rgba(255,255,255,.035);
-
-      color: white;
-
+    .search-btn,
+    .menu-btn {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
       display: grid;
       place-items: center;
-
-      transition: .2s ease;
     }
 
-    .icon-btn:hover {
-      background: var(--accent-soft);
-      border-color: rgba(119,114,255,.4);
+    .search-btn svg,
+    .menu-btn svg {
+      width: 19px;
+      height: 19px;
     }
 
     .menu-btn {
       display: none;
     }
 
-    /* =========================================================
-       MOBILE NAV
-       ========================================================= */
-
-    .mobile-nav {
-      display: none;
-
-      border-top: 1px solid var(--border);
-      padding: 10px 16px 16px;
-
-      background: #090c14;
-    }
-
-    .mobile-nav.open {
-      display: grid;
-      gap: 4px;
-    }
-
-    .mobile-nav a {
-      padding: 12px;
-      border-radius: 10px;
-
-      color: #c5cad4;
-      font-weight: 600;
-    }
-
-    .mobile-nav a:hover {
-      background: var(--accent-soft);
-      color: white;
-    }
-
-    /* =========================================================
-       MAIN
-       ========================================================= */
-
-    main {
-      width: min(var(--max), calc(100% - 32px));
-      margin: auto;
-    }
-
-    /* =========================================================
+    /* =========================
        HERO
-       ========================================================= */
+    ========================== */
 
     .hero {
-      padding: 78px 0 55px;
+      padding: 82px 0 54px;
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(97, 87, 232, 0.13),
+          transparent 32%
+        ),
+        var(--bg);
+    }
 
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap: 40px;
-
-      border-bottom: 1px solid var(--border);
+      grid-template-columns: 1.45fr 0.55fr;
+      gap: 55px;
+      align-items: end;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-
-      color: var(--accent-2);
-
       font-size: 12px;
-      font-weight: 800;
-
       text-transform: uppercase;
       letter-spacing: 1.5px;
-
-      margin-bottom: 18px;
+      font-weight: 850;
+      color: var(--accent);
+      margin-bottom: 20px;
     }
 
     .eyebrow-dot {
-      width: 7px;
-      height: 7px;
-
-      border-radius: 50%;
-
+      width: 8px;
+      height: 8px;
       background: var(--accent);
-
-      box-shadow: 0 0 15px var(--accent);
+      border-radius: 50%;
     }
 
     .hero h1 {
-      font-size: clamp(44px, 7vw, 86px);
-      line-height: .94;
-      letter-spacing: -4px;
-
-      max-width: 850px;
+      max-width: 900px;
+      font-size: clamp(48px, 8vw, 104px);
+      line-height: 0.94;
+      letter-spacing: -6px;
+      font-weight: 900;
     }
 
     .hero h1 span {
-      color: var(--accent-2);
+      color: var(--accent);
     }
 
     .hero-description {
-      max-width: 680px;
-
-      margin-top: 24px;
-
-      font-size: 17px;
-      line-height: 1.75;
-
       color: var(--muted);
+      font-size: 17px;
+      max-width: 480px;
+      margin-bottom: 6px;
     }
 
-    .hero-buttons {
+    /* =========================
+       SEARCH PANEL
+    ========================== */
+
+    .search-panel {
+      display: none;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .search-panel.active {
+      display: block;
+    }
+
+    .search-box {
       display: flex;
       gap: 10px;
-
-      margin-top: 30px;
-
-      flex-wrap: wrap;
+      max-width: 700px;
     }
 
-    .primary-btn,
-    .secondary-btn {
-      min-height: 44px;
-
-      padding: 0 17px;
-
-      border-radius: 10px;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-
-      font-weight: 750;
-      font-size: 13px;
-
-      border: 1px solid transparent;
-
-      transition: .2s ease;
+    .search-box input {
+      flex: 1;
+      min-width: 0;
+      height: 50px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--bg);
+      padding: 0 16px;
+      outline: none;
     }
 
-    .primary-btn {
-      background: white;
-      color: #080b13;
+    .search-box input:focus {
+      border-color: var(--accent);
     }
 
-    .primary-btn:hover {
-      transform: translateY(-1px);
-      background: #e9eaff;
-    }
-
-    .secondary-btn {
-      background: rgba(255,255,255,.035);
-      border-color: var(--border);
+    .search-clear {
+      height: 50px;
+      padding: 0 18px;
+      border: none;
+      border-radius: 12px;
+      background: var(--dark);
       color: white;
+      font-weight: 750;
     }
 
-    .secondary-btn:hover {
-      background: var(--accent-soft);
-      border-color: rgba(119,114,255,.4);
-    }
-
-    .hero-side {
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-    }
-
-    .hero-card {
-      width: 100%;
-      max-width: 370px;
-
-      padding: 24px;
-
-      border: 1px solid var(--border);
-
-      border-radius: var(--radius);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(119,114,255,.14),
-          rgba(255,255,255,.025)
-        );
-
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card-label {
-      color: var(--muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.3px;
-    }
-
-    .hero-card-title {
-      font-size: 23px;
-      font-weight: 800;
-      margin-top: 9px;
-    }
-
-    .hero-card-text {
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 8px;
-      line-height: 1.7;
-    }
-
-    .hero-card-line {
-      height: 1px;
-      background: var(--border);
-      margin: 20px 0;
-    }
-
-    .hero-card-stat {
-      display: flex;
-      justify-content: space-between;
-      color: #c6ccd6;
-      font-size: 13px;
-    }
-
-    /* =========================================================
+    /* =========================
        SECTION
-       ========================================================= */
+    ========================== */
+
+    section {
+      scroll-margin-top: 90px;
+    }
 
     .section {
-      padding: 58px 0;
-
-      border-bottom: 1px solid var(--border);
+      padding: 55px 0;
     }
 
-    .section-header {
+    .section-head {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: end;
       gap: 20px;
-
       margin-bottom: 24px;
     }
 
     .section-title {
-      font-size: 27px;
-      letter-spacing: -.8px;
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1;
+      letter-spacing: -1.8px;
     }
 
     .section-subtitle {
       color: var(--muted);
-      font-size: 13px;
-      margin-top: 4px;
+      margin-top: 7px;
+      font-size: 14px;
     }
 
-    .view-all {
-      color: var(--accent-2);
-      font-size: 13px;
-      font-weight: 750;
-      white-space: nowrap;
+    .section-link {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 800;
     }
 
-    /* =========================================================
+    /* =========================
        LIVE
-       ========================================================= */
+    ========================== */
+
+    .live-section {
+      background: var(--dark);
+      color: white;
+      padding: 55px 0;
+    }
+
+    .live-section .section-subtitle {
+      color: #9ea1ad;
+    }
 
     .live-grid {
       display: grid;
@@ -531,44 +422,22 @@
     }
 
     .live-card {
+      min-height: 245px;
       position: relative;
-      min-height: 220px;
-
-      padding: 22px;
-
-      overflow: hidden;
-
       border-radius: var(--radius);
-
-      border: 1px solid var(--border);
-
+      overflow: hidden;
       background:
         radial-gradient(
-          circle at 85% 15%,
-          rgba(119,114,255,.22),
+          circle at 80% 20%,
+          rgba(97, 87, 232, 0.35),
           transparent 30%
         ),
-        linear-gradient(
-          145deg,
-          #131827,
-          #0c101a
-        );
-    }
-
-    .live-card::after {
-      content: "";
-
-      position: absolute;
-
-      width: 150px;
-      height: 150px;
-
-      right: -60px;
-      bottom: -60px;
-
-      border-radius: 50%;
-
-      border: 1px solid rgba(119,114,255,.18);
+        linear-gradient(135deg, #20222e, #08090d);
+      border: 1px solid #292c38;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
     }
 
     .live-top {
@@ -581,859 +450,516 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-
-      color: #ff7185;
-
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px 10px;
+      border-radius: 100px;
       font-size: 10px;
       font-weight: 850;
-
-      text-transform: uppercase;
       letter-spacing: 1px;
     }
 
-    .live-label::before {
-      content: "";
-
+    .live-label i {
       width: 7px;
       height: 7px;
-
       border-radius: 50%;
-
-      background: #ff5c73;
-
-      box-shadow: 0 0 12px rgba(255,92,115,.8);
+      background: #ff4242;
+      box-shadow: 0 0 12px #ff4242;
     }
 
-    .video-label {
-      color: var(--muted);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .play-circle {
-      position: absolute;
-
-      left: 50%;
-      top: 50%;
-
-      transform: translate(-50%, -50%);
-
+    .play {
       width: 54px;
       height: 54px;
-
       border-radius: 50%;
-
       display: grid;
       place-items: center;
-
-      background: rgba(255,255,255,.08);
-
-      border: 1px solid rgba(255,255,255,.14);
-
-      font-size: 20px;
+      background: white;
+      color: #111;
+      margin: 18px auto 8px;
     }
 
-    .live-bottom {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      bottom: 20px;
-
-      z-index: 2;
+    .play svg {
+      width: 21px;
+      margin-left: 3px;
     }
 
-    .live-title {
-      font-size: 18px;
+    .live-card h3 {
+      font-size: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    .live-card p {
+      color: #a9acb8;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .live-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .live-buttons a {
+      padding: 9px 13px;
+      border-radius: 9px;
+      font-size: 12px;
       font-weight: 800;
     }
 
-    .live-source {
-      margin-top: 3px;
-
-      color: var(--muted);
-
-      font-size: 12px;
-    }
-
-    .live-actions {
-      display: flex;
-      gap: 7px;
-      margin-top: 13px;
-    }
-
-    .small-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      min-height: 34px;
-
-      padding: 0 11px;
-
-      border-radius: 8px;
-
-      font-size: 11px;
-      font-weight: 750;
-
-      border: 1px solid var(--border);
-
-      background: rgba(255,255,255,.045);
-    }
-
-    .small-btn:hover {
-      background: var(--accent-soft);
-    }
-
-    .small-btn.primary {
+    .watch-btn {
       background: white;
-      color: #080b13;
-      border-color: white;
+      color: #111;
     }
 
-    /* =========================================================
+    .source-btn {
+      border: 1px solid #393c48;
+      color: white;
+    }
+
+    /* =========================
        CATEGORY BAR
-       ========================================================= */
+    ========================== */
 
     .category-bar {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      border-top: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .categories {
       display: flex;
       gap: 8px;
-
       overflow-x: auto;
-
-      padding-bottom: 5px;
-
       scrollbar-width: none;
     }
 
-    .category-bar::-webkit-scrollbar {
+    .categories::-webkit-scrollbar {
       display: none;
     }
 
     .category-btn {
-      flex-shrink: 0;
-
-      padding: 8px 13px;
-
+      flex: 0 0 auto;
+      padding: 9px 15px;
       border-radius: 100px;
-
-      border: 1px solid var(--border);
-
-      background: rgba(255,255,255,.025);
-
-      color: #aeb6c3;
-
-      font-size: 12px;
-      font-weight: 700;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: #555861;
+      font-size: 13px;
+      font-weight: 750;
     }
 
-    .category-btn:hover,
-    .category-btn.active {
-      background: var(--accent-soft);
+    .category-btn.active,
+    .category-btn:hover {
+      background: var(--dark);
       color: white;
-      border-color: rgba(119,114,255,.35);
+      border-color: var(--dark);
     }
 
-    /* =========================================================
+    /* =========================
        NEWS GRID
-       ========================================================= */
+    ========================== */
 
     .news-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
     .news-card {
-      min-width: 0;
-
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-
-      border: 1px solid var(--border);
-
-      background:
-        linear-gradient(
-          160deg,
-          rgba(255,255,255,.045),
-          rgba(255,255,255,.018)
-        );
-
-      border-radius: var(--radius);
-
-      overflow: hidden;
-
+      min-height: 285px;
       transition:
-        transform .2s ease,
-        border-color .2s ease;
+        transform 0.2s,
+        box-shadow 0.2s;
     }
 
     .news-card:hover {
       transform: translateY(-3px);
-      border-color: rgba(119,114,255,.35);
+      box-shadow: var(--shadow);
     }
 
     .news-card-top {
-      min-height: 135px;
-
-      padding: 20px;
-
+      padding: 20px 20px 0;
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
-
-      background:
-        radial-gradient(
-          circle at 85% 15%,
-          rgba(119,114,255,.18),
-          transparent 35%
-        ),
-        #101521;
+      gap: 12px;
     }
 
     .category-tag {
-      width: fit-content;
-
-      padding: 5px 8px;
-
-      border-radius: 6px;
-
-      background: var(--accent-soft);
-
-      color: var(--accent-2);
-
-      font-size: 9px;
-      font-weight: 850;
-
+      color: var(--accent);
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .news-index {
-      color: rgba(255,255,255,.15);
-
-      font-size: 50px;
+      letter-spacing: 1.2px;
       font-weight: 900;
-
-      line-height: .8;
-
-      text-align: right;
     }
 
-    .news-body {
-      padding: 19px;
+    .news-time {
+      color: #92959e;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .news-content {
+      padding: 12px 20px 20px;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
     }
 
     .news-title {
-      font-size: 18px;
-      line-height: 1.3;
-
-      letter-spacing: -.3px;
-
-      font-weight: 800;
+      font-size: 21px;
+      line-height: 1.15;
+      letter-spacing: -0.7px;
+      font-weight: 850;
     }
 
     .news-description {
       color: var(--muted);
-
-      font-size: 12px;
-      line-height: 1.65;
-
-      margin-top: 9px;
-
+      font-size: 13px;
+      margin-top: 10px;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
-
       overflow: hidden;
     }
 
-    .news-meta {
+    .news-bottom {
+      margin-top: auto;
+      padding-top: 18px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
 
-      gap: 10px;
-
-      margin-top: 16px;
-
-      color: var(--muted-2);
-
-      font-size: 10px;
+    .source-name {
+      color: #777a83;
+      font-size: 11px;
+      max-width: 55%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .read-btn {
-      margin-top: 15px;
-
-      width: 100%;
-
-      min-height: 37px;
-
-      border-radius: 9px;
-
-      background: rgba(255,255,255,.045);
-
-      border: 1px solid var(--border);
-
+      border: none;
+      background: var(--dark);
       color: white;
-
-      font-size: 11px;
-      font-weight: 750;
+      padding: 9px 13px;
+      border-radius: 9px;
+      font-size: 12px;
+      font-weight: 800;
     }
 
     .read-btn:hover {
-      background: var(--accent-soft);
+      background: var(--accent);
     }
 
-    /* =========================================================
-       FEATURED
-       ========================================================= */
-
-    .featured {
-      display: grid;
-
-      grid-template-columns: 1.35fr .65fr;
-
-      gap: 16px;
-    }
-
-    .featured-main,
-    .featured-side-card {
-      border: 1px solid var(--border);
-
-      border-radius: var(--radius);
-
-      background:
-        radial-gradient(
-          circle at 90% 10%,
-          rgba(119,114,255,.16),
-          transparent 35%
-        ),
-        var(--panel);
-
-      padding: 27px;
-    }
-
-    .featured-main h3 {
-      font-size: clamp(26px, 4vw, 43px);
-
-      line-height: 1.08;
-
-      letter-spacing: -1.5px;
-
-      margin-top: 15px;
-    }
-
-    .featured-main p {
+    .loading,
+    .empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
       color: var(--muted);
-
-      margin-top: 14px;
-
-      max-width: 700px;
-
-      font-size: 14px;
     }
 
-    .featured-side {
-      display: grid;
-      gap: 16px;
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid #ddd;
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      animation: spin 0.8s linear infinite;
     }
 
-    .featured-side-card h4 {
-      font-size: 18px;
-      line-height: 1.3;
-
-      margin-top: 12px;
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
     }
 
-    .featured-side-card p {
-      color: var(--muted);
-
-      font-size: 12px;
-
-      margin-top: 8px;
-    }
-
-    /* =========================================================
+    /* =========================
        ABOUT
-       ========================================================= */
+    ========================== */
 
     .about-grid {
       display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 18px;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 50px;
+      align-items: start;
     }
 
     .about-card {
-      padding: 27px;
-
+      background: var(--dark);
+      color: white;
       border-radius: var(--radius);
+      padding: 28px;
+    }
 
-      border: 1px solid var(--border);
-
-      background: var(--panel);
+    .about-card .mini-logo {
+      width: 58px;
+      height: 58px;
+      background: #1b1d29;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 25px;
     }
 
     .about-card h3 {
-      font-size: 21px;
-      margin-bottom: 10px;
+      font-size: 28px;
+      letter-spacing: -1px;
     }
 
     .about-card p {
-      color: var(--muted);
-
+      color: #a9acb8;
       font-size: 14px;
-
-      line-height: 1.8;
+      margin-top: 8px;
     }
 
-    .principles {
-      display: grid;
-
-      gap: 11px;
-
-      margin-top: 18px;
+    .about-copy h2 {
+      font-size: clamp(32px, 5vw, 55px);
+      line-height: 0.98;
+      letter-spacing: -2.8px;
+      margin-bottom: 20px;
     }
 
-    .principle {
-      display: flex;
-      gap: 11px;
-
-      color: #c7ccd6;
-
-      font-size: 13px;
+    .about-copy p {
+      color: var(--muted);
+      max-width: 680px;
+      margin-bottom: 15px;
     }
 
-    .principle span {
-      color: var(--accent-2);
-      font-weight: 900;
+    .credit {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 9px 13px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 800;
     }
 
-    /* =========================================================
+    /* =========================
        CONTACT
-       ========================================================= */
+    ========================== */
+
+    .contact {
+      background: #e9e9e5;
+    }
 
     .contact-box {
-      display: grid;
-
-      grid-template-columns: 1fr auto;
-
-      gap: 25px;
-
+      background: var(--dark);
+      color: white;
+      border-radius: 22px;
+      padding: 42px;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-
-      padding: 28px;
-
-      border-radius: var(--radius);
-
-      border: 1px solid rgba(119,114,255,.25);
-
-      background:
-        linear-gradient(
-          130deg,
-          rgba(119,114,255,.13),
-          rgba(255,255,255,.025)
-        );
+      gap: 30px;
     }
 
-    .contact-box h3 {
-      font-size: 25px;
+    .contact-box h2 {
+      font-size: clamp(30px, 5vw, 55px);
+      letter-spacing: -2.5px;
+      line-height: 0.98;
     }
 
     .contact-box p {
-      color: var(--muted);
-
-      font-size: 13px;
-
-      margin-top: 5px;
+      color: #a9acb8;
+      max-width: 560px;
+      margin-top: 10px;
     }
 
-    /* =========================================================
-       SEARCH
-       ========================================================= */
-
-    .search-overlay {
-      position: fixed;
-
-      inset: 0;
-
-      z-index: 2000;
-
-      display: none;
-
-      background: rgba(4,6,10,.8);
-
-      backdrop-filter: blur(15px);
-
-      padding: 80px 16px 20px;
-    }
-
-    .search-overlay.open {
-      display: block;
-    }
-
-    .search-box {
-      width: min(720px, 100%);
-
-      margin: auto;
-
-      border-radius: var(--radius);
-
-      border: 1px solid var(--border);
-
-      background: #0d111a;
-
-      box-shadow: var(--shadow);
-
-      overflow: hidden;
-    }
-
-    .search-input-wrap {
+    .socials {
       display: flex;
-      align-items: center;
-
+      flex-wrap: wrap;
       gap: 10px;
-
-      padding: 14px;
-
-      border-bottom: 1px solid var(--border);
     }
 
-    .search-input {
-      flex: 1;
-
-      min-width: 0;
-
-      background: transparent;
-
-      border: none;
-      outline: none;
-
-      color: white;
-
-      font-size: 17px;
-    }
-
-    .search-input::placeholder {
-      color: #626b7b;
-    }
-
-    .search-results {
-      max-height: 65vh;
-
-      overflow-y: auto;
-    }
-
-    .search-result {
-      padding: 15px 17px;
-
-      border-bottom: 1px solid var(--border);
-
-      cursor: pointer;
-    }
-
-    .search-result:hover {
-      background: rgba(255,255,255,.035);
-    }
-
-    .search-result-title {
-      font-weight: 750;
-      font-size: 14px;
-    }
-
-    .search-result-meta {
-      color: var(--muted);
-
-      font-size: 10px;
-
-      margin-top: 4px;
-    }
-
-    /* =========================================================
-       ARTICLE MODAL
-       ========================================================= */
-
-    .article-modal {
-      position: fixed;
-
-      inset: 0;
-
-      z-index: 3000;
-
-      display: none;
-
-      background: rgba(3,5,9,.86);
-
-      backdrop-filter: blur(12px);
-
-      overflow-y: auto;
-
-      padding: 35px 16px;
-    }
-
-    .article-modal.open {
-      display: block;
-    }
-
-    .article-container {
-      width: min(900px, 100%);
-
-      margin: auto;
-
-      border: 1px solid var(--border);
-
-      border-radius: 20px;
-
-      background: #0d111a;
-
-      box-shadow: var(--shadow);
-
-      overflow: hidden;
-    }
-
-    .article-header {
-      padding: 30px;
-
-      border-bottom: 1px solid var(--border);
-    }
-
-    .article-category {
-      color: var(--accent-2);
-
-      font-size: 10px;
-      font-weight: 850;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1.2px;
-    }
-
-    .article-title {
-      font-size: clamp(30px, 5vw, 55px);
-
-      line-height: 1.05;
-
-      letter-spacing: -1.7px;
-
-      margin-top: 12px;
-    }
-
-    .article-info {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 12px;
-
-      color: var(--muted);
-
-      font-size: 11px;
-
-      margin-top: 18px;
-    }
-
-    .article-content {
-      padding: 30px;
-
-      color: #d4d9e2;
-
-      font-size: 16px;
-
-      line-height: 1.85;
-    }
-
-    .article-content p {
-      margin-bottom: 18px;
-    }
-
-    .article-source {
-      padding: 20px 30px;
-
-      border-top: 1px solid var(--border);
-
-      background: rgba(255,255,255,.02);
-
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 15px;
-
-      flex-wrap: wrap;
-
+    .socials a {
+      display: inline-flex;
       align-items: center;
+      padding: 12px 17px;
+      border-radius: 10px;
+      background: white;
+      color: #111;
+      font-size: 13px;
+      font-weight: 850;
     }
 
-    .source-text {
-      color: var(--muted);
-
-      font-size: 11px;
-    }
-
-    .article-actions {
-      display: flex;
-
-      gap: 8px;
-
-      flex-wrap: wrap;
-    }
-
-    .close-modal {
-      position: fixed;
-
-      top: 18px;
-      right: 18px;
-
-      z-index: 4000;
-
-      width: 42px;
-      height: 42px;
-
-      border-radius: 50%;
-
-      border: 1px solid var(--border);
-
-      background: rgba(20,24,35,.9);
-
-      color: white;
-
-      font-size: 20px;
-    }
-
-    /* =========================================================
-       STATUS
-       ========================================================= */
-
-    .status {
-      margin: 18px 0 0;
-
-      color: var(--muted);
-
-      font-size: 12px;
-
-      text-align: center;
-    }
-
-    .loading {
-      padding: 35px;
-
-      text-align: center;
-
-      color: var(--muted);
-
-      border: 1px solid var(--border);
-
-      border-radius: var(--radius);
-    }
-
-    .empty {
-      padding: 30px;
-
-      text-align: center;
-
-      color: var(--muted);
-
-      border: 1px dashed var(--border);
-
-      border-radius: var(--radius);
-    }
-
-    /* =========================================================
+    /* =========================
        FOOTER
-       ========================================================= */
+    ========================== */
 
     footer {
-      width: min(var(--max), calc(100% - 32px));
-
-      margin: auto;
-
-      padding: 50px 0 30px;
+      background: var(--dark);
+      color: white;
+      border-top: 1px solid #272934;
+      padding: 34px 0 22px;
     }
 
-    .footer-grid {
-      display: grid;
-
-      grid-template-columns: 1.5fr 1fr 1fr;
-
-      gap: 35px;
-
-      padding-bottom: 35px;
-
-      border-bottom: 1px solid var(--border);
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding-bottom: 28px;
     }
 
-    .footer-brand {
-      max-width: 350px;
+    .footer-brand p {
+      color: #90939e;
+      font-size: 13px;
+      max-width: 390px;
+      margin-top: 8px;
     }
 
-    .footer-brand .brand {
-      margin-bottom: 14px;
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: start;
     }
 
-    .footer-description {
-      color: var(--muted);
-
-      font-size: 12px;
-
-      line-height: 1.8;
+    .footer-links a {
+      color: #c3c5cc;
+      font-size: 13px;
     }
 
-    .footer-column h4 {
-      font-size: 12px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 1px;
-
-      margin-bottom: 13px;
-    }
-
-    .footer-column a {
-      display: block;
-
-      color: var(--muted);
-
-      font-size: 12px;
-
-      margin: 8px 0;
-    }
-
-    .footer-column a:hover {
+    .footer-links a:hover {
       color: white;
     }
 
     .footer-bottom {
-      padding-top: 20px;
-
+      border-top: 1px solid #272934;
+      padding-top: 18px;
       display: flex;
-
       justify-content: space-between;
-
       gap: 15px;
-
-      flex-wrap: wrap;
-
-      color: var(--muted-2);
-
+      color: #777b87;
       font-size: 11px;
     }
 
-    .credit {
-      color: #b8b0ff;
+    .made-by {
+      color: #aaaeb8;
     }
 
-    /* =========================================================
+    .made-by strong {
+      color: white;
+    }
+
+    /* =========================
+       ARTICLE MODAL
+    ========================== */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      background: rgba(8, 9, 13, 0.76);
+      backdrop-filter: blur(8px);
+      display: none;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-box {
+      width: min(850px, 100%);
+      max-height: 92vh;
+      overflow-y: auto;
+      background: var(--surface);
+      border-radius: 22px;
+      padding: 30px;
+      position: relative;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.25);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 17px;
+      right: 17px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      border-radius: 50%;
+      font-size: 22px;
+    }
+
+    .modal-category {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      font-size: 11px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .modal-title {
+      font-size: clamp(30px, 6vw, 54px);
+      line-height: 1;
+      letter-spacing: -2.3px;
+      padding-right: 40px;
+    }
+
+    .modal-meta {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 13px 0 22px;
+    }
+
+    .modal-description {
+      font-size: 17px;
+      color: #444750;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 25px;
+    }
+
+    .modal-actions a,
+    .modal-actions button {
+      border-radius: 10px;
+      padding: 11px 15px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .modal-source {
+      background: var(--dark);
+      color: white;
+    }
+
+    .modal-copy {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+    }
+
+    /* =========================
        RESPONSIVE
-       ========================================================= */
+    ========================== */
 
     @media (max-width: 1000px) {
-
-      .desktop-nav {
+      .nav-links {
         display: none;
       }
 
@@ -1441,83 +967,36 @@
         display: grid;
       }
 
-      .hero {
+      .nav.mobile-open .nav-links {
+        display: flex;
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        top: 68px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        padding: 10px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav.mobile-open .nav-links a {
+        padding: 13px;
+      }
+
+      .hero-grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero-side {
-        justify-content: flex-start;
-      }
-
-      .hero-card {
-        max-width: 100%;
-      }
-
-      .live-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .news-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .featured {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 700px) {
-
-      .header-inner {
-        min-height: 68px;
-
-        width: min(var(--max), calc(100% - 22px));
-      }
-
-      main,
-      footer {
-        width: min(var(--max), calc(100% - 22px));
-      }
-
-      .brand-logo {
-        width: 39px;
-        height: 39px;
-      }
-
-      .brand-name {
-        font-size: 19px;
-      }
-
-      .brand-tagline {
-        display: none;
-      }
-
-      .hero {
-        padding: 52px 0 40px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2.8px;
       }
 
       .hero-description {
-        font-size: 15px;
+        max-width: 700px;
       }
 
-      .section {
-        padding: 42px 0;
-      }
-
-      .section-header {
-        align-items: flex-start;
-      }
-
-      .section-title {
-        font-size: 23px;
-      }
-
+      .live-grid,
       .news-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .about-grid {
@@ -1525,45 +1004,77 @@
       }
 
       .contact-box {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-brand {
-        grid-column: 1 / -1;
-      }
-
-      .article-header,
-      .article-content {
-        padding: 23px;
-      }
-
-      .article-source {
-        padding: 18px 23px;
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
-    @media (max-width: 450px) {
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 24px, var(--max));
+      }
 
-      .footer-grid {
+      .nav {
+        min-height: 66px;
+      }
+
+      .brand-text {
+        font-size: 20px;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hero {
+        padding: 60px 0 45px;
+      }
+
+      .hero h1 {
+        font-size: clamp(47px, 15vw, 78px);
+        letter-spacing: -4px;
+      }
+
+      .section,
+      .live-section {
+        padding: 42px 0;
+      }
+
+      .live-grid,
+      .news-grid {
         grid-template-columns: 1fr;
       }
 
-      .footer-brand {
-        grid-column: auto;
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
       }
 
-      .hero-buttons {
-        display: grid;
-        grid-template-columns: 1fr;
+      .contact-box {
+        padding: 28px 22px;
       }
 
-      .primary-btn,
-      .secondary-btn {
-        width: 100%;
+      .footer-main,
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        gap: 12px;
+      }
+
+      .modal {
+        padding: 8px;
+      }
+
+      .modal-box {
+        padding: 23px 18px;
+        border-radius: 18px;
+      }
+
+      .modal-title {
+        padding-right: 35px;
       }
     }
   </style>
@@ -1571,500 +1082,390 @@
 
 <body>
 
-  <!-- =========================================================
+  <!-- =========================
        HEADER
-       ========================================================= -->
+  ========================== -->
 
-  <header class="site-header">
-
-    <div class="header-inner">
+  <header>
+    <div class="container nav" id="mainNav">
 
       <a href="#home" class="brand" aria-label="InkSpire Home">
 
-        <img
-          src="logo.png"
-          alt="InkSpire Logo"
-          class="brand-logo"
-          onerror="this.style.display='none'"
-        >
+        <div class="brand-mark">
+          <!-- InkSpire logo mark -->
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <circle cx="50" cy="50" r="48" fill="#0D1019"/>
+            <path
+              d="M50 18 L80 35 L80 65 L50 82 L20 65 L20 35 Z"
+              stroke="#7169E8"
+              stroke-width="5"
+            />
+            <path
+              d="M50 18 V50 M20 35 L50 50 L80 35 M20 65 L50 50 L80 65"
+              stroke="#7169E8"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="50" cy="50" r="7" fill="#7169E8"/>
+          </svg>
+        </div>
 
         <div class="brand-text">
-          <div class="brand-name">InkSpire</div>
-          <div class="brand-tagline">News • Ideas • Intelligence</div>
+          Ink<span>Spire</span>
         </div>
 
       </a>
 
-      <nav class="desktop-nav" aria-label="Main navigation">
-
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#latest" class="nav-link">Latest</a>
-        <a href="#world" class="nav-link">World</a>
-        <a href="#india" class="nav-link">India</a>
-        <a href="#business" class="nav-link">Business</a>
-        <a href="#technology" class="nav-link">Technology</a>
-        <a href="#ai" class="nav-link">AI</a>
-        <a href="#live" class="nav-link">Live</a>
-
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#latest">Latest</a>
+        <a href="#india">India</a>
+        <a href="#world">World</a>
+        <a href="#technology">Technology</a>
+        <a href="#ai">AI</a>
+        <a href="#about">About</a>
       </nav>
 
-      <div class="header-actions">
+      <div class="nav-actions">
 
         <button
-          class="icon-btn"
-          id="searchButton"
-          aria-label="Search"
+          class="search-btn"
+          id="searchToggle"
+          aria-label="Search InkSpire"
           title="Search"
         >
-          ⌕
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle
+              cx="11"
+              cy="11"
+              r="6.5"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <path
+              d="M16 16L21 21"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
         </button>
 
         <button
-          class="icon-btn menu-btn"
-          id="menuButton"
-          aria-label="Menu"
-          title="Menu"
+          class="menu-btn"
+          id="menuToggle"
+          aria-label="Open menu"
         >
-          ☰
+          <svg viewBox="0 0 24 24" fill="none">
+            <path
+              d="M4 7H20M4 12H20M4 17H20"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
         </button>
 
       </div>
-
     </div>
 
-    <nav class="mobile-nav" id="mobileNav">
-
-      <a href="#home">Home</a>
-      <a href="#latest">Latest</a>
-      <a href="#world">World</a>
-      <a href="#india">India</a>
-      <a href="#business">Business</a>
-      <a href="#technology">Technology</a>
-      <a href="#ai">AI</a>
-      <a href="#live">Live / Video</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-
-    </nav>
-
+    <!-- Search -->
+    <div class="search-panel" id="searchPanel">
+      <div class="container">
+        <div class="search-box">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search stories..."
+            autocomplete="off"
+          />
+          <button class="search-clear" id="searchClear">
+            Clear
+          </button>
+        </div>
+      </div>
+    </div>
   </header>
 
 
-  <!-- =========================================================
-       MAIN
-       ========================================================= -->
+  <!-- =========================
+       HERO
+  ========================== -->
 
-  <main id="home">
+  <main>
 
-    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
 
-    <section class="hero">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Independent web publication
+          </div>
 
-      <div>
-
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          Independent Web Publication
+          <h1>
+            News,<br />
+            ideas & <span>intelligence.</span>
+          </h1>
         </div>
-
-        <h1>
-          News, ideas &
-          <span>intelligence.</span>
-        </h1>
 
         <p class="hero-description">
-          InkSpire is a modern web-writing publication covering
-          important developments across India, the world, business,
-          technology and artificial intelligence.
+          InkSpire brings together important stories across India, the world,
+          technology, AI and business — presented clearly with links to
+          original sources.
         </p>
 
-        <div class="hero-buttons">
-
-          <a href="#latest" class="primary-btn">
-            Explore latest stories →
-          </a>
-
-          <a href="#about" class="secondary-btn">
-            About InkSpire
-          </a>
-
-        </div>
-
       </div>
-
-
-      <div class="hero-side">
-
-        <div class="hero-card">
-
-          <div class="hero-card-label">
-            The InkSpire approach
-          </div>
-
-          <div class="hero-card-title">
-            Information first.
-          </div>
-
-          <p class="hero-card-text">
-            Clear writing, useful context and links to original
-            sources — without unnecessary noise.
-          </p>
-
-          <div class="hero-card-line"></div>
-
-          <div class="hero-card-stat">
-            <span>Coverage</span>
-            <strong>Global</strong>
-          </div>
-
-          <div class="hero-card-stat" style="margin-top:9px;">
-            <span>Focus</span>
-            <strong>Web & Ideas</strong>
-          </div>
-
-        </div>
-
-      </div>
-
     </section>
 
 
-    <!-- =======================================================
+    <!-- =========================
          LIVE / VIDEO
-         ======================================================= -->
+    ========================== -->
 
-    <section class="section" id="live">
+    <section class="live-section" id="live">
 
-      <div class="section-header">
+      <div class="container">
 
-        <div>
-          <h2 class="section-title">Live & Video</h2>
-          <p class="section-subtitle">
-            External live and video sources.
-          </p>
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Live & Video</h2>
+            <p class="section-subtitle">
+              Watch current coverage from established news sources.
+            </p>
+          </div>
         </div>
 
-        <span class="view-all">
-          Watch from original sources
-        </span>
+        <div class="live-grid">
 
-      </div>
+          <!-- BBC -->
 
+          <article class="live-card">
 
-      <div class="live-grid">
-
-        <!-- BBC -->
-
-        <article class="live-card">
-
-          <div class="live-top">
-
-            <span class="live-label">Live</span>
-
-            <span class="video-label">BBC News</span>
-
-          </div>
-
-          <div class="play-circle">▶</div>
-
-          <div class="live-bottom">
-
-            <div class="live-title">
-              BBC News
+            <div class="live-top">
+              <span class="live-label">
+                <i></i>
+                LIVE
+              </span>
+              <span style="color:#858895;font-size:12px;">
+                NEWS
+              </span>
             </div>
 
-            <div class="live-source">
-              International news coverage
+            <div>
+              <div class="play">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+
+              <h3>BBC News</h3>
+
+              <p>
+                Live international news coverage.
+              </p>
             </div>
 
-            <div class="live-actions">
+            <div class="live-buttons">
+              <a
+                class="watch-btn"
+                href="https://www.bbc.com/news/live"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-track="bbc_live"
+              >
+                WATCH
+              </a>
 
               <a
-                class="small-btn primary"
+                class="source-btn"
                 href="https://www.bbc.com/news"
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                WATCH
-              </a>
-
-              <a
-                class="small-btn"
-                href="https://help.bbc.com/hc/en-us/sections/39027390550163-Live-BBC-News-Channel-Stream"
-                target="_blank"
-                rel="noopener noreferrer"
+                data-track="bbc_source"
               >
                 SOURCE
               </a>
-
             </div>
 
-          </div>
-
-        </article>
+          </article>
 
 
-        <!-- DD NEWS -->
+          <!-- DD NEWS -->
 
-        <article class="live-card">
+          <article class="live-card">
 
-          <div class="live-top">
-
-            <span class="live-label">Live</span>
-
-            <span class="video-label">DD News</span>
-
-          </div>
-
-          <div class="play-circle">▶</div>
-
-          <div class="live-bottom">
-
-            <div class="live-title">
-              DD News
+            <div class="live-top">
+              <span class="live-label">
+                <i></i>
+                LIVE
+              </span>
+              <span style="color:#858895;font-size:12px;">
+                INDIA
+              </span>
             </div>
 
-            <div class="live-source">
-              Indian news and public affairs
+            <div>
+              <div class="play">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+
+              <h3>DD News</h3>
+
+              <p>
+                Indian news and public broadcasting coverage.
+              </p>
             </div>
 
-            <div class="live-actions">
-
+            <div class="live-buttons">
               <a
-                class="small-btn primary"
-                href="https://www.youtube.com/ddnews"
+                class="watch-btn"
+                href="https://www.youtube.com/@DDNewsOfficial"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track="dd_news"
               >
                 WATCH
               </a>
 
               <a
-                class="small-btn"
+                class="source-btn"
                 href="https://ddnews.gov.in/"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track="dd_source"
               >
                 SOURCE
               </a>
-
             </div>
 
-          </div>
-
-        </article>
+          </article>
 
 
-        <!-- REUTERS -->
+          <!-- REUTERS -->
 
-        <article class="live-card">
+          <article class="live-card">
 
-          <div class="live-top">
-
-            <span class="video-label">Video</span>
-
-            <span class="video-label">Reuters</span>
-
-          </div>
-
-          <div class="play-circle">▶</div>
-
-          <div class="live-bottom">
-
-            <div class="live-title">
-              Reuters Video
+            <div class="live-top">
+              <span class="live-label">
+                <i></i>
+                VIDEO
+              </span>
+              <span style="color:#858895;font-size:12px;">
+                GLOBAL
+              </span>
             </div>
 
-            <div class="live-source">
-              Global news video coverage
+            <div>
+              <div class="play">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+
+              <h3>Reuters Video</h3>
+
+              <p>
+                Global video reporting and breaking coverage.
+              </p>
             </div>
 
-            <div class="live-actions">
-
+            <div class="live-buttons">
               <a
-                class="small-btn primary"
+                class="watch-btn"
                 href="https://www.reuters.com/video/"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track="reuters_video"
               >
                 WATCH
               </a>
 
               <a
-                class="small-btn"
+                class="source-btn"
                 href="https://www.reuters.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track="reuters_source"
               >
                 SOURCE
               </a>
-
             </div>
 
-          </div>
+          </article>
 
-        </article>
-
+        </div>
       </div>
-
     </section>
 
 
-    <!-- =======================================================
+    <!-- =========================
+         CATEGORY BAR
+    ========================== -->
+
+    <div class="category-bar">
+      <div class="container">
+        <div class="categories" id="categories">
+
+          <button class="category-btn active" data-category="all">
+            All
+          </button>
+
+          <button class="category-btn" data-category="world">
+            World
+          </button>
+
+          <button class="category-btn" data-category="india">
+            India
+          </button>
+
+          <button class="category-btn" data-category="business">
+            Business
+          </button>
+
+          <button class="category-btn" data-category="technology">
+            Technology
+          </button>
+
+          <button class="category-btn" data-category="ai">
+            AI
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- =========================
          LATEST
-         ======================================================= -->
+    ========================== -->
 
     <section class="section" id="latest">
 
-      <div class="section-header">
+      <div class="container">
 
-        <div>
-          <h2 class="section-title">Latest Stories</h2>
-
-          <p class="section-subtitle">
-            Current stories gathered from public RSS news feeds.
-          </p>
-        </div>
-
-        <button
-          class="small-btn"
-          id="refreshButton"
-        >
-          ↻ Refresh
-        </button>
-
-      </div>
-
-
-      <div class="category-bar" id="categoryBar">
-
-        <button class="category-btn active" data-category="all">
-          All
-        </button>
-
-        <button class="category-btn" data-category="World">
-          World
-        </button>
-
-        <button class="category-btn" data-category="India">
-          India
-        </button>
-
-        <button class="category-btn" data-category="Business">
-          Business
-        </button>
-
-        <button class="category-btn" data-category="Technology">
-          Technology
-        </button>
-
-        <button class="category-btn" data-category="AI">
-          AI
-        </button>
-
-      </div>
-
-
-      <div style="height:18px;"></div>
-
-
-      <div id="newsGrid" class="news-grid">
-
-        <div class="loading">
-          Loading latest stories…
-        </div>
-
-      </div>
-
-      <div class="status" id="feedStatus"></div>
-
-    </section>
-
-
-    <!-- =======================================================
-         FEATURED
-         ======================================================= -->
-
-    <section class="section" id="world">
-
-      <div class="section-header">
-
-        <div>
-          <h2 class="section-title">Editorial Focus</h2>
-
-          <p class="section-subtitle">
-            The areas InkSpire is built to cover.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="featured">
-
-        <article class="featured-main">
-
-          <span class="category-tag">
-            World
-          </span>
-
-          <h3>
-            Understanding the world through clear web writing.
-          </h3>
-
-          <p>
-            From international affairs and markets to technology
-            and major developments, InkSpire is designed around
-            readable stories and links to original reporting.
-          </p>
-
-          <div class="hero-buttons">
-
-            <a href="#latest" class="secondary-btn">
-              View latest →
-            </a>
-
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Latest</h2>
+            <p class="section-subtitle">
+              Fresh stories collected from selected news feeds.
+            </p>
           </div>
 
-        </article>
+          <span class="section-link" id="lastUpdated">
+            Updating...
+          </span>
+        </div>
 
+        <div class="news-grid" id="newsGrid">
 
-        <div class="featured-side">
-
-          <article class="featured-side-card">
-
-            <span class="category-tag">
-              India
-            </span>
-
-            <h4>
-              Stories that matter in India.
-            </h4>
-
-            <p>
-              National developments, economy, technology and
-              major public-interest stories.
-            </p>
-
-          </article>
-
-
-          <article class="featured-side-card">
-
-            <span class="category-tag">
-              Technology
-            </span>
-
-            <h4>
-              Technology changing the internet.
-            </h4>
-
-            <p>
-              AI, software, digital products and emerging
-              technologies.
-            </p>
-
-          </article>
+          <div class="loading">
+            <div class="spinner"></div>
+            Loading latest stories...
+          </div>
 
         </div>
 
@@ -2073,207 +1474,60 @@
     </section>
 
 
-    <!-- =======================================================
+    <!-- =========================
          INDIA
-         ======================================================= -->
+    ========================== -->
 
     <section class="section" id="india">
 
-      <div class="section-header">
+      <div class="container">
 
-        <div>
-          <h2 class="section-title">India</h2>
-
-          <p class="section-subtitle">
-            India-focused stories from the latest feed.
-          </p>
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">India</h2>
+            <p class="section-subtitle">
+              India-focused stories and developments.
+            </p>
+          </div>
         </div>
 
-        <button
-          class="view-all"
-          onclick="setCategory('India')"
-        >
-          Filter India →
-        </button>
+        <div class="news-grid" id="indiaGrid">
 
-      </div>
-
-      <div id="indiaGrid" class="news-grid">
-
-        <div class="loading">
-          Loading India stories…
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         BUSINESS
-         ======================================================= -->
-
-    <section class="section" id="business">
-
-      <div class="section-header">
-
-        <div>
-          <h2 class="section-title">Business</h2>
-
-          <p class="section-subtitle">
-            Markets, companies and the global economy.
-          </p>
-        </div>
-
-      </div>
-
-      <div id="businessGrid" class="news-grid">
-
-        <div class="loading">
-          Loading business stories…
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         TECHNOLOGY
-         ======================================================= -->
-
-    <section class="section" id="technology">
-
-      <div class="section-header">
-
-        <div>
-          <h2 class="section-title">Technology</h2>
-
-          <p class="section-subtitle">
-            Technology, software and the digital world.
-          </p>
-        </div>
-
-      </div>
-
-      <div id="technologyGrid" class="news-grid">
-
-        <div class="loading">
-          Loading technology stories…
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         AI
-         ======================================================= -->
-
-    <section class="section" id="ai">
-
-      <div class="section-header">
-
-        <div>
-          <h2 class="section-title">Artificial Intelligence</h2>
-
-          <p class="section-subtitle">
-            AI developments, products, research and industry news.
-          </p>
-        </div>
-
-      </div>
-
-      <div id="aiGrid" class="news-grid">
-
-        <div class="loading">
-          Loading AI stories…
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         ABOUT
-         ======================================================= -->
-
-    <section class="section" id="about">
-
-      <div class="section-header">
-
-        <div>
-          <h2 class="section-title">About InkSpire</h2>
-
-          <p class="section-subtitle">
-            What the publication is built for.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="about-grid">
-
-        <div class="about-card">
-
-          <h3>
-            A web-first publication.
-          </h3>
-
-          <p>
-            InkSpire is a digital publication focused on writing
-            that is easy to understand, useful to readers and
-            connected to original sources.
-          </p>
-
-          <div class="principles">
-
-            <div class="principle">
-              <span>01</span>
-              <div>Clear and readable writing.</div>
-            </div>
-
-            <div class="principle">
-              <span>02</span>
-              <div>Original sources wherever possible.</div>
-            </div>
-
-            <div class="principle">
-              <span>03</span>
-              <div>Mobile-first reading experience.</div>
-            </div>
-
-            <div class="principle">
-              <span>04</span>
-              <div>International and India-focused coverage.</div>
-            </div>
-
+          <div class="loading">
+            <div class="spinner"></div>
+            Loading India stories...
           </div>
 
         </div>
 
+      </div>
 
-        <div class="about-card">
+    </section>
 
-          <h3>
-            Built for readers.
-          </h3>
 
-          <p>
-            The goal is not to overload visitors with unnecessary
-            features. InkSpire keeps the focus on stories, context,
-            sources and a fast reading experience.
-          </p>
+    <!-- =========================
+         WORLD
+    ========================== -->
 
-          <div class="hero-card-line"></div>
+    <section class="section" id="world">
 
-          <p>
-            Coverage areas include World, India, Business,
-            Technology and Artificial Intelligence.
-          </p>
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">World</h2>
+            <p class="section-subtitle">
+              International news and global developments.
+            </p>
+          </div>
+        </div>
+
+        <div class="news-grid" id="worldGrid">
+
+          <div class="loading">
+            <div class="spinner"></div>
+            Loading world stories...
+          </div>
 
         </div>
 
@@ -2282,37 +1536,185 @@
     </section>
 
 
-    <!-- =======================================================
-         CONTACT
-         ======================================================= -->
+    <!-- =========================
+         TECHNOLOGY
+    ========================== -->
 
-    <section class="section" id="contact">
+    <section class="section" id="technology">
 
-      <div class="contact-box">
+      <div class="container">
 
-        <div>
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Technology</h2>
+            <p class="section-subtitle">
+              Technology, platforms, devices and the digital economy.
+            </p>
+          </div>
+        </div>
 
-          <h3>
-            Connect with InkSpire.
-          </h3>
+        <div class="news-grid" id="technologyGrid">
+
+          <div class="loading">
+            <div class="spinner"></div>
+            Loading technology stories...
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         AI
+    ========================== -->
+
+    <section class="section" id="ai">
+
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Artificial Intelligence</h2>
+            <p class="section-subtitle">
+              AI research, products, companies and industry developments.
+            </p>
+          </div>
+        </div>
+
+        <div class="news-grid" id="aiGrid">
+
+          <div class="loading">
+            <div class="spinner"></div>
+            Loading AI stories...
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="section" id="about">
+
+      <div class="container about-grid">
+
+        <div class="about-card">
+
+          <div class="mini-logo">
+
+            <svg viewBox="0 0 100 100" width="42" fill="none">
+              <path
+                d="M50 18 L80 35 L80 65 L50 82 L20 65 L20 35 Z"
+                stroke="#7169E8"
+                stroke-width="5"
+              />
+              <path
+                d="M50 18 V50 M20 35 L50 50 L80 35 M20 65 L50 50 L80 65"
+                stroke="#7169E8"
+                stroke-width="5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="50" cy="50" r="7" fill="#7169E8"/>
+            </svg>
+
+          </div>
+
+          <h3>InkSpire</h3>
 
           <p>
-            Follow the publication and stay connected with new
-            stories and updates.
+            News, ideas and intelligence — built for a connected world.
           </p>
 
         </div>
 
-        <div class="hero-buttons" style="margin-top:0;">
 
-          <a
-            href="https://www.instagram.com/inkspire.8s/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="primary-btn"
-          >
-            Instagram ↗
-          </a>
+        <div class="about-copy">
+
+          <h2>
+            Clear information.<br />
+            Original sources.
+          </h2>
+
+          <p>
+            InkSpire is a web publication concept focused on making current
+            information easier to discover and understand.
+          </p>
+
+          <p>
+            Stories are presented with category, timing and source information
+            so readers can continue to the original publisher for the full
+            report.
+          </p>
+
+          <p>
+            InkSpire covers India, world affairs, business, technology and
+            artificial intelligence.
+          </p>
+
+          <div class="credit">
+            Made by Prashant Sagar
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="section contact" id="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div>
+
+            <h2>
+              Connect<br />
+              with InkSpire.
+            </h2>
+
+            <p>
+              Follow InkSpire for updates, stories and future projects.
+            </p>
+
+          </div>
+
+          <div class="socials">
+
+            <a
+              href="https://www.instagram.com/inkspire.8s/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-track="instagram"
+            >
+              Instagram
+            </a>
+
+            <a
+              href="https://x.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-track="x"
+            >
+              X
+            </a>
+
+          </div>
 
         </div>
 
@@ -2323,140 +1725,115 @@
   </main>
 
 
-  <!-- =========================================================
+  <!-- =========================
        FOOTER
-       ========================================================= -->
+  ========================== -->
 
   <footer>
 
-    <div class="footer-grid">
+    <div class="container">
 
-      <div class="footer-brand">
+      <div class="footer-main">
 
-        <div class="brand">
-
-          <img
-            src="logo.png"
-            alt="InkSpire"
-            class="brand-logo"
-            onerror="this.style.display='none'"
-          >
+        <div class="footer-brand">
 
           <div class="brand-text">
-            <div class="brand-name">InkSpire</div>
-            <div class="brand-tagline">
-              News • Ideas • Intelligence
-            </div>
+            Ink<span>Spire</span>
           </div>
+
+          <p>
+            News, ideas and intelligence from India and around the world.
+          </p>
 
         </div>
 
-        <p class="footer-description">
-          A web-first publication covering world, India,
-          business, technology and artificial intelligence.
-        </p>
+        <div class="footer-links">
+
+          <a href="#home">Home</a>
+          <a href="#latest">Latest</a>
+          <a href="#india">India</a>
+          <a href="#world">World</a>
+          <a href="#technology">Technology</a>
+          <a href="#ai">AI</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+
+        </div>
 
       </div>
 
 
-      <div class="footer-column">
+      <div class="footer-bottom">
 
-        <h4>Explore</h4>
+        <span>
+          © <span id="year"></span> InkSpire. All rights reserved.
+        </span>
 
-        <a href="#latest">Latest</a>
-        <a href="#world">World</a>
-        <a href="#india">India</a>
-        <a href="#business">Business</a>
-        <a href="#technology">Technology</a>
-        <a href="#ai">AI</a>
-
-      </div>
-
-
-      <div class="footer-column">
-
-        <h4>Connect</h4>
-
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-
-        <a
-          href="https://www.instagram.com/inkspire.8s/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Instagram
-        </a>
-
-        <a href="#privacy">
-          Privacy
-        </a>
-
-        <a href="#terms">
-          Terms
-        </a>
+        <span class="made-by">
+          Made by <strong>Prashant Sagar</strong>
+        </span>
 
       </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-      <span>
-        © 2026 InkSpire. All rights reserved.
-      </span>
-
-      <span class="credit">
-        Made by Prashant Sagar
-      </span>
 
     </div>
 
   </footer>
 
 
-  <!-- =========================================================
-       SEARCH OVERLAY
-       ========================================================= -->
+  <!-- =========================
+       ARTICLE MODAL
+  ========================== -->
 
   <div
-    class="search-overlay"
-    id="searchOverlay"
-    aria-hidden="true"
+    class="modal"
+    id="articleModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
   >
 
-    <div class="search-box">
+    <div class="modal-box">
 
-      <div class="search-input-wrap">
+      <button
+        class="modal-close"
+        id="modalClose"
+        aria-label="Close article"
+      >
+        ×
+      </button>
 
-        <span>⌕</span>
-
-        <input
-          type="search"
-          id="searchInput"
-          class="search-input"
-          placeholder="Search stories..."
-          autocomplete="off"
-        >
-
-        <button
-          class="icon-btn"
-          id="closeSearch"
-          aria-label="Close search"
-        >
-          ×
-        </button>
-
+      <div class="modal-category" id="modalCategory">
+        NEWS
       </div>
 
-      <div
-        class="search-results"
-        id="searchResults"
-      >
-        <div class="empty">
-          Start typing to search stories.
-        </div>
+      <h2 class="modal-title" id="modalTitle">
+        Article title
+      </h2>
+
+      <div class="modal-meta" id="modalMeta">
+        Source · Date
+      </div>
+
+      <div class="modal-description" id="modalDescription">
+        Article description.
+      </div>
+
+      <div class="modal-actions">
+
+        <a
+          id="modalSource"
+          class="modal-source"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read Original Source ↗
+        </a>
+
+        <button class="modal-copy" id="copyLink">
+          Copy Article Link
+        </button>
+
       </div>
 
     </div>
@@ -2464,194 +1841,58 @@
   </div>
 
 
-  <!-- =========================================================
-       ARTICLE MODAL
-       ========================================================= -->
-
-  <div
-    class="article-modal"
-    id="articleModal"
-    aria-hidden="true"
-  >
-
-    <button
-      class="close-modal"
-      id="closeArticle"
-      aria-label="Close article"
-    >
-      ×
-    </button>
-
-
-    <article class="article-container">
-
-      <header class="article-header">
-
-        <div
-          class="article-category"
-          id="articleCategory"
-        >
-          STORY
-        </div>
-
-        <h1
-          class="article-title"
-          id="articleTitle"
-        >
-          Article
-        </h1>
-
-        <div
-          class="article-info"
-          id="articleInfo"
-        ></div>
-
-      </header>
-
-
-      <div
-        class="article-content"
-        id="articleContent"
-      ></div>
-
-
-      <div class="article-source">
-
-        <div
-          class="source-text"
-          id="articleSource"
-        >
-          Original source
-        </div>
-
-        <div class="article-actions">
-
-          <button
-            class="small-btn"
-            id="copyArticle"
-          >
-            Copy Link
-          </button>
-
-          <a
-            href="#"
-            id="originalArticle"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="small-btn primary"
-          >
-            Original Source ↗
-          </a>
-
-        </div>
-
-      </div>
-
-    </article>
-
-  </div>
-
-
-  <!-- =========================================================
+  <!-- =========================
        JAVASCRIPT
-       ========================================================= -->
+  ========================== -->
 
   <script>
-
     /*
-     * ==========================================================
-     * INKSpire JavaScript
-     * ==========================================================
-     *
-     * The website is static and GitHub Pages compatible.
-     *
-     * News feeds are loaded through RSS2JSON.
-     *
-     * Important:
-     * External feeds can sometimes rate-limit or temporarily
-     * fail. The site itself still works.
-     *
-     */
+      INKSPIRE
+      Single-file publication website
+      Created by Prashant Sagar
+    */
 
+    const RSS_API = "https://api.rss2json.com/v1/api.json?rss_url=";
 
-    /* =========================================================
-       CONFIG
-       ========================================================= */
-
-    const RSS_ENDPOINT =
-      "https://api.rss2json.com/v1/api.json?rss_url=";
-
-
-    const FEEDS = {
-
-      World:
+    const feeds = {
+      world:
         "https://news.google.com/rss/search?q=world+news&hl=en-US&gl=US&ceid=US:en",
 
-      India:
+      india:
         "https://news.google.com/rss/search?q=India+news&hl=en-IN&gl=IN&ceid=IN:en",
 
-      Business:
-        "https://news.google.com/rss/search?q=business+economy+markets&hl=en-US&gl=US&ceid=US:en",
-
-      Technology:
+      technology:
         "https://news.google.com/rss/search?q=technology+news&hl=en-US&gl=US&ceid=US:en",
 
-      AI:
-        "https://news.google.com/rss/search?q=artificial+intelligence+AI&hl=en-US&gl=US&ceid=US:en"
+      ai:
+        "https://news.google.com/rss/search?q=artificial+intelligence+AI&hl=en-US&gl=US&ceid=US:en",
 
+      business:
+        "https://news.google.com/rss/search?q=business+economy+markets&hl=en-US&gl=US&ceid=US:en"
     };
 
 
-    /* =========================================================
-       STATE
-       ========================================================= */
-
-    let allStories = [];
-
-    let currentCategory = "all";
+    let allArticles = [];
+    let activeCategory = "all";
+    let currentArticle = null;
 
 
-    /* =========================================================
-       DOM
-       ========================================================= */
+    /* =========================
+       GOOGLE ANALYTICS EVENTS
+    ========================== */
 
-    const newsGrid =
-      document.getElementById("newsGrid");
-
-    const indiaGrid =
-      document.getElementById("indiaGrid");
-
-    const businessGrid =
-      document.getElementById("businessGrid");
-
-    const technologyGrid =
-      document.getElementById("technologyGrid");
-
-    const aiGrid =
-      document.getElementById("aiGrid");
-
-    const feedStatus =
-      document.getElementById("feedStatus");
-
-    const searchOverlay =
-      document.getElementById("searchOverlay");
-
-    const searchInput =
-      document.getElementById("searchInput");
-
-    const searchResults =
-      document.getElementById("searchResults");
-
-    const articleModal =
-      document.getElementById("articleModal");
+    function trackEvent(eventName, params = {}) {
+      if (typeof gtag === "function") {
+        gtag("event", eventName, params);
+      }
+    }
 
 
-    /* =========================================================
+    /* =========================
        HELPERS
-       ========================================================= */
+    ========================== */
 
     function escapeHTML(value) {
-
       if (!value) return "";
 
       return String(value)
@@ -2660,828 +1901,473 @@
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
-
     }
 
 
-    function cleanText(value) {
-
+    function stripHTML(value) {
       if (!value) return "";
 
-      const temp =
-        document.createElement("div");
-
+      const temp = document.createElement("div");
       temp.innerHTML = value;
 
-      return (
-        temp.textContent ||
-        temp.innerText ||
-        ""
-      ).trim();
-
+      return temp.textContent
+        .replace(/\s+/g, " ")
+        .trim();
     }
 
 
-    function formatDate(dateString) {
-
-      if (!dateString) {
-        return "Recent";
-      }
-
-      const date =
-        new Date(dateString);
-
-      if (Number.isNaN(date.getTime())) {
-        return "Recent";
-      }
-
-      return date.toLocaleDateString(
-        undefined,
-        {
-          year: "numeric",
-          month: "short",
-          day: "numeric"
+    function getSourceName(article) {
+      try {
+        if (article.author) {
+          return article.author;
         }
+
+        const url = new URL(article.link);
+
+        return url.hostname
+          .replace("www.", "")
+          .split(".")[0];
+      } catch {
+        return "Original Source";
+      }
+    }
+
+
+    function formatDate(date) {
+      if (!date) return "";
+
+      const d = new Date(date);
+
+      if (Number.isNaN(d.getTime())) {
+        return "";
+      }
+
+      return d.toLocaleString("en-IN", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+    }
+
+
+    function timeAgo(date) {
+      const d = new Date(date);
+
+      if (Number.isNaN(d.getTime())) {
+        return "";
+      }
+
+      const diff = Math.floor(
+        (Date.now() - d.getTime()) / 1000
       );
 
-    }
-
-
-    function getDomain(url) {
-
-      try {
-
-        return new URL(url).hostname
-          .replace(/^www\./, "");
-
-      } catch {
-
-        return "Source";
-
+      if (diff < 60) {
+        return "Just now";
       }
 
+      if (diff < 3600) {
+        return Math.floor(diff / 60) + "m ago";
+      }
+
+      if (diff < 86400) {
+        return Math.floor(diff / 3600) + "h ago";
+      }
+
+      return Math.floor(diff / 86400) + "d ago";
     }
 
 
-    function getUniqueStories() {
+    function categoryName(category) {
+      const map = {
+        world: "World",
+        india: "India",
+        technology: "Technology",
+        ai: "AI",
+        business: "Business"
+      };
 
-      const seen = new Set();
-
-      return allStories.filter(story => {
-
-        const key =
-          story.link ||
-          story.title;
-
-        if (seen.has(key)) {
-          return false;
-        }
-
-        seen.add(key);
-
-        return true;
-
-      });
-
+      return map[category] || "News";
     }
 
 
-    /* =========================================================
+    function articleKey(article) {
+      return encodeURIComponent(
+        article.title + "|" + article.link
+      );
+    }
+
+
+    /* =========================
        LOAD FEED
-       ========================================================= */
+    ========================== */
 
-    async function loadFeed(
-      category,
-      feedUrl
-    ) {
+    async function loadFeed(category, feedUrl) {
 
       try {
 
-        const response =
-          await fetch(
-            RSS_ENDPOINT +
-            encodeURIComponent(feedUrl)
-          );
+        const response = await fetch(
+          RSS_API + encodeURIComponent(feedUrl)
+        );
 
         if (!response.ok) {
           throw new Error("Feed request failed");
         }
 
-        const data =
-          await response.json();
+        const data = await response.json();
 
-        if (
-          data.status &&
-          data.status !== "ok"
-        ) {
-          throw new Error("Feed returned an error");
+        if (!data || !Array.isArray(data.items)) {
+          throw new Error("No feed items");
         }
 
-        const items =
-          Array.isArray(data.items)
-            ? data.items
-            : [];
-
-        return items.map(item => {
-
-          return {
-
-            id:
-              cryptoRandom(),
-
-            category,
-
-            title:
-              cleanText(item.title) ||
-              "Untitled story",
-
-            description:
-              cleanText(item.description) ||
-              "Read the original story for complete details.",
-
-            link:
-              item.link || "#",
-
-            pubDate:
-              item.pubDate || "",
-
-            source:
-              getDomain(item.link),
-
-            author:
-              item.author || data.feed?.title || ""
-
-          };
-
-        });
+        return data.items.slice(0, 12).map(item => ({
+          title: stripHTML(item.title),
+          description: stripHTML(
+            item.description ||
+            item.content ||
+            "Open the original source for the full story."
+          ),
+          link: item.link,
+          pubDate: item.pubDate,
+          author: item.author || "",
+          category
+        }));
 
       } catch (error) {
 
         console.warn(
-          "Feed failed:",
+          "InkSpire feed error:",
           category,
           error
         );
 
         return [];
-
       }
-
     }
 
-
-    function cryptoRandom() {
-
-      return (
-        Date.now().toString(36) +
-        Math.random()
-          .toString(36)
-          .substring(2)
-      );
-
-    }
-
-
-    /* =========================================================
-       LOAD ALL FEEDS
-       ========================================================= */
 
     async function loadAllFeeds() {
 
-      feedStatus.textContent =
-        "Updating stories…";
+      const results = await Promise.all(
+        Object.entries(feeds).map(
+          ([category, url]) =>
+            loadFeed(category, url)
+        )
+      );
 
-      newsGrid.innerHTML =
-        `<div class="loading">
-          Loading latest stories…
-        </div>`;
+      allArticles = results
+        .flat()
+        .filter(article => article.title && article.link);
 
-      try {
+      allArticles.sort(
+        (a, b) =>
+          new Date(b.pubDate) -
+          new Date(a.pubDate)
+      );
 
-        const results =
-          await Promise.all(
-            Object.entries(FEEDS)
-              .map(
-                ([category, url]) =>
-                  loadFeed(category, url)
-              )
-          );
+      renderEverything();
 
-        allStories =
-          results.flat();
+      const now = new Date();
 
-        allStories.sort(
-          (a, b) =>
-            new Date(b.pubDate || 0) -
-            new Date(a.pubDate || 0)
-        );
-
-        allStories =
-          getUniqueStories();
-
-        renderLatest();
-
-        renderCategory(
-          "India",
-          indiaGrid,
-          6
-        );
-
-        renderCategory(
-          "Business",
-          businessGrid,
-          6
-        );
-
-        renderCategory(
-          "Technology",
-          technologyGrid,
-          6
-        );
-
-        renderCategory(
-          "AI",
-          aiGrid,
-          6
-        );
-
-        feedStatus.textContent =
-          allStories.length
-            ? `${allStories.length} stories available • Updated ${new Date().toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit"
-              })}`
-            : "Live feed is temporarily unavailable.";
-
-      } catch (error) {
-
-        console.error(error);
-
-        newsGrid.innerHTML =
-          `<div class="empty">
-            News feed is temporarily unavailable.
-            Please try Refresh.
-          </div>`;
-
-        feedStatus.textContent =
-          "Feed unavailable.";
-
-      }
+      document.getElementById("lastUpdated").textContent =
+        "Updated " +
+        now.toLocaleTimeString("en-IN", {
+          hour: "2-digit",
+          minute: "2-digit"
+        });
 
     }
 
 
-    /* =========================================================
+    /* =========================
        CARD
-       ========================================================= */
+    ========================== */
 
-    function storyCard(story, index) {
+    function createCard(article) {
 
-      const safeTitle =
-        escapeHTML(story.title);
+      const card = document.createElement("article");
 
-      const safeDescription =
-        escapeHTML(story.description);
+      card.className = "news-card";
 
-      const category =
-        escapeHTML(story.category);
+      card.dataset.category = article.category;
 
-      const source =
-        escapeHTML(story.source);
+      card.innerHTML = `
+        <div class="news-card-top">
 
-      return `
+          <span class="category-tag">
+            ${escapeHTML(categoryName(article.category))}
+          </span>
 
-        <article class="news-card">
+          <span class="news-time">
+            ${escapeHTML(timeAgo(article.pubDate))}
+          </span>
 
-          <div class="news-card-top">
+        </div>
 
-            <span class="category-tag">
-              ${category}
+        <div class="news-content">
+
+          <h3 class="news-title">
+            ${escapeHTML(article.title)}
+          </h3>
+
+          <p class="news-description">
+            ${escapeHTML(article.description)}
+          </p>
+
+          <div class="news-bottom">
+
+            <span class="source-name">
+              ${escapeHTML(getSourceName(article))}
             </span>
-
-            <div class="news-index">
-              ${String(index + 1).padStart(2, "0")}
-            </div>
-
-          </div>
-
-          <div class="news-body">
-
-            <h3 class="news-title">
-              ${safeTitle}
-            </h3>
-
-            <p class="news-description">
-              ${safeDescription}
-            </p>
-
-            <div class="news-meta">
-
-              <span>
-                ${source}
-              </span>
-
-              <span>
-                ${formatDate(story.pubDate)}
-              </span>
-
-            </div>
 
             <button
               class="read-btn"
-              data-story-id="${story.id}"
+              data-article="${articleKey(article)}"
             >
-              Read story →
+              Read
             </button>
 
           </div>
 
-        </article>
-
+        </div>
       `;
 
+      const readButton =
+        card.querySelector(".read-btn");
+
+      readButton.addEventListener(
+        "click",
+        () => openArticle(article)
+      );
+
+      return card;
     }
 
 
-    /* =========================================================
-       RENDER LATEST
-       ========================================================= */
+    /* =========================
+       RENDER
+    ========================== */
+
+    function renderGrid(elementId, articles) {
+
+      const grid =
+        document.getElementById(elementId);
+
+      if (!grid) return;
+
+      grid.innerHTML = "";
+
+      if (!articles.length) {
+
+        grid.innerHTML = `
+          <div class="empty">
+            No stories are available right now.
+          </div>
+        `;
+
+        return;
+      }
+
+      articles
+        .slice(0, 9)
+        .forEach(article => {
+          grid.appendChild(
+            createCard(article)
+          );
+        });
+    }
+
 
     function renderLatest() {
 
-      let stories =
-        [...allStories];
+      let articles = [...allArticles];
 
-      if (currentCategory !== "all") {
-
-        stories =
-          stories.filter(
-            story =>
-              story.category ===
-              currentCategory
-          );
-
+      if (activeCategory !== "all") {
+        articles = articles.filter(
+          article =>
+            article.category === activeCategory
+        );
       }
 
-      stories =
-        stories.slice(0, 12);
-
-      if (!stories.length) {
-
-        newsGrid.innerHTML =
-          `<div class="empty">
-            No stories found in this category.
-          </div>`;
-
-        return;
-
-      }
-
-      newsGrid.innerHTML =
-        stories
-          .map(storyCard)
-          .join("");
-
+      renderGrid(
+        "newsGrid",
+        articles
+      );
     }
 
 
-    /* =========================================================
-       RENDER CATEGORY
-       ========================================================= */
-
-    function renderCategory(
-      category,
-      element,
-      limit
-    ) {
-
-      const stories =
-        allStories
-          .filter(
-            story =>
-              story.category === category
-          )
-          .slice(0, limit);
-
-      if (!stories.length) {
-
-        element.innerHTML =
-          `<div class="empty">
-            No ${category} stories available right now.
-          </div>`;
-
-        return;
-
-      }
-
-      element.innerHTML =
-        stories
-          .map(storyCard)
-          .join("");
-
-    }
-
-
-    /* =========================================================
-       SET CATEGORY
-       ========================================================= */
-
-    function setCategory(category) {
-
-      currentCategory =
-        category === "all"
-          ? "all"
-          : category;
-
-      document
-        .querySelectorAll(".category-btn")
-        .forEach(button => {
-
-          button.classList.toggle(
-            "active",
-            button.dataset.category
-              .toLowerCase() ===
-              currentCategory.toLowerCase()
-          );
-
-        });
+    function renderEverything() {
 
       renderLatest();
 
-      document
-        .getElementById("latest")
-        ?.scrollIntoView({
-          behavior: "smooth"
-        });
+      renderGrid(
+        "indiaGrid",
+        allArticles.filter(
+          article => article.category === "india"
+        )
+      );
 
+      renderGrid(
+        "worldGrid",
+        allArticles.filter(
+          article => article.category === "world"
+        )
+      );
+
+      renderGrid(
+        "technologyGrid",
+        allArticles.filter(
+          article => article.category === "technology"
+        )
+      );
+
+      renderGrid(
+        "aiGrid",
+        allArticles.filter(
+          article => article.category === "ai"
+        )
+      );
     }
 
 
-    window.setCategory =
-      setCategory;
+    /* =========================
+       ARTICLE MODAL
+    ========================== */
 
+    function openArticle(article) {
 
-    /* =========================================================
-       CATEGORY BUTTONS
-       ========================================================= */
+      currentArticle = article;
 
-    document
-      .querySelectorAll(".category-btn")
-      .forEach(button => {
+      document.getElementById(
+        "modalCategory"
+      ).textContent =
+        categoryName(article.category);
 
-        button.addEventListener(
-          "click",
-          () => {
+      document.getElementById(
+        "modalTitle"
+      ).textContent =
+        article.title;
 
-            setCategory(
-              button.dataset.category
-            );
+      document.getElementById(
+        "modalMeta"
+      ).textContent =
+        getSourceName(article) +
+        " · " +
+        formatDate(article.pubDate);
 
-          }
-        );
+      document.getElementById(
+        "modalDescription"
+      ).textContent =
+        article.description ||
+        "Open the original source for the full story.";
 
-      });
+      document.getElementById(
+        "modalSource"
+      ).href =
+        article.link;
 
+      document.getElementById(
+        "articleModal"
+      ).classList.add("active");
 
-    /* =========================================================
-       ARTICLE OPEN
-       ========================================================= */
+      document.body.classList.add("modal-open");
 
-    function openArticle(storyId) {
-
-      const story =
-        allStories.find(
-          item =>
-            item.id === storyId
-        );
-
-      if (!story) {
-        return;
-      }
-
-      document
-        .getElementById("articleCategory")
-        .textContent =
-        story.category;
-
-      document
-        .getElementById("articleTitle")
-        .textContent =
-        story.title;
-
-      document
-        .getElementById("articleInfo")
-        .innerHTML = `
-
-          <span>
-            ${escapeHTML(story.source)}
-          </span>
-
-          <span>•</span>
-
-          <span>
-            ${formatDate(story.pubDate)}
-          </span>
-
-          <span>•</span>
-
-          <span>
-            InkSpire
-          </span>
-
-        `;
-
-
-      /*
-       * We intentionally do not present the RSS description
-       * as if it were an original InkSpire article.
-       *
-       * It is clearly shown as a short feed summary and the
-       * reader is directed to the original source.
-       */
-
-      document
-        .getElementById("articleContent")
-        .innerHTML = `
-
-          <p>
-            ${escapeHTML(story.description)}
-          </p>
-
-          <p>
-            This is a short summary from the available news
-            feed. For the complete report, full context,
-            quotations and original reporting, open the
-            original source below.
-          </p>
-
-        `;
-
-
-      document
-        .getElementById("articleSource")
-        .textContent =
-        `Original source: ${story.source}`;
-
-
-      const sourceButton =
-        document.getElementById(
-          "originalArticle"
-        );
-
-      sourceButton.href =
-        story.link;
-
-
-      articleModal.classList.add("open");
-
-      articleModal.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-      document.body.classList.add(
-        "modal-open"
-      );
-
-      history.replaceState(
-        null,
-        "",
-        "#article"
-      );
-
-    }
-
-
-    /* =========================================================
-       EVENT DELEGATION FOR ARTICLE BUTTONS
-       ========================================================= */
-
-    document.addEventListener(
-      "click",
-      event => {
-
-        const button =
-          event.target.closest(
-            "[data-story-id]"
-          );
-
-        if (!button) {
-          return;
+      trackEvent(
+        "article_open",
+        {
+          article_title: article.title,
+          article_category: article.category,
+          article_source: getSourceName(article)
         }
+      );
+    }
 
-        openArticle(
-          button.dataset.storyId
-        );
-
-      }
-    );
-
-
-    /* =========================================================
-       CLOSE ARTICLE
-       ========================================================= */
 
     function closeArticle() {
 
-      articleModal.classList.remove(
-        "open"
-      );
+      document
+        .getElementById("articleModal")
+        .classList.remove("active");
 
-      articleModal.setAttribute(
-        "aria-hidden",
-        "true"
-      );
+      document.body.classList.remove("modal-open");
 
-      document.body.classList.remove(
-        "modal-open"
-      );
-
-      if (
-        location.hash === "#article"
-      ) {
-
-        history.replaceState(
-          null,
-          "",
-          location.pathname +
-          location.search
-        );
-
-      }
-
+      currentArticle = null;
     }
 
 
+    /* =========================
+       CATEGORY FILTER
+    ========================== */
+
     document
-      .getElementById("closeArticle")
+      .getElementById("categories")
       .addEventListener(
         "click",
-        closeArticle
-      );
+        event => {
 
+          const button =
+            event.target.closest(
+              ".category-btn"
+            );
 
-    articleModal.addEventListener(
-      "click",
-      event => {
-
-        if (
-          event.target === articleModal
-        ) {
-          closeArticle();
-        }
-
-      }
-    );
-
-
-    /* =========================================================
-       ESC KEY
-       ========================================================= */
-
-    document.addEventListener(
-      "keydown",
-      event => {
-
-        if (
-          event.key === "Escape"
-        ) {
-
-          closeArticle();
-
-          closeSearch();
+          if (!button) return;
 
           document
-            .getElementById("mobileNav")
-            .classList.remove("open");
-
-        }
-
-      }
-    );
-
-
-    /* =========================================================
-       COPY LINK
-       ========================================================= */
-
-    document
-      .getElementById("copyArticle")
-      .addEventListener(
-        "click",
-        async () => {
-
-          try {
-
-            await navigator.clipboard.writeText(
-              window.location.href
+            .querySelectorAll(".category-btn")
+            .forEach(btn =>
+              btn.classList.remove("active")
             );
 
-            const button =
-              document.getElementById(
-                "copyArticle"
-              );
+          button.classList.add("active");
 
-            const old =
-              button.textContent;
+          activeCategory =
+            button.dataset.category;
 
-            button.textContent =
-              "Copied ✓";
+          renderLatest();
 
-            setTimeout(
-              () => {
-                button.textContent =
-                  old;
-              },
-              1500
-            );
-
-          } catch {
-
-            alert(
-              "Copy is not available on this browser."
-            );
-
-          }
-
+          trackEvent(
+            "category_filter",
+            {
+              category: activeCategory
+            }
+          );
         }
       );
 
 
-    /* =========================================================
+    /* =========================
        SEARCH
-       ========================================================= */
+    ========================== */
 
-    function openSearch() {
+    const searchToggle =
+      document.getElementById("searchToggle");
 
-      searchOverlay.classList.add(
-        "open"
-      );
+    const searchPanel =
+      document.getElementById("searchPanel");
 
-      searchOverlay.setAttribute(
-        "aria-hidden",
-        "false"
-      );
+    const searchInput =
+      document.getElementById("searchInput");
 
-      setTimeout(
-        () =>
-          searchInput.focus(),
-        100
-      );
-
-    }
+    const searchClear =
+      document.getElementById("searchClear");
 
 
-    function closeSearch() {
-
-      searchOverlay.classList.remove(
-        "open"
-      );
-
-      searchOverlay.setAttribute(
-        "aria-hidden",
-        "true"
-      );
-
-      searchInput.value = "";
-
-      searchResults.innerHTML =
-        `<div class="empty">
-          Start typing to search stories.
-        </div>`;
-
-    }
-
-
-    document
-      .getElementById("searchButton")
-      .addEventListener(
-        "click",
-        openSearch
-      );
-
-
-    document
-      .getElementById("closeSearch")
-      .addEventListener(
-        "click",
-        closeSearch
-      );
-
-
-    searchOverlay.addEventListener(
+    searchToggle.addEventListener(
       "click",
-      event => {
+      () => {
+
+        searchPanel.classList.toggle(
+          "active"
+        );
 
         if (
-          event.target ===
-          searchOverlay
+          searchPanel.classList.contains(
+            "active"
+          )
         ) {
-
-          closeSearch();
-
+          searchInput.focus();
         }
-
       }
     );
 
@@ -3496,138 +2382,80 @@
             .toLowerCase();
 
         if (!query) {
-
-          searchResults.innerHTML =
-            `<div class="empty">
-              Start typing to search stories.
-            </div>`;
-
+          renderLatest();
           return;
-
         }
-
 
         const results =
-          allStories
-            .filter(story => {
-
-              const text =
-                (
-                  story.title +
-                  " " +
-                  story.description +
-                  " " +
-                  story.category +
-                  " " +
-                  story.source
-                ).toLowerCase();
-
-              return text.includes(query);
-
-            })
-            .slice(0, 12);
-
-
-        if (!results.length) {
-
-          searchResults.innerHTML =
-            `<div class="empty">
-              No matching stories found.
-            </div>`;
-
-          return;
-
-        }
-
-
-        searchResults.innerHTML =
-          results
-            .map(story => `
-
-              <div
-                class="search-result"
-                data-story-id="${story.id}"
-              >
-
-                <div class="search-result-title">
-                  ${escapeHTML(story.title)}
-                </div>
-
-                <div class="search-result-meta">
-                  ${escapeHTML(story.category)}
-                  •
-                  ${escapeHTML(story.source)}
-                  •
-                  ${formatDate(story.pubDate)}
-                </div>
-
-              </div>
-
-            `)
-            .join("");
-
-      }
-    );
-
-
-    searchResults.addEventListener(
-      "click",
-      event => {
-
-        const result =
-          event.target.closest(
-            ".search-result"
+          allArticles.filter(article =>
+            (
+              article.title +
+              " " +
+              article.description +
+              " " +
+              article.category
+            )
+              .toLowerCase()
+              .includes(query)
           );
 
-        if (!result) {
-          return;
-        }
-
-        closeSearch();
-
-        openArticle(
-          result.dataset.storyId
+        renderGrid(
+          "newsGrid",
+          results
         );
-
       }
     );
 
 
-    /* =========================================================
+    searchClear.addEventListener(
+      "click",
+      () => {
+
+        searchInput.value = "";
+
+        renderLatest();
+
+        searchInput.focus();
+
+        trackEvent(
+          "search_clear"
+        );
+      }
+    );
+
+
+    /* =========================
        MOBILE MENU
-       ========================================================= */
-
-    const mobileNav =
-      document.getElementById(
-        "mobileNav"
-      );
-
+    ========================== */
 
     document
-      .getElementById("menuButton")
+      .getElementById("menuToggle")
       .addEventListener(
         "click",
         () => {
 
-          mobileNav.classList.toggle(
-            "open"
-          );
-
+          document
+            .getElementById("mainNav")
+            .classList.toggle(
+              "mobile-open"
+            );
         }
       );
 
 
-    mobileNav
-      .querySelectorAll("a")
+    document
+      .querySelectorAll(".nav-links a")
       .forEach(link => {
 
         link.addEventListener(
           "click",
           () => {
 
-            mobileNav.classList.remove(
-              "open"
-            );
+            document
+              .getElementById("mainNav")
+              .classList.remove(
+                "mobile-open"
+              );
 
           }
         );
@@ -3635,127 +2463,178 @@
       });
 
 
-    /* =========================================================
-       REFRESH
-       ========================================================= */
+    /* =========================
+       MODAL CONTROLS
+    ========================== */
 
     document
-      .getElementById("refreshButton")
+      .getElementById("modalClose")
       .addEventListener(
         "click",
-        async () => {
+        closeArticle
+      );
 
-          const button =
-            document.getElementById(
-              "refreshButton"
-            );
 
-          button.disabled = true;
+    document
+      .getElementById("articleModal")
+      .addEventListener(
+        "click",
+        event => {
 
-          button.textContent =
-            "↻ Updating…";
-
-          await loadAllFeeds();
-
-          button.disabled = false;
-
-          button.textContent =
-            "↻ Refresh";
+          if (
+            event.target.id ===
+            "articleModal"
+          ) {
+            closeArticle();
+          }
 
         }
       );
 
 
-    /* =========================================================
-       AUTO REFRESH
-       ========================================================= */
+    document.addEventListener(
+      "keydown",
+      event => {
 
-    setInterval(
-      () => {
+        if (
+          event.key === "Escape"
+        ) {
+          closeArticle();
+        }
 
-        loadAllFeeds();
-
-      },
-      10 * 60 * 1000
+      }
     );
 
 
-    /* =========================================================
-       SMOOTH INTERNAL LINKS
-       ========================================================= */
+    /* =========================
+       COPY ARTICLE LINK
+    ========================== */
 
     document
-      .querySelectorAll(
-        'a[href^="#"]'
-      )
-      .forEach(link => {
+      .getElementById("copyLink")
+      .addEventListener(
+        "click",
+        async () => {
 
-        link.addEventListener(
-          "click",
-          event => {
+          if (!currentArticle) return;
 
-            const targetId =
-              link.getAttribute("href");
+          try {
 
-            if (
-              !targetId ||
-              targetId === "#" ||
-              targetId === "#article"
-            ) {
-              return;
-            }
+            await navigator.clipboard.writeText(
+              currentArticle.link
+            );
 
-            const target =
-              document.querySelector(
-                targetId
-              );
+            document.getElementById(
+              "copyLink"
+            ).textContent =
+              "Copied ✓";
 
-            if (!target) {
-              return;
-            }
+            setTimeout(() => {
 
-            event.preventDefault();
+              document.getElementById(
+                "copyLink"
+              ).textContent =
+                "Copy Article Link";
 
-            target.scrollIntoView({
-              behavior: "smooth"
-            });
+            }, 1800);
+
+            trackEvent(
+              "article_link_copy",
+              {
+                article_title:
+                  currentArticle.title
+              }
+            );
+
+          } catch {
+
+            alert(
+              "Unable to copy the link."
+            );
 
           }
+
+        }
+      );
+
+
+    /* =========================
+       SOURCE / SOCIAL CLICKS
+    ========================== */
+
+    document.addEventListener(
+      "click",
+      event => {
+
+        const element =
+          event.target.closest(
+            "[data-track]"
+          );
+
+        if (!element) return;
+
+        trackEvent(
+          "external_link_click",
+          {
+            destination:
+              element.href || "",
+            link_name:
+              element.dataset.track
+          }
         );
+      }
+    );
 
-      });
+
+    document
+      .getElementById("modalSource")
+      .addEventListener(
+        "click",
+        () => {
+
+          if (!currentArticle) return;
+
+          trackEvent(
+            "original_source_click",
+            {
+              article_title:
+                currentArticle.title,
+              source:
+                getSourceName(currentArticle)
+            }
+          );
+
+        }
+      );
 
 
-    /* =========================================================
-       INITIAL LOAD
-       ========================================================= */
+    /* =========================
+       YEAR
+    ========================== */
+
+    document.getElementById(
+      "year"
+    ).textContent =
+      new Date().getFullYear();
+
+
+    /* =========================
+       START
+    ========================== */
 
     loadAllFeeds();
 
+
+    /*
+      Refresh the news feed every 10 minutes.
+    */
+
+    setInterval(
+      loadAllFeeds,
+      10 * 60 * 1000
+    );
+
   </script>
-
-
-  <!-- =========================================================
-       STRUCTURED DATA
-       ========================================================= -->
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "NewsMediaOrganization",
-    "name": "InkSpire",
-    "url": "https://kavinmusicc-code.github.io/inkspire/",
-    "logo": "https://kavinmusicc-code.github.io/inkspire/logo.png",
-    "founder": {
-      "@type": "Person",
-      "name": "Prashant Sagar"
-    },
-    "sameAs": [
-      "https://www.instagram.com/inkspire.8s/"
-    ]
-  }
-  </script>
-
 
 </body>
 </html>
