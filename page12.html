@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INKSPIRE - Live Career, Scholarships & Global Trends (Page 12)</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --accent-green: #059669;
+            --tag-bg-green: #d1fae5;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+        }
+        header { 
+            background-color: var(--card-bg); 
+            border-bottom: 1px solid var(--border-color); 
+            padding: 2.5rem 1rem; 
+            text-align: center; 
+            margin-bottom: 2rem; 
+        }
+        header h1 { margin: 0; font-size: 2rem; color: var(--primary); letter-spacing: -0.5px; }
+        header p { margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.95rem; }
+        .container { width: 100%; max-width: 650px; margin: 0 auto; padding: 0 1rem; }
+        .search-box {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-size: 0.95rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            outline: none;
+            background: #fff;
+            transition: all 0.2s;
+        }
+        .search-box:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        .article { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 12px; 
+            margin-bottom: 1.5rem; 
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .article:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+        }
+        .article img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .article-content {
+            padding: 1.5rem;
+        }
+        .article h2 { 
+            font-size: 1.15rem; 
+            color: #0f172a; 
+            margin-top: 0; 
+            margin-bottom: 0.7rem; 
+            line-height: 1.4;
+        }
+        .definition-box { 
+            background: #f1f5f9; 
+            border-left: 4px solid var(--primary); 
+            padding: 0.75rem 1rem; 
+            margin: 0.8rem 0; 
+            font-size: 0.9rem; 
+            color: #334155; 
+            border-radius: 0 6px 6px 0; 
+        }
+        .article p { color: var(--text-muted); font-size: 0.9rem; margin: 0 0 1rem 0; }
+        .cat-tag { 
+            display: inline-block; 
+            font-size: 0.7rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            background: #e0e7ff; 
+            color: var(--primary-dark); 
+            padding: 3px 8px; 
+            border-radius: 4px; 
+            margin-bottom: 0.6rem; 
+        }
+        .cat-tag.live {
+            background: var(--tag-bg-green);
+            color: var(--accent-green);
+        }
+        /* Action Button for Real Links */
+        .action-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .action-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        /* Pagination Styling */
+        .pagination { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 8px; 
+            margin: 3rem 0; 
+        }
+        .pagination a { 
+            padding: 8px 14px; 
+            background: #fff; 
+            border: 1px solid var(--border-color); 
+            color: var(--primary); 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            transition: all 0.2s;
+        }
+        .pagination a.active { 
+            background: var(--primary); 
+            color: #fff; 
+            border-color: var(--primary); 
+        }
+        .pagination a:hover:not(.active) {
+            background: #f1f5f9;
+        }
+        footer { 
+            text-align: center; 
+            padding: 2.5rem 1rem; 
+            background-color: #1e293b; 
+            color: #94a3b8; 
+            font-size: 0.85rem; 
+            margin-top: 4rem; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>INKSPIRE HUB</h1>
+        <p>Live Career Opportunities, Scholarships & 24/7 Global Trends (Page 12)</p>
+    </header>
+
+    <div class="container">
+        <!-- Search Filter Input -->
+        <input type="text" id="searchInput" class="search-box" placeholder="Search jobs, scholarships, live trends..." onkeyup="filterModules()">
+
+        <div id="modulesContainer">
+            <!-- Item 111: Job Offer / Career Portal -->
+            <div class="article" data-title="111 remote software engineering jobs tech careers global hiring 2026">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Global Tech Jobs">
+                <div class="article-content">
+                    <span class="cat-tag live">Live Job Hub</span>
+                    <h2>111. Global Remote Tech Careers & High-Paying Engineering Openings</h2>
+                    <div class="definition-box"><strong>Opportunity Focus:</strong> Curated listings for remote software development, AI prompt engineering, and product design roles with global enterprises.</div>
+                    <p>Explore verified remote hiring platforms and direct application portals offering flexible international contracts for developers based in India and worldwide.</p>
+                    <a href="https://remote.co/" target="_blank" class="action-btn">Explore Remote Jobs &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 112: Government & Private Scholarships -->
+            <div class="article" data-title="112 international scholarships study abroad grants financial aid student funding">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Scholarships and Grants">
+                <div class="article-content">
+                    <span class="cat-tag live">Scholarships & Grants</span>
+                    <h2>112. International Student Scholarships & Higher Education Funding</h2>
+                    <div class="definition-box"><strong>Opportunity Focus:</strong> Fully funded master's and research fellowship grants offered by global institutions and government agencies.</div>
+                    <p>Access active application portals for international scholarships, tuition waivers, and research stipends tailored for ambitious global students.</p>
+                    <a href="https://www.scholars4dev.com/" target="_blank" class="action-btn">Check Scholarship Portal &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 113: Trending AI & Tech News -->
+            <div class="article" data-title="113 artificial intelligence breakthroughs 24/7 tech news innovation updates">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Tech News Trends">
+                <div class="article-content">
+                    <span class="cat-tag">Trending Tech News</span>
+                    <h2>113. 24/7 Global Artificial Intelligence & Deep-Tech Industry Bulletins</h2>
+                    <div class="definition-box"><strong>Trend Focus:</strong> Real-time developments in foundational models, semiconductor manufacturing, and autonomous robotics ecosystems.</div>
+                    <p>Stay ahead of industry shifts with live curated updates covering major technological breakthroughs, venture capital movements, and open-source software releases.</p>
+                    <a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" class="action-btn">Read Live AI News &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 114: Indian Startup & Employment Ecosystem -->
+            <div class="article" data-title="114 indian startup hiring digital India employment tech ecosystem updates">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Indian Startup Ecosystem">
+                <div class="article-content">
+                    <span class="cat-tag live">India Career Trend</span>
+                    <h2>114. Indian Startup Ecosystem Hiring & Digital Growth Opportunities</h2>
+                    <div class="definition-box"><strong>Opportunity Focus:</strong> Fast-growing Indian tech startups in Bengaluru, Delhi-NCR, and Mumbai scaling product, marketing, and engineering teams.</div>
+                    <p>Discover active job portals, incubator programs, and freelance agency gigs powering the booming digital economy across India.</p>
+                    <a href="https://wellfound.com/jobs" target="_blank" class="action-btn">Browse Startup Jobs &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 115: Freelance & Gig Economy Benefits -->
+            <div class="article" data-title="115 freelance digital marketing web development gig platforms income generation">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Gig Economy">
+                <div class="article-content">
+                    <span class="cat-tag">Gig & Freelance</span>
+                    <h2>115. Global Freelance Marketplaces & High-Value Digital Agency Gigs</h2>
+                    <div class="definition-box"><strong>Opportunity Focus:</strong> Monetizing web development, graphic design, and content creation skills through verified international freelance channels.</div>
+                    <p>Leverage top-tier client acquisition networks and digital storefront strategies to build sustainable online income streams.</p>
+                    <a href="https://www.upwork.com/" target="_blank" class="action-btn">Explore Freelance Gigs &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination Links -->
+        <div class="pagination">
+            <a href="page11.html">&laquo; Prev</a>
+            <a href="page11.html">11</a>
+            <a href="page12.html" class="active">12</a>
+            <a href="page13.html">13</a>
+            <a href="page13.html">Next &raquo;</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 INKSPIRE. All Rights Reserved. Live Careers & Global Trends (Page 12).</p>
+    </footer>
+
+    <script>
+        function filterModules() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let articles = document.getElementsByClassName('article');
+            for (let i = 0; i < articles.length; i++) {
+                let title = articles[i].getAttribute('data-title') || articles[i].innerText.toLowerCase();
+                articles[i].style.display = title.includes(input) ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
