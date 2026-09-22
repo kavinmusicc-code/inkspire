@@ -80,14 +80,14 @@
             flex-direction: column;
             gap: 1.5rem;
         }
-        .article-card, .admin-panel {
+        .article-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             padding: 1.8rem;
             border-radius: 8px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-        .article-card h2, .admin-panel h2 {
+        .article-card h2 {
             margin-top: 0;
             color: #0f172a;
             font-size: 1.5rem;
@@ -95,28 +95,6 @@
         .article-card p {
             color: var(--text-muted);
             font-size: 0.98rem;
-        }
-        .admin-panel input, .admin-panel textarea {
-            width: 100%;
-            padding: 0.75rem;
-            margin-top: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-family: inherit;
-            box-sizing: border-box;
-        }
-        .admin-panel button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .admin-panel button:hover {
-            background: #4338ca;
         }
         .share-btn {
             display: inline-block;
@@ -199,38 +177,9 @@
     </div>
 
     <div class="main-container">
-        <!-- Left Column: Articles & Hidden Admin Post Creator -->
+        <!-- Left Column: Professional Articles -->
         <div class="content-area">
             
-            <!-- Hidden Admin CMS Panel (Only visible via secret link) -->
-            <div id="admin-container" class="admin-panel" style="display: none;">
-                <h2>Admin Post Creator (Secret Panel)</h2>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Welcome back, Admin! Enter your password to publish new content or video.</p>
-                
-                <div id="login-box">
-                    <label><strong>Admin Password:</strong></label>
-                    <input type="password" id="admin-pass" placeholder="Enter password...">
-                    <button onclick="verifyAdmin()">Unlock Creator</button>
-                </div>
-                
-                <div id="creator-box" style="display: none; margin-top: 1rem;">
-                    <label><strong>Post Title:</strong></label>
-                    <input type="text" id="post-title" placeholder="Enter article title...">
-                    
-                    <label><strong>Content / Description:</strong></label>
-                    <textarea id="post-content" rows="4" placeholder="Write your content here..."></textarea>
-                    
-                    <label><strong>Image or Video URL (Optional):</strong></label>
-                    <input type="text" id="post-media" placeholder="Paste image or video link here...">
-                    
-                    <button onclick="publishPost()">Publish New Post</button>
-                </div>
-            </div>
-
-            <!-- Dynamic Container where new posts will appear -->
-            <div id="dynamic-posts"></div>
-
-            <!-- Pre-existing 12 Professional Articles -->
             <article class="article-card">
                 <h2>1. The Rise of Generative AI in Modern Web Architecture</h2>
                 <p>Artificial intelligence is no longer just a writing assistant; it is actively shaping frontend components, automated routing, and user interaction loops. Developers worldwide are leveraging LLMs to speed up deployment times.</p>
@@ -339,64 +288,6 @@
 
     <!-- Popunder / Direct Script Ad Integration -->
     <script src="https://pl31443964.profitableratecpmnetwork.com/71/9b/68/719b68a75cd92f96024833025c747b48.js"></script>
-
-    <script>
-        // Check if URL has secret admin query parameter (e.g. ?admin=true)
-        const urlParams = new URLSearchParams(window.location.search);
-        if(urlParams.get('admin') === 'true') {
-            document.getElementById('admin-container').style.display = 'block';
-        }
-
-        function verifyAdmin() {
-            const pass = document.getElementById('admin-pass').value;
-            if(pass === '5VKGY2EL63DF') {
-                document.getElementById('login-box').style.display = 'none';
-                document.getElementById('creator-box').style.display = 'block';
-                alert('Admin login successful!');
-            } else {
-                alert('Incorrect password!');
-            }
-        }
-
-        function publishPost() {
-            const title = document.getElementById('post-title').value;
-            const content = document.getElementById('post-content').value;
-            const media = document.getElementById('post-media').value;
-
-            if(!title || !content) {
-                alert('Please fill in both title and content!');
-                return;
-            }
-
-            const dynamicContainer = document.getElementById('dynamic-posts');
-            const newCard = document.createElement('article');
-            newCard.className = 'article-card';
-            
-            let mediaHTML = '';
-            if(media) {
-                if(media.match(/\.(mp4|webm)$/i)) {
-                    mediaHTML = `<video controls style="width:100%; margin-top:1rem; border-radius:6px;"><source src="${media}" type="video/mp4">Your browser does not support video.</video>`;
-                } else {
-                    mediaHTML = `<img src="${media}" alt="Post Media" style="width:100%; margin-top:1rem; border-radius:6px;">`;
-                }
-            }
-
-            newCard.innerHTML = `
-                <h2>${title}</h2>
-                <p>${content}</p>
-                ${mediaHTML}
-                <br>
-                <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}" target="_blank" class="share-btn">Share on X</a>
-            `;
-
-            dynamicContainer.prepend(newCard);
-
-            document.getElementById('post-title').value = '';
-            document.getElementById('post-content').value = '';
-            document.getElementById('post-media').value = '';
-            alert('Post published successfully!');
-        }
-    </script>
 
     <footer>
         <p>&copy; 2026 INKSPIRE. All rights reserved. Built for Global Creators.</p>
