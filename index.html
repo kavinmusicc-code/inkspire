@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INKSPIRE - Dynamic Pages</title>
+    <title>INKSPIRE HUB</title>
     <style>
         body { font-family: sans-serif; background-color: #f8fafc; color: #1e293b; margin: 0; padding: 0; line-height: 1.6; }
         header { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 2rem 1rem; text-align: center; }
@@ -13,121 +13,42 @@
         .article h2 { margin-top: 0; color: #0f172a; font-size: 1.2rem; }
         .article p { color: #475569; font-size: 0.9rem; margin-bottom: 0; }
         
-        /* पेजिनेशन और बटन डिज़ाइन */
-        .pagination-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem; margin: 3rem 0; text-align: center; }
-        .pagination { display: flex; justify-content: center; align-items: center; gap: 6px; margin-bottom: 1rem; flex-wrap: wrap; }
-        .btn { padding: 8px 14px; background: #fff; border: 1px solid #e2e8f0; color: #4f46e5; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.85rem; cursor: pointer; }
-        .btn.active { background: #4f46e5; color: #fff; border-color: #4f46e5; }
+        .pagination { display: flex; justify-content: center; gap: 6px; margin: 3rem 0; flex-wrap: wrap; }
+        .pagination a { padding: 8px 12px; background: #fff; border: 1px solid #e2e8f0; color: #4f46e5; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.85rem; }
+        .pagination a.active { background: #4f46e5; color: #fff; border-color: #4f46e5; }
         
-        .jump-row { display: flex; justify-content: center; align-items: center; gap: 8px; font-size: 0.85rem; color: #475569; }
-        .jump-row input { width: 80px; padding: 6px; border: 1px solid #e2e8f0; border-radius: 6px; text-align: center; font-weight: 600; }
-        .jump-row button { padding: 6px 12px; background: #4f46e5; color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
-
         footer { text-align: center; padding: 2rem; background-color: #1e293b; color: #94a3b8; font-size: 0.85rem; }
     </style>
 </head>
 <body>
     <header>
         <h1>INKSPIRE HUB</h1>
-        <p id="pageSubtitle">Page 1 of 500</p>
+        <p>Global Intelligence & Web Writing</p>
     </header>
 
     <div class="container">
-        <!-- यहाँ एक साथ 10 आर्टिकल्स लोड होंगे -->
-        <div id="contentBox"></div>
+        <!-- यहाँ आप अपनी वेब राइटिंग और आर्टिकल्स खुद लिख सकते हैं -->
+        <div class="article">
+            <h2>1. Quantum Computing & Superposition Qubits</h2>
+            <p>Utilizing quantum mechanics principles to perform complex multi-state computations exponentially faster than binary systems.</p>
+        </div>
 
-        <!-- नीचे नेविगेशन और पेज बदलने के बटन -->
-        <div class="pagination-box">
-            <div class="pagination">
-                <button class="btn" onclick="changePage(-1)">&laquo; Prev</button>
-                <span id="pageNumbersDisplay" style="display: flex; gap: 6px;"></span>
-                <button class="btn" onclick="changePage(1)">Next &raquo;</button>
-            </div>
-            
-            <div class="jump-row">
-                <label for="jumpInput">Go to page (1 - 500):</label>
-                <input type="number" id="jumpInput" min="1" max="500" placeholder="Page">
-                <button onclick="jumpToGo()">Go</button>
-            </div>
+        <div class="article">
+            <h2>2. Your Next Article Title Here</h2>
+            <p>Write your detailed content, notes, or web writing text right here.</p>
+        </div>
+
+        <!-- पेजिनेशन -->
+        <div class="pagination">
+            <a href="index.html" class="active">1</a>
+            <a href="page2.html">2</a>
+            <a href="page3.html">3</a>
+            <a href="page4.html">4</a>
+            <a href="page5.html">5</a>
+            <a href="page2.html">Next &raquo;</a>
         </div>
     </div>
 
     <footer><p>&copy; 2026 INKSPIRE</p></footer>
-
-    <script>
-        let currentPage = 1;
-        const totalPages = 500;
-        const itemsPerPage = 10; // हर पेज पर 10 आर्टिकल्स दिखेंगे
-
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            let p = parseInt(urlParams.get('page'));
-            if(p && p >= 1 && p <= totalPages) {
-                currentPage = p;
-            }
-            renderPage();
-        };
-
-        function renderPage() {
-            document.getElementById('pageSubtitle').innerText = "Page " + currentPage + " of " + totalPages;
-            
-            let contentBox = document.getElementById('contentBox');
-            contentBox.innerHTML = '';
-
-            // इस पेज के हिसाब से 10 आर्टिकल्स जनरेट करें
-            let startItem = (currentPage - 1) * itemsPerPage + 1;
-            let endItem = startItem + itemsPerPage - 1;
-
-            for(let i = startItem; i <= endItem; i++) {
-                contentBox.innerHTML += `
-                    <div class="article">
-                        <h2>${i}. Module Title and Global Intelligence Topic</h2>
-                        <p>This is the detailed information, notes, and description corresponding to module item number ${i} on page ${currentPage} of the INKSPIRE hub.</p>
-                    </div>
-                `;
-            }
-
-            // नीचे के छोटे पेज नंबर बटन अपडेट करें
-            let pDisplay = document.getElementById('pageNumbersDisplay');
-            pDisplay.innerHTML = '';
-            
-            let start = Math.max(1, currentPage - 2);
-            let end = Math.min(totalPages, currentPage + 2);
-            
-            for(let i = start; i <= end; i++) {
-                let b = document.createElement('button');
-                b.className = "btn " + (i === currentPage ? "active" : "");
-                b.innerText = i;
-                b.onclick = function() { goTo(i); };
-                pDisplay.appendChild(b);
-            }
-        }
-
-        function changePage(direction) {
-            let newPage = currentPage + direction;
-            if(newPage >= 1 && newPage <= totalPages) {
-                currentPage = newPage;
-                window.history.pushState({}, '', '?page=' + currentPage);
-                renderPage();
-                window.scrollTo(0, 0);
-            }
-        }
-
-        function goTo(p) {
-            currentPage = p;
-            window.history.pushState({}, '', '?page=' + currentPage);
-            renderPage();
-            window.scrollTo(0, 0);
-        }
-
-        function jumpToGo() {
-            let val = parseInt(document.getElementById('jumpInput').value);
-            if(val >= 1 && val <= totalPages) {
-                goTo(val);
-            } else {
-                alert("कृपया 1 से 500 के बीच का कोई सही नंबर डालें।");
-            }
-        }
-    </script>
 </body>
 </html>
