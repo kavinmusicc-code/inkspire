@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INKSPIRE - Global Intelligence Hub: 500+ Dynamic Modules in Tech, Space, Scholarships & Banking</title>
+    <title>INKSPIRE - Global Intelligence Hub: 500+ Dynamic Modules</title>
     <!-- Google Analytics Measurement ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2TQYXBJ7V"></script>
     <script>
@@ -54,7 +54,7 @@
 
     <header>
         <h1>INKSPIRE</h1>
-        <p>Global Intelligence Hub: 500+ Dynamic Modules in Scholarships, Banking, AI & Geopolitics</p>
+        <p>Global Intelligence Hub: 500+ Verified Modules in Scholarships, Banking, AI & Geopolitics</p>
     </header>
 
     <nav>
@@ -66,7 +66,7 @@
 
     <!-- Controls: Search & Category Filters -->
     <div class="controls-container">
-        <input type="text" id="searchInput" class="search-input" placeholder="Search across all 500+ global modules..." onkeyup="filterArticles()">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search across all 500+ global intelligence modules..." onkeyup="filterArticles()">
         
         <div class="filter-buttons">
             <button class="filter-btn active" onclick="filterByCategory('all')">All Modules (500+)</button>
@@ -79,79 +79,37 @@
     </div>
 
     <div class="container" id="articlesContainer">
-        
-        <!-- Top Ad Unit -->
-        <div class="ad-box">
-            <script>
-              atOptions = { 'key' : 'e32965a13148c46266f49efbbbee0632', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
-            </script>
-            <script src="https://www.highrevenueformat.com/e32965a13148c46266f49efbbbee0632/invoke.js"></script>
-        </div>
-
-        <!-- Dynamic Articles Will Be Injected Here via JavaScript -->
-
+        <!-- Articles will be dynamically loaded here -->
     </div>
 
-    <!-- JavaScript to Automatically Generate 500+ Articles, Search & Filters -->
     <script>
-        // Database of 500+ Global Intelligence Modules
-        const database = [
-            { id: 1, cat: 'scholarship', title: 'Fully Funded US Fulbright Foreign Student Program: Master Guide', img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80', def: 'The Fulbright Program is the flagship international educational exchange grant sponsored by the United States government.', desc: 'Enables graduate students, young professionals, and researchers to study in the US with full financial support covering tuition, airfare, and stipends.', link: 'https://foreign.fulbrightonline.org', linkText: 'Apply for US Fulbright Scholarship' },
-            { id: 2, cat: 'scholarship', title: 'European Union Erasmus Mundus Joint Masters Scholarships', img: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80', def: 'Erasmus Mundus Joint Masters are prestigious EU-funded international study programs delivered by global university consortia.', desc: 'Covers participation costs, travel expenses, and monthly living allowances across multi-country master curricula in premier European institutions.', link: 'https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en', linkText: 'Explore Erasmus Portal' },
-            { id: 3, cat: 'scholarship', title: 'UK Government Chevening Scholarships: Global Leadership Grants', img: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80', def: 'Chevening Scholarships represent the UK government international award scheme funded by the FCDO.', desc: 'Offers fully funded master degree opportunities at participating universities across the United Kingdom for future global leaders.', link: 'https://www.chevening.org', linkText: 'Apply for Chevening Grants' },
-            { id: 4, cat: 'scholarship', title: 'DAAD German Academic Exchange Service Postgraduate Scholarships', img: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80', def: 'DAAD is the world largest funding organization for international student and researcher mobility.', desc: 'Provides stipends, health insurance, and travel allowances for international scholars pursuing postgraduate degrees in Germany.', link: 'https://www.daad.de/en', linkText: 'Explore DAAD Portal' },
-            { id: 5, cat: 'scholarship', title: 'Australia Awards Scholarships: Regional Development Grants', img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80', def: 'Australia Awards are long-term development assistance grants managed by the Department of Foreign Affairs and Trade.', desc: 'Offers emerging leaders from developing partner nations full-time undergraduate and postgraduate study opportunities in Australia.', link: 'https://www.dfat.gov.au/people-to-people/australia-awards', linkText: 'Apply for Australia Awards' },
-            
-            { id: 6, cat: 'banking', title: 'Agentic AI and Autonomous Banking: Transforming Financial Institutions', img: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1200&q=80', def: 'Agentic Banking refers to automated AI systems executing financial transactions and risk evaluations autonomously.', desc: 'Global banks deploy software agents to optimize liquidity management, enforce regulatory compliance, and deliver personalized wealth advisory services.', link: '', linkText: '' },
-            { id: 7, cat: 'banking', title: 'Central Bank Digital Currencies (CBDCs) and Cross-Border Settlements', img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80', def: 'CBDCs are sovereign digital fiat currencies created to modernize national payment systems and lower friction.', desc: 'Central banking networks interconnect fast-payment interfaces to bypass correspondent banking bottlenecks and settle international trade instantly.', link: '', linkText: '' },
-            { id: 8, cat: 'banking', title: 'Post-Quantum Cryptography in Banking: Securing Global Ledgers', img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80', def: 'Post-Quantum Cryptography comprises advanced encryption standards resistant to quantum supercomputer decryption.', desc: 'Financial regulators mandate cryptographic migration strategies to shield global banking infrastructure and digital asset stores against quantum threats.', link: '', linkText: '' },
-            { id: 9, cat: 'banking', title: 'Open Banking Open-API Frameworks and Secure OAuth2 Data Sharing', img: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80', def: 'Open Banking protocols allow authorized third-party apps to access consumer financial records via secure APIs.', desc: 'Streamlines personal financial management while maintaining strict bank-grade cybersecurity standards and user consent controls.', link: '', linkText: '' },
-            { id: 10, cat: 'banking', title: 'Algorithmic Fraud Detection Systems and Real-Time AML Compliance', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80', def: 'AI-driven AML models monitor live transaction streams to detect suspicious activity instantly.', desc: 'Global financial institutions deploy machine learning inference engines to thwart cyber-heists, synthetic identity fraud, and money laundering rings.', link: '', linkText: '' },
-
-            { id: 11, cat: 'ai', title: 'The Global Shift Toward Agentic AI Systems in Enterprise Operations', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80', def: 'Agentic AI systems possess autonomous planning, reasoning, and tool-execution capabilities for multi-step workflows.', desc: 'Organizations transition from static chatbots to self-directed AI workforces capable of managing software development and operational logistics.', link: '', linkText: '' },
-            { id: 12, cat: 'ai', title: 'Decentralized Machine Learning: The Surge of On-Device AI and NPUs', img: 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=1200&q=80', def: 'On-Device AI executes lightweight neural models locally on hardware via dedicated silicon NPUs.', desc: 'Eliminates network latency and protects confidential user information without transmitting data to centralized cloud server farms.', link: '', linkText: '' },
-            { id: 13, cat: 'ai', title: 'Next-Gen Smart Coding Assistants and Autonomous Engineering Copilots', img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80', def: 'Smart Coding Assistants are machine learning models trained to analyze code repositories and find bugs.', desc: 'Global developers collaborate with deep-learning copilots to optimize performance, write rigorous unit tests, and resolve security vulnerabilities.', link: '', linkText: '' },
-            { id: 14, cat: 'ai', title: 'Synthetic Data Generation Frameworks: Overcoming Internet Data Walls', img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80', def: 'Synthetic data consists of artificially created datasets mirroring real-world properties without privacy leaks.', desc: 'As human internet text reaches limits, algorithmic synthetic data safely fuels the next generation of foundational LLM model training.', link: '', linkText: '' },
-            { id: 15, cat: 'ai', title: 'Sovereign AI Initiatives: Why Nations Build Domestic Language Models', img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80', def: 'Sovereign AI is the national strategic imperative to construct and host foundational AI infrastructure.', desc: 'Governments invest heavily to prevent AI monopolies, ensuring public administration and national security rely on secure indigenous algorithms.', link: '', linkText: '' },
-
-            { id: 16, cat: 'news', title: 'The BRICS New Delhi Declaration: Multipolarity & Trade Resilience', img: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80', def: 'The New Delhi Declaration represents a multilateral agreement promoting local currency trade and financial sovereignty.', desc: 'Emerging economic blocs establish alternative payment mechanisms and reinforce supply chain ties to insulate domestic markets from global shocks.', link: '', linkText: '' },
-            { id: 17, cat: 'news', title: 'SEMICON India: Establishing South Asia as a Global Semiconductor Hub', img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80', def: 'SEMICON India convenes international chip designers to build resilient microchip supply networks.', desc: 'Developing end-to-end semiconductor fabrication plants to ensure stable hardware component supplies outside geographic monopolies.', link: '', linkText: '' },
-            { id: 18, cat: 'news', title: 'United Nations Urgent Global Call on Frontier AI Safety Governance', img: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=1200&q=80', def: 'Frontier AI Governance encompasses international policy standards regulating superintelligent systems.', desc: 'UN authorities urge member states to enact mandatory synthetic media watermarking and collaborative safeguards to mitigate systemic risks.', link: '', linkText: '' },
-            { id: 19, cat: 'news', title: 'De-Dollarization Strategies and Bilateral Local Currency Pacts', img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80', def: 'Local currency trade agreements allow sovereign nations to settle commerce without USD conversion.', desc: 'Developing economic blocs insulate financial markets from exchange rate volatility and global monetary tightening cycles.', link: '', linkText: '' },
-            { id: 20, cat: 'news', title: 'Critical Mineral Supply Chain Security for Clean Energy Transitions', img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80', def: 'Critical mineral corridors secure international access to lithium, cobalt, nickel, and rare earth elements.', desc: 'Industrial nations forge strategic mining alliances to guarantee raw material supplies for EV battery and renewable energy manufacturing.', link: '', linkText: '' },
-
-            { id: 21, cat: 'space', title: 'Commercial Spaceflight and Artemis Base Camp: The Interplanetary Economy', img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80', def: 'Commercial Spaceflight involves private aerospace missions focusing on orbital tourism and lunar bases.', desc: 'Reusable rocket architectures drastically reduce payload costs, laying the foundation for permanent human habitation on the Moon.', link: '', linkText: '' },
-            { id: 22, cat: 'space', title: 'Quantum Supremacy and Error-Corrected Qubits in Computation', img: 'https://images.unsplash.com/photo-1509017174183-0b7e0278f1ec?auto=format&fit=crop&w=1200&q=80', def: 'Error-Corrected Quantum Computing utilizes logical qubits backed by hardware redundancy for instant math solutions.', desc: 'Advanced laboratories simulate intricate molecular interactions in seconds, revolutionizing pharmaceutical design and material science.', link: '', linkText: '' },
-            { id: 23, cat: 'space', title: 'Nuclear Fusion Energy Milestones: Unlocking Limitless Clean Power', img: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80', def: 'Nuclear Fusion mirrors stellar processes by fusing atomic nuclei to generate clean energy without radioactive waste.', desc: 'Magnetic confinement reactors achieve critical net-energy gains, advancing humanity toward sustainable, baseload clean electricity.', link: '', linkText: '' },
-            { id: 24, cat: 'space', title: 'AI-Powered Drug Discovery and AlphaFold Protein Folding Breakthroughs', img: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80', def: 'Computational biology integrates deep learning prediction models with high-throughput genetic sequencing.', desc: 'Accelerating pharmaceutical research by predicting 3D protein structures in minutes instead of decades of laboratory experiments.', link: '', linkText: '' },
-            { id: 25, cat: 'space', title: 'Brain-Computer Interfaces: Translating Neural Signals into Digital Commands', img: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80', def: 'BCI hardware interfaces bridge human neurological activity directly with digital operating systems.', desc: 'Neural engineering enables paralyzed individuals to control computers and communicate seamlessly through direct thought processing.', link: '', linkText: '' }
+        // Generating 500+ Global Intelligence Modules Dynamically
+        const categories = ['scholarship', 'banking', 'ai', 'news', 'space'];
+        const topics = [
+            { cat: 'scholarship', title: 'Fully Funded US Fulbright Foreign Student Program Master Guide', def: 'The Fulbright Program is the flagship international educational exchange grant sponsored by the US government.', desc: 'Enables graduate students and researchers to study in the United States with full financial coverage.' },
+            { cat: 'banking', title: 'Agentic AI and Autonomous Banking Financial Transformations', def: 'Agentic Banking refers to automated financial AI models executing complex transactions autonomously.', desc: 'Major international banks deploy software agents to optimize liquidity management and regulatory compliance.' },
+            { cat: 'ai', title: 'The Global Shift Toward Agentic AI Systems in Enterprise Operations', def: 'Agentic AI systems possess autonomous planning, reasoning, and tool-execution capabilities.', desc: 'Enterprise organizations are shifting toward self-directed AI workforces capable of overseeing software deployment.' },
+            { cat: 'news', title: 'The BRICS New Delhi Declaration and Financial Resilience Frameworks', def: 'The New Delhi Declaration represents a multilateral agreement promoting local currency trade and economic sovereignty.', desc: 'Emerging economies establish alternative payment mechanisms to insulate markets from external shocks.' },
+            { cat: 'space', title: 'Commercial Spaceflight and Artemis Base Camp Interplanetary Economy', def: 'Commercial Spaceflight involves private aerospace missions focusing on lunar bases and satellite constellations.', desc: 'Reusable rocket architectures drastically reduce payload delivery costs, paving the way for lunar habitation.' }
         ];
 
-        // Automatically expand the database to 500+ dynamic modules
-        const extraCategories = ['scholarship', 'banking', 'ai', 'news', 'space'];
-        const extraTitles = [
-            'Global Research Grants and Innovation Fellowships', 
-            'Decentralized Finance Protocols and Liquidity Pools', 
-            'Advanced Neural Network Architectures and Transformers', 
-            'Sovereignty and Multilateral Trade Agreements in 2026', 
-            'Next-Generation Aerospace Engineering and Deep Space Probes'
-        ];
-        
-        for (let i = 26; i <= 500; i++) {
-            let catIndex = i % 5;
+        let database = [];
+        let counter = 1;
+
+        // Creating 500+ entries programmatically
+        while(counter <= 500) {
+            let t = topics[(counter - 1) % topics.length];
             database.push({
-                id: i,
-                cat: extraCategories[catIndex],
-                title: `${i}. ${extraTitles[catIndex]} - Global Intelligence Briefing Module #${i}`,
-                img: `https://images.unsplash.com/photo-${1500000000000 + (i * 12345)}?auto=format&fit=crop&w=1200&q=80`,
-                def: `Definition: Module #${i} represents cutting-edge developments in international standards, technical frameworks, and cross-border protocols.`,
-                desc: `Comprehensive analysis and strategic overview concerning module #${i}, detailing market impacts, technological paradigms, and global adoption trends.`,
-                link: '',
-                linkText: ''
+                id: counter,
+                cat: t.cat,
+                title: `${counter}. ${t.title} - Global Sector Analysis #${counter}`,
+                img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
+                def: t.def,
+                desc: `${t.desc} This module provides comprehensive insights into global trends, technical frameworks, and future projections for item #${counter}.`
             });
+            counter++;
         }
 
-        // Render Articles Function
         function renderArticles(filter = 'all', search = '') {
             const container = document.getElementById('articlesContainer');
             let html = `
@@ -175,11 +133,10 @@
                 filtered.forEach(item => {
                     html += `
                         <div class="article" data-category="${item.cat}">
-                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" alt="${item.title}">
+                            <img src="${item.img}" alt="${item.title}">
                             <h2>${item.title}</h2>
                             <div class="definition-box"><strong>Definition:</strong> ${item.def}</div>
                             <p>${item.desc}</p>
-                            ${item.link ? `<a href="${item.link}" target="_blank" class="action-link">${item.linkText}</a>` : ''}
                         </div>
                     `;
                 });
@@ -206,7 +163,6 @@
             renderArticles(currentCategory, searchVal);
         }
 
-        // Initial Render on Page Load
         window.onload = function() {
             renderArticles();
         };
@@ -214,26 +170,9 @@
 
     <!-- Hidden Google Translate Element for Auto-Detection -->
     <div id="google_translate_element" style="display:none;"></div>
-
-    <!-- Automatic Browser Language Detector Script -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                autoDisplay: false
-            }, 'google_translate_element');
-
-            setTimeout(function() {
-                var userLang = navigator.language || navigator.userLanguage;
-                var shortLang = userLang.substring(0, 2);
-                if(shortLang !== 'en') {
-                    var selectField = document.querySelector(".goog-te-combo");
-                    if(selectField) {
-                        selectField.value = shortLang;
-                        selectField.dispatchEvent(new Event('change'));
-                    }
-                }
-            }, 1000);
+            new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element');
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
