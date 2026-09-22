@@ -15,26 +15,36 @@
     <style>
         * { box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #1e293b; margin: 0; padding: 0; line-height: 1.8; }
-        header { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 2rem 1rem; text-align: center; }
-        header h1 { margin: 0; font-size: 2rem; color: #4f46e5; }
-        header p { margin: 0.5rem 0 0; color: #64748b; font-size: 0.95rem; }
-        nav { background-color: #1e293b; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; padding: 0.8rem; }
-        nav a { color: #f8fafc; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        header { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 2.5rem 1rem; text-align: center; }
+        header h1 { margin: 0; font-size: 2.2rem; color: #4f46e5; }
+        header p { margin: 0.5rem 0 0; color: #64748b; font-size: 1rem; }
+        nav { background-color: #1e293b; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; padding: 0.9rem; }
+        nav a { color: #f8fafc; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
         nav a:hover { color: #818cf8; }
-        .container { max-width: 700px; margin: 3rem auto; padding: 0 1.5rem; }
-        .contact-card { background: #ffffff; border: 1px solid #e2e8f0; padding: 2.5rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        
+        .container { max-width: 750px; margin: 3rem auto; padding: 0 1.5rem; }
+        .contact-card { background: #ffffff; border: 1px solid #e2e8f0; padding: 2.5rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
         .contact-card h2 { color: #0f172a; margin-top: 0; font-size: 1.8rem; }
         .contact-card p { color: #475569; font-size: 1.05rem; margin-bottom: 1.5rem; }
-        .email-btn { display: inline-block; background: #4f46e5; color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-size: 1rem; font-weight: 600; margin-top: 1rem; }
-        .email-btn:hover { background: #4338ca; }
-        footer { text-align: center; padding: 2rem 1rem; background-color: #1e293b; color: #94a3b8; font-size: 0.85rem; margin-top: 5rem; }
+        
+        .contact-section { margin: 1.8rem 0; padding: 1rem; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .contact-section h3 { margin: 0 0 0.5rem 0; font-size: 1.1rem; color: #1e293b; }
+        
+        .btn { display: inline-block; background: #4f46e5; color: white; padding: 0.75rem 1.8rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; font-weight: 600; margin-top: 0.5rem; transition: background 0.2s; }
+        .btn:hover { background: #4338ca; }
+        
+        .social-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+        .social-btn { display: inline-block; background: #0f172a; color: white; padding: 0.6rem 1.4rem; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+        .social-btn:hover { background: #334155; }
+
+        footer { text-align: center; padding: 2.5rem 1rem; background-color: #1e293b; color: #94a3b8; font-size: 0.9rem; margin-top: 5rem; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>INKSPIRE</h1>
-        <p>Get in Touch with Our Support Team</p>
+        <p>Get in Touch with Our Global Support & Official Channels</p>
     </header>
 
     <nav>
@@ -47,11 +57,39 @@
     <div class="container">
         <div class="contact-card">
             <h2>Contact Us</h2>
-            <p>Have questions regarding scholarships, tech content, partnerships, or need support? Reach out to our official support desk anytime.</p>
-            <p><strong>Email Support:</strong></p>
-            <a href="mailto:inkspiresupporteng@gmail.com" class="email-btn">inkspiresupporteng@gmail.com</a>
+            <p>Have inquiries regarding global scholarships, technology insights, partnerships, or technical support? Reach out through our official desk or connect via social handles below.</p>
+            
+            <!-- Email Support Section -->
+            <div class="contact-section">
+                <h3>Official Support Email</h3>
+                <p style="margin-bottom: 0.5rem; color: #64748b;">For formal inquiries and support tickets:</p>
+                <a href="mailto:inkspiresupporteng@gmail.com" class="btn">inkspiresupporteng@gmail.com</a>
+            </div>
+
+            <!-- Social Media Handles Section -->
+            <div class="contact-section">
+                <h3>Official Social Handles</h3>
+                <p style="margin-bottom: 0.8rem; color: #64748b;">Follow and connect with us on our verified platforms:</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/inkspire.8s?stkn=MWJmODE4NjVxOWZlZw==" target="_blank" class="social-btn">Instagram (@inkspire.8s)</a>
+                    <a href="https://x.com/kavinmusic13" target="_blank" class="social-btn">X / Twitter (@kavinmusic13)</a>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Hidden Google Translate Element for Auto-Detection -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <footer>
         <p>&copy; 2026 INKSPIRE. All rights reserved. Empowering Global Creators, Scholars and Innovators Worldwide.</p>
