@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INKSPIRE - Global Intelligence Hub (Modules 31-40)</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+        }
+        header { 
+            background-color: var(--card-bg); 
+            border-bottom: 1px solid var(--border-color); 
+            padding: 2.5rem 1rem; 
+            text-align: center; 
+            margin-bottom: 2rem; 
+        }
+        header h1 { margin: 0; font-size: 2rem; color: var(--primary); letter-spacing: -0.5px; }
+        header p { margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.95rem; }
+        .container { width: 100%; max-width: 650px; margin: 0 auto; padding: 0 1rem; }
+        .search-box {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-size: 0.95rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            outline: none;
+            background: #fff;
+            transition: all 0.2s;
+        }
+        .search-box:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        .article { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 12px; 
+            margin-bottom: 1.5rem; 
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .article:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+        }
+        .article img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .article-content {
+            padding: 1.5rem;
+        }
+        .article h2 { 
+            font-size: 1.15rem; 
+            color: #0f172a; 
+            margin-top: 0; 
+            margin-bottom: 0.7rem; 
+            line-height: 1.4;
+        }
+        .definition-box { 
+            background: #f1f5f9; 
+            border-left: 4px solid var(--primary); 
+            padding: 0.75rem 1rem; 
+            margin: 0.8rem 0; 
+            font-size: 0.9rem; 
+            color: #334155; 
+            border-radius: 0 6px 6px 0; 
+        }
+        .article p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+        .cat-tag { 
+            display: inline-block; 
+            font-size: 0.7rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            background: #e0e7ff; 
+            color: var(--primary-dark); 
+            padding: 3px 8px; 
+            border-radius: 4px; 
+            margin-bottom: 0.6rem; 
+        }
+        /* Pagination Styling */
+        .pagination { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 8px; 
+            margin: 3rem 0; 
+        }
+        .pagination a { 
+            padding: 8px 14px; 
+            background: #fff; 
+            border: 1px solid var(--border-color); 
+            color: var(--primary); 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            transition: all 0.2s;
+        }
+        .pagination a.active { 
+            background: var(--primary); 
+            color: #fff; 
+            border-color: var(--primary); 
+        }
+        .pagination a:hover:not(.active) {
+            background: #f1f5f9;
+        }
+        footer { 
+            text-align: center; 
+            padding: 2.5rem 1rem; 
+            background-color: #1e293b; 
+            color: #94a3b8; 
+            font-size: 0.85rem; 
+            margin-top: 4rem; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>INKSPIRE HUB</h1>
+        <p>Global Intelligence & Deep-Tech Modules (Modules 31 - 40)</p>
+    </header>
+
+    <div class="container">
+        <!-- Search Filter Input -->
+        <input type="text" id="searchInput" class="search-box" placeholder="Search modules 31-40..." onkeyup="filterModules()">
+
+        <div id="modulesContainer">
+            <!-- Module 31 -->
+            <div class="article" data-title="31 quantum cryptography quantum key distribution qkd network security">
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80" alt="Quantum Cryptography">
+                <div class="article-content">
+                    <span class="cat-tag">Quantum Security</span>
+                    <h2>31. Quantum Cryptography, Key Distribution & Unhackable Networks</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Utilizing quantum mechanical principles to transmit cryptographic keys that instantly reveal any unauthorized interception attempt.</div>
+                    <p>Financial institutions and defense networks deploy quantum key distribution (QKD) channels to secure data against future decryption threats.</p>
+                </div>
+            </div>
+
+            <!-- Module 32 -->
+            <div class="article" data-title="32 autonomous agriculture precision farming agritech smart irrigation">
+                <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=800&q=80" alt="Precision Agriculture">
+                <div class="article-content">
+                    <span class="cat-tag">AgriTech</span>
+                    <h2>32. Autonomous Agriculture, Precision Farming & Smart Irrigation Systems</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> AI-guided agricultural machinery and soil moisture sensors optimizing fertilizer and water usage down to the centimeter.</div>
+                    <p>Modern agritech operations utilize drone multispectral imaging to track crop health, predict yield outputs, and minimize ecological run-off.</p>
+                </div>
+            </div>
+
+            <!-- Module 33 -->
+            <div class="article" data-title="33 human augmentation exoskeleton neural prosthetics bionic limbs">
+                <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80" alt="Human Augmentation">
+                <div class="article-content">
+                    <span class="cat-tag">Human Augmentation</span>
+                    <h2>33. Robotic Exoskeletons, Neural Prosthetics & Physical Augmentation</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Powered wearable frames and neural-linked prosthetic limbs designed to restore or enhance human mobility and strength.</div>
+                    <p>Industrial workers and rehabilitation centers integrate powered exoskeletons to reduce physical strain and assist individuals with severe mobility impairments.</p>
+                </div>
+            </div>
+
+            <!-- Module 34 -->
+            <div class="article" data-title="34 decentralized autonomous organizations dao governance web3 management">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="DAOs">
+                <div class="article-content">
+                    <span class="cat-tag">Web3 Governance</span>
+                    <h2>34. Decentralized Autonomous Organizations & Token-Based Governance</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Flat organizational structures managed by transparent smart contracts and decentralized community voting mechanisms.</div>
+                    <p>Global contributor networks use DAO frameworks to pool capital, allocate project grants, and execute collaborative development initiatives securely.</p>
+                </div>
+            </div>
+
+            <!-- Module 35 -->
+            <div class="article" data-title="35 deep sea mining marine mineral extraction environmental impact tech">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Deep Sea Exploration">
+                <div class="article-content">
+                    <span class="cat-tag">Resource Extraction</span>
+                    <h2>35. Deep-Sea Mineral Extraction, Polymetallic Nodules & Ecosystem Ethics</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Harvesting critical battery metals like cobalt and nickel from abyssal plains while balancing marine conservation obligations.</div>
+                    <p>International seabed authorities establish strict environmental monitoring standards to evaluate the ecological trade-offs of deep-sea resource collection.</p>
+                </div>
+            </div>
+
+            <!-- Module 36 -->
+            <div class="article" data-title="36 cognitive architectures artificial general intelligence agi reasoning models">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80" alt="Cognitive Architectures">
+                <div class="article-content">
+                    <span class="cat-tag">Advanced AI</span>
+                    <h2>36. Cognitive Architectures, Synthetic Reasoning & Multi-Step Logic</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Shifting from pattern recognition to multi-step logical deduction, self-correction, and long-term planning frameworks in AI.</div>
+                    <p>Research labs develop unified cognitive models capable of learning new domains autonomously with minimal human prompt intervention.</p>
+                </div>
+            </div>
+
+            <!-- Module 37 -->
+            <div class="article" data-title="37 smart packaging RFID active packaging supply chain integrity">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Smart Packaging">
+                <div class="article-content">
+                    <span class="cat-tag">Supply Chain Tech</span>
+                    <h2>37. Intelligent Packaging, RFID Sensors & Product Authenticity Tracking</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Embedded micro-sensors tracking temperature variations, freshness expiration, and supply chain tampering in real time.</div>
+                    <p>Pharmaceutical and luxury goods sectors utilize smart packaging identifiers to eliminate counterfeit circulation and verify product lineage.</p>
+                </div>
+            </div>
+
+            <!-- Module 38 -->
+            <div class="article" data-title="38 ambient computing invisible technology smart environments iot integration">
+                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=800&q=80" alt="Ambient Computing">
+                <div class="article-content">
+                    <span class="cat-tag">Ambient Tech</span>
+                    <h2>38. Ambient Computing, Invisible Interfaces & Context-Aware Environments</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Seamlessly embedding computing capabilities into physical surroundings so technology reacts intuitively without active manual input.</div>
+                    <p>Smart living spaces integrate multi-modal sensors that adjust lighting, climate, and acoustic parameters based on occupant habits.</p>
+                </div>
+            </div>
+
+            <!-- Module 39 -->
+            <div class="article" data-title="39 nanotechnology molecular manufacturing medical nanobots targeted therapy">
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" alt="Nanotechnology">
+                <div class="article-content">
+                    <span class="cat-tag">Nanotech</span>
+                    <h2>39. Molecular Nanotechnology, Targeted Nanobots & Cellular Repair</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Engineering nanoscale molecular machines capable of repairing damaged cells and delivering drugs to precise biological targets.</div>
+                    <p>Oncology researchers pioneer programmable nanoparticles designed to seek out malignant tumor cells and release therapeutics locally.</p>
+                </div>
+            </div>
+
+            <!-- Module 40 -->
+            <div class="article" data-title="40 global telecommunications satellite mega constellations 6g networks">
+                <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=800&q=80" alt="Global Telecommunications">
+                <div class="article-content">
+                    <span class="cat-tag">Telecom</span>
+                    <h2>40. Satellite Mega-Constellations & Next-Gen 6G Terahertz Networks</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Low-earth orbit satellite grids combined with terahertz wireless frequencies delivering ultra-low latency global connectivity.</div>
+                    <p>Telecommunication pioneers build hybrid terrestrial-orbital communication backbones to bridge digital divides in isolated geographical territories.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination Links -->
+        <div class="pagination">
+            <a href="page3.html">&laquo; Prev</a>
+            <a href="index.html">1</a>
+            <a href="page2.html">2</a>
+            <a href="page3.html">3</a>
+            <a href="page4.html" class="active">4</a>
+            <a href="page5.html">Next &raquo;</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 INKSPIRE. All Rights Reserved. Modules 31-40 Compilation.</p>
+    </footer>
+
+    <script>
+        function filterModules() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let articles = document.getElementsByClassName('article');
+            for (let i = 0; i < articles.length; i++) {
+                let title = articles[i].getAttribute('data-title') || articles[i].innerText.toLowerCase();
+                articles[i].style.display = title.includes(input) ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
