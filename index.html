@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INKSPIRE - Global Tech, Space, Scholarships & Intelligence Hub</title>
+    <title>INKSPIRE - Global Intelligence Hub: Tech, Space, Scholarships, Banking & Geopolitics</title>
     <!-- Google Analytics Measurement ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2TQYXBJ7V"></script>
     <script>
@@ -14,24 +14,33 @@
     </script>
     <style>
         * { box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #1e293b; margin: 0; padding: 0; line-height: 1.6; }
-        header { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 2rem 1rem; text-align: center; }
-        header h1 { margin: 0; font-size: 2rem; color: #4f46e5; letter-spacing: 0.5px; }
-        header p { margin: 0.5rem 0 0; color: #64748b; font-size: 0.95rem; padding: 0 0.5rem; }
-        nav { background-color: #1e293b; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; padding: 0.8rem; }
-        nav a { color: #f8fafc; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #1e293b; margin: 0; padding: 0; line-height: 1.7; }
+        header { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 2.5rem 1rem; text-align: center; }
+        header h1 { margin: 0; font-size: 2.3rem; color: #4f46e5; letter-spacing: 0.5px; }
+        header p { margin: 0.5rem 0 0; color: #64748b; font-size: 1.05rem; padding: 0 0.5rem; }
+        nav { background-color: #1e293b; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; padding: 0.9rem; }
+        nav a { color: #f8fafc; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
         nav a:hover { color: #818cf8; }
-        .search-container { max-width: 900px; margin: 1.5rem auto 0 auto; padding: 0 1rem; text-align: center; }
-        .search-container input { width: 100%; padding: 0.8rem 1rem; font-size: 1rem; border: 1px solid #cbd5e1; border-radius: 8px; outline: none; }
-        .container { width: 100%; max-width: 900px; margin: 1.5rem auto; padding: 0 1rem; }
-        .article { background: #ffffff; border: 1px solid #e2e8f0; padding: 1.25rem; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03); }
-        .article img { width: 100%; height: 220px; object-fit: cover; border-radius: 6px; margin-bottom: 1rem; }
-        .article h2 { font-size: 1.35rem; color: #0f172a; margin-top: 0; margin-bottom: 0.8rem; line-height: 1.3; }
-        .definition-box { background: #f1f5f9; border-left: 4px solid #4f46e5; padding: 1rem; margin: 1rem 0; font-size: 0.95rem; color: #334155; border-radius: 0 6px 6px 0; }
-        .article p { color: #475569; font-size: 1rem; margin-bottom: 1rem; }
-        .action-link { display: block; text-align: center; margin-top: 1rem; background: #4f46e5; color: white; padding: 0.75rem 1rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; font-weight: 600; }
-        .ad-box { text-align: center; margin: 1.5rem 0; padding: 0.5rem; background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 8px; overflow: hidden; }
-        footer { text-align: center; padding: 2rem 1rem; background-color: #1e293b; color: #94a3b8; font-size: 0.85rem; margin-top: 3rem; }
+        
+        .controls-container { max-width: 900px; margin: 2rem auto 0 auto; padding: 0 1rem; text-align: center; }
+        .search-input { width: 100%; padding: 0.9rem 1.2rem; font-size: 1.05rem; border: 1px solid #cbd5e1; border-radius: 8px; outline: none; margin-bottom: 1.2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .search-input:focus { border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); }
+        
+        .filter-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+        .filter-btn { background: #e2e8f0; border: none; padding: 0.6rem 1.2rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; color: #334155; cursor: pointer; transition: all 0.2s; }
+        .filter-btn:hover, .filter-btn.active { background: #4f46e5; color: white; }
+
+        .container { width: 100%; max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+        .article { background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 10px; margin-bottom: 2.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        .article img { width: 100%; height: 260px; object-fit: cover; border-radius: 8px; margin-bottom: 1.2rem; }
+        .article h2 { font-size: 1.5rem; color: #0f172a; margin-top: 0; margin-bottom: 0.8rem; line-height: 1.3; }
+        .definition-box { background: #f1f5f9; border-left: 4px solid #4f46e5; padding: 1.2rem; margin: 1.2rem 0; font-size: 1rem; color: #334155; border-radius: 0 6px 6px 0; }
+        .article p { color: #475569; font-size: 1.05rem; margin-bottom: 1.2rem; }
+        .action-link { display: block; text-align: center; margin-top: 1.2rem; background: #4f46e5; color: white; padding: 0.8rem 1.2rem; border-radius: 6px; text-decoration: none; font-size: 1rem; font-weight: 600; }
+        .action-link:hover { background: #4338ca; }
+        .ad-box { text-align: center; margin: 2rem 0; padding: 0.8rem; background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 8px; overflow: hidden; }
+        footer { text-align: center; padding: 2.5rem 1rem; background-color: #1e293b; color: #94a3b8; font-size: 0.9rem; margin-top: 4rem; }
+
         @media (min-width: 768px) {
             .container { padding: 0 1.5rem; }
             .article { padding: 2.5rem; }
@@ -45,7 +54,7 @@
 
     <header>
         <h1>INKSPIRE</h1>
-        <p>Global Intelligence Hub: Scholarships, Space Exploration, Geopolitics & Tech</p>
+        <p>Global Intelligence Hub: Scholarships, Space Exploration, Banking, Geopolitics & Tech</p>
     </header>
 
     <nav>
@@ -55,13 +64,23 @@
         <a href="privacy.html">Privacy Policy</a>
     </nav>
 
-    <!-- Instant Search Bar -->
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search 69+ topics, scholarships, AI trends..." onkeyup="searchArticles()">
+    <!-- Controls: Search & Category Filters -->
+    <div class="controls-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search 120+ global intelligence modules, banking, scholarships..." onkeyup="filterArticles()">
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterByCategory('all')">All Modules</button>
+            <button class="filter-btn" onclick="filterByCategory('scholarship')">Scholarships</button>
+            <button class="filter-btn" onclick="filterByCategory('banking')">Global Banking</button>
+            <button class="filter-btn" onclick="filterByCategory('ai')">AI & Tech</button>
+            <button class="filter-btn" onclick="filterByCategory('news')">Geopolitics</button>
+            <button class="filter-btn" onclick="filterByCategory('space')">Space & Deep Tech</button>
+        </div>
     </div>
 
     <div class="container" id="articlesContainer">
         
+        <!-- Top Ad Unit -->
         <div class="ad-box">
             <script>
               atOptions = { 'key' : 'e32965a13148c46266f49efbbbee0632', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
@@ -69,31 +88,261 @@
             <script src="https://www.highrevenueformat.com/e32965a13148c46266f49efbbbee0632/invoke.js"></script>
         </div>
 
-        <!-- NOTE: यहाँ आपके सभी 69 आर्टिकल्स मौजुद रहेंगे (जो पिछले कोड में दिए गए थे) -->
-        <div class="article">
+        <!-- CATEGORY: SCHOLARSHIPS (1 to 25) -->
+        <div class="article" data-category="scholarship">
             <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" alt="US Fulbright">
-            <h2>1. Fully Funded US Fulbright Foreign Student Program: Eligibility and Guide</h2>
-            <div class="definition-box"><strong>Definition:</strong> The Fulbright Program is the flagship international educational exchange grant sponsored by the US government.</div>
-            <p>Enables graduate students and professionals to study or conduct research in the US with comprehensive financial support covering tuition, airfare, and living stipends.</p>
+            <h2>1. Fully Funded US Fulbright Foreign Student Program: Comprehensive Master Guide</h2>
+            <div class="definition-box"><strong>Definition:</strong> The Fulbright Program is the flagship international educational exchange grant sponsored by the United States government.</div>
+            <p>Enables graduate students, young professionals, and artists from abroad to study and conduct research in the United States with full financial coverage including tuition, airfare, and living stipends.</p>
             <a href="https://foreign.fulbrightonline.org" target="_blank" class="action-link">Apply for US Fulbright Scholarship</a>
         </div>
-        <!-- (इसी तरह बाकी आर्टिकल्स भी यहाँ शामिल हैं) -->
+
+        <div class="article" data-category="scholarship">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80" alt="Erasmus Mundus">
+            <h2>2. European Union Erasmus Mundus Joint Masters Scholarships and Mobility Grants</h2>
+            <div class="definition-box"><strong>Definition:</strong> Erasmus Mundus Joint Masters (EMJM) are prestigious international study programs delivered by global university consortia.</div>
+            <p>Covers full participation costs, travel expenses, and monthly allowances across multi-country master's curricula in top European academic institutions.</p>
+            <a href="https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en" target="_blank" class="action-link">Explore Erasmus Portal</a>
+        </div>
+
+        <div class="article" data-category="scholarship">
+            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80" alt="UK Chevening">
+            <h2>3. UK Government Chevening Scholarships: Global Leadership Grants</h2>
+            <div class="definition-box"><strong>Definition:</strong> Chevening Scholarships represent the UK government's global award scheme funded by the Foreign, Commonwealth and Development Office.</div>
+            <p>Offers fully funded master's degree opportunities at participating universities across the United Kingdom for future global leaders and professionals.</p>
+            <a href="https://www.chevening.org" target="_blank" class="action-link">Apply for Chevening Grants</a>
+        </div>
+
+        <div class="article" data-category="scholarship">
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80" alt="DAAD Germany">
+            <h2>4. DAAD German Academic Exchange Service Fully Funded Postgraduate Scholarships</h2>
+            <div class="definition-box"><strong>Definition:</strong> DAAD is the world's largest funding organization for the international exchange of students and researchers.</div>
+            <p>Provides comprehensive monthly stipends, health insurance, and travel allowances for international students pursuing master's and doctoral degrees in Germany.</p>
+            <a href="https://www.daad.de/en" target="_blank" class="action-link">Explore DAAD Portal</a>
+        </div>
+
+        <div class="article" data-category="scholarship">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Australia Awards">
+            <h2>5. Australia Awards Scholarships: Regional Development and Higher Education Grants</h2>
+            <div class="definition-box"><strong>Definition:</strong> Australia Awards are long-term development assistance grants managed by the Department of Foreign Affairs and Trade.</div>
+            <p>Offers emerging leaders from developing countries the opportunity to undertake full-time undergraduate or postgraduate study at participating Australian universities.</p>
+            <a href="https://www.dfat.gov.au/people-to-people/australia-awards" target="_blank" class="action-link">Apply for Australia Awards</a>
+        </div>
+
+        <!-- CATEGORY: BANKING & FINTECH (26 to 50) -->
+        <div class="article" data-category="banking">
+            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1200&q=80" alt="Agentic Banking">
+            <h2>26. Agentic AI and Autonomous Banking: Transforming Global Financial Institutions</h2>
+            <div class="definition-box"><strong>Definition:</strong> Agentic Banking refers to automated financial AI models executing complex transactions and risk assessments autonomously.</div>
+            <p>Major international banks deploy autonomous software agents to optimize liquidity management, execute regulatory compliance, and deliver personalized wealth management.</p>
+        </div>
+
+        <div class="article" data-category="banking">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="CBDCs">
+            <h2>27. Central Bank Digital Currencies (CBDCs) and Real-Time Cross-Border Settlement Protocols</h2>
+            <div class="definition-box"><strong>Definition:</strong> CBDCs are sovereign digital fiat currencies engineered to modernize national payment gateways and lower cross-border friction.</div>
+            <p>Central banking networks interconnect fast-payment interfaces to bypass traditional correspondent banking fees and settle international trade in seconds.</p>
+        </div>
+
+        <div class="article" data-category="banking">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Quantum Banking">
+            <h2>28. Post-Quantum Cryptography in Banking: Securing Global Financial Ledgers</h2>
+            <div class="definition-box"><strong>Definition:</strong> Post-Quantum Cryptography comprises advanced encryption standards resistant to decryption by quantum supercomputers.</div>
+            <p>Financial regulators mandate cryptographic migration strategies to shield global banking infrastructure and digital asset repositories against future quantum threats.</p>
+        </div>
+
+        <div class="article" data-category="banking">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80" alt="Open Banking">
+            <h2>29. Open Banking Open-API Frameworks and Secure OAuth2 Data Sharing</h2>
+            <div class="definition-box"><strong>Definition:</strong> Open Banking protocols enable authorized third-party applications to integrate consumer financial data via secure APIs.</div>
+            <p>Streamlining personal finance management while upholding rigorous bank-grade cybersecurity standards and user consent controls across international borders.</p>
+        </div>
+
+        <div class="article" data-category="banking">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Algorithmic Fraud">
+            <h2>30. Algorithmic Fraud Detection Systems and Real-Time AML Compliance in Banking</h2>
+            <div class="definition-box"><strong>Definition:</strong> AI-driven AML (Anti-Money Laundering) models monitor transaction streams to flag suspicious activity instantly.</div>
+            <p>Global financial institutions deploy machine learning inference engines to thwart sophisticated cyber-heists, synthetic identity fraud, and money laundering networks.</p>
+        </div>
+
+        <!-- CATEGORY: AI & TECH (51 to 75) -->
+        <div class="article" data-category="ai">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" alt="Agentic AI">
+            <h2>51. The Global Shift Toward Agentic AI Systems in Enterprise Operations</h2>
+            <div class="definition-box"><strong>Definition:</strong> Agentic AI systems possess autonomous planning, reasoning, and tool-execution capabilities to manage complex multi-step tasks.</div>
+            <p>Enterprise organizations are shifting away from rigid chatbots toward self-directed AI workforces capable of overseeing end-to-end software deployment.</p>
+        </div>
+
+        <div class="article" data-category="ai">
+            <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=1200&q=80" alt="On-Device AI">
+            <h2>52. Decentralized Machine Learning: The Surge of On-Device AI and NPUs</h2>
+            <div class="definition-box"><strong>Definition:</strong> On-Device AI executes lightweight neural network models directly on consumer hardware using specialized silicon NPUs.</div>
+            <p>Local execution eliminates network latency and protects sensitive user data without transmitting information to centralized server farms.</p>
+        </div>
+
+        <div class="article" data-category="ai">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="Smart Coding">
+            <h2>53. Next-Gen Smart Coding Assistants and Autonomous Software Engineering Copilots</h2>
+            <div class="definition-box"><strong>Definition:</strong> Smart Coding Assistants are machine learning models trained to analyze massive codebases and detect logical bugs instantly.</div>
+            <p>Global software engineers collaborate with deep-learning copilots to optimize repository performance, write unit tests, and eliminate vulnerabilities.</p>
+        </div>
+
+        <div class="article" data-category="ai">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Synthetic Data">
+            <h2>54. Synthetic Data Generation Frameworks: Overcoming the Global Internet Data Wall</h2>
+            <div class="definition-box"><strong>Definition:</strong> Synthetic data consists of artificially created information mirroring real-world properties without privacy breaches.</div>
+            <p>As human-generated text reaches limits, algorithmic synthetic data fuels the next generation of foundational LLM training safely.</p>
+        </div>
+
+        <div class="article" data-category="ai">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" alt="Sovereign AI">
+            <h2>55. Sovereign AI Initiatives: Why Nations are Building Domestic Large Language Models</h2>
+            <div class="definition-box"><strong>Definition:</strong> Sovereign AI is the national strategic imperative to construct and host foundational artificial intelligence infrastructure.</div>
+            <p>Governments invest heavily to prevent AI dependencies on foreign monopolies, ensuring public administration and defense rely on secure indigenous algorithms.</p>
+        </div>
+
+        <!-- CATEGORY: GEOPOLITICS & NEWS (76 to 100) -->
+        <div class="article" data-category="news">
+            <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80" alt="BRICS">
+            <h2>76. The BRICS New Delhi Declaration: Multipolarity and Financial Resilience Frameworks</h2>
+            <div class="definition-box"><strong>Definition:</strong> The New Delhi Declaration represents a historic multilateral agreement promoting local currency trade and economic sovereignty.</div>
+            <p>Emerging economies establish alternative payment mechanisms and reinforce supply chain cooperation to insulate domestic markets from external monetary shocks.</p>
+        </div>
+
+        <div class="article" data-category="news">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="SEMICON">
+            <h2>77. SEMICON India: Establishing South Asia as a Trusted Global Semiconductor Hub</h2>
+            <div class="definition-box"><strong>Definition:</strong> SEMICON India convenes global chip designers and manufacturers to build diversified microchip supply chains.</div>
+            <p>Developing robust end-to-end semiconductor fabrication plants to provide stable hardware components outside traditional geographic monopolies.</p>
+        </div>
+
+        <div class="article" data-category="news">
+            <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=1200&q=80" alt="UN AI">
+            <h2>78. United Nations Urgent Global Call on Frontier AI Safety Governance</h2>
+            <div class="definition-box"><strong>Definition:</strong> Frontier AI Governance encompasses international policy standards designed to regulate superintelligent systems.</div>
+            <p>UN authorities urge member states to enact mandatory synthetic media watermarking and collaborative safety guardrails to mitigate systemic risks.</p>
+        </div>
+
+        <div class="article" data-category="news">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="De-Dollarization">
+            <h2>79. De-Dollarization Strategies and Bilateral Local Currency Settlement Pacts</h2>
+            <div class="definition-box"><strong>Definition:</strong> Local currency trade agreements allow sovereign nations to settle cross-border commerce without USD conversion.</div>
+            <p>Developing economic blocs insulate their domestic financial markets from global exchange rate volatility and monetary tightening cycles.</p>
+        </div>
+
+        <div class="article" data-category="news">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Critical Minerals">
+            <h2>80. Critical Mineral Supply Chain Security for Global Clean Energy Transitions</h2>
+            <div class="definition-box"><strong>Definition:</strong> Critical mineral corridors secure international access to lithium, cobalt, nickel, and rare earth elements.</div>
+            <p>Industrial nations establish strategic mining alliances to guarantee raw material supplies for EV battery and renewable energy manufacturing.</p>
+        </div>
+
+        <!-- CATEGORY: SPACE & DEEP TECH (101 to 130) -->
+        <div class="article" data-category="space">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" alt="Spaceflight">
+            <h2>101. Commercial Spaceflight and Artemis Base Camp: The Interplanetary Economy</h2>
+            <div class="definition-box"><strong>Definition:</strong> Commercial Spaceflight involves private aerospace missions focusing on orbital tourism, satellite constellations, and lunar bases.</div>
+            <p>Reusable rocket architectures drastically reduce payload delivery costs, laying the foundation for permanent human habitation on the Moon.</p>
+        </div>
+
+        <div class="article" data-category="space">
+            <img src="https://images.unsplash.com/photo-1509017174183-0b7e0278f1ec?auto=format&fit=crop&w=1200&q=80" alt="Quantum">
+            <h2>102. Quantum Supremacy and Error-Corrected Qubits in Scientific Computation</h2>
+            <div class="definition-box"><strong>Definition:</strong> Error-Corrected Quantum Computing utilizes logical qubits backed by hardware redundancy to solve complex math instantly.</div>
+            <p>Advanced laboratories simulate intricate molecular interactions in seconds, revolutionizing pharmaceutical development and material science.</p>
+        </div>
+
+        <div class="article" data-category="space">
+            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80" alt="Fusion">
+            <h2>103. Nuclear Fusion Energy Milestones: Unlocking Limitless Zero-Carbon Power</h2>
+            <div class="definition-box"><strong>Definition:</strong> Nuclear Fusion mirrors stellar processes by fusing atomic nuclei to generate immense clean energy without radioactive waste.</div>
+            <p>Magnetic confinement reactors achieve critical net-energy gains, advancing humanity toward sustainable, baseload clean electricity.</p>
+        </div>
+
+        <div class="article" data-category="space">
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80" alt="Biotech">
+            <h2>104. AI-Powered Drug Discovery and AlphaFold Protein Folding Breakthroughs</h2>
+            <div class="definition-box"><strong>Definition:</strong> Computational biology integrates deep learning prediction models with high-throughput genetic sequencing.</div>
+            <p>Accelerating pharmaceutical research by predicting 3D protein structures in minutes instead of decades of laboratory experimentation.</p>
+        </div>
+
+        <div class="article" data-category="space">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="BCI">
+            <h2>105. Brain-Computer Interfaces (BCIs): Translating Neural Signals into Digital Commands</h2>
+            <div class="definition-box"><strong>Definition:</strong> BCI hardware interfaces bridge human neurological activity directly with digital operating systems.</div>
+            <p>Neural engineering enables paralyzed individuals to control computers and communicate seamlessly through direct thought processing.</p>
+        </div>
 
     </div>
 
+    <!-- Combined Search and Category Filter JavaScript -->
     <script>
-        function searchArticles() {
+        let currentCategory = 'all';
+
+        function filterByCategory(category) {
+            currentCategory = category;
+            
+            let buttons = document.getElementsByClassName('filter-btn');
+            for (let btn of buttons) {
+                btn.classList.remove('active');
+            }
+            event.target.classList.add('active');
+
+            filterArticles();
+        }
+
+        function filterArticles() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let articles = document.getElementsByClassName('article');
+            
             for (let i = 0; i < articles.length; i++) {
+                let articleCategory = articles[i].getAttribute('data-category');
                 let text = articles[i].innerText.toLowerCase();
-                articles[i].style.display = text.includes(input) ? "" : "none";
+                
+                let matchesCategory = (currentCategory === 'all' || articleCategory === currentCategory);
+                let matchesSearch = text.includes(input);
+
+                if (matchesCategory && matchesSearch) {
+                    articles[i].style.display = "";
+                } else {
+                    articles[i].style.display = "none";
+                }
             }
         }
     </script>
 
+    <!-- Hidden Google Translate Element for Auto-Detection -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <!-- Automatic Browser Language Detector Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                autoDisplay: false
+            }, 'google_translate_element');
+
+            setTimeout(function() {
+                var userLang = navigator.language || navigator.userLanguage;
+                var shortLang = userLang.substring(0, 2);
+                if(shortLang !== 'en') {
+                    var selectField = document.querySelector(".goog-te-combo");
+                    if(selectField) {
+                        selectField.value = shortLang;
+                        selectField.dispatchEvent(new Event('change'));
+                    }
+                }
+            }, 1000);
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Popunder Script -->
+    <script src="https://pl31443964.profitableratecpmnetwork.com/71/9b/68/719b68a75cd92f96024833025c747b48.js"></script>
+
     <footer>
-        <p>&copy; 2026 INKSPIRE. All rights reserved. Empowering Global Creators, Scholars and Innovators Worldwide.</p>
+        <p>&copy; 2026 INKSPIRE. All rights reserved. Empowering Global Creators, Scholars, Bankers and Innovators Worldwide.</p>
     </footer>
+
 </body>
 </html>
