@@ -85,28 +85,39 @@
             margin-bottom: 40px;
             color: #ffffff;
         }
-        .services-grid {
+        .services-grid, .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
-        .service-card {
+        .service-card, .portfolio-card {
             background: #1e293b;
             padding: 30px;
             border-radius: 10px;
             border: 1px solid #334155;
             transition: border-color 0.3s;
         }
-        .service-card:hover {
+        .service-card:hover, .portfolio-card:hover {
             border-color: #38bdf8;
         }
-        .service-card h3 {
+        .service-card h3, .portfolio-card h3 {
             margin-bottom: 15px;
             color: #38bdf8;
             font-size: 1.3rem;
         }
-        .service-card p {
+        .service-card p, .portfolio-card p {
             color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        .tag {
+            display: inline-block;
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid #334155;
         }
         .about-text {
             text-align: center;
@@ -159,6 +170,7 @@
         <div class="logo">Inkspire</div>
         <nav>
             <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -176,14 +188,40 @@
             <div class="service-card">
                 <h3>SEO Blog Writing</h3>
                 <p>Engaging, well-researched articles optimized for search engines to bring organic traffic to your website.</p>
+                <span class="tag">Organic Traffic</span>
             </div>
             <div class="service-card">
                 <h3>Copywriting</h3>
                 <p>Compelling landing pages and sales copy designed to maximize conversions and boost your revenue.</p>
+                <span class="tag">Conversions</span>
             </div>
             <div class="service-card">
                 <h3>E-books & Guides</h3>
                 <p>Comprehensive long-form content, guides, and digital materials tailored for your audience.</p>
+                <span class="tag">Long-form</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" style="background: #162032;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2>Featured Samples</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <h3>AI & Automation Guide</h3>
+                    <p>A deep-dive digital e-book focusing on smart work and productivity systems for modern professionals.</p>
+                    <span class="tag">Tech / E-book</span>
+                </div>
+                <div class="portfolio-card">
+                    <h3>SaaS Growth Case Study</h3>
+                    <p>Strategic blog post and copywriting assets designed to showcase software feature updates and scale user acquisition.</p>
+                    <span class="tag">SaaS / SEO</span>
+                </div>
+                <div class="portfolio-card">
+                    <h3>E-commerce Brand Story</h3>
+                    <p>Persuasive product descriptions and landing page copy written to maximize retail conversions.</p>
+                    <span class="tag">Copywriting</span>
+                </div>
             </div>
         </div>
     </section>
