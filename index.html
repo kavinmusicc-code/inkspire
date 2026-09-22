@@ -11,6 +11,7 @@
         .container { max-width: 650px; margin: 2rem auto; padding: 0 1rem; }
         .article { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
         .article h2 { margin-top: 0; color: #0f172a; font-size: 1.2rem; }
+        .article p { color: #475569; font-size: 0.9rem; margin-bottom: 0; }
         
         /* पेजिनेशन और बटन डिज़ाइन */
         .pagination-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem; margin: 3rem 0; text-align: center; }
@@ -32,11 +33,8 @@
     </header>
 
     <div class="container">
-        <!-- यहाँ हर पेज का कंटेंट अपने आप बदलेगा -->
-        <div class="article" id="contentBox">
-            <h2>1. Quantum Computing & Superposition Qubits</h2>
-            <p>Utilizing quantum mechanics principles to perform complex multi-state computations exponentially faster than binary systems.</p>
-        </div>
+        <!-- यहाँ एक साथ 10 आर्टिकल्स लोड होंगे -->
+        <div id="contentBox"></div>
 
         <!-- नीचे नेविगेशन और पेज बदलने के बटन -->
         <div class="pagination-box">
@@ -57,11 +55,10 @@
     <footer><p>&copy; 2026 INKSPIRE</p></footer>
 
     <script>
-        // वर्तमान पेज नंबर याद रखने के लिए
         let currentPage = 1;
         const totalPages = 500;
+        const itemsPerPage = 10; // हर पेज पर 10 आर्टिकल्स दिखेंगे
 
-        // पेज लोड होने पर चेक करें कि क्या यूआरएल में कोई पेज नंबर दिया गया है
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
             let p = parseInt(urlParams.get('page'));
@@ -72,16 +69,25 @@
         };
 
         function renderPage() {
-            // हेडर और कंटेंट अपडेट करें
             document.getElementById('pageSubtitle').innerText = "Page " + currentPage + " of " + totalPages;
             
             let contentBox = document.getElementById('contentBox');
-            contentBox.innerHTML = `
-                <h2>${currentPage}. Module Title for Page ${currentPage}</h2>
-                <p>This is the detailed information, notes, and module description corresponding to page number ${currentPage} of the INKSPIRE global intelligence hub database.</p>
-            `;
+            contentBox.innerHTML = '';
 
-            // छोटे पेज नंबर के बटन जनरेट करें (जैसे आस-पास के पेज)
+            // इस पेज के हिसाब से 10 आर्टिकल्स जनरेट करें
+            let startItem = (currentPage - 1) * itemsPerPage + 1;
+            let endItem = startItem + itemsPerPage - 1;
+
+            for(let i = startItem; i <= endItem; i++) {
+                contentBox.innerHTML += `
+                    <div class="article">
+                        <h2>${i}. Module Title and Global Intelligence Topic</h2>
+                        <p>This is the detailed information, notes, and description corresponding to module item number ${i} on page ${currentPage} of the INKSPIRE hub.</p>
+                    </div>
+                `;
+            }
+
+            // नीचे के छोटे पेज नंबर बटन अपडेट करें
             let pDisplay = document.getElementById('pageNumbersDisplay');
             pDisplay.innerHTML = '';
             
