@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INKSPIRE - Global Intelligence Hub (Modules 101-110)</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6; 
+        }
+        header { 
+            background-color: var(--card-bg); 
+            border-bottom: 1px solid var(--border-color); 
+            padding: 2.5rem 1rem; 
+            text-align: center; 
+            margin-bottom: 2rem; 
+        }
+        header h1 { margin: 0; font-size: 2rem; color: var(--primary); letter-spacing: -0.5px; }
+        header p { margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.95rem; }
+        .container { width: 100%; max-width: 650px; margin: 0 auto; padding: 0 1rem; }
+        .search-box {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-size: 0.95rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            outline: none;
+            background: #fff;
+            transition: all 0.2s;
+        }
+        .search-box:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        .article { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 12px; 
+            margin-bottom: 1.5rem; 
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .article:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+        }
+        .article img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .article-content {
+            padding: 1.5rem;
+        }
+        .article h2 { 
+            font-size: 1.15rem; 
+            color: #0f172a; 
+            margin-top: 0; 
+            margin-bottom: 0.7rem; 
+            line-height: 1.4;
+        }
+        .definition-box { 
+            background: #f1f5f9; 
+            border-left: 4px solid var(--primary); 
+            padding: 0.75rem 1rem; 
+            margin: 0.8rem 0; 
+            font-size: 0.9rem; 
+            color: #334155; 
+            border-radius: 0 6px 6px 0; 
+        }
+        .article p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+        .cat-tag { 
+            display: inline-block; 
+            font-size: 0.7rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            background: #e0e7ff; 
+            color: var(--primary-dark); 
+            padding: 3px 8px; 
+            border-radius: 4px; 
+            margin-bottom: 0.6rem; 
+        }
+        /* Pagination Styling */
+        .pagination { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 8px; 
+            margin: 3rem 0; 
+        }
+        .pagination a { 
+            padding: 8px 14px; 
+            background: #fff; 
+            border: 1px solid var(--border-color); 
+            color: var(--primary); 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            transition: all 0.2s;
+        }
+        .pagination a.active { 
+            background: var(--primary); 
+            color: #fff; 
+            border-color: var(--primary); 
+        }
+        .pagination a:hover:not(.active) {
+            background: #f1f5f9;
+        }
+        footer { 
+            text-align: center; 
+            padding: 2.5rem 1rem; 
+            background-color: #1e293b; 
+            color: #94a3b8; 
+            font-size: 0.85rem; 
+            margin-top: 4rem; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>INKSPIRE HUB</h1>
+        <p>Global Intelligence & Advanced Tech Modules (Modules 101 - 110)</p>
+    </header>
+
+    <div class="container">
+        <!-- Search Filter Input -->
+        <input type="text" id="searchInput" class="search-box" placeholder="Search modules 101-110..." onkeyup="filterModules()">
+
+        <div id="modulesContainer">
+            <!-- Module 101 -->
+            <div class="article" data-title="101 neuromorphic computing brain inspired hardware chips ai">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Neuromorphic Computing">
+                <div class="article-content">
+                    <span class="cat-tag">Neuromorphic Hardware</span>
+                    <h2>101. Neuromorphic Computing & Spike-Based Processing Chips</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Semiconductor architecture replicating biological neural synapses to process cognitive workloads with extreme energy efficiency.</div>
+                    <p>Next-gen computing labs deploy neuromorphic silicon processors to run edge-AI models with minimal power consumption compared to traditional GPUs.</p>
+                </div>
+            </div>
+
+            <!-- Module 102 -->
+            <div class="article" data-title="102 fusion energy magnetic confinement tokamaks clean power">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Nuclear Fusion">
+                <div class="article-content">
+                    <span class="cat-tag">Advanced Energy</span>
+                    <h2>102. Magnetic Confinement Fusion & Commercial Tokamak Reactors</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Harnessing toroidal magnetic fields to contain high-temperature plasma, mimicking stellar fusion for limitless clean energy.</div>
+                    <p>Clean energy consortiums scale superconducting tokamak prototypes to establish stable net-gain nuclear fusion baseload power plants.</p>
+                </div>
+            </div>
+
+            <!-- Module 103 -->
+            <div class="article" data-title="103 synthetic biology programmable organisms gene editing crispr">
+                <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80" alt="Synthetic Biology">
+                <div class="article-content">
+                    <span class="cat-tag">Synthetic Biology</span>
+                    <h2>103. Programmable Synthetic Genomes & Engineered Microbes</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Writing custom DNA sequences from scratch to program cellular organisms for biodegradable plastic production and toxin removal.</div>
+                    <p>Biotech enterprises utilize synthetic biology workflows to engineer specialized enzymes capable of breaking down complex industrial pollutants.</p>
+                </div>
+            </div>
+
+            <!-- Module 104 -->
+            <div class="article" data-title="104 holographic displays spatial computing volumetric interfaces">
+                <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80" alt="Holographic Displays">
+                <div class="article-content">
+                    <span class="cat-tag">Spatial Computing</span>
+                    <h2>104. Volumetric Holographic Displays & Light-Field Interfaces</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Generating true three-dimensional floating visual objects that can be viewed from multiple angles without specialized eyewear.</div>
+                    <p>Medical surgeons and industrial designers utilize interactive volumetric holographic displays for precise spatial collaboration and planning.</p>
+                </div>
+            </div>
+
+            <!-- Module 105 -->
+            <div class="article" data-title="105 autonomous hyperloop high speed transit maglev transport">
+                <img src="https://images.unsplash.com/photo-1558441719-6779b686d634?auto=format&fit=crop&w=800&q=80" alt="Hyperloop Transport">
+                <div class="article-content">
+                    <span class="cat-tag">Future Mobility</span>
+                    <h2>105. Vacuum Tube Hyperloop Transit & Magnetic Levitation Pods</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Propelling passenger and cargo capsules at airline speeds through low-pressure sealed steel tubes using magnetic levitation.</div>
+                    <p>Transport engineers test friction-less hyperloop corridors designed to connect major metropolitan megaregions within minutes.</p>
+                </div>
+            </div>
+
+            <!-- Module 106 -->
+            <div class="article" data-title="106 quantum cryptography post quantum encryption cyber security">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Quantum Cryptography">
+                <div class="article-content">
+                    <span class="cat-tag">Cyber Security</span>
+                    <h2>106. Post-Quantum Cryptography & Quantum Key Distribution</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Implementing mathematical algorithms and photon-based key distribution that remain entirely unbreakable by quantum computers.</div>
+                    <p>Financial institutions and defense agencies migrate to post-quantum encryption standards to safeguard sensitive data from future decryption threats.</p>
+                </div>
+            </div>
+
+            <!-- Module 107 -->
+            <div class="article" data-title="107 atmospheric water harvesting metal organic frameworks humidity tech">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Water Harvesting">
+                <div class="article-content">
+                    <span class="cat-tag">Water Tech</span>
+                    <h2>107. Metal-Organic Frameworks & Autonomous Air Water Generators</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Utilizing porous crystalline materials to extract pure drinking water directly from arid desert air using solar thermal power.</div>
+                    <p>Off-grid communities and disaster relief teams deploy MOF-based atmospheric water harvesters to secure sustainable hydration sources.</p>
+                </div>
+            </div>
+
+            <!-- Module 108 -->
+            <div class="article" data-title="108 autonomous underwater vehicles deep ocean exploration robotics">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Underwater Drones">
+                <div class="article-content">
+                    <span class="cat-tag">Marine Robotics</span>
+                    <h2>108. Deep-Sea Autonomous Underwater Vehicles & Trench Mapping</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Pressure-resistant robotic submarines navigating abyssal ocean depths autonomously to map trenches and hydrothermal vents.</div>
+                    <p>Marine research institutes deploy untethered AUV fleets to monitor deep-ocean seismic activity and catalog uncharted benthic ecosystems.</p>
+                </div>
+            </div>
+
+            <!-- Module 109 -->
+            <div class="article" data-title="109 solid state batteries next gen energy storage electric vehicles">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" alt="Solid State Batteries">
+                <div class="article-content">
+                    <span class="cat-tag">Energy Storage</span>
+                    <h2>109. High-Density Solid-State Batteries & Fast Charging Electrolytes</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Replacing liquid electrolytes with solid ceramic or polymer compounds to achieve double the energy density and zero fire risk.</div>
+                    <p>Electric vehicle manufacturers scale solid-state battery production lines to deliver ultra-fast charging capabilities and extended driving ranges.</p>
+                </div>
+            </div>
+
+            <!-- Module 110 -->
+            <div class="article" data-title="110 planetary defense kinetic impactors near earth object tracking">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Planetary Defense">
+                <div class="article-content">
+                    <span class="cat-tag">Space Defense</span>
+                    <h2>110. Planetary Defense Systems & Kinetic Impactor Deflection</h2>
+                    <div class="definition-box"><strong>Core Concept:</strong> Automated telescope arrays tracking Near-Earth Asteroids (NEAs) and deep-space kinetic probes designed to deflect hazardous space rocks.</div>
+                    <p>Global space agencies coordinate advanced radar telemetry and interception frameworks to safeguard Earth from potential asteroid impact scenarios.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination Links -->
+        <div class="pagination">
+            <a href="page10.html">&laquo; Prev</a>
+            <a href="page10.html">10</a>
+            <a href="page11.html" class="active">11</a>
+            <a href="page12.html">12</a>
+            <a href="page12.html">Next &raquo;</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 INKSPIRE. All Rights Reserved. Modules 101-110 Compilation.</p>
+    </footer>
+
+    <script>
+        function filterModules() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let articles = document.getElementsByClassName('article');
+            for (let i = 0; i < articles.length; i++) {
+                let title = articles[i].getAttribute('data-title') || articles[i].innerText.toLowerCase();
+                articles[i].style.display = title.includes(input) ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
