@@ -3,284 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INKSPIRE - Global Intelligence Hub (Modules 1-10)</title>
+    <title>INKSPIRE Hub - Global Intelligence (1M+ Pages)</title>
     <style>
-        :root {
-            --primary: #4f46e5;
-            --primary-dark: #4338ca;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #475569;
-            --border-color: #e2e8f0;
-        }
-        *, *::before, *::after { box-sizing: border-box; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            background-color: var(--bg-color); 
-            color: var(--text-main); 
-            margin: 0; 
-            padding: 0; 
-            line-height: 1.6; 
-        }
-        header { 
-            background-color: var(--card-bg); 
-            border-bottom: 1px solid var(--border-color); 
-            padding: 2.5rem 1rem; 
-            text-align: center; 
-            margin-bottom: 2rem; 
-        }
-        header h1 { margin: 0; font-size: 2rem; color: var(--primary); letter-spacing: -0.5px; }
-        header p { margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.95rem; }
+        :root { --primary: #4f46e5; --bg-color: #f8fafc; --card-bg: #ffffff; --text-main: #1e293b; --text-muted: #475569; --border-color: #e2e8f0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; line-height: 1.6; }
+        header { background-color: var(--card-bg); border-bottom: 1px solid var(--border-color); padding: 2rem 1rem; text-align: center; margin-bottom: 2rem; }
+        header h1 { margin: 0; font-size: 2rem; color: var(--primary); }
         .container { width: 100%; max-width: 650px; margin: 0 auto; padding: 0 1rem; }
-        .search-box {
-            width: 100%;
-            padding: 0.85rem 1rem;
-            font-size: 0.95rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            outline: none;
-            background: #fff;
-            transition: all 0.2s;
-        }
-        .search-box:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-        }
-        .article { 
-            background: var(--card-bg); 
-            border: 1px solid var(--border-color); 
-            border-radius: 12px; 
-            margin-bottom: 1.5rem; 
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .article:hover { 
-            transform: translateY(-2px); 
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
-        }
-        .article img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-        .article-content {
-            padding: 1.5rem;
-        }
-        .article h2 { 
-            font-size: 1.15rem; 
-            color: #0f172a; 
-            margin-top: 0; 
-            margin-bottom: 0.7rem; 
-            line-height: 1.4;
-        }
-        .definition-box { 
-            background: #f1f5f9; 
-            border-left: 4px solid var(--primary); 
-            padding: 0.75rem 1rem; 
-            margin: 0.8rem 0; 
-            font-size: 0.9rem; 
-            color: #334155; 
-            border-radius: 0 6px 6px 0; 
-        }
+        .search-box { width: 100%; padding: 0.85rem 1rem; font-size: 0.95rem; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 2rem; outline: none; background: #fff; }
+        .article { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 1.5rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
+        .article img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .article-content { padding: 1.5rem; }
+        .article h2 { font-size: 1.15rem; color: #0f172a; margin-top: 0; }
+        .definition-box { background: #f1f5f9; border-left: 4px solid var(--primary); padding: 0.75rem 1rem; margin: 0.8rem 0; font-size: 0.9rem; color: #334155; }
         .article p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
-        .cat-tag { 
-            display: inline-block; 
-            font-size: 0.7rem; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            background: #e0e7ff; 
-            color: var(--primary-dark); 
-            padding: 3px 8px; 
-            border-radius: 4px; 
-            margin-bottom: 0.6rem; 
-        }
-        /* Pagination Styling */
-        .pagination { 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            gap: 8px; 
-            margin: 3rem 0; 
-        }
-        .pagination a { 
-            padding: 8px 14px; 
-            background: #fff; 
-            border: 1px solid var(--border-color); 
-            color: var(--primary); 
-            text-decoration: none; 
-            border-radius: 6px; 
-            font-weight: 600; 
-            font-size: 0.9rem; 
-            transition: all 0.2s;
-        }
-        .pagination a.active { 
-            background: var(--primary); 
-            color: #fff; 
-            border-color: var(--primary); 
-        }
-        .pagination a:hover:not(.active) {
-            background: #f1f5f9;
-        }
-        footer { 
-            text-align: center; 
-            padding: 2.5rem 1rem; 
-            background-color: #1e293b; 
-            color: #94a3b8; 
-            font-size: 0.85rem; 
-            margin-top: 4rem; 
-        }
+        .cat-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; background: #e0e7ff; color: var(--primary); padding: 3px 8px; border-radius: 4px; margin-bottom: 0.6rem; }
+        
+        /* 1 Million Pages Jump & Pagination Control */
+        .pagination-box { background: #fff; border: 1px solid var(--border-color); border-radius: 10px; padding: 1.2rem; margin: 3rem 0; text-align: center; }
+        .page-jump-row { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 1rem; flex-wrap: wrap; }
+        .page-jump-row input { width: 100px; padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 6px; text-align: center; font-weight: 600; }
+        .btn { padding: 6px 14px; background: var(--primary); color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; text-decoration: none; font-size: 0.85rem; }
+        .btn:hover { opacity: 0.9; }
+        .nav-links { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+
+        footer { text-align: center; padding: 2.5rem 1rem; background-color: #1e293b; color: #94a3b8; font-size: 0.85rem; margin-top: 4rem; }
     </style>
 </head>
 <body>
-
     <header>
         <h1>INKSPIRE HUB</h1>
-        <p>Global Intelligence & Deep-Tech Modules (Modules 1 - 10)</p>
+        <p>Global Intelligence Database (Scalable up to 1,000,000+ Pages)</p>
     </header>
 
     <div class="container">
-        <!-- Search Filter Input -->
-        <input type="text" id="searchInput" class="search-box" placeholder="Search modules 1-10..." onkeyup="filterModules()">
+        <input type="text" id="searchInput" class="search-box" placeholder="Search across all modules..." onkeyup="filterModules()">
+        
+        <!-- Dynamic Content Container -->
+        <div id="moduleView"></div>
 
-        <div id="modulesContainer">
-            <!-- Module 1 -->
-            <div class="article" data-title="1 artificial intelligence neural networks autonomous agents ai tech">
-                <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80" alt="AI Neural Networks">
-                <div class="article-content">
-                    <span class="cat-tag">AI & Tech</span>
-                    <h2>1. Artificial Intelligence, Neural Networks & Autonomous Agents</h2>
-                    <div class="definition-box"><strong>Core Concept:</strong> Large-scale transformer models and decentralized neural networks are shifting automation from rule-based scripts to self-learning cognitive systems.</div>
-                    <p>Modern enterprises utilize multi-agent AI frameworks to automate complex decision trees, cutting manual operational overhead by over 60% globally.</p>
-                </div>
+        <!-- 1M Scale Navigation & Jump Box -->
+        <div class="pagination-box">
+            <div class="nav-links">
+                <button class="btn" id="prevBtn" onclick="changePage(-1)">&laquo; Previous Page</button>
+                <span id="pageIndicator" style="font-weight: 700; color: var(--text-main);">Page 1 of 1,000,000</span>
+                <button class="btn" id="nextBtn" onclick="changePage(1)">Next Page &raquo;</button>
             </div>
-
-            <!-- Module 2 -->
-            <div class="article" data-title="2 worldwide fashion trends sustainable textiles bio-based design">
-                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Sustainable Fashion">
-                <div class="article-content">
-                    <span class="cat-tag">Global Fashion</span>
-                    <h2>2. Worldwide Fashion Trends & Bio-Based Sustainable Textiles</h2>
-                    <div class="definition-box"><strong>Core Concept:</strong> The integration of lab-grown leather, recycled ocean plastics, and closed-loop supply chains is redefining high-street retail design.</div>
-                    <p>Global apparel brands are legally mandated to adopt traceable digital product passports, ensuring complete transparency from raw yarn extraction to final retail shelves.</p>
-                </div>
+            <div class="page-jump-row">
+                <label for="jumpInput" style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">Jump directly to page:</label>
+                <input type="number" id="jumpInput" min="1" max="1000000" placeholder="1 - 1000000">
+                <button class="btn" onclick="jumpToPage()">Go</button>
             </div>
-
-            <!-- Module 3 -->
-            <div class="article" data-title="3 international graduate fellowships academic research funding scholarships">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Academic Research">
-                <div class="article-content">
-                    <span class="cat-tag">Scholarships</span>
-                    <h2>3. International Graduate Fellowships & Academic Research Funding</h2>
-                    <div class="definition-box"><strong>Core Concept:</strong> Cross-border grant frameworks and fully-funded doctoral scholarships driving breakthrough innovations in science and technology.</div>
-                    <p>Top-tier universities and global research foundations provide multi-year endowments to support exceptional postgraduate scholars across engineering and social sciences.</p>
-                </div>
-            </div>
-
-            <!-- Module 4 -->
-            <div class="article" data-title="4 global banking infrastructure fintech apis monetary policy">
-                <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80" alt="Global Banking">
-                <div class="article-content">
-                    <span class="cat-tag">Global Banking</span>
-                    <h2>4. Global Banking Infrastructure, Fintech APIs & Monetary Policy</h2>
-                    <div class="definition-box"><strong>Core Concept:</strong> Open banking protocols and real-time cross-border payment architectures transforming legacy financial ledgers.</div>
-                    <p>Central banks are accelerating central bank digital currency (CBDC) pilots to streamline institutional liquidity and eliminate settlement delays.</p>
-                </div>
-            </div>
-
-            <!-- Module 5 -->
-            <div class="article" data-title="5 space exploration deep tech engineering orbital systems">
-                <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=800&q=80" alt="Space Exploration">
-                <div class="article-content">
-                    <span class="cat-tag">Space & Deep Tech</span>
-                    <h2>5. Space Exploration, Deep Tech Engineering & Orbital Systems</h2>
-                    <div class="definition-box"><strong>Core Concept:</strong> Reusable launch vehicles and commercial low-Earth orbit habitats lowering barriers for industrial space operations.</div>
-                    <p>Private aerospace contractors are deploying modular satellite constellations to provide high-speed global broadband and earth observation telemetry.</p>
-                </div>
-            </div>
-
-            <!-- Module 6 -->
-            <div class="article" data-title="6 renewable energy smart grids green technology transition">
-                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80" alt="Renewable Energy">
-                <div class="article-content">
-                    <span class="cat-tag">Clean Energy</span>
-                    <h2>6. Renewable Energy Integration & Smart Grid Infrastructure</h2>
-                    <div class="definition-box"><strong>Core Concept:</strong> Decentralized power generation paired with AI-driven grid balancing to optimize peak energy distribution.</div>
-                    <p>Smart utility networks leverage predictive analytics to integrate solar and wind outputs seamlessly while minimizing transmission loss.</p>
-                </div>
-            </div>
-
-            <!-- Module 7 -->
-            <div class="article" data-title="7 cybersecurity threat intelligence zero trust architecture">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity">
-                <div class="article-content">
-                    <span class="cat-tag">Cybersecurity</span>
-                    <h2>7. Advanced Cybersecurity Threat Intelligence & Zero-Trust Frameworks</h2>
-                    <div class="definition-box"><strong>Core Concept:</strong> Continuous identity verification and automated behavioral monitoring replacing traditional perimeter-based security defenses.</div>
-                    <p>Enterprise security teams deploy automated response playbooks to contain ransomware vectors and neutralize malicious lateral network movements.</p>
-                </div>
-            </div>
-
-            <!-- Module 8 -->
-            <div class="article" data-title="8 biotechnology genomic sequencing personalized medicine">
-                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" alt="Biotechnology">
-                <div class="article-content">
-                    <span class="cat-tag">Biotech</span>
-                    <h2>8. Genomic Sequencing, CRISPR Therapeutics & Personalized Medicine</h2>
-                    <div class="definition-box"><strong>Core Concept:</strong> Precision gene editing technologies enabling targeted treatments for rare genetic disorders and chronic metabolic conditions.</div>
-                    <p>Clinical laboratories harness high-throughput DNA sequencing platforms to tailor pharmacological therapies based on individual patient biomarkers.</p>
-                </div>
-            </div>
-
-            <!-- Module 9 -->
-            <div class="article" data-title="9 supply chain logistics autonomous freight blockchain tracking">
-                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Supply Chain">
-                <div class="article-content">
-                    <span class="cat-tag">Logistics</span>
-                    <h2>9. Autonomous Freight Logistics & Immutable Supply Chain Tracking</h2>
-                    <div class="definition-box"><strong>Core Concept:</strong> IoT sensor integration and distributed ledger tracking ensuring tamper-proof provenance across global trade lanes.</div>
-                    <p>Autonomous cargo fleets and smart warehousing hubs reduce transit bottlenecks and inventory mismatch in international manufacturing pipelines.</p>
-                </div>
-            </div>
-
-            <!-- Module 10 -->
-            <div class="article" data-title="10 quantum computing qubits cryptography advanced computation">
-                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80" alt="Quantum Computing">
-                <div class="article-content">
-                    <span class="cat-tag">Deep Tech</span>
-                    <h2>10. Quantum Computing Architectures, Qubits & Post-Encryption</h2>
-                    <div class="definition-box"><strong>Core Concept:</strong> Superconducting qubits performing parallel state evaluations to solve complex molecular simulation problems exponentially faster.</div>
-                    <p>Research consortia develop error-corrected quantum processors to model material science breakthroughs and optimize financial risk parameters.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pagination Links -->
-        <div class="pagination">
-            <a href="index.html" class="active">1</a>
-            <a href="page2.html">2</a>
-            <a href="page3.html">3</a>
-            <a href="page4.html">4</a>
-            <a href="page2.html">Next &raquo;</a>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 INKSPIRE. All Rights Reserved. Modules 1-10 Compilation.</p>
-    </footer>
-
-    <script>
-        function filterModules() {
-            let input = document.getElementById('searchInput').value.toLowerCase();
-            let articles = document.getElementsByClassName('article');
-            for (let i = 0; i < articles.length; i++) {
-                let title = articles[i].getAttribute('data-title') || articles[i].innerText.toLowerCase();
-                articles[i].style.display = title.includes(input) ? "" : "none";
-            }
-        }
-    </script>
-</body>
-</html>
+    <footer><p>&copy; 2026 INKSPIRE. All Rights Reserved. (Massive Scale Edition)</p>
