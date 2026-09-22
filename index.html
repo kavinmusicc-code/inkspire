@@ -82,48 +82,39 @@
             space: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'
         };
 
-        // मॉड्यूल 105 से शुरू करके आगे के सभी मॉड्यूल्स को 1105 तक (कुल 1000 कंटेंट्स) लगातार जोड़ना
+        // मॉड्यूल 105 से शुरू होकर आगे के सभी कंटेंट्स का लूप
         for(let i = 105; i <= 1105; i++) {
             let c = cats[i % cats.length];
             database.push({
                 id: i, 
                 cat: c,
-                title: `${i}. Global Intelligence & Strategic Technology Briefing Series Module #${i}`,
+                title: i + '. Global Intelligence & Strategic Technology Briefing Series Module #' + i,
                 img: imgs[c],
-                def: `Definition: Advanced cross-sectoral framework, empirical data metrics, and future scalability analysis for global module number ${i}.`,
-                desc: `Comprehensive worldwide report detailing international market dynamics, regulatory compliance standards, and multi-industry adoption forecasts for module #${i} across key economic zones.`
+                def: 'Definition: Advanced cross-sectoral framework, empirical data metrics, and future scalability analysis for global module number ' + i + '.',
+                desc: 'Comprehensive worldwide report detailing international market dynamics, regulatory compliance standards, and multi-industry adoption forecasts for module #' + i + ' across key economic zones.'
             });
         }
 
         function renderArticles(filter = 'all', search = '') {
             const container = document.getElementById('articlesContainer');
-            let html = `
-                <div class="ad-box">
-                    <script>
-                      atOptions = { 'key' : 'e32965a13148c46266f49efbbbee0632', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
-                    </script>
-                    <script src="https://www.highrevenueformat.com/e32965a13148c46266f49efbbbee0632/invoke.js"></script>
-                </div>
-            `;
+            let html = '<div class="ad-box"><script>atOptions = { "key" : "e32965a13148c46266f49efbbbee0632", "format" : "iframe", "height" : 90, "width" : 728, "params" : {} };<\/script><script src="https://www.highrevenueformat.com/e32965a13148c46266f49efbbbee0632/invoke.js"></script></div>';
 
-            let filtered = database.filter(item => {
+            let filtered = database.filter(function(item) {
                 let matchesCat = (filter === 'all' || item.cat === filter);
                 let matchesSearch = item.title.toLowerCase().includes(search) || item.desc.toLowerCase().includes(search) || item.def.toLowerCase().includes(search);
                 return matchesCat && matchesSearch;
             });
 
             if (filtered.length === 0) {
-                html += `<div class="article" style="text-align: center; padding: 3rem;"><h3>No matching modules found!</h3></div>`;
+                html += '<div class="article" style="text-align: center; padding: 3rem;"><h3>No matching modules found!</h3></div>';
             } else {
-                filtered.slice(0, 300).forEach(item => {
-                    html += `
-                        <div class="article" data-category="${item.cat}">
-                            <img src="${item.img}" alt="${item.title}">
-                            <h2>${item.title}</h2>
-                            <div class="definition-box"><strong>Definition:</strong> ${item.def}</div>
-                            <p>${item.desc}</p>
-                        </div>
-                    `;
+                filtered.slice(0, 300).forEach(function(item) {
+                    html += '<div class="article" data-category="' + item.cat + '">';
+                    html += '<img src="' + item.img + '" alt="' + item.title + '">';
+                    html += '<h2>' + item.title + '</h2>';
+                    html += '<div class="definition-box"><strong>Definition:</strong> ' + item.def + '</div>';
+                    html += '<p>' + item.desc + '</p>';
+                    html += '</div>';
                 });
             }
 
@@ -135,8 +126,8 @@
         function filterByCategory(category) {
             currentCategory = category;
             let buttons = document.getElementsByClassName('filter-btn');
-            for (let btn of buttons) {
-                btn.classList.remove('active');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
             }
             event.target.classList.add('active');
             let searchVal = document.getElementById('searchInput').value.toLowerCase();
